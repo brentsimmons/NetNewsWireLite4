@@ -48,21 +48,21 @@
 
 @interface NNWArticleListScrollView : NSScrollView {
 @private
-	CGFloat *cachedViewYOrigins;
-	NSMutableArray *enqueuedViews;
-	NSMutableArray *visibleViews;
-	NSMutableDictionary *rowToViewMap;
-	NSUInteger numberOfRows;
-	NSIndexSet *selectedRowIndexes;
-	CGFloat heightOfAllRows;
-	NSUInteger indexOfFirstVisibleRow;
-	id<NNWArticleListDelegate> delegate;
-	BOOL selected;
+    CGFloat *cachedViewYOrigins;
+    NSMutableArray *enqueuedViews;
+    NSMutableArray *visibleViews;
+    NSMutableDictionary *rowToViewMap;
+    NSUInteger numberOfRows;
+    NSIndexSet *selectedRowIndexes;
+    CGFloat heightOfAllRows;
+    NSUInteger indexOfFirstVisibleRow;
+    id<NNWArticleListDelegate> __unsafe_unretained delegate;
+    BOOL selected;
 }
 
 
-@property (nonatomic, assign) IBOutlet id<NNWArticleListDelegate> delegate;
-@property (nonatomic, retain, readonly) NSIndexSet *selectedRowIndexes;
+@property (nonatomic, unsafe_unretained) IBOutlet id<NNWArticleListDelegate> delegate;
+@property (nonatomic, strong, readonly) NSIndexSet *selectedRowIndexes;
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic, assign) CGFloat heightOfAllRows;
 

@@ -16,14 +16,14 @@ extern NSString *NNWSendToAppBundleIDKey;
 
 @interface NNWSendToAppSpecifier : NSObject {
 @private
-	BOOL appExistsOnDisk;
-	BOOL usesAPI;
-	BOOL usesURLScheme;
-	NSImage *icon;
-	NSString *URLSchemeTemplate;
-	NSString *appBundleID;
-	NSString *appName;
-	NSString *appPath;
+    BOOL appExistsOnDisk;
+    BOOL usesAPI;
+    BOOL usesURLScheme;
+    NSImage *icon;
+    NSString *URLSchemeTemplate;
+    NSString *appBundleID;
+    NSString *appName;
+    NSString *appPath;
 }
 
 /*ConfigInfo is either a string or a dictionary. If string, it should be the bundleID.*/
@@ -33,11 +33,11 @@ extern NSString *NNWSendToAppBundleIDKey;
 @property (nonatomic, assign, readonly) BOOL appExistsOnDisk;
 @property (nonatomic, assign, readonly) BOOL usesAPI; /* http://ranchero.com/netnewswire/developers/externalinterface */
 @property (nonatomic, assign, readonly) BOOL usesURLScheme;
-@property (nonatomic, retain, readonly) NSImage *icon;
-@property (nonatomic, retain, readonly) NSString *URLSchemeTemplate;
-@property (nonatomic, retain, readonly) NSString *appBundleID;
-@property (nonatomic, retain, readonly) NSString *appName;
-@property (nonatomic, retain, readonly) NSString *appPath;
+@property (nonatomic, strong, readonly) NSImage *icon;
+@property (nonatomic, strong, readonly) NSString *URLSchemeTemplate;
+@property (nonatomic, strong, readonly) NSString *appBundleID;
+@property (nonatomic, strong, readonly) NSString *appName;
+@property (nonatomic, strong, readonly) NSString *appPath;
 
 
 @end
@@ -45,13 +45,13 @@ extern NSString *NNWSendToAppBundleIDKey;
 
 @interface NNWPluginCommandSendToApp : NSObject <RSPluginCommand> {
 @private
-	NNWSendToAppSpecifier *sendToAppSpecifier;
-	id<RSSharableItem> sharableItem;
+    NNWSendToAppSpecifier *sendToAppSpecifier;
+    id<RSSharableItem> sharableItem;
 }
 
 
 - (id)initWithAppSpecifier:(NNWSendToAppSpecifier *)aSendToAppSpecifier;
 
-@property (nonatomic, retain, readonly) NNWSendToAppSpecifier *sendToAppSpecifier;
+@property (nonatomic, strong, readonly) NNWSendToAppSpecifier *sendToAppSpecifier;
 
 @end

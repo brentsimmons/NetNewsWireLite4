@@ -16,16 +16,16 @@
 }
 
 
-@property (nonatomic, retain) NSNumber *bitRate;
-@property (nonatomic, retain) NSNumber *fileSize;
-@property (nonatomic, retain) NSNumber *height;
-@property (nonatomic, retain) NSNumber *mediaType;
-@property (nonatomic, retain) NSString *medium;
-@property (nonatomic, retain) NSString *mimeType;
-@property (nonatomic, retain) NSString *URL;
-@property (nonatomic, retain) NSNumber *width;
+@property (nonatomic, strong) NSNumber *bitRate;
+@property (nonatomic, strong) NSNumber *fileSize;
+@property (nonatomic, strong) NSNumber *height;
+@property (nonatomic, strong) NSNumber *mediaType;
+@property (nonatomic, strong) NSString *medium;
+@property (nonatomic, strong) NSString *mimeType;
+@property (nonatomic, strong) NSString *URL;
+@property (nonatomic, strong) NSNumber *width;
 
-@property (nonatomic, retain) NSSet *articles;
+@property (nonatomic, strong) NSSet *articles;
 
 + (NSSet *)enclosuresWithArrayOfParsedEnclosures:(NSArray *)parsedEnclosures moc:(NSManagedObjectContext *)moc;
 

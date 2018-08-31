@@ -17,13 +17,13 @@ NSString *RSParseSingleStringWithTag(NSData *xmlData, NSString *tagName); //Or d
 
 @interface RSSingleStringParser : RSSAXParser {
 @private
-	NSString *tagName;
-	NSString *returnedString;
+    NSString *tagName;
+    NSString *returnedString;
 }
 
 
-@property (nonatomic, retain) NSString *tagName; /*Whose string value we'll get*/
-@property (nonatomic, retain, readonly) NSString *returnedString;
+@property (nonatomic, strong) NSString *tagName; /*Whose string value we'll get*/
+@property (nonatomic, strong, readonly) NSString *returnedString;
 
 
 @end

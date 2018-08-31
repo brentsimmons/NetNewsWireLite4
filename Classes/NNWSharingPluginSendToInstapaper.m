@@ -12,7 +12,7 @@
 
 @interface NNWSharingPluginSendToInstapaper ()
 
-@property (nonatomic, retain, readwrite) NSArray *allCommands;
+@property (nonatomic, strong, readwrite) NSArray *allCommands;
 @end
 
 
@@ -22,17 +22,13 @@
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[allCommands release];
-	[super dealloc];
-}
 
 
 #pragma mark RSPlugin
 
 - (BOOL)shouldRegister:(id<RSPluginManager>)pluginManager {
-	self.allCommands = [NSArray arrayWithObject:[[[NNWPluginCommandSendToInstapaper alloc] init] autorelease]];
-	return YES;
+    self.allCommands = [NSArray arrayWithObject:[[NNWPluginCommandSendToInstapaper alloc] init]];
+    return YES;
 }
 
 

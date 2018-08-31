@@ -4,12 +4,12 @@
 @implementation FMDatabase
 
 + (id)databaseWithPath:(NSString*)aPath {
-    return [[[self alloc] initWithPath:aPath] autorelease];
+    return [[self alloc] initWithPath:aPath];
 }
 
 - (id)initWithPath:(NSString*)aPath {
     self = [super init];
-	
+    
     if (self) {
         databasePath        = [aPath copy];
         db                  = 0x00;
@@ -17,17 +17,14 @@
         crashOnErrors       = 0x00;
         busyRetryTimeout    = 0x00;
     }
-	
-	return self;
+    
+    return self;
 }
 
 - (void)dealloc {
-	[self close];
+    [self close];
     
-    [cachedStatements release];
-    [databasePath release];
-	
-    [super dealloc];
+    
 }
 
 + (NSString*) sqliteLibVersion {
@@ -43,23 +40,23 @@
 }
 
 - (BOOL) open {
-	int err = sqlite3_open([databasePath fileSystemRepresentation], &db );
-	if(err != SQLITE_OK) {
+    int err = sqlite3_open([databasePath fileSystemRepresentation], &db );
+    if(err != SQLITE_OK) {
         NSLog(@"error opening!: %d", err);
-		return NO;
-	}
-	
-	return YES;
+        return NO;
+    }
+    
+    return YES;
 }
 
 #if SQLITE_VERSION_NUMBER >= 3005000
 - (BOOL) openWithFlags:(int)flags {
     int err = sqlite3_open_v2([databasePath fileSystemRepresentation], &db, flags, NULL /* Name of VFS module to use */);
-	if(err != SQLITE_OK) {
-		NSLog(@"error opening!: %d", err);
-		return NO;
-	}
-	return YES;
+    if(err != SQLITE_OK) {
+        NSLog(@"error opening!: %d", err);
+        return NO;
+    }
+    return YES;
 }
 #endif
 
@@ -68,7 +65,7 @@
     
     [self clearCachedStatements];
     
-	if (!db) {
+    if (!db) {
         return;
     }
     
@@ -93,7 +90,7 @@
     }
     while (retry);
     
-	db = nil;
+    db = nil;
 }
 
 - (void) clearCachedStatements {
@@ -102,7 +99,7 @@
     FMStatement *cachedStmt;
 
     while ((cachedStmt = [e nextObject])) {
-    	[cachedStmt close];
+        [cachedStmt close];
     }
     
     [cachedStatements removeAllObjects];
@@ -117,7 +114,6 @@
     query = [query copy]; // in case we got handed in a mutable string...
     [statement setQuery:query];
     [cachedStatements setObject:statement forKey:query];
-    [query release];
 }
 
 
@@ -345,7 +341,7 @@
         return nil;
     }
     
-    [statement retain]; // to balance the release below
+     // to balance the release below
     
     if (!statement) {
         statement = [[FMStatement alloc] init];
@@ -362,7 +358,6 @@
     
     statement.useCount = statement.useCount + 1;
     
-    [statement release];    
     
     [self setInUse:NO];
     
@@ -529,7 +524,6 @@
         
         [self setCachedStatement:cachedStmt forQuery:sql];
         
-        [cachedStmt release];
     }
     
     if (cachedStmt) {
@@ -678,8 +672,7 @@
 
 - (void)setCachedStatements:(NSMutableDictionary *)value {
     if (cachedStatements != value) {
-        [cachedStatements release];
-        cachedStatements = [value retain];
+        cachedStatements = value;
     }
 }
 
@@ -695,9 +688,7 @@
 @implementation FMStatement
 
 - (void)dealloc {
-	[self close];
-    [query release];
-	[super dealloc];
+    [self close];
 }
 
 
@@ -728,8 +719,7 @@
 
 - (void)setQuery:(NSString *)value {
     if (query != value) {
-        [query release];
-        query = [value retain];
+        query = value;
     }
 }
 

@@ -20,10 +20,10 @@ extern NSString *RSFaviconDownloadedNotification; //RSURLKey in userInfo
 
 @interface RSFaviconController : NSObject {
 @private
-	pthread_mutex_t faviconControllerLock;
-	NSMutableSet *checkedURLs;
-	RSImageFolderCache *imageFolderCache;
-	NSTimer *dumpCheckedURLsCacheTimer;
+    pthread_mutex_t faviconControllerLock;
+    NSMutableSet *checkedURLs;
+    RSImageFolderCache *imageFolderCache;
+    NSTimer *dumpCheckedURLsCacheTimer;
 }
 
 
@@ -36,6 +36,6 @@ extern NSString *RSFaviconDownloadedNotification; //RSURLKey in userInfo
 
 - (NSString *)filenameForFavicon:(NSURL *)homePageURL faviconURL:(NSURL *)faviconURL;
 
-@property (nonatomic, retain, readonly) RSImageFolderCache *imageFolderCache;
+@property (nonatomic, strong, readonly) RSImageFolderCache *imageFolderCache;
 
 @end

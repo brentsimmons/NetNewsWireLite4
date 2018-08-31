@@ -13,8 +13,8 @@
 
 @interface RSDataCategory : NSManagedObject
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSSet *articles;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSSet *articles;
 
 @end
 

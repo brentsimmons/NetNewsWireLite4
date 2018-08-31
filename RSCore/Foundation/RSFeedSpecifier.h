@@ -18,20 +18,20 @@
 
 @interface RSFeedSpecifier : NSObject <RSFeedSpecifier> {
 @private
-	NSString *name;
-	NSURL *URL;
-	NSURL *homePageURL;
-	id<RSAccount> account;
+    NSString *name;
+    NSURL *URL;
+    NSURL *homePageURL;
+    id<RSAccount> account;
 }
 
 + (id<RSFeedSpecifier>)feedSpecifierWithName:(NSString *)feedName feedURL:(NSURL *)feedURL feedHomePageURL:(NSURL *)feedHomePageURL account:(id<RSAccount>)anAccount;
 + (id<RSFeedSpecifier>)feedSpecifierWithFeed:(RSFeed *)aFeed;
 
 
-@property (nonatomic, retain, readonly) NSString *name;
-@property (nonatomic, retain, readonly) NSURL *URL;
-@property (nonatomic, retain, readonly) NSURL *homePageURL;
-@property (nonatomic, retain, readonly) id<RSAccount> account;
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSURL *URL;
+@property (nonatomic, strong, readonly) NSURL *homePageURL;
+@property (nonatomic, strong, readonly) id<RSAccount> account;
 
 
 @end

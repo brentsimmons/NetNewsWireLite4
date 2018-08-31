@@ -25,27 +25,27 @@ extern NSString *RSDatesDidChangeNotification;
 
 
 typedef enum _RSDateGroup {
-	RSDateGroupFuture,
-	RSDateGroupToday,
-	RSDateGroupYesterday,
-	RSDateGroupPast,
+    RSDateGroupFuture,
+    RSDateGroupToday,
+    RSDateGroupYesterday,
+    RSDateGroupPast,
 } RSDateGroup;
 
 
 @interface RSDateManager : NSObject {
 @private
-	NSDate *firstSecondOfToday;
-	NSDate *firstSecondOfTomorrow;
-	NSDate *firstSecondOfYesterday;
-	NSCalendar *userCalendar;
-	NSTimer *recalculateDatesTimer;
+    NSDate *firstSecondOfToday;
+    NSDate *firstSecondOfTomorrow;
+    NSDate *firstSecondOfYesterday;
+    NSCalendar *userCalendar;
+    NSTimer *recalculateDatesTimer;
 }
 
 
 + (RSDateManager *)sharedManager;
 
-@property (nonatomic, retain, readonly) NSDate *firstSecondOfToday;
-@property (nonatomic, retain, readonly) NSDate *firstSecondOfTomorrow;
+@property (nonatomic, strong, readonly) NSDate *firstSecondOfToday;
+@property (nonatomic, strong, readonly) NSDate *firstSecondOfTomorrow;
 
 - (void)recalculateDates; //re-caches the calendar and updates today, tomorrow, yesterday
 

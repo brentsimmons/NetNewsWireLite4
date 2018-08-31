@@ -10,9 +10,9 @@
 
 
 typedef enum _NNWToolbarItemVisibilityPriority {
-	NNWToolbarItemVisibilityPriorityLow,
-	NNWToolbarItemVisibilityPriorityMedium,
-	NNWToolbarItemVisibilityPriorityHigh
+    NNWToolbarItemVisibilityPriorityLow,
+    NNWToolbarItemVisibilityPriorityMedium,
+    NNWToolbarItemVisibilityPriorityHigh
 } NNWToolbarItemVisibilityPriority;
 
 
@@ -31,13 +31,13 @@ typedef enum _NNWToolbarItemVisibilityPriority {
 
 @interface NNWToolbar : NSView {
 @private
-	NSArray *toolbarItems;
-	NNWCloseButton *closeButton;
+    NSArray *toolbarItems;
+    NNWCloseButton *closeButton;
 }
 
 
-@property (nonatomic, retain) NSArray *toolbarItems;
-@property (nonatomic, retain) IBOutlet NNWCloseButton *closeButton;
+@property (nonatomic, strong) NSArray *toolbarItems;
+@property (nonatomic, strong) IBOutlet NNWCloseButton *closeButton;
 
 
 @end

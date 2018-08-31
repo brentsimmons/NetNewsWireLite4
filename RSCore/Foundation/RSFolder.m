@@ -56,7 +56,6 @@ static NSString *RSFolderUnreadCountKey = @"unreadCount";
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    treeNode = nil;
 }
 
 

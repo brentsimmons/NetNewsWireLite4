@@ -12,8 +12,8 @@
 @interface NNWFeedbackProgressWindowController ()
 
 @property (nonatomic, assign) BOOL showingSuccessMessage;
-@property (nonatomic, retain) NSImage *image;
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, strong) NSImage *image;
+@property (nonatomic, strong) NSString *title;
 
 - (void)closeWindow;
 - (void)fadeoutWindow;
@@ -36,116 +36,108 @@
 static NNWFeedbackProgressWindowController *gWindowController = nil;
 
 + (void)runWindowWithTitle:(NSString *)aTitle image:(NSImage *)anImage {
-	if (!gWindowController)
-		gWindowController = [[self alloc] init];
-	gWindowController.image = anImage;
-	gWindowController.title = aTitle;
-	gWindowController.showingSuccessMessage = NO;
-	[gWindowController showWindow:self];
+    if (!gWindowController)
+        gWindowController = [[self alloc] init];
+    gWindowController.image = anImage;
+    gWindowController.title = aTitle;
+    gWindowController.showingSuccessMessage = NO;
+    [gWindowController showWindow:self];
 }
 
 
 + (void)runWindowWithSuccessMessage:(NSString *)aSuccessMessage image:(NSImage *)anImage {
-	if (!gWindowController)
-		gWindowController = [[self alloc] init];
-	gWindowController.image = anImage;
-	gWindowController.title = aSuccessMessage;
-	gWindowController.showingSuccessMessage = YES;
-	[gWindowController showWindow:self];
-	[gWindowController performSelector:@selector(fadeoutWindow) withObject:nil afterDelay:0.75f];
+    if (!gWindowController)
+        gWindowController = [[self alloc] init];
+    gWindowController.image = anImage;
+    gWindowController.title = aSuccessMessage;
+    gWindowController.showingSuccessMessage = YES;
+    [gWindowController showWindow:self];
+    [gWindowController performSelector:@selector(fadeoutWindow) withObject:nil afterDelay:0.75f];
 }
 
 
 + (void)closeWindow {
-	[gWindowController closeWindow];
+    [gWindowController closeWindow];
 }
 
 
 #pragma mark Init
 
 - (id)init {
-	return [self initWithWindowNibName:@"FeedbackProgress"];
+    return [self initWithWindowNibName:@"FeedbackProgress"];
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[image release];
-	[title release];
-	[imageView release];
-	[titleTextField release];
-	[progressIndicator release];
-	[super dealloc];
-}
 
 
 #pragma mark NSWindowController
 
 - (void)windowDidLoad {
-	[self.imageView setImage:self.image];
-	[self.titleTextField setStringValue:self.title ? self.title : @""];
-	//[[self window] setReleasedWhenClosed:NO];
+    [self.imageView setImage:self.image];
+    [self.titleTextField setStringValue:self.title ? self.title : @""];
+    //[[self window] setReleasedWhenClosed:NO];
 }
 
 
 - (void)centerWindowInFrontOfNewsreaderWindow {
-	/*A little higher than centered, sort of like -[NSWindow center]*/
-	NSWindow *newsreaderWindow = [NSApp mainWindow];
-	NSRect rNewsreaderWindow = [newsreaderWindow frame];
-	//rNewsreaderWindow.origin = [newsreaderWindow convertBaseToScreen:rNewsreaderWindow.origin];
-	NSPoint centerPoint = NSMakePoint(NSMidX(rNewsreaderWindow), NSMidY(rNewsreaderWindow));
-	NSRect rFeedbackRect = [[self window] frame];
-	NSPoint topLeftPoint = centerPoint;
-	topLeftPoint.x -= (NSWidth(rFeedbackRect) / 2);
-	topLeftPoint.y += (NSHeight(rFeedbackRect) / 2);
-	topLeftPoint.y += 100; /*Raise a little bit*/
-	topLeftPoint.y += NSHeight(rFeedbackRect);
-	if (topLeftPoint.y < (NSHeight(rFeedbackRect) * 2)) /*Just make sure it's not hidden below screen*/
-		topLeftPoint.y = NSHeight(rFeedbackRect) * 2;
-	[[self window] setFrameTopLeftPoint:topLeftPoint];
+    /*A little higher than centered, sort of like -[NSWindow center]*/
+    NSWindow *newsreaderWindow = [NSApp mainWindow];
+    NSRect rNewsreaderWindow = [newsreaderWindow frame];
+    //rNewsreaderWindow.origin = [newsreaderWindow convertBaseToScreen:rNewsreaderWindow.origin];
+    NSPoint centerPoint = NSMakePoint(NSMidX(rNewsreaderWindow), NSMidY(rNewsreaderWindow));
+    NSRect rFeedbackRect = [[self window] frame];
+    NSPoint topLeftPoint = centerPoint;
+    topLeftPoint.x -= (NSWidth(rFeedbackRect) / 2);
+    topLeftPoint.y += (NSHeight(rFeedbackRect) / 2);
+    topLeftPoint.y += 100; /*Raise a little bit*/
+    topLeftPoint.y += NSHeight(rFeedbackRect);
+    if (topLeftPoint.y < (NSHeight(rFeedbackRect) * 2)) /*Just make sure it's not hidden below screen*/
+        topLeftPoint.y = NSHeight(rFeedbackRect) * 2;
+    [[self window] setFrameTopLeftPoint:topLeftPoint];
 }
 
 
 - (void)showWindow:(id)sender {
-	[[self window] setTitle:@""];
-	[self.imageView setImage:self.image];
-	[self.titleTextField setStringValue:self.title ? self.title : @""];
-	[self.titleTextField setNeedsDisplay:YES];
-	if (self.showingSuccessMessage)
-		[self.progressIndicator stopAnimation:self];
-	else
-		[self.progressIndicator startAnimation:self];
-	if (![self rs_isOpen]) {
-		[[self window] setAlphaValue:0.0f];
-		[self centerWindowInFrontOfNewsreaderWindow];
-		[NSAnimationContext beginGrouping];
-		[[NSAnimationContext currentContext] setDuration:0.2f];
-		[[[self window] animator] setAlphaValue:1.0f];
-		[NSAnimationContext endGrouping];	
-	}
-	[super showWindow:sender];
+    [[self window] setTitle:@""];
+    [self.imageView setImage:self.image];
+    [self.titleTextField setStringValue:self.title ? self.title : @""];
+    [self.titleTextField setNeedsDisplay:YES];
+    if (self.showingSuccessMessage)
+        [self.progressIndicator stopAnimation:self];
+    else
+        [self.progressIndicator startAnimation:self];
+    if (![self rs_isOpen]) {
+        [[self window] setAlphaValue:0.0f];
+        [self centerWindowInFrontOfNewsreaderWindow];
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setDuration:0.2f];
+        [[[self window] animator] setAlphaValue:1.0f];
+        [NSAnimationContext endGrouping];    
+    }
+    [super showWindow:sender];
 }
 
 
 - (void)fadeoutWindow {
-	[NSAnimationContext beginGrouping];
-	[[NSAnimationContext currentContext] setDuration:0.2f];
-	[[[self window] animator] setAlphaValue:0.0f];
-	[NSAnimationContext endGrouping];		
-	[self performSelector:@selector(closeWindow) withObject:nil afterDelay:0.3f];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:0.2f];
+    [[[self window] animator] setAlphaValue:0.0f];
+    [NSAnimationContext endGrouping];        
+    [self performSelector:@selector(closeWindow) withObject:nil afterDelay:0.3f];
 }
 
 
 - (void)closeWindow {
-	if (![self isWindowLoaded])
-		return;
-	self.showingSuccessMessage = NO;
-	[self.progressIndicator stopAnimation:self];
-	[self.imageView setImage:nil];
-	self.image = nil;
-	[self.titleTextField setStringValue:@""];
-	[[self window] close];
+    if (![self isWindowLoaded])
+        return;
+    self.showingSuccessMessage = NO;
+    [self.progressIndicator stopAnimation:self];
+    [self.imageView setImage:nil];
+    self.image = nil;
+    [self.titleTextField setStringValue:@""];
+    [[self window] close];
 }
 
 

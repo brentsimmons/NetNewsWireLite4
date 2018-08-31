@@ -22,8 +22,8 @@ extern NSString *RSRefreshDidUpdateFeedNotification;
 
 @interface RSRefreshController : NSObject {
 @private
-	NSMutableArray *accountRefreshers;
-	RSOperationController *refreshOperationController; //one for all refresh ops
+    NSMutableArray *accountRefreshers;
+    RSOperationController *refreshOperationController; //one for all refresh ops
 }
 
 
@@ -33,7 +33,7 @@ extern NSString *RSRefreshDidUpdateFeedNotification;
 - (void)refreshFeeds:(NSArray *)feeds; //a feed knows what account it's in
 - (void)cancelSession;
 
-@property (nonatomic, retain, readonly) RSOperationController *refreshOperationController;
+@property (nonatomic, strong, readonly) RSOperationController *refreshOperationController;
 
 
 @end

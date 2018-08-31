@@ -18,15 +18,15 @@ extern NSString *RSDidParseFeedInfoNotification;
 
 @interface RSParsedFeedInfo : NSObject {
 @private
-	NSString *feedURLString;
-	NSString *homePageURLString;
-	NSString *title;
+    NSString *feedURLString;
+    NSString *homePageURLString;
+    NSString *title;
 }
 
 
-@property (nonatomic, retain) NSString *feedURLString;
-@property (nonatomic, retain) NSString *homePageURLString;
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, strong) NSString *feedURLString;
+@property (nonatomic, strong) NSString *homePageURLString;
+@property (nonatomic, strong) NSString *title;
 
 - (void)sendDidParseFeedInfoNotification; //always sends on main thread
 

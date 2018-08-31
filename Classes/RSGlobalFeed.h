@@ -12,25 +12,25 @@
 
 
 typedef enum _RSGlobalFeedType {
-	RSGlobalFeedTypeAllUnread,
-	RSGlobalFeedTypeToday
+    RSGlobalFeedTypeAllUnread,
+    RSGlobalFeedTypeToday
 } RSGlobalFeedType;
 
 
 @interface RSGlobalFeed : NSObject <RSTreeNodeRepresentedObject> {
 @private
-	NSString *nameForDisplay;
-	NSUInteger unreadCount;
-	RSGlobalFeedType globalFeedType;
-	id<RSAccount> account;
+    NSString *nameForDisplay;
+    NSUInteger unreadCount;
+    RSGlobalFeedType globalFeedType;
+    id<RSAccount> account;
 }
 
 
-@property (nonatomic, retain, readwrite) NSString *nameForDisplay;
+@property (nonatomic, strong, readwrite) NSString *nameForDisplay;
 @property (nonatomic, assign, readonly) NSUInteger countForDisplay;
 @property (nonatomic, assign) NSUInteger unreadCount;
 @property (nonatomic, assign) RSGlobalFeedType globalFeedType;
-@property (nonatomic, retain) id<RSAccount> account;
+@property (nonatomic, strong) id<RSAccount> account;
 
 - (NSArray *)fetchArticlesWithSortDescriptor:(NSSortDescriptor *)aSortDescriptor moc:(NSManagedObjectContext *)moc;
 

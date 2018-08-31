@@ -15,9 +15,9 @@
 
 @interface NNWHTMLBuilderArticle ()
 
-@property (nonatomic, retain) RSDataArticle *article;
-@property (nonatomic, retain) NSString *htmlTemplate;
-@property (nonatomic, retain) NSString *styleSheetPath;
+@property (nonatomic, strong) RSDataArticle *article;
+@property (nonatomic, strong) NSString *htmlTemplate;
+@property (nonatomic, strong) NSString *styleSheetPath;
 
 @end
 
@@ -34,35 +34,29 @@
 #pragma mark Init
 
 - (id)initWithArticle:(RSDataArticle *)anArticle htmlTemplate:(NSString *)anHTMLTemplate styleSheetPath:(NSString *)aStyleSheetPath {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	article = [anArticle retain];
-	htmlTemplate = [anHTMLTemplate retain];
-	styleSheetPath = [aStyleSheetPath retain];
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    article = anArticle;
+    htmlTemplate = anHTMLTemplate;
+    styleSheetPath = aStyleSheetPath;
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[article release];
-	[htmlTemplate release];
-	[styleSheetPath release];
-	[super dealloc];
-}
 
 
 #pragma mark HTML
 
 - (NSString *)renderedHTML {
-	RSHTMLDataSourceArticle *htmlDataSourceArticle = [[[RSHTMLDataSourceArticle alloc] initWithArticle:self.article] autorelease];
-	RSHTMLBuilder *htmlBuilder = [[[RSHTMLBuilder alloc] initWithDataSource:htmlDataSourceArticle andHTMLTemplate:self.htmlTemplate] autorelease];
-	htmlBuilder.includeHTMLHeader = self.includeHTMLHeader;
-	htmlBuilder.includeHTMLFooter = self.includeHTMLFooter;
-	htmlBuilder.styleSheetPath = self.styleSheetPath;
-	return htmlBuilder.renderedHTML;
+    RSHTMLDataSourceArticle *htmlDataSourceArticle = [[RSHTMLDataSourceArticle alloc] initWithArticle:self.article];
+    RSHTMLBuilder *htmlBuilder = [[RSHTMLBuilder alloc] initWithDataSource:htmlDataSourceArticle andHTMLTemplate:self.htmlTemplate];
+    htmlBuilder.includeHTMLHeader = self.includeHTMLHeader;
+    htmlBuilder.includeHTMLFooter = self.includeHTMLFooter;
+    htmlBuilder.styleSheetPath = self.styleSheetPath;
+    return htmlBuilder.renderedHTML;
 }
 
 @end

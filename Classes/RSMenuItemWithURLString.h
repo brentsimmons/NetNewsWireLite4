@@ -22,17 +22,17 @@
  menu item. Example:
  
  - (void)openAssociatedURL:(id)sender {
-	NSParameterAssert([sender respondsToSelector:@selector(urlString)]);
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[sender valueForKey:@"urlString"]]];
+    NSParameterAssert([sender respondsToSelector:@selector(urlString)]);
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[sender valueForKey:@"urlString"]]];
  }
  */
 
 
 @interface RSMenuItemWithURLString : NSMenuItem {
 @private
-	NSString *urlString;	
+    NSString *urlString;    
 }
 
-@property (nonatomic, retain) NSString *urlString;
+@property (nonatomic, strong) NSString *urlString;
 
 @end

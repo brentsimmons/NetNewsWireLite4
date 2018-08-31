@@ -11,18 +11,18 @@
 
 
 @interface NNWCloseButton : NSButton {
-	
+    
 @private
-	NSImage *_realImage;
-	NSImage *_mouseOverImage;
-	NSTrackingRectTag _buttonTrackingRect;
-	id mouseOverDelegate;
+    NSImage *_realImage;
+    NSImage *_mouseOverImage;
+    NSTrackingRectTag _buttonTrackingRect;
+    id __unsafe_unretained mouseOverDelegate;
 }
 
 
-@property (nonatomic, retain) NSImage *realImage;
-@property (nonatomic, retain) NSImage *mouseOverImage;
-@property (nonatomic, assign) id mouseOverDelegate;
+@property (nonatomic, strong) NSImage *realImage;
+@property (nonatomic, strong) NSImage *mouseOverImage;
+@property (nonatomic, unsafe_unretained) id mouseOverDelegate;
 
 - (void)commonInit;
 - (void)discardTrackingRects;

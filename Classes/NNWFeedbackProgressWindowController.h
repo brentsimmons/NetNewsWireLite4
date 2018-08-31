@@ -11,21 +11,21 @@
 
 @interface NNWFeedbackProgressWindowController : NSWindowController {
 @private
-	BOOL showingSuccessMessage;
-	NSImage *image;
-	NSImageView *imageView;
-	NSProgressIndicator *progressIndicator;
-	NSString *title;
-	NSTextField *titleTextField;
+    BOOL showingSuccessMessage;
+    NSImage *image;
+    NSImageView *imageView;
+    NSProgressIndicator *progressIndicator;
+    NSString *title;
+    NSTextField *titleTextField;
 }
 
 
-@property (nonatomic, retain) IBOutlet NSImageView *imageView;
-@property (nonatomic, retain) IBOutlet NSProgressIndicator *progressIndicator;
-@property (nonatomic, retain) IBOutlet NSTextField *titleTextField;
+@property (nonatomic, strong) IBOutlet NSImageView *imageView;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, strong) IBOutlet NSTextField *titleTextField;
 
 + (void)runWindowWithTitle:(NSString *)aTitle image:(NSImage *)anImage;
 + (void)runWindowWithSuccessMessage:(NSString *)aSuccessMessage image:(NSImage *)anImage;
 + (void)closeWindow;
-	
+    
 @end

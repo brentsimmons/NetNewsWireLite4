@@ -15,18 +15,18 @@
 
 @interface RSSAXParser : NSObject {
 @protected
-	xmlParserCtxtPtr _context;
-	NSMutableData *_characterBuffer;
-	NSMutableDictionary *_xmlAttributesDict;
-	BOOL _storingCharacters;
-	NSMutableArray *_xmlAttributesStack;
-	NSURL *_dataURL; /*where the data came from, such as a feed*/
+    xmlParserCtxtPtr _context;
+    NSMutableData *_characterBuffer;
+    NSMutableDictionary *_xmlAttributesDict;
+    BOOL _storingCharacters;
+    NSMutableArray *_xmlAttributesStack;
+    NSURL *_dataURL; /*where the data came from, such as a feed*/
 }
 
 
-@property (nonatomic, retain, readonly) NSMutableData *characterBuffer;
-@property (nonatomic, retain) NSMutableDictionary *xmlAttributesDict;
-@property (nonatomic, retain) NSURL *dataURL;
+@property (nonatomic, strong, readonly) NSMutableData *characterBuffer;
+@property (nonatomic, strong) NSMutableDictionary *xmlAttributesDict;
+@property (nonatomic, strong) NSURL *dataURL;
 
 + (id)xmlParser;
 

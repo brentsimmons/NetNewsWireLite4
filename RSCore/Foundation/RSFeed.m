@@ -124,10 +124,6 @@ static NSString *RSFeedUnreadCountIsValidKey = @"unreadCountIsValid";
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-    account = nil;
-    [super dealloc];
-}
 
 
 #pragma mark Disk Dictionary

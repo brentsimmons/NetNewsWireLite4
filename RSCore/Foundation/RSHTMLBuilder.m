@@ -11,9 +11,9 @@
 
 @interface RSHTMLBuilder ()
 
-@property (nonatomic, retain) id dataSource;
-@property (nonatomic, retain) NSString *htmlTemplate;
-@property (nonatomic, retain, readwrite) NSString *renderedHTML;
+@property (nonatomic, strong) id dataSource;
+@property (nonatomic, strong) NSString *htmlTemplate;
+@property (nonatomic, strong, readwrite) NSString *renderedHTML;
 
 - (NSString *)buildHTMLUsingTemplate:(NSString *)aTemplate;
 
@@ -33,24 +33,17 @@
 #pragma mark Init
 
 - (id)initWithDataSource:(id)aDataSource andHTMLTemplate:(NSString *)anHTMLTemplate {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	dataSource = [aDataSource retain];
-	htmlTemplate = [anHTMLTemplate retain];
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    dataSource = aDataSource;
+    htmlTemplate = anHTMLTemplate;
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[dataSource release];
-	[htmlTemplate release];
-	[renderedHTML release];
-	[styleSheetPath release];
-	[super dealloc];
-}
 
 
 #pragma mark HTML
@@ -62,80 +55,80 @@ static const NSUInteger numberOfMacroEndCharacters = 2;
 
 
 - (NSUInteger)indexOfMacroCharacters:(NSString *)macroCharacters beforeMaxIndex:(NSUInteger)maxIndex inString:(NSString *)stringToSearch {
-	NSUInteger numberOfMacroCharacters = [macroCharacters length];
-	if (maxIndex < numberOfMacroCharacters)
-		return NSNotFound;
-	NSRange macroCharactersRange = [stringToSearch rangeOfString:macroCharacters options:NSBackwardsSearch range:NSMakeRange(0, maxIndex)];
-	if (macroCharactersRange.length < numberOfMacroCharacters)
-		return NSNotFound;
-	return macroCharactersRange.location;	
+    NSUInteger numberOfMacroCharacters = [macroCharacters length];
+    if (maxIndex < numberOfMacroCharacters)
+        return NSNotFound;
+    NSRange macroCharactersRange = [stringToSearch rangeOfString:macroCharacters options:NSBackwardsSearch range:NSMakeRange(0, maxIndex)];
+    if (macroCharactersRange.length < numberOfMacroCharacters)
+        return NSNotFound;
+    return macroCharactersRange.location;    
 }
 
 
 - (NSUInteger)indexOfMacroStartBefore:(NSUInteger)maxIndex inString:(NSString *)stringToSearch {
-	return [self indexOfMacroCharacters:macroStartCharacters beforeMaxIndex:maxIndex inString:stringToSearch ];
+    return [self indexOfMacroCharacters:macroStartCharacters beforeMaxIndex:maxIndex inString:stringToSearch ];
 }
 
 
 - (NSUInteger)indexOfMacroEndBefore:(NSUInteger)maxIndex inString:(NSString *)stringToSearch {
-	return [self indexOfMacroCharacters:macroEndCharacters beforeMaxIndex:maxIndex inString:stringToSearch ];
+    return [self indexOfMacroCharacters:macroEndCharacters beforeMaxIndex:maxIndex inString:stringToSearch ];
 }
 
 
 - (void)insertHTMLHeader {
-	
-	NSMutableString *htmlHeader = [NSMutableString stringWithString:@"<html><head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"];
-	
-	if (!RSStringIsEmpty(self.styleSheetPath)) {
-		[htmlHeader appendString:@"<style type=\"text/css\" media=\"screen\">@import \""];
-		[htmlHeader appendString:self.styleSheetPath];
-		[htmlHeader appendString:@"\";</style>\n"];
-//		[htmlHeader appendString:@"<style type=\"text/css\" media=\"screen\">\n"];
-//		[htmlHeader appendString:self.styleSheetPath];
-//		NSString *styleSheetContents = [NSString rs_stringWithContentsOfUTF8EncodedFile:self.styleSheetPath];
-//		[htmlHeader rs_safeAppendString:styleSheetContents];
-//		[htmlHeader appendString:@"\n;</style>\n"];
-	}
-	
-	[htmlHeader appendString:@"<title>[[newsitem_title]]</title>\n"];
-	[htmlHeader appendString:@"<body>\n"];
-	NSString *processedHTMLHeader = [self buildHTMLUsingTemplate:htmlHeader]; //replaces [[newsitem_title]]
-	self.renderedHTML = [NSString stringWithFormat:@"%@%@", processedHTMLHeader, renderedHTML];
+    
+    NSMutableString *htmlHeader = [NSMutableString stringWithString:@"<html><head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"];
+    
+    if (!RSStringIsEmpty(self.styleSheetPath)) {
+        [htmlHeader appendString:@"<style type=\"text/css\" media=\"screen\">@import \""];
+        [htmlHeader appendString:self.styleSheetPath];
+        [htmlHeader appendString:@"\";</style>\n"];
+//        [htmlHeader appendString:@"<style type=\"text/css\" media=\"screen\">\n"];
+//        [htmlHeader appendString:self.styleSheetPath];
+//        NSString *styleSheetContents = [NSString rs_stringWithContentsOfUTF8EncodedFile:self.styleSheetPath];
+//        [htmlHeader rs_safeAppendString:styleSheetContents];
+//        [htmlHeader appendString:@"\n;</style>\n"];
+    }
+    
+    [htmlHeader appendString:@"<title>[[newsitem_title]]</title>\n"];
+    [htmlHeader appendString:@"<body>\n"];
+    NSString *processedHTMLHeader = [self buildHTMLUsingTemplate:htmlHeader]; //replaces [[newsitem_title]]
+    self.renderedHTML = [NSString stringWithFormat:@"%@%@", processedHTMLHeader, renderedHTML];
 }
 
 
 - (void)insertHTMLFooter {
-	self.renderedHTML = [NSString stringWithFormat:@"%@%@", renderedHTML, @"\n\n</body></html>"];
+    self.renderedHTML = [NSString stringWithFormat:@"%@%@", renderedHTML, @"\n\n</body></html>"];
 }
 
 
 - (NSString *)buildHTMLUsingTemplate:(NSString *)aTemplate {
-	
-	NSMutableString *htmlString = [[[NSMutableString alloc] initWithString:aTemplate] autorelease];
-	
-	NSUInteger indexOfMacroStart = 0;
-	NSUInteger indexOfMacroEnd = 0;
-	NSUInteger lastIndexOfMacroStart = [aTemplate length];
-	
-	/*Loop through the HTML backwards, so that replacement text that happens to contain macros doesn't get processed.*/
-	while (true) {
-		indexOfMacroEnd = [self indexOfMacroEndBefore:lastIndexOfMacroStart inString:htmlString];
-		if (indexOfMacroEnd == NSNotFound)
-			break;
-		indexOfMacroStart = [self indexOfMacroStartBefore:indexOfMacroEnd inString:htmlString];
-		if (indexOfMacroStart == NSNotFound)
-			break;
-		lastIndexOfMacroStart = indexOfMacroStart;
-		NSRange rangeOfMacro = NSMakeRange(indexOfMacroStart, (indexOfMacroEnd - indexOfMacroStart) + numberOfMacroEndCharacters);
-		NSRange rangeOfMacroKey = NSMakeRange(indexOfMacroStart + numberOfMacroStartCharacters, (indexOfMacroEnd - indexOfMacroStart) - numberOfMacroEndCharacters);
-		NSString *macroString = [htmlString substringWithRange:rangeOfMacroKey];
-		NSString *replacementString = [self.dataSource valueForKey:macroString];
-		if (replacementString == nil)
-			replacementString = @"";
-		[htmlString replaceCharactersInRange:rangeOfMacro withString:replacementString];
-	}
-	
-	return htmlString;
+    
+    NSMutableString *htmlString = [[NSMutableString alloc] initWithString:aTemplate];
+    
+    NSUInteger indexOfMacroStart = 0;
+    NSUInteger indexOfMacroEnd = 0;
+    NSUInteger lastIndexOfMacroStart = [aTemplate length];
+    
+    /*Loop through the HTML backwards, so that replacement text that happens to contain macros doesn't get processed.*/
+    while (true) {
+        indexOfMacroEnd = [self indexOfMacroEndBefore:lastIndexOfMacroStart inString:htmlString];
+        if (indexOfMacroEnd == NSNotFound)
+            break;
+        indexOfMacroStart = [self indexOfMacroStartBefore:indexOfMacroEnd inString:htmlString];
+        if (indexOfMacroStart == NSNotFound)
+            break;
+        lastIndexOfMacroStart = indexOfMacroStart;
+        NSRange rangeOfMacro = NSMakeRange(indexOfMacroStart, (indexOfMacroEnd - indexOfMacroStart) + numberOfMacroEndCharacters);
+        NSRange rangeOfMacroKey = NSMakeRange(indexOfMacroStart + numberOfMacroStartCharacters, (indexOfMacroEnd - indexOfMacroStart) - numberOfMacroEndCharacters);
+        NSString *macroString = [htmlString substringWithRange:rangeOfMacroKey];
+        NSString *replacementString = [self.dataSource valueForKey:macroString];
+        if (replacementString == nil)
+            replacementString = @"";
+        [htmlString replaceCharactersInRange:rangeOfMacro withString:replacementString];
+    }
+    
+    return htmlString;
 }
 
 
@@ -150,15 +143,14 @@ static NSString *defaultHTMLTemplate = @"<div class=\"newsItemContainer\">\n\
 </div>";
 
 - (NSString *)renderedHTML {
-	if (RSIsEmpty(self.htmlTemplate))
-		self.htmlTemplate = defaultHTMLTemplate;
-	[renderedHTML autorelease];
-	renderedHTML = [[self buildHTMLUsingTemplate:self.htmlTemplate] retain];
-	if (self.includeHTMLHeader)
-		[self insertHTMLHeader];
-	if (self.includeHTMLFooter)
-		[self insertHTMLFooter];
-	return renderedHTML;
+    if (RSIsEmpty(self.htmlTemplate))
+        self.htmlTemplate = defaultHTMLTemplate;
+    renderedHTML = [self buildHTMLUsingTemplate:self.htmlTemplate];
+    if (self.includeHTMLHeader)
+        [self insertHTMLHeader];
+    if (self.includeHTMLFooter)
+        [self insertHTMLFooter];
+    return renderedHTML;
 }
 
 

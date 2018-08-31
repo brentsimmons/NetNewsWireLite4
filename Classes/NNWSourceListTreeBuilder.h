@@ -16,16 +16,16 @@
 
 @interface NNWSourceListTreeBuilder : NSObject {
 @private
-	RSTree *tree;
-	RSDataController *dataController;
-	RSTreeNode *localAccountNode;
+    RSTree *tree;
+    RSDataController *dataController;
+    RSTreeNode *localAccountNode;
 }
 
 
 + (NNWSourceListTreeBuilder *)sharedTreeBuilder; //init has to be called first
 - (id)initWithDataController:(RSDataController *)aDataController;
 
-@property (nonatomic, retain) RSTree *tree;
+@property (nonatomic, strong) RSTree *tree;
 
 - (void)rebuildTree;
 

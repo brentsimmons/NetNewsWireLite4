@@ -15,15 +15,15 @@
 
 @interface RSSQLiteDatabaseController : NSObject {
 @protected
-	NSString *databaseFilePath;
-	BOOL databaseIsNew;		
-	NSString *databaseKey; //Subclasses should not need to deal with these two keys
-	NSString *refcountKey;
+    NSString *databaseFilePath;
+    BOOL databaseIsNew;        
+    NSString *databaseKey; //Subclasses should not need to deal with these two keys
+    NSString *refcountKey;
 }
 
 
-@property (nonatomic, retain, readonly) FMDatabase *database; //Returns a per-thread database; same db should not be used in different threads
-@property (nonatomic, retain, readonly) NSString *databaseFilePath;
+@property (nonatomic, strong, readonly) FMDatabase *database; //Returns a per-thread database; same db should not be used in different threads
+@property (nonatomic, strong, readonly) NSString *databaseFilePath;
 @property (nonatomic, assign, readonly) BOOL databaseIsNew;
 
 - (id)initWithDatabaseFileName:(NSString *)databaseName createTableStatement:(NSString *)createTableStatement;

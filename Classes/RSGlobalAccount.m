@@ -19,9 +19,9 @@ NSString *RSTodayUnreadCountKey = @"todayUnreadCount";
 
 @interface RSGlobalAccount ()
 
-@property (nonatomic, retain) NSTimer *todayUnreadCountTimer;
-@property (nonatomic, retain) RSGlobalFeed *allUnreadFeed;
-@property (nonatomic, retain) RSGlobalFeed *todayFeed;
+@property (nonatomic, strong) NSTimer *todayUnreadCountTimer;
+@property (nonatomic, strong) RSGlobalFeed *allUnreadFeed;
+@property (nonatomic, strong) RSGlobalFeed *todayFeed;
 
 - (void)scheduleUpdateForTodayUnreadCount;
 
@@ -39,122 +39,117 @@ NSString *RSTodayUnreadCountKey = @"todayUnreadCount";
 #pragma mark Class Methods
 
 + (RSGlobalAccount *)globalAccount {
-	static id gMyInstance = nil;
-	if (gMyInstance == nil)
-		gMyInstance = [[self alloc] init];
-	return gMyInstance;
+    static id gMyInstance = nil;
+    if (gMyInstance == nil)
+        gMyInstance = [[self alloc] init];
+    return gMyInstance;
 }
 
 
 #pragma mark Init
 
 - (id)init {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	
-	allUnreadFeed = [[RSGlobalFeed alloc] init];
-	allUnreadFeed.globalFeedType = RSGlobalFeedTypeAllUnread;
-	allUnreadFeed.nameForDisplay = NSLocalizedString(@"All Unread", @"Feed name");
-	
-	todayFeed = [[RSGlobalFeed alloc] init];
-	todayFeed.globalFeedType = RSGlobalFeedTypeToday;
-	todayFeed.nameForDisplay = NSLocalizedString(@"Today", @"Feed name");
-	
-	accountTreeNode = [[RSTreeNode treeNodeWithParent:nil representedObject:self] retain];
-	RSTreeNode *allUnreadTreeNode = [RSTreeNode treeNodeWithParent:accountTreeNode representedObject:allUnreadFeed];
-	allUnreadTreeNode.allowsDragging = NO;
-	RSTreeNode *todayTreeNode = [RSTreeNode treeNodeWithParent:accountTreeNode representedObject:todayFeed];
-	todayTreeNode.allowsDragging = NO;
-	childTreeNodes = [[NSArray arrayWithObjects:allUnreadTreeNode, todayTreeNode, nil] retain];
-	
-	[self performSelectorOnMainThread:@selector(setupObserving) withObject:nil waitUntilDone:NO];
-	[self performSelectorOnMainThread:@selector(restoreUnreadCounts) withObject:nil waitUntilDone:NO];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(articleReadStatusDidChange:) name:RSDataArticleReadStatusDidChangeNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleUpdateForTodayUnreadCount) name:RSRefreshSessionDidEndNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleUpdateForTodayUnreadCount) name:RSDataDidDeleteArticlesNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleUpdateForTodayUnreadCount) name:RSMultipleArticlesDidChangeReadStatusNotification object:nil];
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    
+    allUnreadFeed = [[RSGlobalFeed alloc] init];
+    allUnreadFeed.globalFeedType = RSGlobalFeedTypeAllUnread;
+    allUnreadFeed.nameForDisplay = NSLocalizedString(@"All Unread", @"Feed name");
+    
+    todayFeed = [[RSGlobalFeed alloc] init];
+    todayFeed.globalFeedType = RSGlobalFeedTypeToday;
+    todayFeed.nameForDisplay = NSLocalizedString(@"Today", @"Feed name");
+    
+    accountTreeNode = [RSTreeNode treeNodeWithParent:nil representedObject:self];
+    RSTreeNode *allUnreadTreeNode = [RSTreeNode treeNodeWithParent:accountTreeNode representedObject:allUnreadFeed];
+    allUnreadTreeNode.allowsDragging = NO;
+    RSTreeNode *todayTreeNode = [RSTreeNode treeNodeWithParent:accountTreeNode representedObject:todayFeed];
+    todayTreeNode.allowsDragging = NO;
+    childTreeNodes = [NSArray arrayWithObjects:allUnreadTreeNode, todayTreeNode, nil];
+    
+    [self performSelectorOnMainThread:@selector(setupObserving) withObject:nil waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(restoreUnreadCounts) withObject:nil waitUntilDone:NO];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(articleReadStatusDidChange:) name:RSDataArticleReadStatusDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleUpdateForTodayUnreadCount) name:RSRefreshSessionDidEndNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleUpdateForTodayUnreadCount) name:RSDataDidDeleteArticlesNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleUpdateForTodayUnreadCount) name:RSMultipleArticlesDidChangeReadStatusNotification object:nil];
+    return self;
 }
 
 
 #pragma mark Dealloc
 
 - (void)dealloc {
-	[todayUnreadCountTimer rs_invalidateIfValid];
-	[todayUnreadCountTimer release];
-	[[RSDataAccount localAccount] removeObserver:self forKeyPath:@"unreadCount"];
-	[allUnreadFeed release];
-	[childTreeNodes release];
-	[todayFeed release];
-	[super dealloc];
+    [todayUnreadCountTimer rs_invalidateIfValid];
+    [[RSDataAccount localAccount] removeObserver:self forKeyPath:@"unreadCount"];
 }
 
 
 #pragma mark KVO
 
 - (void)setupObserving {
-	[[RSDataAccount localAccount] addObserver:self forKeyPath:@"unreadCount" options:0 context:nil];
+    [[RSDataAccount localAccount] addObserver:self forKeyPath:@"unreadCount" options:0 context:nil];
 }
 
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	if ([keyPath isEqualToString:@"unreadCount"])
-		self.allUnreadFeed.unreadCount = ((RSDataAccount *)(object)).unreadCount;
+    if ([keyPath isEqualToString:@"unreadCount"])
+        self.allUnreadFeed.unreadCount = ((RSDataAccount *)(object)).unreadCount;
 }
 
 
 #pragma mark Notifications
 
 - (void)articleReadStatusDidChange:(NSNotification *)note {
-	/*Need to update today unread count?*/
-	RSDataArticle *changedArticle = [note object];
-	if (changedArticle == nil)
-		return;
-	NSDate *articleDate = changedArticle.dateForDisplay;
-	if ([articleDate earlierDate:[[RSDateManager sharedManager] firstSecondOfToday]] == articleDate)
-		return;
-	[self scheduleUpdateForTodayUnreadCount];
+    /*Need to update today unread count?*/
+    RSDataArticle *changedArticle = [note object];
+    if (changedArticle == nil)
+        return;
+    NSDate *articleDate = changedArticle.dateForDisplay;
+    if ([articleDate earlierDate:[[RSDateManager sharedManager] firstSecondOfToday]] == articleDate)
+        return;
+    [self scheduleUpdateForTodayUnreadCount];
 }
 
 
 #pragma mark Today Unread Count
 
 - (void)restoreUnreadCounts {
-	NSNumber *todayUnreadCountNum = [[NSUserDefaults standardUserDefaults] objectForKey:RSTodayUnreadCountKey];
-	if (todayUnreadCountNum != nil)
-		self.todayFeed.unreadCount = [todayUnreadCountNum unsignedIntegerValue];
-	[self scheduleUpdateForTodayUnreadCount];
+    NSNumber *todayUnreadCountNum = [[NSUserDefaults standardUserDefaults] objectForKey:RSTodayUnreadCountKey];
+    if (todayUnreadCountNum != nil)
+        self.todayFeed.unreadCount = [todayUnreadCountNum unsignedIntegerValue];
+    [self scheduleUpdateForTodayUnreadCount];
 }
 
 
 - (void)feedCountUnreadOperationDidComplete:(RSTodayFeedCountUnreadOperation *)countUnreadOperation {
-	if (rs_app_delegate.appIsShuttingDown)
-		return;
-	self.todayFeed.unreadCount = countUnreadOperation.unreadCount;
-	[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithUnsignedInteger:countUnreadOperation.unreadCount] forKey:RSTodayUnreadCountKey];
+    if (rs_app_delegate.appIsShuttingDown)
+        return;
+    self.todayFeed.unreadCount = countUnreadOperation.unreadCount;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithUnsignedInteger:countUnreadOperation.unreadCount] forKey:RSTodayUnreadCountKey];
 }
 
 
 - (void)updateTodayUnreadCount:(NSTimer *)aTimer {
-	[self.todayUnreadCountTimer rs_invalidateIfValid];
-	self.todayUnreadCountTimer = nil;
-	if (rs_app_delegate.appIsShuttingDown)
-		return;
-	RSTodayFeedCountUnreadOperation *countUnreadOperation = [[[RSTodayFeedCountUnreadOperation alloc] initWithAccountID:[RSDataAccount localAccount].identifier delegate:self callbackSelector:@selector(feedCountUnreadOperationDidComplete:)] autorelease];
-	[countUnreadOperation setQueuePriority:NSOperationQueuePriorityLow];
-	countUnreadOperation.operationType = RSOperationTypeUpdateUnreadCount;
-	countUnreadOperation.operationObject = @"today";
-	[[RSOperationController sharedController] addOperation:countUnreadOperation];	
+    [self.todayUnreadCountTimer rs_invalidateIfValid];
+    self.todayUnreadCountTimer = nil;
+    if (rs_app_delegate.appIsShuttingDown)
+        return;
+    RSTodayFeedCountUnreadOperation *countUnreadOperation = [[RSTodayFeedCountUnreadOperation alloc] initWithAccountID:[RSDataAccount localAccount].identifier delegate:self callbackSelector:@selector(feedCountUnreadOperationDidComplete:)];
+    [countUnreadOperation setQueuePriority:NSOperationQueuePriorityLow];
+    countUnreadOperation.operationType = RSOperationTypeUpdateUnreadCount;
+    countUnreadOperation.operationObject = @"today";
+    [[RSOperationController sharedController] addOperation:countUnreadOperation];    
 }
 
 
 - (void)scheduleUpdateForTodayUnreadCount {
-	if (rs_app_delegate.appIsShuttingDown)
-		return;
-	[self.todayUnreadCountTimer rs_invalidateIfValid];
-	self.todayUnreadCountTimer = nil;
-	self.todayUnreadCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(updateTodayUnreadCount:) userInfo:nil repeats:NO];
+    if (rs_app_delegate.appIsShuttingDown)
+        return;
+    [self.todayUnreadCountTimer rs_invalidateIfValid];
+    self.todayUnreadCountTimer = nil;
+    self.todayUnreadCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(updateTodayUnreadCount:) userInfo:nil repeats:NO];
 }
 
 
@@ -162,63 +157,63 @@ NSString *RSTodayUnreadCountKey = @"todayUnreadCount";
 #pragma mark RSAccount Protocol
 
 - (BOOL)disabled {
-	return NO;
+    return NO;
 }
 
 
 - (void)setDisabled:(BOOL)flag {
-	;
+    ;
 }
 
 
 - (NSString *)identifier {
-	return @"global";
+    return @"global";
 }
 
 
 - (NSString *)login {
-	return nil;
+    return nil;
 }
 
 
 - (void)setLogin:(NSString *)aLogin {
-	;
+    ;
 }
 
 
 - (NSString *)title {
-	return @"Global"; //never gets displayed: don't need to localize
+    return @"Global"; //never gets displayed: don't need to localize
 }
 
 
 - (NSInteger)accountType {
-	return RSAccountTypeGlobal;
+    return RSAccountTypeGlobal;
 }
 
 
 - (NSArray *)allFeedsThatCanBeRefreshed {
-	return nil;
+    return nil;
 }
 
 
 - (NSUInteger)unreadCount {
-	return 0;
+    return 0;
 }
 
 
 - (BOOL)isSubscribedToFeedWithURL:(NSURL *)aFeedURL {
-	return NO;
+    return NO;
 }
 
 
 #pragma mark RSTreeNodeRepresentedObject
 
 - (NSString *)nameForDisplay {
-	return self.title;
+    return self.title;
 }
 
 
 - (void)setNameForDisplay:(NSString *)aName; {
-	;
+    ;
 }
 @end

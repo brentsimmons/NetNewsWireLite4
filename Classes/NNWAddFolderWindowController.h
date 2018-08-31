@@ -11,11 +11,11 @@
 
 @interface NNWAddFolderWindowController : NSWindowController {
 @private
-	NSTextField *folderNameTextField;
+    NSTextField *folderNameTextField;
 }
 
 
-@property (nonatomic, retain) IBOutlet NSTextField *folderNameTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *folderNameTextField;
 
 
 @end

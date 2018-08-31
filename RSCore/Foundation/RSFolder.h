@@ -20,7 +20,7 @@ extern NSString *RSFolderUnreadCountDidChangeNotification;
     BOOL unreadCountIsValid;
     NSString *name;
     NSUInteger unreadCount;
-    RSDataAccount *account;
+    RSDataAccount *__weak account;
     RSTreeNode *treeNode;
 }
 
@@ -30,7 +30,7 @@ extern NSString *RSFolderUnreadCountDidChangeNotification;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign, readonly) BOOL nameIsEditable;
-@property (nonatomic) RSDataAccount *account;
+@property (weak, nonatomic) RSDataAccount *account;
 @property (nonatomic, assign, readonly) BOOL isFolder;
 
 @property (nonatomic, assign) NSUInteger unreadCount;

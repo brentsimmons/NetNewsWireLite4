@@ -13,10 +13,10 @@
 
 @interface RSFeedSpecifier ()
 
-@property (nonatomic, retain, readwrite) NSString *name;
-@property (nonatomic, retain, readwrite) NSURL *URL;
-@property (nonatomic, retain, readwrite) NSURL *homePageURL;
-@property (nonatomic, retain, readwrite) id<RSAccount> account;
+@property (nonatomic, strong, readwrite) NSString *name;
+@property (nonatomic, strong, readwrite) NSURL *URL;
+@property (nonatomic, strong, readwrite) NSURL *homePageURL;
+@property (nonatomic, strong, readwrite) id<RSAccount> account;
 @end
 
 
@@ -32,47 +32,40 @@
 
 
 + (id<RSFeedSpecifier>)feedSpecifierWithName:(NSString *)feedName feedURL:(NSURL *)feedURL feedHomePageURL:(NSURL *)feedHomePageURL account:(id<RSAccount>)anAccount {
-	RSFeedSpecifier *feedSpecifier = nil;
-	if (feedSpecifier == nil) {
-		feedSpecifier = [[[RSFeedSpecifier alloc] init] autorelease];
-		feedSpecifier.name = feedName;
-		feedSpecifier.URL = feedURL;
-		feedSpecifier.homePageURL = feedHomePageURL;
-		feedSpecifier.account = anAccount;
-	}
-	return feedSpecifier;
+    RSFeedSpecifier *feedSpecifier = nil;
+    if (feedSpecifier == nil) {
+        feedSpecifier = [[RSFeedSpecifier alloc] init];
+        feedSpecifier.name = feedName;
+        feedSpecifier.URL = feedURL;
+        feedSpecifier.homePageURL = feedHomePageURL;
+        feedSpecifier.account = anAccount;
+    }
+    return feedSpecifier;
 }
 
 
 + (id<RSFeedSpecifier>)feedSpecifierWithFeed:(RSFeed *)aFeed {
-	RSFeedSpecifier *feedSpecifier = [[[RSFeedSpecifier alloc] init] autorelease];
-	feedSpecifier.name = aFeed.userSpecifiedName;
-	if (RSStringIsEmpty(feedSpecifier.name))
-		feedSpecifier.name = aFeed.feedSpecifiedName;
-	if (RSStringIsEmpty(feedSpecifier.name))
-		feedSpecifier.name = NSLocalizedString(@"Untitled Feed", @"Feeds");
-	feedSpecifier.URL = aFeed.URL;
-	feedSpecifier.homePageURL = aFeed.homePageURL;
-	feedSpecifier.account = aFeed.account;
-	return feedSpecifier;
+    RSFeedSpecifier *feedSpecifier = [[RSFeedSpecifier alloc] init];
+    feedSpecifier.name = aFeed.userSpecifiedName;
+    if (RSStringIsEmpty(feedSpecifier.name))
+        feedSpecifier.name = aFeed.feedSpecifiedName;
+    if (RSStringIsEmpty(feedSpecifier.name))
+        feedSpecifier.name = NSLocalizedString(@"Untitled Feed", @"Feeds");
+    feedSpecifier.URL = aFeed.URL;
+    feedSpecifier.homePageURL = aFeed.homePageURL;
+    feedSpecifier.account = aFeed.account;
+    return feedSpecifier;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[URL release];
-	[name release];
-	[homePageURL release];
-	[account release];
-	[super dealloc];
-}
 
 
 #pragma mark -
 
 - (NSString *)description {
-	return [NSString stringWithFormat:@"RSFeedSpecifier: %@ '%@' %@ %@", self.URL, self.name, self.homePageURL, self.account];
+    return [NSString stringWithFormat:@"RSFeedSpecifier: %@ '%@' %@ %@", self.URL, self.name, self.homePageURL, self.account];
 }
 
 

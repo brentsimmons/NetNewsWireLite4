@@ -24,25 +24,25 @@
 
 @interface RSAbstractFeedParser : RSSAXParser {
 @protected
-	NSMutableDictionary *headerItems;
-	NSMutableArray *newsItems;
-	RSParsedNewsItem *newsItem;
-	id <RSFeedParserDelegate> delegate;
-	BOOL delegateRespondsToDidParseNewsItem;
-	BOOL parsingNewsItem;
-	NSString *feedTitle;
-	NSString *feedHomePageURL;
+    NSMutableDictionary *headerItems;
+    NSMutableArray *newsItems;
+    RSParsedNewsItem *newsItem;
+    id <RSFeedParserDelegate> __unsafe_unretained delegate;
+    BOOL delegateRespondsToDidParseNewsItem;
+    BOOL parsingNewsItem;
+    NSString *feedTitle;
+    NSString *feedHomePageURL;
 }
 
 
-@property (nonatomic, retain) NSMutableDictionary *headerItems;
-@property (nonatomic, retain) NSMutableArray *newsItems; //empty if delegate consumed each newsItem
-@property (nonatomic, retain) RSParsedNewsItem *newsItem;
-@property (nonatomic, assign) id <RSFeedParserDelegate> delegate;
+@property (nonatomic, strong) NSMutableDictionary *headerItems;
+@property (nonatomic, strong) NSMutableArray *newsItems; //empty if delegate consumed each newsItem
+@property (nonatomic, strong) RSParsedNewsItem *newsItem;
+@property (nonatomic, unsafe_unretained) id <RSFeedParserDelegate> delegate;
 @property (nonatomic, assign) BOOL delegateRespondsToDidParseNewsItem;
 @property (nonatomic, assign) BOOL parsingNewsItem;
-@property (nonatomic, retain) NSString *feedTitle;
-@property (nonatomic, retain) NSString *feedHomePageURL;
+@property (nonatomic, strong) NSString *feedTitle;
+@property (nonatomic, strong) NSString *feedHomePageURL;
 
 /*For subclasses to over-ride or use.*/
 

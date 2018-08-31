@@ -13,10 +13,10 @@
 
 @interface NNWBrowserContentView : NSView {
 @private
-	NNWBrowserViewController *controller;
+    NNWBrowserViewController *__weak controller;
 }
 
-@property (nonatomic, assign) NNWBrowserViewController *controller;
+@property (nonatomic, weak) NNWBrowserViewController *controller;
 @end
 
 
@@ -30,31 +30,31 @@
 @end
 
 
-	
+    
 @class NNWToolbar;
 @class RSMacWebView;
 @class RSBrowserTextField;
 
 @interface NNWBrowserViewController : NSViewController {
 @private
-	NNWToolbar *toolbar;
-	RSMacWebView *webview;
-	BOOL backButtonClosesView;
-	BOOL pageLoadInProgress;
-	RSBrowserTextField *addressField;
-	NSSegmentedControl *backForwardButtons;
-	NSButton *reloadButton;
-	id<NNWBrowserViewControllerDelegate> delegate;
+    NNWToolbar *toolbar;
+    RSMacWebView *webview;
+    BOOL backButtonClosesView;
+    BOOL pageLoadInProgress;
+    RSBrowserTextField *addressField;
+    NSSegmentedControl *backForwardButtons;
+    NSButton *reloadButton;
+    id<NNWBrowserViewControllerDelegate> __unsafe_unretained delegate;
 }
 
 
-@property (nonatomic, retain) IBOutlet NNWToolbar *toolbar;
-@property (nonatomic, retain) IBOutlet RSMacWebView *webview;
-@property (nonatomic, retain) IBOutlet RSBrowserTextField *addressField;
-@property (nonatomic, retain) IBOutlet NSSegmentedControl *backForwardButtons;
-@property (nonatomic, retain) IBOutlet NSButton *reloadButton;
+@property (nonatomic, strong) IBOutlet NNWToolbar *toolbar;
+@property (nonatomic, strong) IBOutlet RSMacWebView *webview;
+@property (nonatomic, strong) IBOutlet RSBrowserTextField *addressField;
+@property (nonatomic, strong) IBOutlet NSSegmentedControl *backForwardButtons;
+@property (nonatomic, strong) IBOutlet NSButton *reloadButton;
 
-@property (nonatomic, assign) id<NNWBrowserViewControllerDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<NNWBrowserViewControllerDelegate> delegate;
 
 @property (nonatomic, assign) BOOL backButtonClosesView;
 

@@ -17,14 +17,14 @@
 
 @interface RSOPMLParser : RSSAXParser {
 @protected
-	NSMutableArray *outlineItems;
-	NSMutableArray *flattenedOutlineItems;
-	NSMutableArray *outlineDictStack;
+    NSMutableArray *outlineItems;
+    NSMutableArray *flattenedOutlineItems;
+    NSMutableArray *outlineDictStack;
 }
 
 
-@property (nonatomic, retain) NSMutableArray *outlineItems;
-@property (nonatomic, retain) NSMutableArray *flattenedOutlineItems;
+@property (nonatomic, strong) NSMutableArray *outlineItems;
+@property (nonatomic, strong) NSMutableArray *flattenedOutlineItems;
 
 
 @end

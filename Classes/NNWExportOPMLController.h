@@ -12,13 +12,13 @@
 
 @interface NNWExportOPMLController  : NSObject {
 @private
-	NSWindow *backgroundWindow;
-	id<RSAccount>account;
-	NSMutableArray *feedsAdded;
+    NSWindow *backgroundWindow;
+    id<RSAccount>account;
+    NSMutableArray *feedsAdded;
 }
 
 
-@property (nonatomic, retain) NSWindow *backgroundWindow; //runs as a sheet on this window
+@property (nonatomic, strong) NSWindow *backgroundWindow; //runs as a sheet on this window
 
 - (void)exportOPML:(id<RSAccount>)accountToExport;
 
