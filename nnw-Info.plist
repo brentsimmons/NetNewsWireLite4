@@ -115,5 +115,12 @@
 			</dict>
 		</dict>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
