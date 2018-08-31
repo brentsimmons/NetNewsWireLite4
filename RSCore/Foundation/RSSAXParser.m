@@ -232,17 +232,17 @@ static xmlSAXHandler saxHandlerStruct;
 #pragma mark C -- SAX Callbacks from libxml2
 
 static void startElementSAX(void *ctx, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI, int nb_namespaces, const xmlChar **namespaces, int nb_attributes, int nb_defaulted, const xmlChar **attributes) {
-	[(RSSAXParser *)ctx xmlStartElement:localname prefix:prefix uri:URI numberOfNamespaces:nb_namespaces namespaces:namespaces numberOfAttributes:nb_attributes numberDefaulted:nb_defaulted attributes:attributes];
+	[(__bridge RSSAXParser *)ctx xmlStartElement:localname prefix:prefix uri:URI numberOfNamespaces:nb_namespaces namespaces:namespaces numberOfAttributes:nb_attributes numberDefaulted:nb_defaulted attributes:attributes];
 }
 
 
 static void	endElementSAX(void *ctx, const xmlChar *localname, const xmlChar *prefix, const xmlChar *URI) {    
-	[(RSSAXParser *)ctx xmlEndElement:localname prefix:prefix uri:URI];
+	[(__bridge RSSAXParser *)ctx xmlEndElement:localname prefix:prefix uri:URI];
 }
 
 
 static void	charactersFoundSAX(void *ctx, const xmlChar *ch, int len) {
-	[(RSSAXParser *)ctx xmlCharactersFound:ch length:len];
+	[(__bridge RSSAXParser *)ctx xmlCharactersFound:ch length:len];
 }
 
 
@@ -257,7 +257,7 @@ static void	charactersFoundSAX(void *ctx, const xmlChar *ch, int len) {
 
 
 static void endDocumentSAX(void *ctx) {
-	[(RSSAXParser *)ctx xmlEndDocument];
+	[(__bridge RSSAXParser *)ctx xmlEndDocument];
 }
 
 

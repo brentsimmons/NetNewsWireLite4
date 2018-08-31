@@ -62,7 +62,7 @@ static void _RSSendCrashReport(NSString *crashReport);
 #pragma mark Window delegate
 
 - (void)windowWillClose:(NSNotification *)note {
-	[self performSelectorOnMainThread:@selector(release) withObject:nil waitUntilDone:NO];
+	//[self performSelectorOnMainThread:@selector(release) withObject:nil waitUntilDone:NO];
 	}
 	
 
@@ -224,7 +224,7 @@ void RSCheckForCrash(void) {
 static void _RSSendCrashReport(NSString *crashReport) {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	@try {
-		[[crashReport retain] autorelease];
+		//[[crashReport retain] autorelease];
 		NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://ranchero.com/crashreportcatcher4Lite.php"]];
 		NSString *boundary = @"0xKhTmLbOuNdArY";
 		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];

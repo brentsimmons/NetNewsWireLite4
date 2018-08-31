@@ -126,7 +126,7 @@ void RSHelpOpenAnchor(NSString *anchor) {
 
 void RSHelpGotoPage(NSString *page) {
 	_registerHelpBookIfNeeded();
-	AHGotoPage((CFStringRef)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleHelpBookName"], (CFStringRef)page, nil);
+	AHGotoPage((CFStringRef)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleHelpBookName"], (__bridge CFStringRef)page, nil);
 }
 
 
@@ -149,7 +149,7 @@ void RSBringAppToFront(NSString *f) {
 		err = CopyProcessName(&psn, &oneAppName);
 		if (err != noErr)
 			break;
-		if (RSEqualNotEmptyStrings(appName, (NSString *)oneAppName) || RSEqualNotEmptyStrings(appNameWithAppSuffix, (NSString *)oneAppName))
+		if (RSEqualNotEmptyStrings(appName, (__bridge NSString *)oneAppName) || RSEqualNotEmptyStrings(appNameWithAppSuffix, (__bridge NSString *)oneAppName))
 			foundPSN = YES;
 		CFRelease(oneAppName);
 		if (foundPSN)
@@ -181,11 +181,12 @@ OSStatus RSLaunchAppWithPathSync(NSString *f) {
 
 
 NSString *RSPathToDefaultAppForURLScheme(NSString *urlScheme) {
-	NSURL* appURL = nil;	
+	CFURLRef appURL ;
 	if (![urlScheme hasSuffix:@":"])
 		urlScheme = RSAddStrings(urlScheme, @":");
-	LSGetApplicationForURL((CFURLRef)[NSURL URLWithString:urlScheme], kLSRolesAll, nil, (CFURLRef *)&appURL);
-	return [appURL path];
+	LSGetApplicationForURL((CFURLRef)[NSURL URLWithString:urlScheme], kLSRolesAll, nil, &appURL);
+    NSURL *appURLARC = (__bridge_transfer NSURL *)appURL;
+	return [appURLARC path];
 }
 
 

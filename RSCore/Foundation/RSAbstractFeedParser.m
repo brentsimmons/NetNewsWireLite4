@@ -181,8 +181,8 @@ static NSString *RSMediaCreditPhotographer = @"photographer";
 			CFDictionarySetValue(attributesDict, (CFStringRef)attName, (CFStringRef)value); //Must use CFDictionarySetValue to avoid key-copying
 			didAddToAttributesDict = YES;
 		}
-		self.xmlAttributesDict = didAddToAttributesDict ? (NSMutableDictionary *)attributesDict : nil;
-		CFRelease(attributesDict);
+		self.xmlAttributesDict = didAddToAttributesDict ? (__bridge_transfer NSMutableDictionary *)attributesDict : nil;
+		//CFRelease(attributesDict);
 	}
 	[_xmlAttributesStack addObject:didAddToAttributesDict ? (id)self.xmlAttributesDict : (id)[NSNull null]];
 	[pool drain];

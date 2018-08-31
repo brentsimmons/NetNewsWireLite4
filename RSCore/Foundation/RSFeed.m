@@ -45,20 +45,20 @@ NSString *RSFeedUnreadCountDidChangeNotification = @"RSFeedUnreadCountDidChangeN
 #pragma mark Class Methods - Creating
 
 + (RSFeed *)feedWithURL:(NSURL *)aURL account:(id<RSAccount>)anAccount {
-	RSFeed *feed = [[[self alloc] initWithAccount:anAccount] autorelease];
-	feed.URL = aURL;
-	return feed;
+    RSFeed *feed = [[self alloc] initWithAccount:anAccount];
+    feed.URL = aURL;
+    return feed;
 }
 
 
 #pragma mark Init
 
 - (id)initWithAccount:(id<RSAccount>)anAccount {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	account = anAccount;
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    account = anAccount;
+    return self;
 }
 
 
@@ -82,259 +82,252 @@ static NSString *RSFeedUnreadCountIsValidKey = @"unreadCountIsValid";
 
 
 - (id)initWithDiskDictionary:(NSDictionary *)diskDictionary inAccount:(id<RSAccount>)anAccount {
-	
-	self = [self initWithAccount:anAccount];
-	if (self == nil)
-		return nil;
-	
-	NSString *urlString = [diskDictionary objectForKey:RSFeedURLKey];
-	if (!RSStringIsEmpty(urlString))
-		URL = [[NSURL URLWithString:urlString] retain];
-	feedSpecifiedName = [[diskDictionary objectForKey:RSFeedSpecifiedNameKey] retain];
-	urlString = [diskDictionary objectForKey:RSFeedHomePageURLKey];
-	if (!RSStringIsEmpty(urlString))
-		homePageURL = [[NSURL URLWithString:urlString] retain];
-	urlString = [diskDictionary objectForKey:RSFeedFaviconURLKey];
-	if (!RSStringIsEmpty(urlString))
-		faviconURL = [[NSURL URLWithString:urlString] retain];
-	
-	userSpecifiedName = [[diskDictionary objectForKey:RSFeedUserSpecifiedNameKey] retain];
-	feedSpecifiedName = [[diskDictionary objectForKey:RSFeedSpecifiedNameKey] retain];
-	username = [[diskDictionary objectForKey:RSFeedUsernameKey] retain];
+    
+    self = [self initWithAccount:anAccount];
+    if (self == nil)
+        return nil;
+    
+    NSString *urlString = [diskDictionary objectForKey:RSFeedURLKey];
+    if (!RSStringIsEmpty(urlString))
+        URL = [NSURL URLWithString:urlString];
+    feedSpecifiedName = [diskDictionary objectForKey:RSFeedSpecifiedNameKey];
+    urlString = [diskDictionary objectForKey:RSFeedHomePageURLKey];
+    if (!RSStringIsEmpty(urlString))
+        homePageURL = [NSURL URLWithString:urlString];
+    urlString = [diskDictionary objectForKey:RSFeedFaviconURLKey];
+    if (!RSStringIsEmpty(urlString))
+        faviconURL = [NSURL URLWithString:urlString];
+    
+    userSpecifiedName = [diskDictionary objectForKey:RSFeedUserSpecifiedNameKey];
+    feedSpecifiedName = [diskDictionary objectForKey:RSFeedSpecifiedNameKey];
+    username = [diskDictionary objectForKey:RSFeedUsernameKey];
 
-	serviceOldestTrackedItemTimestamp = [[diskDictionary objectForKey:RSFeedServiceOldestTrackedItemTimestampKey] unsignedLongLongValue];
-	daysToPersistArticles = [diskDictionary rs_integerForKey:RSFeedDaysToPersistArticlesKey];
+    serviceOldestTrackedItemTimestamp = [[diskDictionary objectForKey:RSFeedServiceOldestTrackedItemTimestampKey] unsignedLongLongValue];
+    daysToPersistArticles = [diskDictionary rs_integerForKey:RSFeedDaysToPersistArticlesKey];
 
-	sortKey = [diskDictionary rs_integerForKey:RSFeedSortKey];
-	
-	feedFlags.sortDescending = (unsigned int)[diskDictionary rs_boolForKey:RSFeedSortDescendingKey];
+    sortKey = [diskDictionary rs_integerForKey:RSFeedSortKey];
+    
+    feedFlags.sortDescending = (unsigned int)[diskDictionary rs_boolForKey:RSFeedSortDescendingKey];
 
-	feedFlags.excludeFromDisplay = (unsigned int)[diskDictionary rs_boolForKey:RSFeedExcludeFromDisplayKey];
+    feedFlags.excludeFromDisplay = (unsigned int)[diskDictionary rs_boolForKey:RSFeedExcludeFromDisplayKey];
 
-	feedFlags.persistArticles = (unsigned int)[diskDictionary rs_boolForKey:RSFeedPersistArticlesKey];
-	feedFlags.suspended = (unsigned int)[diskDictionary rs_boolForKey:RSFeedSuspendedKey];
-	feedFlags.deleted = (unsigned int)[diskDictionary rs_boolForKey:RSFeedDeletedKey];
-	
-	unreadCount = [[diskDictionary objectForKey:RSFeedUnreadCountKey] unsignedIntegerValue];
-	feedFlags.unreadCountIsValid = (unsigned int)[diskDictionary rs_boolForKey:RSFeedUnreadCountIsValidKey];
-	
-	return self;
+    feedFlags.persistArticles = (unsigned int)[diskDictionary rs_boolForKey:RSFeedPersistArticlesKey];
+    feedFlags.suspended = (unsigned int)[diskDictionary rs_boolForKey:RSFeedSuspendedKey];
+    feedFlags.deleted = (unsigned int)[diskDictionary rs_boolForKey:RSFeedDeletedKey];
+    
+    unreadCount = [[diskDictionary objectForKey:RSFeedUnreadCountKey] unsignedIntegerValue];
+    feedFlags.unreadCountIsValid = (unsigned int)[diskDictionary rs_boolForKey:RSFeedUnreadCountIsValidKey];
+    
+    return self;
 }
 
 
 #pragma mark Dealloc
 
 - (void)dealloc {
-	[URL release];
-	account = nil;
-	[feedSpecifiedName release];
-	[homePageURL release];
-	[faviconURL release];
-	[userSpecifiedName release];
-	[username release];
-	[password release];
-	[super dealloc];
+    account = nil;
+    [super dealloc];
 }
 
 
 #pragma mark Disk Dictionary
 
 - (NSDictionary *)dictionaryRepresentation {
-	
-	/*Disk dictionary uses CFMutableDictionaryRef that doesn't copy keys, for better memory use and faster performance.*/
-	CFMutableDictionaryRef diskDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 32, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-	
-	NSString *urlString = [self.URL absoluteString];
-	if (urlString != nil)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedURLKey, (CFStringRef)urlString); //Must use CFDictionarySetValue to avoid key-copying
-	urlString = [self.homePageURL absoluteString];
-	if (urlString != nil)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedHomePageURLKey, (CFStringRef)urlString);
-	urlString = [self.faviconURL absoluteString];
-	if (urlString != nil)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedFaviconURLKey, (CFStringRef)urlString);
-	
-	if (self.feedSpecifiedName != nil)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSpecifiedNameKey, (CFStringRef)(self.feedSpecifiedName));
-	if (self.userSpecifiedName != nil)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUserSpecifiedNameKey, (CFStringRef)(self.userSpecifiedName));
-	
-	if (self.username != nil)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUsernameKey, (CFStringRef)(self.username));
+    
+    /*Disk dictionary uses CFMutableDictionaryRef that doesn't copy keys, for better memory use and faster performance.*/
+    CFMutableDictionaryRef diskDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 32, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    
+    NSString *urlString = [self.URL absoluteString];
+    if (urlString != nil)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedURLKey, (CFStringRef)urlString); //Must use CFDictionarySetValue to avoid key-copying
+    urlString = [self.homePageURL absoluteString];
+    if (urlString != nil)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedHomePageURLKey, (CFStringRef)urlString);
+    urlString = [self.faviconURL absoluteString];
+    if (urlString != nil)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedFaviconURLKey, (CFStringRef)urlString);
+    
+    if (self.feedSpecifiedName != nil)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSpecifiedNameKey, (CFStringRef)(self.feedSpecifiedName));
+    if (self.userSpecifiedName != nil)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUserSpecifiedNameKey, (CFStringRef)(self.userSpecifiedName));
+    
+    if (self.username != nil)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUsernameKey, (CFStringRef)(self.username));
 
-	if (self.serviceOldestTrackedItemTimestamp > 0)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedServiceOldestTrackedItemTimestampKey, (CFNumberRef)([NSNumber numberWithUnsignedLongLong:self.serviceOldestTrackedItemTimestamp]));
-	
-	if (self.daysToPersistArticles > 0)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedDaysToPersistArticlesKey, (CFNumberRef)([NSNumber numberWithInteger:self.daysToPersistArticles]));
-	if (self.sortKey != 0)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSortKey, (CFNumberRef)([NSNumber numberWithInteger:self.sortKey]));
-	
-	if (feedFlags.sortDescending)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSortDescendingKey, kCFBooleanTrue);
+    if (self.serviceOldestTrackedItemTimestamp > 0)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedServiceOldestTrackedItemTimestampKey, (CFNumberRef)([NSNumber numberWithUnsignedLongLong:self.serviceOldestTrackedItemTimestamp]));
+    
+    if (self.daysToPersistArticles > 0)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedDaysToPersistArticlesKey, (CFNumberRef)([NSNumber numberWithInteger:self.daysToPersistArticles]));
+    if (self.sortKey != 0)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSortKey, (CFNumberRef)([NSNumber numberWithInteger:self.sortKey]));
+    
+    if (feedFlags.sortDescending)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSortDescendingKey, kCFBooleanTrue);
 
-	if (feedFlags.excludeFromDisplay)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedExcludeFromDisplayKey, kCFBooleanTrue);
+    if (feedFlags.excludeFromDisplay)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedExcludeFromDisplayKey, kCFBooleanTrue);
 
-	if (feedFlags.persistArticles)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedPersistArticlesKey, kCFBooleanTrue);
+    if (feedFlags.persistArticles)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedPersistArticlesKey, kCFBooleanTrue);
 
-	if (feedFlags.suspended)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSuspendedKey, kCFBooleanTrue);
-	if (feedFlags.deleted)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedDeletedKey, kCFBooleanTrue);
-	
-	if (self.unreadCount > 0)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUnreadCountKey, (CFNumberRef)([NSNumber numberWithUnsignedInteger:self.unreadCount]));
-	if (self.unreadCountIsValid)
-		CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUnreadCountIsValidKey, (CFNumberRef)([NSNumber numberWithBool:self.unreadCountIsValid]));
-		
-	return [NSMakeCollectable(diskDictionary) autorelease];
+    if (feedFlags.suspended)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedSuspendedKey, kCFBooleanTrue);
+    if (feedFlags.deleted)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedDeletedKey, kCFBooleanTrue);
+    
+    if (self.unreadCount > 0)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUnreadCountKey, (CFNumberRef)([NSNumber numberWithUnsignedInteger:self.unreadCount]));
+    if (self.unreadCountIsValid)
+        CFDictionarySetValue(diskDictionary, (CFStringRef)RSFeedUnreadCountIsValidKey, (CFNumberRef)([NSNumber numberWithBool:self.unreadCountIsValid]));
+        
+    return (__bridge_transfer NSDictionary *)diskDictionary;
 }
 
 
 #pragma mark Saving
 
 - (void)markAsNeedsToBeSaved {
-	self.needsToBeSavedOnDisk = YES;
+    self.needsToBeSavedOnDisk = YES;
 }
 
 
 #pragma mark Accessors
 
 - (BOOL)suspended {
-	return feedFlags.suspended;
+    return feedFlags.suspended;
 }
 
 
 - (BOOL)deleted {
-	return feedFlags.deleted;
+    return feedFlags.deleted;
 }
 
 
 - (void)setDeleted:(BOOL)flag {
-	feedFlags.deleted = (unsigned int)flag;
+    feedFlags.deleted = (unsigned int)flag;
 }
 
 
 - (BOOL)excludeFromDisplay {
-	return feedFlags.excludeFromDisplay;
+    return feedFlags.excludeFromDisplay;
 }
 
 
 - (BOOL)canBeRefreshed {
-	return !self.suspended && !self.deleted && !self.excludeFromDisplay;
+    return !self.suspended && !self.deleted && !self.excludeFromDisplay;
 }
 
 
 - (BOOL)needsToBeSavedOnDisk {
-	return feedFlags.needsToBeSavedOnDisk;
+    return feedFlags.needsToBeSavedOnDisk;
 }
 
 - (void)setNeedsToBeSavedOnDisk:(BOOL)flag {
-	feedFlags.needsToBeSavedOnDisk = (unsigned int)flag;
-	if (flag)
-		self.account.needsToBeSavedOnDisk = YES;
+    feedFlags.needsToBeSavedOnDisk = (unsigned int)flag;
+    if (flag)
+        self.account.needsToBeSavedOnDisk = YES;
 }
 
 
 - (BOOL)unreadCountIsValid {
-	return feedFlags.unreadCountIsValid;
+    return feedFlags.unreadCountIsValid;
 }
 
 
 - (void)setUnreadCountIsValid:(BOOL)flag {
-	feedFlags.unreadCountIsValid = (unsigned int)flag;
+    feedFlags.unreadCountIsValid = (unsigned int)flag;
 }
 
 
 - (CGImageRef)icon {
-	return nil;
+    return nil;
 }
 
 
 - (BOOL)isSection {
-	return NO;
+    return NO;
 }
 
 
 - (BOOL)isFolder {
-	return NO;
+    return NO;
 }
 
 
 - (NSString *)name {
-	NSString *aName = self.userSpecifiedName;
-	if (RSStringIsEmpty(aName))
-		aName = self.feedSpecifiedName;
-	if (RSStringIsEmpty(aName))
-		aName = NSLocalizedString(@"Untitled Feed", @"Feeds");
-	return aName;
+    NSString *aName = self.userSpecifiedName;
+    if (RSStringIsEmpty(aName))
+        aName = self.feedSpecifiedName;
+    if (RSStringIsEmpty(aName))
+        aName = NSLocalizedString(@"Untitled Feed", @"Feeds");
+    return aName;
 }
 
 
 - (void)setName:(NSString *)aName {
-	/*User-edited name*/
-	self.userSpecifiedName = aName;
+    /*User-edited name*/
+    self.userSpecifiedName = aName;
 }
 
 
 - (void)setUnreadCount:(NSUInteger)anUnreadCount {
-	if (anUnreadCount == unreadCount)
-		return;
-	unreadCount = anUnreadCount;
-	[[NSNotificationCenter defaultCenter] postNotificationName:RSFeedUnreadCountDidChangeNotification object:self userInfo:nil];
+    if (anUnreadCount == unreadCount)
+        return;
+    unreadCount = anUnreadCount;
+    [[NSNotificationCenter defaultCenter] postNotificationName:RSFeedUnreadCountDidChangeNotification object:self userInfo:nil];
 }
 
 
 #pragma mark RSTreeNodeRepresentedObject
 
 - (BOOL)nameIsEditable {
-	return YES;
+    return YES;
 }
 
 
 - (BOOL)canBeDeleted {
-	return YES;
+    return YES;
 }
 
 
 - (NSString *)nameForDisplay {
-	NSString *aNameForDisplay = self.userSpecifiedName;
-	if (RSStringIsEmpty(aNameForDisplay))
-		aNameForDisplay = self.feedSpecifiedName;
-	return aNameForDisplay;
+    NSString *aNameForDisplay = self.userSpecifiedName;
+    if (RSStringIsEmpty(aNameForDisplay))
+        aNameForDisplay = self.feedSpecifiedName;
+    return aNameForDisplay;
 }
 
 
 - (void)setNameForDisplay:(NSString *)aName {
-	self.userSpecifiedName = aName;
+    self.userSpecifiedName = aName;
 }
 
 
 - (NSUInteger)countForDisplay {
-	return self.unreadCount;
+    return self.unreadCount;
 }
 
 
 - (NSURL *)associatedURL {
-	return self.homePageURL;
+    return self.homePageURL;
 }
 
 
 #pragma mark Keychain
 
 - (NSString *)password {
-	if (password != nil)
-		return password;
-	if (self.username != nil)
-		self.password = RSKeychainFetchInternetPassword(self.URL, self.username);
-	return password;
+    if (password != nil)
+        return password;
+    if (self.username != nil)
+        self.password = RSKeychainFetchInternetPassword(self.URL, self.username);
+    return password;
 }
 
 
 - (void)savePasswordInKeychain {
-	RSKeychainStoreInternetPassword(self.URL, self.username, self.password);
+    RSKeychainStoreInternetPassword(self.URL, self.username, self.password);
 }
 
 

@@ -110,7 +110,7 @@
 		CFRelease(imageSourceRef);
 	}
 	RSLockUnlock(&folderLock);
-	return (CGImageRef)[NSMakeCollectable(cgImage) autorelease];
+	return cgImage;
 }
 
 
@@ -122,7 +122,7 @@
 	
 	CGImageRef onDiskCachedCGImage = [self cgImageFromFile:[self pathWithFilename:filename]];
 	if (onDiskCachedCGImage != NULL)
-		[self.cgImageCache setObject:(id)onDiskCachedCGImage forKey:filename];
+		[self.cgImageCache setObject:(__bridge id)onDiskCachedCGImage forKey:filename];
 	return onDiskCachedCGImage;
 }
 
@@ -141,7 +141,7 @@
 	CGImageSourceRef imageSourceRef = CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
 	CGImageRef cgImage = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
 	CFRelease(imageSourceRef);
-	return (CGImageRef)[NSMakeCollectable(cgImage) autorelease];
+	return cgImage;
 }
 
 
@@ -187,7 +187,7 @@
 #pragma unused(error)
 	if (cgImage == nil || RSStringIsEmpty(filename))
 		return NO;
-	[self.cgImageCache setObject:(id)cgImage forKey:filename];
+	[self.cgImageCache setObject:(__bridge id)cgImage forKey:filename];
 	CGImageDestinationRef imageFileDestination = CGImageDestinationCreateWithURL((CFURLRef)[self URLWithFilename:filename], kUTTypePNG, 1, NULL);
 	if (imageFileDestination == nil)
 		return NO;

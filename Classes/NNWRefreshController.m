@@ -21,35 +21,34 @@ static NSString *NNWRefreshFeedsIntervalDefaultsKey = @"refreshFeedsInterval";
 #pragma mark Init
 
 - (id)init {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	[self.refreshOperationController.operationQueue setMaxConcurrentOperationCount:20];
-	RSLocalAccountRefresher *localAccountRefresher = [[[RSLocalAccountRefresher alloc] init] autorelease];
-	[self registerAccountRefresher:localAccountRefresher];
-	[localAccountRefresher registerFeedRefresher:[[[RSDownloadableFeedRefresher alloc] init] autorelease]];
-	
-	NSDictionary *defaultPreferences = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:30] forKey:NNWRefreshFeedsIntervalDefaultsKey];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(feedAdded:) name:NNWFeedAddedNotification object:nil];
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    [self.refreshOperationController.operationQueue setMaxConcurrentOperationCount:20];
+    RSLocalAccountRefresher *localAccountRefresher = [[RSLocalAccountRefresher alloc] init];
+    [self registerAccountRefresher:localAccountRefresher];
+    [localAccountRefresher registerFeedRefresher:[[RSDownloadableFeedRefresher alloc] init]];
+    
+    NSDictionary *defaultPreferences = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:30] forKey:NNWRefreshFeedsIntervalDefaultsKey];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(feedAdded:) name:NNWFeedAddedNotification object:nil];
+    return self;
 }
 
 
 #pragma mark Dealloc
 
 - (void)dealloc {
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[super dealloc];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark Notifications
 
 
 - (void)feedAdded:(NSNotification *)note {
-	RSFeed *feedAdded = [[note userInfo] objectForKey:NNWFeedKey];
-	[self refreshFeeds:[NSArray arrayWithObject:feedAdded]];
+    RSFeed *feedAdded = [[note userInfo] objectForKey:NNWFeedKey];
+    [self refreshFeeds:[NSArray arrayWithObject:feedAdded]];
 }
 
 

@@ -69,11 +69,13 @@ NSString *RSDefaultWebBrowserName(void) {
 	
 	
 NSString *RSPathToDefaultWebBrowser(void) {
-	NSURL* appURL = nil;
-	LSGetApplicationForURL((CFURLRef)[NSURL URLWithString:@"http:"], kLSRolesAll, nil, (CFURLRef *)&appURL);
-	if (!appURL)
+	CFURLRef appURL ;
+	LSGetApplicationForURL((CFURLRef)[NSURL URLWithString:@"http:"], kLSRolesAll, nil, &appURL);
+    NSURL *appURLARC = (__bridge_transfer NSURL *)appURL;
+    
+	if (!appURLARC)
 		return nil;
-	return [appURL path];	
+	return [appURLARC path];	
 	}
 	
 
@@ -121,7 +123,7 @@ void RSWebBrowserOpenURL(NSString *urlString, BOOL inBackground) {
 		NSArray *urlsArray = [NSArray arrayWithObject:url];
 		LSLaunchURLSpec urlSpec;		
 		urlSpec.appURL = nil;	
-		urlSpec.itemURLs = (CFArrayRef)urlsArray;
+        urlSpec.itemURLs = (__bridge_retained CFArrayRef)urlsArray;
 		urlSpec.passThruParams = nil;
 		urlSpec.launchFlags = kLSLaunchDontSwitch;
 		urlSpec.asyncRefCon = nil;		

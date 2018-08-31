@@ -809,13 +809,14 @@ static NSString *NNWSuppressDefaultAggregatorPromptKey = @"suppressDefaultAggreg
 }
 	 
 
-static BOOL anyVersionOfNetNewsWireIsDefaultAggregator(void) {	
-	NSURL *appURL = nil;	
-	LSGetApplicationForURL((CFURLRef)[NSURL URLWithString: @"feed:"], kLSRolesAll, nil, (CFURLRef *)&appURL);	
-	if (appURL == nil)
+static BOOL anyVersionOfNetNewsWireIsDefaultAggregator(void) {
+    CFURLRef appURL;
+	LSGetApplicationForURL((__bridge CFURLRef)[NSURL URLWithString: @"feed:"], kLSRolesAll, nil, &appURL);
+    NSURL *appURLARC = (__bridge_transfer NSURL *)appURL;
+    if (appURLARC == nil)
 		return NO;
-	BOOL isDefault = [[appURL absoluteString] rs_caseInsensitiveContains:@"netnewswire"];
-	[appURL release];
+    BOOL isDefault = [[appURLARC absoluteString] rs_caseInsensitiveContains:@"netnewswire"];
+
 	return isDefault;
 }
 

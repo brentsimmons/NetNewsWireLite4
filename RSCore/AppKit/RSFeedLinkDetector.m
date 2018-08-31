@@ -55,7 +55,6 @@ static NSMutableDictionary *_linkCache = nil;
 				tempString = [d objectForKey:@"r"];
 			if (!RSIsEmpty(tempString)) {
 				urlString = [(NSString *)CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)tempString, (CFStringRef)@"%20") autorelease];
-				CFMakeCollectable((CFStringRef)urlString);
 			}
 		}
 	}

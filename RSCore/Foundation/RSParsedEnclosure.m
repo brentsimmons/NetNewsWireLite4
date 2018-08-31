@@ -106,8 +106,6 @@ static NSString *RSParsedEnclosureWidthKey = @"width";
 
 - (NSDictionary *)dictionaryRepresentation {
 	CFMutableDictionaryRef d = CFDictionaryCreateMutable(kCFAllocatorDefault, 8, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks); //no copy keys
-	CFMakeCollectable(d);
-	[(NSMutableDictionary *)d autorelease];
 	if (self.urlString != nil)
 		CFDictionarySetValue(d, (CFStringRef)RSParsedEnclosureURLStringKey, (CFStringRef)(self.urlString));
 	if (self.mimeType != nil)
@@ -122,7 +120,7 @@ static NSString *RSParsedEnclosureWidthKey = @"width";
 		CFDictionarySetValue(d, (CFStringRef)RSParsedEnclosureHeightKey, (CFNumberRef)[NSNumber numberWithInteger:self.height]);
 	if (self.width > 0)
 		CFDictionarySetValue(d, (CFStringRef)RSParsedEnclosureWidthKey, (CFNumberRef)[NSNumber numberWithInteger:self.width]);
-	return (NSDictionary *)d;
+	return (__bridge_transfer NSDictionary *)d;
 }
 
 

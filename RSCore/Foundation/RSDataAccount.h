@@ -23,20 +23,20 @@ extern NSString *RSDataAccountIdentifierOnMyMac;
 
 @interface RSDataAccount : NSObject <RSAccount, RSTreeNodeRepresentedObject> {
 @private
-	BOOL disabled;
-	NSString *identifier;
-	NSString *login;
-	NSString *title;
-	NSInteger accountType;
-	NSMutableArray *feeds;
-	NSMutableDictionary *feedsDictionary;
-	NSString *pathToPlist;
-	BOOL needsToBeSavedOnDisk;
-	RSTreeNode *accountTreeNode;
-	NSTimer *unreadCountTimer;
-	NSTimer *totalUnreadCountTimer;
-	NSUInteger unreadCount;
-	NSTimer *saveAccountTimer;
+    BOOL disabled;
+    NSString *identifier;
+    NSString *login;
+    NSString *title;
+    NSInteger accountType;
+    NSMutableArray *feeds;
+    NSMutableDictionary *feedsDictionary;
+    NSString *pathToPlist;
+    BOOL needsToBeSavedOnDisk;
+    RSTreeNode *accountTreeNode;
+    NSTimer *unreadCountTimer;
+    NSTimer *totalUnreadCountTimer;
+    NSUInteger unreadCount;
+    NSTimer *saveAccountTimer;
 }
 
 
@@ -46,18 +46,18 @@ extern NSString *RSDataAccountIdentifierOnMyMac;
 
 
 @property (nonatomic, assign) BOOL disabled;
-@property (nonatomic, retain) NSString *identifier;
-@property (nonatomic, retain) NSString *login;
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, strong) NSString *login;
+@property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) NSInteger accountType;
-@property (nonatomic, retain, readonly) NSArray *allFeedsThatCanBeRefreshed; //all downloadable, not-suspended feeds. RSFeed array.
-@property (nonatomic, retain, readonly) NSMutableArray *feeds; //RSFeed objects.
-@property (nonatomic, retain, readonly) NSArray *feedURLs;
-@property (nonatomic, retain, readonly) NSArray *folders; //RSFolder and NSURL (feed) objects - the tree.
+@property (nonatomic, strong, readonly) NSArray *allFeedsThatCanBeRefreshed; //all downloadable, not-suspended feeds. RSFeed array.
+@property (nonatomic, strong, readonly) NSMutableArray *feeds; //RSFeed objects.
+@property (nonatomic, strong, readonly) NSArray *feedURLs;
+@property (nonatomic, strong, readonly) NSArray *folders; //RSFolder and NSURL (feed) objects - the tree.
 @property (nonatomic, assign) BOOL needsToBeSavedOnDisk;
-@property (nonatomic, retain, readonly) RSTreeNode *accountTreeNode;
+@property (nonatomic, strong, readonly) RSTreeNode *accountTreeNode;
 @property (nonatomic, assign, readonly) NSUInteger unreadCount; //for entire account
-@property (nonatomic, retain) NSString *nameForDisplay;
+@property (nonatomic, strong) NSString *nameForDisplay;
 
 - (NSMutableDictionary *)dictionaryRepresentation; //for disk
 //- (NSMutableArray *)arrayRepresentationOfChildren:(NSArray *)someChildren inFolder:(RSFolder *)aFolder;

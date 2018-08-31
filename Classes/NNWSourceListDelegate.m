@@ -335,17 +335,17 @@ CGImageRef NNWFaviconForFeed(NSURL *feedHomePageURL, NSURL *feedFaviconURL, BOOL
 	if (feedFaviconURL != nil)
 		feedImage = [faviconCache objectForKey:feedFaviconURL];
 	if (feedImage != nil)
-		return (CGImageRef)feedImage;
+        return (CGImageRef)CFBridgingRetain(feedImage);
 	
 	if (feedHomePageURL != nil)
 		feedImage = [faviconCache objectForKey:feedHomePageURL];
 	if (feedImage != nil)
-		return (CGImageRef)feedImage;
+        return (CGImageRef)CFBridgingRetain(feedImage);
 	
 	feedImage = (id)[[RSFaviconController sharedController] faviconForHomePageURL:feedHomePageURL faviconURL:feedFaviconURL];
 	if (feedImage != nil) {
 		[faviconCache setObject:feedImage forKey:feedFaviconURL ? feedFaviconURL : feedHomePageURL];
-		return (CGImageRef)feedImage;
+        return (CGImageRef)CFBridgingRetain(feedImage);
 	}
 	
 	if (!useDefaultIfNotFound)
@@ -365,7 +365,7 @@ CGImageRef NNWFaviconForFeed(NSURL *feedHomePageURL, NSURL *feedFaviconURL, BOOL
 
 
 - (void)fetchImageForFeed:(RSFeed *)aFeed andAssignToCell:(NNWSourceListCell *)cell {
-	cell.smallImage = (id)NNWFaviconForFeed(aFeed.homePageURL, aFeed.faviconURL, YES);
+    cell.smallImage = (__bridge id)NNWFaviconForFeed(aFeed.homePageURL, aFeed.faviconURL, YES);
 }
 
 
@@ -390,7 +390,7 @@ CGImageRef NNWFaviconForFeed(NSURL *feedHomePageURL, NSURL *feedFaviconURL, BOOL
 			}
 		}
 		if (folderImage != nil)
-			sourceListCell.smallImage = (id)folderImage;
+            sourceListCell.smallImage = (id)CFBridgingRelease(folderImage);
 	}
 	
 	id<RSTreeNodeRepresentedObject> representedObject = ((RSTreeNode *)item).representedObject;

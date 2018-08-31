@@ -20,10 +20,6 @@
 #pragma mark Dealloc
 
 - (void)dealloc {
-	[groupItem release];
-	[reuseIdentifier release];
-	[title release];
-	[super dealloc];
 }
 
 

@@ -119,7 +119,7 @@ NSColor *RSRGBColor(NSUInteger red, NSUInteger green, NSUInteger blue) {
 static NSColor *_interfaceColor = nil;
 
 + (void)rs_updateInterfaceColor {
-	[_interfaceColor autorelease];
+	//[_interfaceColor autorelease];
 	_interfaceColor = nil;
 }
 

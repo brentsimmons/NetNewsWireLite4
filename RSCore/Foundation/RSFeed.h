@@ -18,32 +18,32 @@ extern NSString *RSFeedUnreadCountDidChangeNotification;
 
 @interface RSFeed : NSObject <RSTreeNodeRepresentedObject> {
 @private
-	NSURL *URL;
-	RSDataAccount *account;
-	NSString *feedSpecifiedName;
-	NSURL *homePageURL;
-	NSURL *faviconURL;
+    NSURL *URL;
+    RSDataAccount *account;
+    NSString *feedSpecifiedName;
+    NSURL *homePageURL;
+    NSURL *faviconURL;
 
-	NSString *userSpecifiedName;
-	
-	NSString *username;
-	NSString *password;
+    NSString *userSpecifiedName;
+    
+    NSString *username;
+    NSString *password;
 
-	UInt64 serviceOldestTrackedItemTimestamp;
+    UInt64 serviceOldestTrackedItemTimestamp;
 
-	NSInteger daysToPersistArticles;
-	NSInteger sortKey;
-	NSUInteger unreadCount;
+    NSInteger daysToPersistArticles;
+    NSInteger sortKey;
+    NSUInteger unreadCount;
 
-	struct {
-		unsigned int sortDescending:1;
+    struct {
+        unsigned int sortDescending:1;
         unsigned int excludeFromDisplay:1;
         unsigned int persistArticles:1;
         unsigned int suspended:1;
-		unsigned int deleted:1;
-		unsigned int needsToBeSavedOnDisk:1;
-		unsigned int unreadCountIsValid:1;
-		unsigned int padding:1;
+        unsigned int deleted:1;
+        unsigned int needsToBeSavedOnDisk:1;
+        unsigned int unreadCountIsValid:1;
+        unsigned int padding:1;
     } feedFlags;
 }
 
@@ -57,19 +57,19 @@ extern NSString *RSFeedUnreadCountDidChangeNotification;
 - (void)markAsNeedsToBeSaved; //if any changes are made, must be done, so that it gets saved; call right before unlockFeeds
 - (NSDictionary *)dictionaryRepresentation;
 
-@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, strong) NSURL *URL;
 
-@property (nonatomic, retain) NSURL *homePageURL;
-@property (nonatomic, retain) NSURL *faviconURL;
-@property (nonatomic, retain) NSString *username;
-@property (nonatomic, retain) NSString *password;
+@property (nonatomic, strong) NSURL *homePageURL;
+@property (nonatomic, strong) NSURL *faviconURL;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *password;
 @property (nonatomic, assign) BOOL deleted;
 
 @property (nonatomic, assign, readonly) BOOL suspended;
 @property (nonatomic, assign, readonly) BOOL excludeFromDisplay;
 @property (nonatomic, assign, readonly) BOOL canBeRefreshed; //not suspended, not deleted, not excluded from display
-@property (nonatomic, retain) NSString *userSpecifiedName;
-@property (nonatomic, retain) NSString *feedSpecifiedName;
+@property (nonatomic, strong) NSString *userSpecifiedName;
+@property (nonatomic, strong) NSString *feedSpecifiedName;
 
 @property (nonatomic, assign) BOOL needsToBeSavedOnDisk;
 
@@ -78,8 +78,8 @@ extern NSString *RSFeedUnreadCountDidChangeNotification;
 
 @property (nonatomic, assign, readonly) NSInteger sortKey;
 
-@property (nonatomic, assign) RSDataAccount *account;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) RSDataAccount *account;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign, readonly) BOOL nameIsEditable;
 @property (nonatomic, assign, readonly) BOOL isSection;
 @property (nonatomic, assign, readonly) BOOL isFolder;

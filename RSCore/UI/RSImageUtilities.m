@@ -14,13 +14,13 @@
 
 
 CGImageRef RSCGImageFromDataWithMaxPixelSize(NSData *imageData, NSInteger maxPixelSize) {
-	CGImageSourceRef imageSourceRef = (CGImageSourceRef)[NSMakeCollectable(CGImageSourceCreateWithData((CFDataRef)imageData, NULL)) autorelease];
+    CGImageSourceRef imageSourceRef = (CGImageSourceRef)CGImageSourceCreateWithData((CFDataRef)imageData, NULL);
 	if (imageSourceRef == nil)
 		return nil;
 	size_t numberOfImages = CGImageSourceGetCount(imageSourceRef);
 	size_t indexOfImage;
 	for (indexOfImage = 0; indexOfImage < numberOfImages; indexOfImage++) {
-		NSDictionary *oneImageProperties = [NSMakeCollectable(CGImageSourceCopyPropertiesAtIndex(imageSourceRef, indexOfImage, NULL)) autorelease];
+		NSDictionary *oneImageProperties = (__bridge_transfer NSDictionary *)CGImageSourceCopyPropertiesAtIndex(imageSourceRef, indexOfImage, NULL);
 		NSInteger oneImagePixelWidth = [[oneImageProperties objectForKey:(NSString *)kCGImagePropertyPixelWidth] integerValue];
 		if (oneImagePixelWidth < 1 || oneImagePixelWidth > maxPixelSize)
 			continue;
@@ -28,7 +28,7 @@ CGImageRef RSCGImageFromDataWithMaxPixelSize(NSData *imageData, NSInteger maxPix
 		if (oneImagePixelHeight > 0 && oneImagePixelHeight <= maxPixelSize) {
 			CGImageRef cgImage = CGImageSourceCreateImageAtIndex(imageSourceRef, indexOfImage, NULL);
 			if (cgImage != NULL)
-				return (CGImageRef)[NSMakeCollectable(cgImage) autorelease];
+				return (CGImageRef)cgImage;
 		}
 	}
 	return RSCGImageThumbnailFromImageSourceWithMaxPixelSize(imageSourceRef, maxPixelSize);
@@ -40,7 +40,7 @@ CGImageRef RSCGImageThumbnailFromImageSourceWithMaxPixelSize(CGImageSourceRef im
 	CGImageRef cgImage = CGImageSourceCreateThumbnailAtIndex(imageSourceRef, 0, (CFDictionaryRef)thumbnailOptions);
 	if (cgImage == nil)
 		return nil;
-	return (CGImageRef)[NSMakeCollectable(cgImage) autorelease];
+	return cgImage;
 }
 
 
@@ -52,7 +52,7 @@ CGImageRef RSCGImageWithFilePath(NSString *filePath) {
 		cgImage = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
 		CFRelease(imageSourceRef);
 	}
-	return (CGImageRef)[NSMakeCollectable(cgImage) autorelease];	
+	return cgImage;	
 }
 
 

@@ -109,8 +109,8 @@
 - (NSArray *)buildCommands {
 	
 	NSMutableArray *commands = [NSMutableArray array];
-	
-	NSArray *openURLApps = (NSArray *)[NSMakeCollectable(LSCopyAllHandlersForURLScheme(CFSTR("http"))) autorelease];
+    NSString *protoString = @"http";
+	NSArray *openURLApps = (NSArray *)LSCopyAllHandlersForURLScheme((__bridge_retained CFStringRef)protoString );
 	[self addCommandsForOpenURLApps:openURLApps toArray:commands];
 	
 	NSSortDescriptor *sortByAppNameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"appName" ascending:YES selector:@selector(localizedStandardCompare:)];

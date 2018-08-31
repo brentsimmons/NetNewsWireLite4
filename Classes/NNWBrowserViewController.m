@@ -12,7 +12,7 @@
 #import "RSMacwebview.h"
 #import "RSPluginObjects.h"
 #import "Webview+Extras.h"
-
+#import "NNWToolbar.h"
 
 
 @interface NNWBrowserViewController ()
@@ -50,12 +50,7 @@
 - (void)dealloc {
 	[webview setFrameLoadDelegate:nil];
 	[webview setPolicyDelegate:nil];
-	[toolbar release];
-	[webview release];
-	[addressField release];
-	[backForwardButtons release];
-	[reloadButton release];
-	[super dealloc];
+	
 }
 
 

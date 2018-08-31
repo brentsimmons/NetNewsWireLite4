@@ -150,8 +150,8 @@ CGRect CGRectCenteredInRect(CGRect rectToCenter, CGRect containingRect) {
 
 void RSLogCGRect(CGRect aRect, NSString *messageStart) {
 	CFDictionaryRef rectDictionary = CGRectCreateDictionaryRepresentation(aRect);
-	NSLog(@"%@ : %@", messageStart, (id)rectDictionary);
-	[NSMakeCollectable(rectDictionary) autorelease];
+	NSLog(@"%@ : %@", messageStart, (__bridge id)rectDictionary);
+	//[NSMakeCollectable(rectDictionary) autorelease];
 //	CFRelease(rectDictionary);
 }
 
@@ -330,7 +330,7 @@ BOOL RSWriteArrayOrDictionaryToFileUsingBinaryFormat(NSString *f, id obj) {
 			goto fileURL_cleanup;
 		if (!CFWriteStreamOpen(stream))
 			goto stream_cleanup;
-		(void)CFPropertyListWriteToStream(obj, stream, kCFPropertyListBinaryFormat_v1_0, NULL);
+        (void)CFPropertyListWriteToStream((__bridge CFPropertyListRef)(obj), stream, kCFPropertyListBinaryFormat_v1_0, NULL);
 		CFWriteStreamClose(stream);
 		
 	stream_cleanup:
@@ -866,8 +866,8 @@ static NSCalendar *rs_cachedCalendar(void) {
 	[s appendString:key];
 	[s appendString:@"="];
 	CFStringRef urlEncodedString = CFURLCreateStringByAddingPercentEscapes(nil, (CFStringRef)value, nil, CFSTR("%=&/:+?#$,;@ "), kCFStringEncodingUTF8);
-	[s appendString:(NSString *)urlEncodedString];
-	CFRelease(urlEncodedString);	
+	[s appendString:(__bridge_transfer NSString *)urlEncodedString];
+		
 }
 
 
@@ -1431,7 +1431,6 @@ static NSString *RSHTMLBRSlashTag = @"<br/>";
 	CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
 	NSString *uuidString = [(NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid) autorelease];
 	CFRelease(uuid);
-	CFMakeCollectable((CFStringRef)uuidString);
 	return uuidString;	
 }
 
@@ -1521,8 +1520,7 @@ static NSString *startImgTag = @"<img";
 
 - (NSString *)rs_stringWithURLEncoding {
 	CFStringRef encodedString = CFURLCreateStringByAddingPercentEscapes(nil, (CFStringRef)self, nil, CFSTR("`*^[]{}%=&/:+?#$,;<>@!'\" "), kCFStringEncodingUTF8);
-	CFMakeCollectable(encodedString);
-	return [(NSString *)encodedString autorelease];
+	return (__bridge_transfer NSString *)encodedString;
 }
 
 
@@ -1575,9 +1573,7 @@ static NSString *startImgTag = @"<img";
 	s = [stringComponents objectAtIndex:0];
 	stringComponents = [s componentsSeparatedByString:@":"];
 	NSString *u = [(NSString *)CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)[stringComponents objectAtIndex:0], (CFStringRef)@"") autorelease];
-	CFMakeCollectable(u);
 	NSString *p = [(NSString *)CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)[stringComponents rs_safeObjectAtIndex:1], (CFStringRef)@"") autorelease];
-	CFMakeCollectable(p);
 	*username = [[u copy] autorelease];
 	*password = [[p copy] autorelease];	
 	return YES;	
@@ -1812,7 +1808,6 @@ NSArray *RSArraySeparatedByFirstInstanceOfCharacter(NSString *s, unichar ch) {
 
 NSString *RSURLDecodedString(NSString *s) {
 	s = (NSString *)CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)s, (CFStringRef) @"");
-	CFMakeCollectable((CFStringRef)s);
 	return [s autorelease];
 }
 
@@ -1980,9 +1975,8 @@ NSString *RSStringUsefulStringWithData (NSData *d) {
 
 
 NSString *RSStringByAddingPercentEscapes(NSString *s) {
-	CFStringRef encodedString = CFURLCreateStringByAddingPercentEscapes(nil, (CFStringRef)s, nil, nil, kCFStringEncodingUTF8);
-	CFMakeCollectable(encodedString);
-	return [(NSString *)encodedString autorelease];
+    CFStringRef encodedString = CFURLCreateStringByAddingPercentEscapes(nil, (CFStringRef)s, nil, nil, kCFStringEncodingUTF8);
+	return (__bridge_transfer NSString *)encodedString;
 }
 
 

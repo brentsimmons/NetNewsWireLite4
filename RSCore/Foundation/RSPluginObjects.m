@@ -85,9 +85,8 @@
 	urlString = [urlString rs_stringByStrippingURLQuery];
 	NSString *fileExtension = [urlString pathExtension];
 	if (!RSStringIsEmpty(fileExtension)) {
-		CFStringRef mediaItemUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)fileExtension, kUTTypeAudiovisualContent);
-		sharableItem.uti = (NSString *)mediaItemUTI;
-		CFMakeCollectable(mediaItemUTI);
+        CFStringRef mediaItemUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge_retained CFStringRef)fileExtension, kUTTypeAudiovisualContent);
+		sharableItem.uti = (__bridge NSString *)mediaItemUTI;
 		CFRelease(mediaItemUTI);
 	}
 	if (sharableItem.uti == nil)

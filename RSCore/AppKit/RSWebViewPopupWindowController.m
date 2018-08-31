@@ -49,7 +49,7 @@
 	
 - (BOOL)windowShouldClose:(id)sender {
 	if (_releaseOnClose)
-		[self performSelectorOnMainThread:@selector(autorelease) withObject:nil waitUntilDone:NO];
+		//[self performSelectorOnMainThread:@selector(autorelease) withObject:nil waitUntilDone:NO];
 	return YES;
 	}
 	

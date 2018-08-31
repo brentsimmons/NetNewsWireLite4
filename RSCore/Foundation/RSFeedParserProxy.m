@@ -28,18 +28,19 @@
 
 
 - (BOOL)parseData:(NSData *)feedData error:(NSError **)error {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	RSFeedType feedType = RSFeedTypeForData(feedData);
-	[pool drain];
-	if (feedType == RSFeedTypeNotAFeed)
-		return NO;
-	if (feedType == RSFeedTypeAtom)
-		self.actualParser = [[[RSAtomParser alloc] init] autorelease];
-	else if (feedType == RSFeedTypeRSS)
-		self.actualParser = [[[RSRSSParser alloc] init] autorelease];
-	if (self.actualParser == nil)
-		return NO;
-	[self.actualParser parseData:feedData error:error];
+	
+    @autoreleasepool {
+        RSFeedType feedType = RSFeedTypeForData(feedData);
+        if (feedType == RSFeedTypeNotAFeed)
+            return NO;
+        if (feedType == RSFeedTypeAtom)
+            self.actualParser = [[[RSAtomParser alloc] init] autorelease];
+        else if (feedType == RSFeedTypeRSS)
+            self.actualParser = [[[RSRSSParser alloc] init] autorelease];
+        if (self.actualParser == nil)
+            return NO;
+        [self.actualParser parseData:feedData error:error];
+    }
 	return YES;
 }
 

@@ -17,29 +17,30 @@ extern NSString *RSFolderUnreadCountDidChangeNotification;
 
 @interface RSFolder : NSObject <RSTreeNodeRepresentedObject> {
 @private
-	BOOL unreadCountIsValid;
-	NSString *name;
-	NSUInteger unreadCount;
-	RSDataAccount *account;
-	RSTreeNode *treeNode;
+    BOOL unreadCountIsValid;
+    NSString *name;
+    NSUInteger unreadCount;
+    RSDataAccount *account;
+    RSTreeNode *treeNode;
 }
 
 
 - (id)initWithName:(NSString *)aName account:(RSDataAccount *)anAccount;
+- (id)initWithDiskDictionary:(NSDictionary *)diskDictionary inAccount:(RSDataAccount *)anAccount;
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign, readonly) BOOL nameIsEditable;
-@property (nonatomic, assign) RSDataAccount *account;
+@property (nonatomic) RSDataAccount *account;
 @property (nonatomic, assign, readonly) BOOL isFolder;
 
 @property (nonatomic, assign) NSUInteger unreadCount;
 @property (nonatomic, assign) BOOL unreadCountIsValid;
 
-@property (nonatomic, retain, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, strong, readonly) NSDictionary *dictionaryRepresentation;
 
-@property (nonatomic, assign) RSTreeNode *treeNode; //a given folder can appear only once, so it can have just one treeNode
+@property (nonatomic, strong) RSTreeNode *treeNode; //a given folder can appear only once, so it can have just one treeNode
 
-@property (nonatomic, retain, readonly) NSArray *allDescendantsThatAreFeeds;
+@property (nonatomic, strong, readonly) NSArray *allDescendantsThatAreFeeds;
 
 - (void)updateUnreadCount;
 

@@ -220,7 +220,7 @@ static const AEKeyword kWeblogEditorAPIFeedURL = 'furl';
 
 static NSString *stringWithURLEncoding(NSString *urlStringToEncode) {
 	CFStringRef encodedString = CFURLCreateStringByAddingPercentEscapes(nil, (CFStringRef)urlStringToEncode, nil, CFSTR("`*^[]{}%=&/:+?#$,;<>@!'\" "), kCFStringEncodingUTF8);
-	return (NSString *)[NSMakeCollectable(encodedString) autorelease];
+	return (__bridge_transfer NSString *)encodedString;
 }
 
 

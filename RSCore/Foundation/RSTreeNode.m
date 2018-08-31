@@ -199,7 +199,6 @@ NSString *RSTreeDidDeleteItemsNotification = @"RSTreeDidDeleteItemsNotification"
 
 - (void)moveChildren:(NSArray *)someChildren {
 	/*They're going from somewhere else to here. They have to divorce their parents first.*/
-	[[someChildren retain] autorelease];
 	for (RSTreeNode *oneChild in someChildren) {
 		RSTreeNode *oneParent = oneChild.parent;
 		[oneParent removeChild:oneChild];
@@ -277,7 +276,7 @@ NSString *RSTreeDidDeleteItemsNotification = @"RSTreeDidDeleteItemsNotification"
 
 
 - (void)detach {
-	[[self retain] autorelease];
+	//[[self retain] autorelease];
 	[self.parent removeChild:self];
 	self.parent = nil;
 }

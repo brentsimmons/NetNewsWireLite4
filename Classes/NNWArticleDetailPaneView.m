@@ -92,7 +92,7 @@ static const CGFloat delayBeforeRemovingTemporaryView = 0.26f;
 
 	[self.screenshotViewForAnimation setImage:[self screenshotOfView:self.detailTemporaryView]];
 	[self.detailTemporaryView removeFromSuperview];
-	[detailTemporaryView autorelease];
+	//[detailTemporaryView autorelease];
 	detailTemporaryView = nil;
 	[self.screenshotViewForAnimation removeFromSuperview];
 	[self addSubview:self.screenshotViewForAnimation positioned:NSWindowAbove relativeTo:self.detailContentView];
