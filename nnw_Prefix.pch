@@ -1,0 +1,28 @@
+//
+// Prefix header for all source files of the 'nnw' target in the 'nnw' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+#import <CoreData/CoreData.h>
+#import <WebKit/WebKit.h>
+
+#define LITE
+
+#import "RSFoundationExtras.h"
+#import "RSDownloadConstants.h"
+#import "RSDrawingUtilities.h"
+#import "RSAppDelegateProtocols.h"
+#import "RSAppKitCategories.h"
+#import "RSAppKitUtilities.h"
+#import "RSDateManager.h"
+#import "RSOperationController.h"
+#import "RSImageUtilities.h"
+#import "RSKeychain.h"
+
+#define nnw_app_delegate ((NNWAppDelegate *)([NSApp delegate]))
+
+#import "NNWConstants.h"
+

@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><meta content="text/javascript" http-equiv="Content-Script-Type" /><meta content="text/css" http-equiv="Content-Style-Type" /><meta id="MetaDescription" name="DESCRIPTION" content="NewsGator’s Social Networking solutions help you overcome business challenges by providing an integrated social computing platform" /><meta id="MetaCopyright" name="COPYRIGHT" content="Copyright (c) 2010 by NewsGator" /><meta id="MetaAuthor" name="AUTHOR" content="NewsGator" /><meta name="RESOURCE-TYPE" content="DOCUMENT" /><meta name="DISTRIBUTION" content="GLOBAL" /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><meta name="REVISIT-AFTER" content="1 DAYS" /><meta name="RATING" content="GENERAL" /><meta http-equiv="PAGE-ENTER" content="RevealTrans(Duration=0,Transition=1)" /><style id="StylePlaceholder" type="text/css"></style><link id="ADesktopModules_Orizonti_NukeFeeds" rel="stylesheet" type="text/css" href="/DesktopModules/Orizonti_NukeFeeds/module.css" /><link id="APortals__default_" rel="stylesheet" type="text/css" href="/Portals/_default/default.css" /><link id="APortals__default_Skins_NewsGator_" rel="stylesheet" type="text/css" href="/Portals/_default/Skins/NewsGator/skin.css" /><link id="APortals__default_Containers_NewsGator_" rel="stylesheet" type="text/css" href="/Portals/_default/Containers/NewsGator/container.css" /><link id="APortals_0_" rel="stylesheet" type="text/css" href="/Portals/0/portal.css" /><script type="text/javascript" src="/Resources/Shared/Scripts/jquery/jquery.min.js" ></script><link href="/DesktopModules/Markit.SlideShow/CSSHandler.ashx?file=/DesktopModules/Markit.SlideShow/Templates/NewsGator/template.css&amp;bg=FCFCFC&amp;tbcolor=CCCCCC&amp;scbgcolor=F5F5F5&amp;scbcolor=D0D0D0&amp;PortalID=0&amp;mid=543&amp;w=1000&amp;h=233&amp;tw=75&amp;th=45&amp;sw=1000&amp;sc=4&amp;path=/DesktopModules/Markit.SlideShow/Templates/NewsGator&amp;b=0&amp;tipw=200&amp;tipborderw=0&amp;tiptcolor=666666&amp;tipbcolor=9AC2DB&amp;tipbgcolor=FFFFFF" rel="stylesheet" type="text/css" /><link href="/DesktopModules/Markit.SlideShow/CSSHandler.ashx?file=/DesktopModules/Markit.SlideShow/Templates/Default/template.css&amp;bg=FFFFFF&amp;tbcolor=CCCCCC&amp;scbgcolor=F5F5F5&amp;scbcolor=D0D0D0&amp;PortalID=0&amp;mid=687&amp;w=250&amp;h=300&amp;tw=0&amp;th=0&amp;sw=0&amp;sc=6&amp;path=/DesktopModules/Markit.SlideShow/Templates/Default&amp;b=0&amp;tipw=200&amp;tipborderw=3&amp;tiptcolor=666666&amp;tipbcolor=9AC2DB&amp;tipbgcolor=FFFFFF" rel="stylesheet" type="text/css" /><title>
+	MOSS SharePoint 2007 & 2010 Enterprise Social Computing – NewsGator Social Sites
+</title></head>
+<body id="Body">
+    <form name="Form" method="post" action="/Default.aspx" id="Form" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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Ni4xNS4xMDwvZGl2Pg0KPGRpdiBjbGFzcz0iaG9tZWZlZWQtZW50cnkiPjxhIGhyZWY9J2h0dHA6Ly9ibG9ncy5uZXdzZ2F0b3IuY29tL2RhaWx5LzIwMTAvMDYvbmV3c2dhdG9yLXNlbGVjdGVkLWFzLXJlZC1oZXJyaW5nLTEwMC1maW5hbGlzdC1mb3ItMjAxMC5odG1sJ3RhcmdldD0iX2JsYW5rIj5OZXdzR2F0b3IgU2VsZWN0ZWQgYXMgUmVkIEhlcnJpbmcgMTAwIEZpbmFsaXN0IGZvciAyMDEwPC9hPjwvZGl2PmQCAg9kFgICAQ8WAh8ABdgBPGRpdiBjbGFzcz0iaG9tZWZlZWQtZGF0ZSI+MDYuMTIuMTA8L2Rpdj4NCjxkaXYgY2xhc3M9ImhvbWVmZWVkLWVudHJ5Ij48YSBocmVmPSdodHRwOi8vYmxvZ3MubmV3c2dhdG9yLmNvbS9kYWlseS8yMDEwLzA2L3dlcmUtYW1wZWQtZm9yLWUyMC1ib3N0b24tMjAxMC5odG1sJ3RhcmdldD0iX2JsYW5rIj5XZSdyZSBhbXBlZCBmb3IgRTIuMCBCb3N0b24gMjAxMCE8L2E+PC9kaXY+ZAIFDxYCHwAFxgE8cCBzdHlsZT0idGV4dC1hbGlnbjogcmlnaHQ7Ij48YSBocmVmPSJodHRwOi8vYmxvZ3MubmV3c2dhdG9yLmNvbS9kYWlseS8iIHRhcmdldD0iX2JsYW5rIj5TZWUgRnVsbCBCbG9nIDxpbWcgd2lkdGg9IjMiIGhlaWdodD0iNSIgYWxpZ249ImFic01pZGRsZSIgc3JjPSIvUG9ydGFscy8wL2Fycm93LWdyZWVuLmdpZiIgYWx0PSIiIC8+PC9hPjwvcD5kAhMPZBYCAgEPZBYEZg8PFgIfAWhkZAICD2QWAgIBDw9kFgIfBgUPRE5OX0hUTUxDb250ZW50FgICAQ9kFgICAg8WAh8BaGQCFQ9kFgICAQ9kFgRmDw8WAh8BaGRkAgIPZBYCAgEPD2QWAh8GBQ9ETk5fSFRNTENvbnRlbnQWAgIBD2QWAgICDxYCHwFoZAIXD2QWAgIBD2QWBGYPDxYCHwFoZGQCAg9kFgICAQ8PZBYCHwYFD0ROTl9IVE1MQ29udGVudBYCAgEPZBYCAgIPFgIfAWhkAgsPFCsAAmRkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUUZG5uJGRubk5BViRjdGxkbm5OQVbrQ/b6j/9+lvUDaOW0S51AcLoruw==" />
+</div>
+
+
+<script src="/js/dnncore.js" type="text/javascript"></script>
+<script src="/WebResource.axd?d=gucbSlgMoxpqw25dnd0NdoKisphrDZk_qF48DRQta2PQDhTL7qMpwAYO8KoeDMDM0&amp;t=634111743060000000" type="text/javascript"></script>
+<script src="/WebResource.axd?d=gucbSlgMoxpqw25dnd0NdoKisphrDZk_qF48DRQta2NdZGRvnIdojZcB3xyKePll0&amp;t=634111743060000000" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=oTAeLsi3hOt2MTwqZkOvrrMgWmgaFpJUaQ-e5zLSN4uZr-5fKLNXDN0b4O-9cDHr5sZbjDwt1_LdDugEZhShX8Tii6JQuvR30&amp;t=1d01527d" type="text/javascript"></script>
+
+        
+        
+
+<!--BEGIN ROI TRACKING Code-->
+<script language="javascript" src="http://track.roiservice.com/track/track.aspx?ROIID=932428107000017"></script>
+<script language="javascript">
+<!--
+                if (typeof(ROIID) + '' != 'undefined') {
+                                TrackEvent('LandingPage', 0);
+                }
+//-->
+</script>
+<!--END ROI TRACKING Code-->
+<div id="topbar">
+	<div id="topwrap"><div id="dnn_TopPane"><a name="397"></a><div id="dnn_ctr397_ContentPane"><!-- Start_Module_397 --><div id="dnn_ctr397_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr397_HtmlModule_lblContent" class="Normal">
+		<p><a href="/resources/agg522_selecttab/1.aspx"><img align="absMiddle" src="/Portals/0/icon-top-videos.gif" alt="Watch Videos" />&#160;watch videos</a> &#160;&#160;&#160;&#160; <a href="/resources/agg522_selecttab/2.aspx"><img align="absMiddle" src="/Portals/0/icon-top-resources.gif" alt="Find Resources" />&#160;find resources</a> &#160;&#160;&#160;&#160; <a href="/company/contact-us.aspx"><img align="absMiddle" src="/Portals/0/icon-top-contact.gif" alt="Contact" />&#160;contact us</a> &#160;&#160;&#160;&#160; 800-608-4597</p>
+	</div>
+
+</div><!-- End_Module_397 --></div>
+
+</div></div>
+</div>
+<div id="wrap" class="homer">
+	<div id="logo"><img src="/portals/_default/skins/newsgator/images/logo.gif" alt="NewsGator" /></div>
+	<div id="topright">
+		<div id="searcharea"><div id="dnn_SearchPane"><a name="579"></a><div id="dnn_ctr579_ContentPane"><!-- Start_Module_579 --><div id="dnn_ctr579_ModuleContent" class="CustomSearchContent">
+	
+<link rel="stylesheet" type="text/css" href="http://www.google.com/cse/api/branding.css" />
+<div id="dnn_ctr579_CustomSearch_divSearch" style="">
+    <div class="cse-branding-form">
+        <input name="dnn$ctr579$CustomSearch$txtQuery" type="text" id="dnn_ctr579_CustomSearch_txtQuery" />
+        <input type="submit" name="dnn$ctr579$CustomSearch$btnSearch" value="Search" id="dnn_ctr579_CustomSearch_btnSearch" class="button" />
+        
+        
+    </div>
+
+</div>
+
+</div><!-- End_Module_579 --></div>
+
+</div></div>
+		<div id="navbar"><div>
+	<ul class="main_dnnmenu_item" id="dnn_dnnNAV_ctldnnNAV">
+		<li id="dnn_dnnNAV_ctldnnNAVctr40"><a href="http://www.newsgator.com/"><span>Home</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr86"><a href="http://www.newsgator.com/products/social-sites-for-sharepoint-2007-moss.aspx"><span>Products</span><img src="/images/menu_down.gif" style="border-width:0px;" /></a><ul id="dnn_dnnNAV_ctldnnNAVsub86">
+			<li id="dnn_dnnNAV_ctldnnNAVctr88"><a href="http://www.newsgator.com/products/social-sites-for-sharepoint-2007-moss.aspx"><span>Social Sites for SharePoint 2007 MOSS</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr62"><a href="http://www.newsgator.com/products/social-sites-for-sharepoint-2010.aspx"><span>Social Sites for SharePoint 2010</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr89"><a href="http://www.newsgator.com/products/tomoye.aspx"><span>Tomoye</span></a></li>
+		</ul></li><li id="dnn_dnnNAV_ctldnnNAVctr75"><a href="http://www.newsgator.com/industries/government-military.aspx"><span>Industries</span><img src="/images/menu_down.gif" style="border-width:0px;" /></a><ul id="dnn_dnnNAV_ctldnnNAVsub75">
+			<li id="dnn_dnnNAV_ctldnnNAVctr87"><a href="http://www.newsgator.com/industries/government-military.aspx"><span>Government Military</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr92"><a href="http://www.newsgator.com/industries/financial-services.aspx"><span>Financial Services</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr93"><a href="http://www.newsgator.com/industries/life-sciences.aspx"><span>Life Sciences</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr94"><a href="http://www.newsgator.com/industries/professional-services.aspx"><span>Professional Services</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr95"><a href="http://www.newsgator.com/industries/technology-manufacturing.aspx"><span>Technology & Manufacturing</span></a></li>
+		</ul></li><li id="dnn_dnnNAV_ctldnnNAVctr76"><a href="http://www.newsgator.com/solutions.aspx"><span>Solutions</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr77"><a href="http://www.newsgator.com/services.aspx"><span>Services</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr72"><a href="http://www.newsgator.com/company/about-us.aspx"><span>Company</span><img src="/images/menu_down.gif" style="border-width:0px;" /></a><ul id="dnn_dnnNAV_ctldnnNAVsub72">
+			<li id="dnn_dnnNAV_ctldnnNAVctr141"><a href="http://www.newsgator.com/company/about-us.aspx"><span>About Us</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr96"><a href="http://www.newsgator.com/company/contact-us.aspx"><span>Contact Us</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr78"><a href="http://www.newsgator.com/company/executive-team.aspx"><span>Executive Team</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr82"><a href="http://www.newsgator.com/company/board-of-directors.aspx"><span>Board of Directors</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr81"><a href="http://www.newsgator.com/company/investors.aspx"><span>Investors</span></a></li><li id="dnn_dnnNAV_ctldnnNAVctr84"><a href="http://www.newsgator.com/company/careers.aspx"><span>Careers</span></a></li>
+		</ul></li>
+	</ul>
+</div></div>
+		<div class="clear_both"></div>
+	</div>
+	<div id="home-feature">
+		<div id="dnn_FeaturePane"><a name="543"></a><div id="dnn_ctr543_ContentPane"><!-- Start_Module_543 --><div id="dnn_ctr543_ModuleContent" class="Markit_SlideShowContent">
+	
+<!-- Markit SlideShow By MarkitModules.com -->
+<div id="mss-outer-container_543">
+  <div id="mss-container_543">
+    <div id="mss-slider_543">
+      <div id="slide-loading_543"> </div>
+      <div id="slide-wrapper_543">
+        <div id="slide-outer_543">
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<div id="slide-1">
+<h1>The Accenture Story</h1>
+<p>Accenture uses Social Sites to rock their collaboration 2.0 goals - helping people across the globe to collaborate, discover expertise &amp; deliver for their customers.</p>
+<p style="text-align: right;"><a href="http://info.newsgator.com/06-01-10AccentureVideo.html" target="_blank">Register and watch the video <img width="5" height="10" align="absMiddle" src="/Portals/0/arrow-slides.gif" alt="" /></a></p>
+</div>
+</div>
+              <div class="mss-introtext_543" style="display:none;">
+                <div class="slidetext_543" id="slide_0">
+                  <div class="slidetitle">The Accenture Story</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<div id="slide-2">
+<h1>Mobile</h1>
+<p>Social Sites clients for iPhone, iPad &amp; BlackBerry<small>®</small> –  post, link, comment, like &amp; discover...</p>
+<p>Work the way you want.&#160; Anywhere.</p>
+<p style="text-align: right;"><a href="http://www.newsgator.com/products/social-sites-for-sharepoint-2010/rich-clients.aspx">Learn more <img width="5" height="10" align="absMiddle" src="/Portals/0/arrow-slides.gif" alt="" /></a></p>
+</div>
+</div>
+              <div class="mss-introtext_543" style="display:none;">
+                <div class="slidetext_543" id="slide_1">
+                  <div class="slidetitle">Mobile</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<div id="slide-3">
+<h1>The United States Air Force</h1>
+<p>The US Air Force manages a world-class system for collaborative learning and professional networking. Join Lt. Col. Hower and Eric Sauve, VP of Tomoye to learn more...</p>
+<p style="text-align: right;"><a href="http://info.newsgator.com/03-02-10CommunityBestPractices--AirForceWebinar.html?LeadSource=archive" target="_blank">Register and watch this informative webinar <img width="5" height="10" align="absMiddle" alt="" src="/Portals/0/arrow-slides.gif" /></a></p>
+</div>
+<p>&#160;</p>
+</div>
+              <div class="mss-introtext_543" style="display:none;">
+                <div class="slidetext_543" id="slide_2">
+                  <div class="slidetitle">US Air Force</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<div id="slide-4">
+<h1>Social Insights</h1>
+<p>Look who's most popular now!</p>
+<p style="text-align: right;"><a href="http://www.newsgator.com/products/social-sites-for-sharepoint-2010/social-insights.aspx">Learn about social insights <img width="5" height="10" align="absMiddle" alt="" src="/Portals/0/arrow-slides.gif" /></a></p>
+</div>
+</div>
+              <div class="mss-introtext_543" style="display:none;">
+                <div class="slidetext_543" id="slide_3">
+                  <div class="slidetitle">Social Insights</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="navi-outer_543">
+      <div id="ul_container_543">
+        <ul><li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-img"><img src="/DesktopModules/Markit.SlideShow/ImageHandler.ashx?img=/Portals/0/slideshow_photos/543/slide-1-thumb.jpg&amp;w=75&amp;h=45&amp;Q=0&amp;portalid=0&amp;C=1" alt="The Accenture Story" /></span>
+    <span class="navbar-key">01</span>
+    <span class="navbar-title">The Accenture Story</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-img"><img src="/DesktopModules/Markit.SlideShow/ImageHandler.ashx?img=/Portals/0/slideshow_photos/543/slide-2-thumb.jpg&amp;w=75&amp;h=45&amp;Q=0&amp;portalid=0&amp;C=1" alt="Mobile" /></span>
+    <span class="navbar-key">02</span>
+    <span class="navbar-title">Mobile</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-img"><img src="/DesktopModules/Markit.SlideShow/ImageHandler.ashx?img=/Portals/0/slideshow_photos/543/slide-3-thumb.jpg&amp;w=75&amp;h=45&amp;Q=0&amp;portalid=0&amp;C=1" alt="US Air Force" /></span>
+    <span class="navbar-key">03</span>
+    <span class="navbar-title">US Air Force</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-img"><img src="/DesktopModules/Markit.SlideShow/ImageHandler.ashx?img=/Portals/0/slideshow_photos/543/slide-4-thumb.jpg&amp;w=75&amp;h=45&amp;Q=0&amp;portalid=0&amp;C=1" alt="Social Insights" /></span>
+    <span class="navbar-key">04</span>
+    <span class="navbar-title">Social Insights</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li></ul>
+      </div>
+    </div>
+    <div id="timebar-outer_543" style="display:none;">
+      <div id="slide-TimeBar_543">&nbsp;</div>
+    </div>
+    <div id="control-outer_543" style="display:none;">
+      <div id="mss-container_543_prev" onclick="showPrev();clearSlide();" title="Previous"> </div>
+      <div id="mss-container_543_playButton" title="Play/Pause Slide">Pause</div>
+      <div id="mss-container_543_next" onclick="showNext();clearSlide();" title="Next"> </div>
+    </div>
+  </div>
+</div><script language="javascript" type="text/javascript">
+$slid_show_data = { CTRslidetextSelector:'.slidetext_543', CTRstr_pause:'Pause', CTRstr_start:'Play', CTRloadingTime:800, CTRslideInterval:6000, CTRtransitionDuration:1000, CTRtransitionText:1000, CTRrotateAction:'click', CTRautoplay:true, CTRtext_effect:true, autoPuase:false, loopOnce:false, autoIntro:true, slideLoading:'slide-loading_543', slideOuter:'slide-wrapper_543', mssContainerId:'mss-container_543',slideTimeBar:'slide-TimeBar_543', transition:MK111.Fx.Transitions.Expo.easeInOut, effectType:'fade', orientation:'horizontal', slideWidth:1000, slideHeight:233, introBackColor:'#293830', introTransparencyPercent:30, timeBarTransition:MK111.Fx.Transitions.linear, timeBarorientation:'horizontal'}
+multiSlideShow.make($slid_show_data);
+window.addEvent('domready', function(){var scroll543 = new MK111.Scroller('ul_container_543', {area: 70, velocity: 1});MK111.$('ul_container_543').addEvent('mouseover', scroll543.start.bind(scroll543));MK111.$('ul_container_543').addEvent('mouseout', scroll543.stop.bind(scroll543));}); </script>
+<div style="display:none;"><a href="http://www.markitmodules.com" >DNN SlideShow - Markit SlideShow</a></div>
+
+
+
+
+</div><!-- End_Module_543 --></div>
+
+</div>
+	</div>
+	<div id="homebody">
+		<div id="homebodyfade">
+			<div id="home1"><div id="dnn_LeftPane"><a name="390"></a><div id="dnn_ctr390_ContentPane"><!-- Start_Module_390 --><div id="dnn_ctr390_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr390_HtmlModule_lblContent" class="Normal">
+		<p style="text-align: left">NewsGator’s Social Networking solutions help you overcome business challenges by providing an integrated, behind-the-firewall, social computing platform that supports collaboration, facilitates communication, and improves worker knowledge.</p>
+<p style="text-align: left"><br />
+<a target="_blank" href="http://www.newsgator.com/the-buzz/press/press-details/articleid/283/newsgator-counted-among-top-finalists-for-2010-microsoft-partner-awards-in-the-category-isv-software.aspx"><img border="0" hspace="150" alt="Microsoft ISV/Software Solutions Partner of the Year Finalist " width="234" height="60" src="/Portals/0/Logos/WPC10_WebBnnr_Static_Fin.jpg" /></a>&#160;</p>
+<p>&#160;</p>
+<h2>Trusted by leading companies and military agencies</h2>
+<p><a target="_blank" href="http://info.newsgator.com/03-02-10CommunityBestPractices--AirForceWebinar.html?LeadSource=archive"><img border="0" alt="The US Air Force" align="left" width="60" height="50" style="padding-bottom: 10px; padding-left: 0pt; padding-right: 15px; padding-top: 0pt" src="/Portals/0/logo-USAF.gif" /></a>Would you like to drive higher adoption of your organization’s online communities?</p>
+<p style="text-align: right"><a target="_blank" href="http://info.newsgator.com/03-02-10CommunityBestPractices--AirForceWebinar.html?LeadSource=archive">Learn from the best - the US Air Force <img alt="" align="absMiddle" width="3" height="5" src="/Portals/0/arrow-green.gif" /></a></p>
+<div class="dotter" width="100%">&#160;</div>
+<p>&#160;</p>
+	</div>
+
+</div><!-- End_Module_390 --></div>
+
+</div></div>
+			<div id="home2"><div id="dnn_ContentPane"><a name="388"></a><div id="dnn_ctr388_ContentPane"><!-- Start_Module_388 --><div id="dnn_ctr388_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr388_HtmlModule_lblContent" class="Normal">
+		<h1>We Make SharePoint Social</h1>
+<p><a href="/products/social-sites-for-sharepoint-2010.aspx"><img width="78" height="55" border="0" align="left" src="/Portals/0/icon-social4sharepoint.png" style="padding: 0pt 15px 10px 0pt;" alt="Social Sites for SharePoint" /></a>No one offers the level of integration that NewsGator's Social Sites® has with Microsoft SharePoint.</p>
+<p style="text-align: right;"><a href="/products/social-sites-for-sharepoint-2010.aspx">Learn More <img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-green.gif" alt="" /></a></p>
+<div width="100%" class="dotter">&#160;</div>
+<h1><strong>Government 2.0 &amp; Tomoye </strong><a href="/products/tomoye.aspx"><img border="0" align="middle" src="/Portals/0/Logos/TomoyeIcon.png" alt="Government 2.0 &amp; Tomoye" /></a></h1>
+<p style="text-align: left;">We've found the perfect advisor for your collaboration software initiatives - Tomoye</p>
+<p style="text-align: right;"><a href="/products/tomoye.aspx">Check it out <img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-green.gif" alt="" /></a></p>
+<div width="100%" class="dotter">&#160;</div>
+<p>Learn more about <a href="http://www.newsgator.com/products/social-sites-for-sharepoint-2010/advanced-rss.aspx">Enterprise RSS <img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-green.gif" alt="" /></a></p>
+	</div>
+
+</div><!-- End_Module_388 --></div>
+
+</div></div>
+			<div class="clear_both"></div>
+		</div>
+	</div>
+	<div id="homebodybot"></div>
+	<div id="homebody2">
+		<div id="homebodyfade2">
+			<div id="home3"><div id="dnn_LowerLeft"><a name="757"></a><div id="dnn_ctr757_ContentPane"><!-- Start_Module_757 --><div id="dnn_ctr757_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr757_HtmlModule_lblContent" class="Normal">
+		<h3>Awards</h3>
+	</div>
+
+</div><!-- End_Module_757 --></div>
+
+<a name="687"></a><div id="dnn_ctr687_ContentPane"><!-- Start_Module_687 --><div id="dnn_ctr687_ModuleContent" class="Markit_SlideShowContent">
+	
+<!-- Markit SlideShow By MarkitModules.com -->
+<div id="mss-outer-container_687">
+  <div id="mss-container_687">
+    <div id="mss-slider_687">
+      <div id="slide-loading_687"> </div>
+      <div id="slide-wrapper_687">
+        <div id="slide-outer_687">
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<p style="text-align: center;"><span style="font-family: Arial;"><strong><span style="color: rgb(51, 51, 51);">Winner - Microsoft 2009 Best Social Computing Solution</span></strong></span></p>
+<p style="text-align: center;"><img width="245" height="162" alt="" src="/Portals/0/Logos/fastforward.gif" /></p>
+</div>
+              <div class="mss-introtext_687" style="display:none;">
+                <div class="slidetext_687" id="slide_23">
+                  <div class="slidetitle">FastForward</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<p style="text-align: center;"><span style="color: rgb(51, 51, 51);"><strong><span style="font-family: Arial;">Winner – Upshot50 2009 Marketing Technology Leader</span></strong></span></p>
+<p style="text-align: center;"><img width="253" height="96" src="/Portals/0/Logos/Upshot.jpg" alt="" /></p>
+</div>
+              <div class="mss-introtext_687" style="display:none;">
+                <div class="slidetext_687" id="slide_28">
+                  <div class="slidetitle">Upshot</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<p style="text-align: center;"><strong><span style="color: rgb(51, 51, 51);"><span style="font-family: Arial;">Winner – 2009 Colorado Companies to Watch</span></span></strong></p>
+<p style="text-align: center;"><img width="225" height="111" src="/Portals/0/Logos/CoCompanies.jpg" alt="" /></p>
+</div>
+              <div class="mss-introtext_687" style="display:none;">
+                <div class="slidetext_687" id="slide_27">
+                  <div class="slidetitle">Colorado</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<p style="text-align: center;"><span style="font-family: Arial;"><strong><span style="color: rgb(51, 51, 51);">Winner – KMWorld 2010 Companies That Matter</span></strong></span></p>
+<p style="text-align: center;"><img width="255" height="231" src="/Portals/0/Logos/kmworld2010.gif" alt="" /></p>
+</div>
+              <div class="mss-introtext_687" style="display:none;">
+                <div class="slidetext_687" id="slide_26">
+                  <div class="slidetitle">KM World</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<p style="text-align: center;"><span style="font-family: Arial;"><strong><span style="color: rgb(51, 51, 51);">Winner – Deloitte 2009 Technology Fast 500</span></strong></span></p>
+<p style="text-align: center;"><img width="248" height="69" src="/Portals/0/Logos/DeloitteFast500_2009.gif" alt="" /></p>
+</div>
+              <div class="mss-introtext_687" style="display:none;">
+                <div class="slidetext_687" id="slide_25">
+                  <div class="slidetitle">Deloitte</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="mss_conent">
+<p style="text-align: center;"><span style="font-family: Arial;"><strong><span style="color: rgb(51, 51, 51);">Winner - Inc500 Fastest Growing Private Companies</span></strong></span></p>
+<p style="text-align: center;"><img width="219" height="55" src="/Portals/0/Logos/Inc500Logo.gif" alt="" /></p>
+</div>
+              <div class="mss-introtext_687" style="display:none;">
+                <div class="slidetext_687" id="slide_24">
+                  <div class="slidetitle">Inc500</div>
+                  <div class="slidesubtitle"> </div>
+                  <div class="readonReplacement"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="navi-outer_687" style="display:none;">
+      <div id="ul_container_687">
+        <ul><li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-key">01</span>
+    <span class="navbar-title">FastForward</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-key">02</span>
+    <span class="navbar-title">Upshot</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-key">03</span>
+    <span class="navbar-title">Colorado</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-key">04</span>
+    <span class="navbar-title">KM World</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-key">05</span>
+    <span class="navbar-title">Deloitte</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li>
+<li>
+  <a class="button off navi" href="javascript:void(0);">
+    <span class="navbar-key">06</span>
+    <span class="navbar-title">Inc500</span>
+    <span class="navbar-subtitle"> </span>
+    <span class="navbar-clr"> </span>
+  </a>
+</li></ul>
+      </div>
+    </div>
+    <div id="timebar-outer_687" style="display:none;">
+      <div id="slide-TimeBar_687">&nbsp;</div>
+    </div>
+    <div id="control-outer_687" style="display:none;">
+      <div id="mss-container_687_prev" onclick="showPrev();clearSlide();" title="Previous"> </div>
+      <div id="mss-container_687_playButton" title="Play/Pause Slide">Pause</div>
+      <div id="mss-container_687_next" onclick="showNext();clearSlide();" title="Next"> </div>
+    </div>
+  </div>
+</div><script language="javascript" type="text/javascript">
+$slid_show_data = { CTRslidetextSelector:'.slidetext_687', CTRstr_pause:'Pause', CTRstr_start:'Play', CTRloadingTime:800, CTRslideInterval:6000, CTRtransitionDuration:1000, CTRtransitionText:1000, CTRrotateAction:'click', CTRautoplay:true, CTRtext_effect:true, autoPuase:false, loopOnce:false, autoIntro:true, slideLoading:'slide-loading_687', slideOuter:'slide-wrapper_687', mssContainerId:'mss-container_687',slideTimeBar:'slide-TimeBar_687', transition:MK111.Fx.Transitions.Expo.easeInOut, effectType:'fade', orientation:'horizontal', slideWidth:250, slideHeight:300, introBackColor:'#293830', introTransparencyPercent:30, timeBarTransition:MK111.Fx.Transitions.linear, timeBarorientation:'horizontal'}
+multiSlideShow.make($slid_show_data);
+window.addEvent('domready', function(){ var JTooltips = new MK111.Tips(MK111.$$('.hasTip'), { maxTitleChars: 50, className: 'tool_687',offsets: {'x': 16, 'y': 16},fixed: false}); });
+</script>
+<div style="display:none;"><a href="http://www.markitmodules.com" >DNN SlideShow - Markit SlideShow</a></div>
+
+
+
+
+</div><!-- End_Module_687 --></div>
+
+</div></div>
+			<div id="home4"><div id="dnn_LowerMiddle"><a name="392"></a><div id="dnn_ctr392_ContentPane"><!-- Start_Module_392 --><div id="dnn_ctr392_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr392_HtmlModule_lblContent" class="Normal">
+		
+		<h3>Webinars</h3>
+<p>With social computing,&nbsp;Deloitte is effectively meeting the needs of  their highly-distributed workforce. <a href="http://info.newsgator.com/DeloitteWeb2010.html" target="_blank">Watch now <img alt="" src="/Portals/0/arrow-green.gif" align="absMiddle" height="5" width="3"></a></p>
+<p>USAID is using Gov 2.0 to bring agility and transparency to their  agency. <a href="http://info.newsgator.com/Gov2.0webinar.html" target="_blank">Watch now <img alt="" src="/Portals/0/arrow-green.gif" align="absMiddle" height="5" width="3"></a></p>
+<p style="text-align: center;"><span style="color: rgb(153, 153, 153);">.......................................................................................</span></p>
+<p style="text-align: center;"><a href="http://www.newsgator.com/resources/agg522_selecttab/2.aspx"><img style="width: 110px; height: 57px;" src="/Portals/0/icon-webinar.gif" alt=""></a></p>
+<p style="text-align: center;"><a href="http://www.newsgator.com/resources/agg522_selecttab/2.aspx">See a full list of Webinars <img alt="" src="/Portals/0/arrow-green.gif" align="absMiddle" height="5" width="3"></a><a href="/resources.aspx"><br>
+</a></p>
+	
+	</div>
+
+</div><!-- End_Module_392 --></div>
+
+</div></div>
+			<div id="home5"><div id="dnn_LowerRight"><a name="393"></a><div id="dnn_ctr393_ContentPane"><!-- Start_Module_393 --><div id="dnn_ctr393_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr393_HtmlModule_lblContent" class="Normal">
+		<h3>NewsGator Daily Blog</h3>
+	</div>
+
+</div><!-- End_Module_393 --></div>
+
+<a name="577"></a><div id="dnn_ctr577_ContentPane"><!-- Start_Module_577 --><div id="dnn_ctr577_ModuleContent" class="Orizonti_NukeFeedsContent">
+	
+<script language="javascript" type="text/javascript">
+    function setNews(results)
+    {
+        document.getElementById(upd).innerHTML = results;
+        window.setTimeout('loadNews()', winSched);
+    }
+    
+    function errorFunc(result)
+    {
+        alert('error: ' + result);
+        return false;
+    }
+</script>
+
+
+		<div class="homefeed-date">06.18.10</div>
+<div class="homefeed-entry"><a href='http://blogs.newsgator.com/daily/2010/06/just-returning-from-a-week-in-boston-at-the-enterprise-20-show-i-cant-help-but-reflect-on-what-a-fantastic-week-it.html'target="_blank">This is no forced marriage, it’s the real deal</a></div>
+	
+		<div class="homefeed-date">06.15.10</div>
+<div class="homefeed-entry"><a href='http://blogs.newsgator.com/daily/2010/06/newsgator-selected-as-red-herring-100-finalist-for-2010.html'target="_blank">NewsGator Selected as Red Herring 100 Finalist for 2010</a></div>
+	
+		<div class="homefeed-date">06.12.10</div>
+<div class="homefeed-entry"><a href='http://blogs.newsgator.com/daily/2010/06/were-amped-for-e20-boston-2010.html'target="_blank">We're amped for E2.0 Boston 2010!</a></div>
+	
+<p style="text-align: right;"><a href="http://blogs.newsgator.com/daily/" target="_blank">See Full Blog <img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-green.gif" alt="" /></a></p>
+</div><!-- End_Module_577 --></div>
+
+</div></div>
+			<div class="clear_both"></div>
+		</div>
+	</div>
+	<div id="homebodybot2"></div>
+	<div id="footer">
+		<div id="foot1"><div id="dnn_FooterRight"><a name="394"></a><div id="dnn_ctr394_ContentPane"><!-- Start_Module_394 --><div id="dnn_ctr394_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr394_HtmlModule_lblContent" class="Normal">
+		<p><a target="_blank" href="http://twitter.com/newsgator"><img width="24" height="17" align="absMiddle" src="/Portals/0/icon-twitter-blue.gif" alt="Twitter" />&#160;Follow us on Twitter</a></p>
+	</div>
+
+</div><!-- End_Module_394 --></div>
+
+</div></div>
+		<div id="foot2"><div id="dnn_FooterLinks1"><a name="395"></a><div id="dnn_ctr395_ContentPane"><!-- Start_Module_395 --><div id="dnn_ctr395_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr395_HtmlModule_lblContent" class="Normal">
+		<p><a href="/resources/agg522_selecttab/1.aspx"><img align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> Watch Videos</a> &#160;&#160;&#160;&#160; <a href="/resources/agg522_selecttab/2.aspx"><img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> Find Resources</a> &#160;&#160;&#160;&#160; <a href="/company/contact-us.aspx"><img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> Contact Us</a> &#160;&#160;&#160;&#160; <a href="/blogs.aspx"><img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> Blogs</a> &#160;&#160;&#160;&#160; <a href="/partners.aspx"><img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> Partners</a> &#160;&#160;&#160;&#160; <a href="/the-buzz.aspx"><img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> The Buzz </a> &#160;&#160;&#160;&#160; <a href="/rss-readers.aspx"><img width="3" height="5" align="absMiddle" src="/Portals/0/arrow-gray.gif" alt="" /> RSS Readers</a></p>
+	</div>
+
+</div><!-- End_Module_395 --></div>
+
+</div></div>
+		<div id="foot3"><div id="dnn_Copyright"><a name="396"></a><div id="dnn_ctr396_ContentPane"><!-- Start_Module_396 --><div id="dnn_ctr396_ModuleContent" class="DNN_HTMLContent">
+	<div id="dnn_ctr396_HtmlModule_lblContent" class="Normal">
+		<p>© Copyright 2003-2010 NewsGator® Technologies, Inc.&#160; All Rights Reserved.</p>
+	</div>
+
+</div><!-- End_Module_396 --></div>
+
+</div></div>
+	</div>
+</div>
+
+<script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
+ <script>mktoMunchkin("728-OGX-548");</script>
+        <input name="ScrollTop" type="hidden" id="ScrollTop" />
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" />
+        
+    
+<script type="text/javascript" src="/Resources/Shared/scripts/initWidgets.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+
+            
+                <script type="text/javascript">
+                var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+                </script>
+
+                <script type="text/javascript">
+                var pageTracker = _gat._getTracker("UA-233427-1");
+                pageTracker._trackPageview();
+                </script>
+
+            
+            </body>
+</html>

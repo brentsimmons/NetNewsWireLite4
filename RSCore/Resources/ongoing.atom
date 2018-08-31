@@ -1,0 +1,979 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom'
+      xmlns:thr='http://purl.org/syndication/thread/1.0'
+      xml:base='http://www.tbray.org/ongoing/ongoing.atom'
+      xml:lang='en-us'>
+ <title>ongoing by Tim Bray</title>
+ <link rel='hub' href='http://pubsubhubbub.appspot.com/' />
+ <id>http://www.tbray.org/ongoing/</id>
+ <link href='./' />
+ <link rel='self' href='' />
+ <link rel='replies'       thr:count='101'       href='/home/tbray.org/www/html/ongoing/comments.atom' />
+ <logo>rsslogo.jpg</logo>
+ <icon>/favicon.ico</icon>
+ <updated>2010-06-22T07:22:02-07:00</updated>
+ <author><name>Tim Bray</name></author>
+ <subtitle>ongoing fragmented essay by Tim Bray</subtitle>
+ <rights>All content written by Tim Bray and photos by Tim Bray Copyright Tim Bray, some rights reserved, see /ongoing/misc/Copyright</rights>
+ <generator uri='/misc/Colophon'>Generated from XML source code using Perl, Expat, Emacs, Mysql, Ruby, Java, and ImageMagick.  Industrial-strength technology, baby.</generator>
+
+<entry xml:base='When/201x/2010/06/20/'>
+ <title>Unfinished, With Clouds</title>
+ <link href='Unfinished' />
+ <link rel='replies'        thr:count='2'        type='application/xhtml+xml'        href='Unfinished#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/20/Unfinished</id>
+ <published>2010-06-20T12:00:00-07:00</published>
+ <updated>2010-06-20T20:50:59-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts/Photos' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Photos' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World/Places/Vancouver' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Places' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Vancouver' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>What happened was, we went to a party at Shane and Ally&#x2019;s place on East First Ave at a mixed residential-commercial development with a common rooftop garden.  We barbecued up there, sharing the space amicably with a couple of other parties.  The view was compelling and the clouds were interesting.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>What happened was, we went to a party at Shane and Ally’s place on East First Ave at a mixed
+residential-commercial development with a common rooftop garden.  We barbecued
+up there, sharing the space amicably with a couple of other parties.  The view
+was compelling and the clouds were interesting.</p>
+<p>This is looking West from more or less
+<a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=366+east+1st+ave,+vancouver+bc&amp;sll=49.268043,-123.096925&amp;sspn=0.003731,0.009023&amp;g=Richmond,+Greater+Vancouver+Regional+District,+British+Columbia,+Canada&amp;ie=UTF8&amp;hq=&amp;hnear=366+1+Ave+E,+Vancouver,+Greater+Vancouver+Regional+District,+British+Columbia+V5T+1A7,+Canada&amp;ll=49.269149,-123.10421&amp;spn=0.119403,0.288734&amp;t=h&amp;z=12">here</a>.</p>
+<img src="PS089492.png" alt="Clouds, looking west from central Vancouver" />
+<p>Notice that in the foreground there’s quite a bit of low-rise low-rent
+industrial land; every city needs to earn its living and to have cheap
+neighborhoods, but the density doesn’t feel right.</p>
+<p>Doug Coupland (I believe it was in
+<a href="http://www.coupland.com/2009/02/28/template-book-3/">City of
+Glass</a>) said “In 100 years, Paris will still be Paris and New York will
+still be New York.  What will Vancouver be?”  He had a point, and the point is
+that Vancouver is profoundly unfinished; we’re making it up as we go
+along. Let me underline the point by turning the camera northeast.</p>
+<img src="PS089497.png" alt="Vacant space in central Vancouver" />
+<p>In one of these vacant spaces (not shown here) there was some sort of
+squatter thing happening, with a nice semi-modern Greyhound-style bus
+apparently parked permanently with lawn chairs, sort of a one-inhabitant trailer park.</p>
+<p>Bear in mind that this is all within spitting distance of some of the most
+expensive neighborhoods in one of the world’s most expensive real-state
+markets; bubble-icious say some.</p>
+<p>But then the clouds kept pulling the front of the camera back to the
+west.</p>
+<img src="PS089499.png" alt="Looking west at sunset from central Vancouver" />
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/20/'>
+ <title>Day Ten</title>
+ <link href='World-Cup-Day-10' />
+ <link rel='replies'        thr:count='4'        type='application/xhtml+xml'        href='World-Cup-Day-10#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/20/World-Cup-Day-10</id>
+ <published>2010-06-20T12:00:00-07:00</published>
+ <updated>2010-06-20T14:25:06-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Well, my job and my life have interfered heavily with your authoritative Web Geek&#x2019;s <a href='/ongoing/When/201x/2010/06/12/World-Cup-2020'>World Cup 2010</a> coverage.  And&#xa0;&#x2014;&#xa0;let&#x2019;s get this out of the way&#xa0;&#x2014;&#xa0;my predictions as to which matches were going to be fun and how the groups would play out have been almost entirely wrong.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Well, my job and my life have interfered heavily with your authoritative
+Web Geek’s <a href="/ongoing/When/201x/2010/06/12/World-Cup-2020">World Cup
+2010</a> coverage.  And — let’s get this out of the way — my predictions as to
+which matches were going to be fun and how the groups would play out have been
+almost entirely wrong.</p>
+<p>In fact, the only games I watched end-to-end were Argentina-South Korea on
+Day Seven, and Brazil-Côte d'Ivoire just now, until I switched off at Brazil’s
+third; too depressing for this
+<a href="http://en.wikipedia.org/wiki/Côte_d%27Ivoire_national_football_team">Elephants</a>
+fan.  So rather than games, just some impressions and notes as we approach
+two-thirds of the way through the round-robin.</p>
+<h2 id='p-1'>Disappointed</h2>
+<p>In the quality of play in general.  With the notable exception of Argentina
+I haven’t seen any team really show seriously hot stuff for more than a few
+minutes of a match against a first-rank opponent.</p>
+<p>Just now, I caught a bit of Brazil-Côte d'Ivoire post-game and the
+commentator remarked on having seen ten or fifteen minutes of “real Brazilian
+football.”  No.  Your <em>real</em> game is the one you play for most of the
+match, innit?</p>
+<p>In particular, I’m shocked by the big-name teams apparently concluding they don’t
+need their “A” game against non-marquee opponents; as in Spain against
+Switzerland or Germany against Serbia.</p>
+<h2 id='p-2'>Disappointed</h2>
+<p>In the refereeing.  It seems like every game I watch has
+egregiously-botched calls, sendings-off that are travesties, flagrant
+hand-balls in the penalty zone missed, innocent tacklers punished and guilty
+divers rewarded.  I assume they send the best, so we’re watching either a run
+of bad luck or a profession in bad shape.</p>
+<h2 id='p-3'>Disappointed</h2>
+<p>In the ethics of the players.  This is the <em>fucking World Cup</em>, what’s with
+the grabbing and clutching and above all the diving?  I eventually gave up
+watching the Tour de France when I realized I had no respect for any of the
+chemically-enhanced performers; I’d hate to walk away from soccer, but this is
+starting to get seriously up my nose.  I say give all the referee’s assistants
+the power to issue an instant red card for diving, with a presumption of guilt.</p>
+<h2 id='p-4'>Disappointed</h2>
+<p>In African soccer.  The traditional story is that the African teams run at
+opponents and terrify defenders and then lose when it matters because they
+don’t have the defensive precision. This year’s been like that only without
+much attack, either.  Next time, right?</p>
+<h2 id='p-6'>Impressed</h2>
+<p>By the play of the Latin-American teams.  Yes, every other commentator has
+highlighted this too, but good heavens.  The odds of the Cup staying in the
+Northern Hemisphere seem increasingly long.  Even Mexico and Paraguay have
+looked stronger than supposed powers like France and Italy.  Which is fine by
+me; European soccer, even when it’s played well (as by Germany, this time
+around) is boring.</p>
+<h2 id='p-7'>Impressed</h2>
+<p>By Argentina.  The clear standouts in the round-robin play.  Also, they
+play with a little more courage and less diving than the World-Cup norm.</p>
+<p>But here’s the thing; the round-robin results become instantly meaningless
+when it ends.  Teams which have disappointed so far can get through and
+suddenly come alive.  Despite the dominance of the New World teams in general
+and Argentina in particular, it’s perfectly possible that one of the old-guard
+Eurobores will grind their way through to the Cup.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/17/'>
+ <title>Maureen Forrester, 1930&#x2014;2010</title>
+ <link href='Maureen-Forrester' />
+ <link rel='replies'        thr:count='3'        type='application/xhtml+xml'        href='Maureen-Forrester#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/17/Maureen-Forrester</id>
+ <published>2010-06-17T12:00:00-07:00</published>
+ <updated>2010-06-17T06:28:53-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts/Music' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Music' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World/Eulogies' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Eulogies' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>I have a teeny little bit of personal history with this opera icon; sad to see that <a href='http://en.wikipedia.org/wiki/Maureen_Forrester'>Ms Forrester</a> has left us.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>I have a teeny little bit of personal history with this opera icon; sad to see
+that <a href="http://en.wikipedia.org/wiki/Maureen_Forrester">Ms
+Forrester</a> has left us.</p> 
+<p>This would have been some thirty years ago, when as a college student I was
+earning rent money by stage-managing any and every sort of musical event, one
+of which was a set of master classes given by the diva.</p>
+<p>For those who haven’t been to a master class, it’s essentially a public
+music lesson. The students (young professionals on that occasion) perform
+little bits and pieces; the Star 
+critiques and praises and makes them retake and rethink and rework. Good
+fun — she was a natural teacher and obviously enjoyed offering <i>faux</i>-intimate
+“just between me and all of you” asides to the audience; I sure learned a lot about opera
+singing.</p>
+<p>Anyhow, here’s what sticks in my memory.  I’d put in a few hours of hard
+work setting up the room and polishing the piano and so on; then the Leading
+Lady swept in.  She arrived in a cloud of perfume and pastel taffeta, retainers
+either side, laughing hugely, her smile framed by a tower of golden hair 
+and a generous helping of creamy bosom.  Introductions all around, 
+then she asked “And which way to the little girls’ room?”</p>
+<p>I didn’t have the nerve to say it, but I was thinking she was about as far
+from a “little girl” as it’s possible for a female person to be; it was a
+thrill to be in her presence.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/15/'>
+ <title>Day Five</title>
+ <link href='World-Cup-Day-5' />
+ <link rel='replies'        thr:count='6'        type='application/xhtml+xml'        href='World-Cup-Day-5#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/15/World-Cup-Day-5</id>
+ <published>2010-06-15T12:00:00-07:00</published>
+ <updated>2010-06-15T23:23:56-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>We&#x2019;re now approaching the end of the first third of the round-robin in this geek-blog <a href='/ongoing/When/201x/2010/06/12/World-Cup-2020'>World Cup 2010</a> coverage. Long way to go yet.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>We’re now approaching the end of the first third of the round-robin in this geek-blog
+<a href="/ongoing/When/201x/2010/06/12/World-Cup-2020">World Cup 2010</a>
+coverage.
+Long way to go yet.</p>
+<p>I didn’t get up at 4AM to watch New Zealand-Slovakia, although I am the
+husband of a New Zealander and the father of two more.  Oh well.  And I might
+divert a bit of attention from work for an interesting game but I decided that
+Brazil-DPRK wouldn’t be one of those; I gather I was wrong.  I have a certain
+sick fascination with North Korea to the extent of feeling physical pain in
+my gut when I read about what its poor people have to live through. And watching
+them play a football match, or otherwise pretend to be normal in the context of a normal
+human activity, well it just seems wrong.</p>
+<h2 id='p-1'>Ivory Coast 0 Portugal 0</h2>
+<p>OK, I’m a fan now, of the team from the country that would prefer to be
+known as Côte d'Ivoire.  They pretty well made mincemeat of the Portuguese
+midfield; if Drogba had been able to play 90 minutes I can’t see them not
+having won.</p>
+<p>There’s all this noise about Ronaldo’s hotness; but today Gervinho was the
+more impressive attacker.  No, he’s not an import, his real name is
+Gervais Yao Kouassi and Gervinho’s a nickname he got from a Brazilian coach.  If
+Drogba can get back on form that just might be the best one-two attacking
+punch in the tournament.</p>
+<p>As for the Portuguese, feaugh.  I have an attitude problem
+caused by their despicable clutching and diving and whining in the 2006
+tournament, and I will say they didn’t seem quite as loathsome this time
+around.  I literally crowed with glee when the no-bullshit referee gave Ronaldo
+and his dance partner yellow cards right at the start of the game; I think the ref
+may have done his colleagues in the rest of the tournament a big favor
+there.</p>
+<p>It’s a pity — that big early shot of Ronaldo’s was like a force of nature
+unleashed.  The guy’s got so much talent and so little class.</p>
+<h2 id='p-2'>Tomorrow</h2>
+<p>The interesting game, since Group H is a complete yawner which will deliver
+Spain and some cannon fodder to the round of 16, is South Africa-Uruguay of
+course, since Group A is so wide-open.  Pity it’s in the middle of the work-day.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/15/'>
+ <title>Day Four</title>
+ <link href='World-Cup-Day-4' />
+ <link rel='replies'        thr:count='0'        type='application/xhtml+xml'        href='World-Cup-Day-4#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/15/World-Cup-Day-4</id>
+ <published>2010-06-15T12:00:00-07:00</published>
+ <updated>2010-06-15T08:13:27-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>We&#x2019;re now four days into the unique insights on <a href='/ongoing/When/201x/2010/06/12/World-Cup-2020'>World Cup 2010</a> only available from those with a good basis in Web and Mobile technology.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>We’re now four days into the unique insights on
+<a href="/ongoing/When/201x/2010/06/12/World-Cup-2020">World Cup 2010</a> only
+available from those with a good basis in Web and Mobile
+technology.</p>
+<p>I didn’t watch Netherlands-Denmark nor will I watch any further games that
+require me to get up at 4AM; there are limits to fandom.</p>
+<h2 id='p-1'>Japan 1 Cameroon 0</h2>
+<p>I wanted to be a Cameroon fan on the principle that fluid attacking soccer
+in the African style is something to be encouraged.  But I was left 
+cold; even the mighty Eto’o seemed a little lead-footed.  Unless Cameroon
+has a reservoir of so-far-unrevealed brilliance, I don’t see them making it
+out of the group.</p>
+<p>As for Japan, their goal was well-earned, their conditioning obviously
+better than the opposition’s, and their defence well-schooled.  Not terribly
+exciting to watch aside from Matsui’s runs up the side, but I’ll be
+unsurprised if they move on.</p>
+<h2 id='p-2'>Italy 1 Paraguay 1</h2>
+<p>I sort-of watched this in on my computer via the excellent 
+<a href="http://cbcsports.ca">cbcsports.ca</a> feed, but work was intense and
+held most of my attention.  On the occasions where I did tune in for a few
+minutes, I saw the Italian attack running aground in the rain on the sharp-edged rocks of the
+Paraguayan defense.  Even though I’m generally negative about defensive
+soccer, it was quite a show.</p>
+<p>And the Paraguayan goal, which I did happen to see, was a lightning strike,
+perfectly staged and entirely impossible to parry. It wasn’t a defensive
+lapse, Alcaraz just out-worked and out-jumped the Italian defenders.
+One or two of those per game, plus strong defense, is plenty enough to get not
+just out of Group F but well into the serious part of the tournament.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/13/'>
+ <title>Day Three</title>
+ <link href='World-Cup-Day-3' />
+ <link rel='replies'        thr:count='4'        type='application/xhtml+xml'        href='World-Cup-Day-3#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/13/World-Cup-Day-3</id>
+ <published>2010-06-13T12:00:00-07:00</published>
+ <updated>2010-06-13T13:37:14-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Thus endeth the first weekend of a geek blogger&#x2019;s deathless  <a href='/ongoing/When/201x/2010/06/12/World-Cup-2020'>World Cup 2010</a> prose. For other coverage from non-specialists, much more amusing than mine, check out <a href='http://nplusonemag.com/world-cup-preview'>n+1 magazine&#x2019;s World Cup Preview</a>.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Thus endeth the first weekend of a geek blogger’s deathless 
+<a href="/ongoing/When/201x/2010/06/12/World-Cup-2020">World Cup 2010</a>
+prose.
+For other coverage from non-specialists, much more amusing than mine, check
+out
+<a href="http://nplusonemag.com/world-cup-preview">n+1 magazine’s World Cup Preview</a>.</p>
+<p>I didn’t get up at 4AM to watch Algeria-Slovenia but I guess I’m happy because I’ve
+<a href="/ongoing/What/The%20World/Places/Slovenia/">been to
+Slovenia</a> but not Algeria.</p>
+<h2 id='p-1'>Sebia 0 Ghana 1</h2>
+<p>I really couldn’t figure this game out. The Ghanaians totally sliced up the
+Serbian mid-field, time and again, quality moves all over the place, then
+failed to penetrate the penalty area.  The Serbians looked clumsy and 
+unpolished but actually had, on balance, more scoring chances.  That handball?
+More clumsiness.  I suppose Ghana deserved the win.</p>
+<h2 id='p-2'>Germany 4 Australia 0</h2>
+<p>Just a few minutes into the match, I tweeted “The Germans are scary
+good. Ouf” and, well, yeah.  The Aussie defence didn’t seem that weak, which
+speaks volumes, probably unnecessary, to Germany’s lethal combination of
+precision passing and individual excellence up front.</p>
+<p>On the other hand, the Aussie attackers did seem pretty hapless, which
+suggests a more capable opponent could give Germany real trouble at the back.
+It looks on balance like they and the Ghanaians should waltz out of Group D
+without breathing too hard.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/12/'>
+ <title>Day Two</title>
+ <link href='World-Cup-Day-2' />
+ <link rel='replies'        thr:count='4'        type='application/xhtml+xml'        href='World-Cup-Day-2#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/12/World-Cup-Day-2</id>
+ <published>2010-06-12T12:00:00-07:00</published>
+ <updated>2010-06-13T07:43:59-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Being the second outing in the bloggification of <a href='/ongoing/When/201x/2010/06/12/World-Cup-2020'>World Cup 2010</a>.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Being the second outing in the bloggification of
+<a href="/ongoing/When/201x/2010/06/12/World-Cup-2020">World Cup 2010</a>.</p>
+<h2 id='p-1'>Korea 2 Greece 0</h2>
+<p>The first comprehensive pounding of this year’s tournament.  The Koreans
+apparently recognized fairly early on that the Greeks were having a rotten
+day and decided to go into all-pressure-all-the-time mode, and then it was
+over.  It’d take real courage for them to try the same approach next time,
+which happens to be Argentina, but I’d sure like to watch it.</p>
+<p>I think just maybe the Koreans are underrated; among other things, I find
+it hard to believe the Greeks are as bad as they looked today. To be fair,
+Greece’s team have historically been World Cup chokers, but still.</p>
+<p>In particular, the commentators on my TV channel put both Korean
+goals down to defensive lapses, which just isn’t true. In particular that
+second goal by Park Ji-Sung, who’s a real force at Man United let’s not
+forget, may have started with a clumsy give-away, but that was at mid-field
+and then he blasted through two defencemen and made the keeper look bad; that
+was a class effort.</p>
+<p>Nobody seemed to notice that while Greece didn’t bring much pressure to
+bear on Korean keeper Jung Sung-Ryong, he handled some nasty high balls coming
+right out of the sun without any apparent effort; seems a cool cat.
+I’m hoping the Koreans surprise some of the big
+names and I’m afraid the Greeks are out of their depth.</p>
+<h2 id='p-2'>Argentina 1 Nigera 0</h2>
+<p>Obviously, the boys in blue and white are among the favorites, and this
+game offered evidence both for and against that ranking.  On the “for” side is
+Messi, who is the real deal.  I’m pleased that with he and Ribéry,
+two of the tournament’s biggest-name attackers like to take the ball straight at,
+as opposed to around, the defense.  Messi, I suspect he’s the single person on
+the planet that a defender least likes to see incoming with momentum.</p>
+<p>Also in the “for” side is the remarkable Argentinean discipline and
+precision; they routinely pull off these jaw-dropping passing sequences that
+happen so fast you have to reconstruct it your mind later.  Truly hot
+stuff.</p>
+<p>On the other hand, the margin was only 1-0, and Nigeria looked 
+pathetic to me: sloppy, poorly conditioned, and just not that hungry.  With
+the obvious exception of Vincent Enyeama, who put on as good a
+goalkeeping display as I think I’ve ever seen.  But that’s a lousy excuse; a
+properly-set-up goal in soccer is one that leaves the keeper no chance, and
+Argentine could only manage one of those in 90 minutes.  I think some of their
+players not named Messi are going to have to up their game a couple of notches
+if they’re going to get anywhere.</p>
+<p>But jeepers, those hell-for-leather charges by Messi sure are fun to
+watch.</p>
+<h2 id='p-3'>England 1 USA 1</h2>
+<p>(I only watched the last third).</p>
+<p>What a terrible disappointment for the English. You can’t ride a shaky
+keeper very far in the World Cup, and you also can’t go far if you finish 
+your scoring chances with a shot straight at the other keeper’s
+chest.  People were praising US keeper Tim Howard to the skies, and yeah, he
+stopped Rooney cold three times in the part of the game I saw, but none of
+those shots actually made him worry about anything but rebound control.</p>
+<p>England may have more to offer than we saw today; they’d better or they’re
+in for a short run.  The USA are a lovable team and may just make it out of
+the first round, but nobody’s expecting any more than that I think.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/12/'>
+ <title>Day One</title>
+ <link href='World-Cup-Day-1' />
+ <link rel='replies'        thr:count='2'        type='application/xhtml+xml'        href='World-Cup-Day-1#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/12/World-Cup-Day-1</id>
+ <published>2010-06-12T12:00:00-07:00</published>
+ <updated>2010-06-12T06:03:03-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Welcome to the <a href='/ongoing/When/201x/2010/06/12/World-Cup-2020'>ongoing World Cup 2010 blogathon</a>.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Welcome to the
+<a href="/ongoing/When/201x/2010/06/12/World-Cup-2020">ongoing World Cup 2010
+blogathon</a>.</p>
+<h2 id='p-1'>Mexico 1 South Africa 1</h2>
+<p>It’s a pity the Bafanas couldn’t have won.  Their opening-segment
+nerves were forgivable, and their recovery admirable.
+Tshabalala’s goal was pure beauty, the kind of thing that
+makes soccer worth watching.</p>
+<p>I also was impressed by keeper Itumeleng Khune’s quickness and coolness
+under fire; he covered for some appalling South African defensive
+lapses.</p>
+<p>Except for one; on the equalizer there were <em>three</em> Mexican
+attackers lined up behind the defense, no South African anywhere near.  What
+sets the elite European teams apart is, among other things, that they simply
+don’t make that class of mistake.</p>
+<p>As for the Mexican game, it felt very European to me: cautious,
+orchestrated, focused on at all costs avoiding mistakes.  I don’t think they
+have enough attack to get very much further in this tournament, once they’re
+up against world-class defense.  But we’ll see.</p>
+<h2 id='p-2'>Uruguay 0 France 0</h2>
+<p>I came away from this one liking the French, and remembering that four
+years ago they also started slow; slower, if memory serves, than this
+pretty-good outing.</p>
+<p>Let’s be honest: I also like watching France because, unlike so many of the
+other teams, they don’t look like a bunch of TV stars, but like some guys you might
+meet in an ordinary bar somewhere.  And Ribéry’s monumental scarfaced
+homeliness is remarkably appealing; makes me smile almost every time he crosses the screen.</p>
+<p>Speaking of Ribéry, you have to love his relentless runs, given the
+slightest opportunity, straight at the defense.
+None actually got through against Uruguay, and maybe none
+will in this tournament, but they may stress out a few of those defenses to
+the point of opening up other attacking lanes.</p>
+<p>France is going to have to play better to get very far into this
+tournament, but it’s easy to believe they have it in them.</p>
+<p>As for Uruguay, after the match I found a blank spot where my opinion of
+the team ought to have been. I don’t think my attention wandered that much,
+but I just couldn’t bring anything memorable to mind, aside from keeper
+Fernando Muslera’s remarkable save against Gourcoff’s nasty corner-bound free
+kick.</p>
+<p>Being colorful or memorable is not necessarily required for success in the
+World Cup tournament; but surely we can ask for a little more than we saw on
+Day One.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/12/'>
+ <title>2010 World Cup</title>
+ <link href='World-Cup-2020' />
+ <link rel='replies'        thr:count='6'        type='application/xhtml+xml'        href='World-Cup-2020#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/12/World-Cup-2020</id>
+ <published>2010-06-12T12:00:00-07:00</published>
+ <updated>2010-06-12T05:01:23-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports/Soccer/World Cup 2010' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Sports' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Soccer' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='World Cup 2010' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>What happened was, four years ago in June we <a href='/ongoing/When/200x/2006/06/11/Now-We-Are-Four'>had a baby daughter</a> and I ended up <a href='/ongoing/What/Sports/Soccer/'>watching the World Cup</a>.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>What happened was, four years ago in June we
+<a href="/ongoing/When/200x/2006/06/11/Now-We-Are-Four">had a baby
+daughter</a> and I ended up
+<a href="/ongoing/What/Sports/Soccer/">watching the World Cup</a>.</p>
+<p>I’m not particularly a soccer fan but I found that I enjoyed the show immensely.
+I’m not a sportswriter but after I started blogging the matches more or
+less accidentally in a newborn-parent haze, that was fun too, and I got tons
+of email (that was before there were comments here).</p>
+<p>I don’t have parental leave this time, so I probably won’t see as much
+of the show, but lots of the matches are very early Pacific time... and then
+there’s BitTorrent.  So if you’re oblivious to sports in general or soccer in
+particular, I apologize in advance for the coverage that is about to
+occur.</p>
+<h2 id='p-1'>Why I Like It</h2>
+<p>The sense of occasion, and the widespread joy it brings to so
+many around the world.  Something that causes this much intense shared feeling
+just can’t be a bad thing.  On balance, I’d say the World Cup is one of the
+good things about being a member of <i>Homo sapiens</i>.</p>
+<p>Yesterday, before the opening match, listening to the remarkable howl of the
+vuvuzelas, halfway between a beehive and a Formula One race, all the smiles
+and color and excitement; whose heart could avoid lifting?  I felt (pardon the
+cliché) at one with the world.</p>
+<h2 id='p-2'>My Prejudices</h2>
+<p>This year, I go in without a favorite, not really backing anyone.  And I
+didn’t manage to catch any of the playdowns, so I’m pretty well in <i>tabula
+rasa</i> mode as regards all the teams.  But I’m not without prejudices:</p>
+<ul>
+<li><p>I like underdogs.</p></li>
+<li><p>I like attacking soccer; I think the key to the game is finding space and
+running into it and playing the ball forward.</p></li>
+<li><p>I like African soccer; the firewagon attack of the good Cameroon and Côte
+d'Ivoire teams has provided my favorite international-soccer moments.
+Eventually one of these teams is going to build a world-class defense and cut
+through the Europe elite, with its fussy caution-first approach, like a
+hot knife through butter</p></li>
+<li><p>I like Mexico, because they’re from our group, the one that Canada almost
+never makes it through into the finals.</p></li>
+<li><p>I dislike, of all things, diving.  The #1 thing FIFA could do to improve
+the game would be to attack it, and here’s how: Since experience shows that
+the referees on the field can’t reliably detect it, but that it’s obvious on
+TV, for big matches there ought to be a couple of extra officials watching
+video streams, on the radio with the chief referee; and a policy of an instant
+yellow card for every dive.</p></li>
+</ul>
+<h2 id='p-3'>How To Watch It</h2>
+<p>I mean, in the case where you can’t sit down in a comfy chair in front of a
+nice TV.  There are a variety of feeds here and there around the Net; perhaps
+my commenters will fill the details.</p>
+<p>Here in Canada,
+<a href="http://cbcsports.ca/">cbcsports.ca</a> has a nice setup that 
+includes several alternate-camera feeds.</p>
+<p>And, in what I consider a triumph, I demonstrated that, given a good WiFi
+Signal, my Nexus One, running an Android 2.2 prerelease, with the Flash plug-in installed
+(but set to “On Demand” rather than “Auto Start”), I could watch the
+cbcsports.ca live feed; a bit of lag and jag but quite usable.</p>
+<p>Here’s hoping for surprises.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/10/'>
+ <title>Disclosure re Twitter</title>
+ <link href='Twitter-Disclosure' />
+ <link rel='replies'        thr:count='9'        type='application/xhtml+xml'        href='Twitter-Disclosure#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/10/Twitter-Disclosure</id>
+ <published>2010-06-10T12:00:00-07:00</published>
+ <updated>2010-06-10T10:31:52-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Business' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Business' />
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>A while ago, I made a small investment in a Vancouver company called
+Smallthought Systems, which has now been
+<a href="http://blog.twitter.com/2010/06/more-than-dabbling.html">acquired by
+Twitter</a>.  Thus, I am now the owner of a small number of Twitter shares,
+and may fairly be suspected of bias when discussing that company.  I continue
+to admire and use Twitter, and also continue to think that it’s a bug when an
+apparently-fundamental medium for human communications is the product of a
+single company.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/09/'>
+ <title>Early-Summer Evening</title>
+ <link href='Lightroom-Porch' />
+ <link rel='replies'        thr:count='3'        type='application/xhtml+xml'        href='Lightroom-Porch#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/09/Lightroom-Porch</id>
+ <published>2010-06-09T12:00:00-07:00</published>
+ <updated>2010-06-09T19:19:57-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts/Photos' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Photos' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>The idea was, since I just upgraded to Lightroom 3, that I&#x2019;d import whatever was on the cameras, beautify it, and report back on the big new release.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>The idea was, since I just upgraded to Lightroom 3, that I’d import
+whatever was on the cameras, beautify it, and report back on the big new
+release.</p>
+<p>Except for something went wrong; the most interesting pictures were all
+taken in a six-minute span out on the porch after dinner, and
+for some reason the big Pentax was in JPG not RAW mode, which
+drastically reduces Lightroom’s scope.  It’s actually not that easy to switch
+the camera over; I suspect one of my children of fiddling with it while I
+wasn’t looking.</p>
+<p>Having said all that, Pentax ships a pretty damn good JPEG engine in those
+cameras; so
+consider the following as a photo-essay on a bright early-summer back-porch
+evening. I’ll be back to discuss the subtleties of Lightroom 3 once I have
+more challenging raw material.</p>
+<img src="PS089479.png" alt="Flowers and large arthropod" />
+<img src="PS089480.png" alt="Flowers and large arthropod" />
+<img src="PS089487.png" alt="Cat (note tongue at work)" />
+<img src="PS089490.png" alt="Dogwood" />
+<p>That last shot is a dogwood,
+the replacement for our recently-deceased pear tree, now in June somewhat past
+its prime but still pretty nice to look at as the sun coasts sideways and
+down, but mostly sideways at 50°N latitude.</p>
+
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/07/'>
+ <title>Dots Per Inch</title>
+ <link href='DPI' />
+ <link rel='replies'        thr:count='19'        type='application/xhtml+xml'        href='DPI#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/07/DPI</id>
+ <published>2010-06-07T12:00:00-07:00</published>
+ <updated>2010-06-07T20:19:19-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Mobile' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Mobile' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Presentation' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Presentation' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>I thought maybe the most interesting single thing about the new iPhone 4 was its display, not so much the 960 vertical dots but the 326DPI, in the cleverly-named <a href='http://www.apple.com/iphone/features/retina-display.html'>Retina Display</a>. Which leads me to wonder, how much does this matter?</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>I thought maybe the most interesting single thing about the new iPhone 4
+was its display, not so much the 960 vertical dots but the 326DPI, in the
+cleverly-named
+<a href="http://www.apple.com/iphone/features/retina-display.html">Retina
+Display</a>. Which leads me to wonder, how much does this matter?</p>
+<h2 id='p-2'>300</h2>
+<p>If you care about this subject, I recommend a quick trip to Wikipedia’s
+<a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density">List
+of displays by pixel density</a>.  In the keynote, Steve claimed that there
+was some sort of a threshold around 300DPI having to do with the resolving
+capabilities of the human retina (thus the name).</p>
+<p>Indeed, three hundred is an interesting number; the first wave of
+personal-computer printers which produced results that actually looked really
+good started at 300DPI.  Right now, per Wikipedia, there are exactly three
+devices in the world whose displays exceed it; along with the iPhone, the
+Toshiba G900 and the Sony/Ericsson Experia X1, both WinMo phones.</p>
+<p>Also I can testify that my Nexus One, at 250DPI or so, is astoundingly
+sharp; the first thing in years that’s made me want to tune up the typography
+on my blog.</p>
+<h2 id='p-1'>Take Me Higher</h2>
+<p>At the same time, I’m not sure about the importance of that 300DPI elbow.
+It’s sure not there on paper; today’s commercial laser printers commonly run
+at 1200 or 2400DPI.  And high-end commercial pre-press products go way higher;
+the devices in the 
+<a href="http://www.heidelberg.com/pe/www/en/content/products/prepress/prosetter/prosetter_family">Heidelberg Prosetter</a>
+family range up to 3386DPI.</p>
+<p>Given the nature of the Android ecosystem, I think we can be pretty sure
+that if it turns out that Apple bet right and the extra resolution is a good
+selling point, we’ll be in an amusing arms race around DPI PDQ.</p>
+<h2 id='p-3'>Do We Even Need It?</h2>
+<p>I hope so, because I sure love the look of these things, but I’m not 100%
+convinced.  I’m typing this on a generic Dell 30" 2560x1600 display
+offering a pathetic 101DPI, and for the stuff I do all day, it makes me very
+happy; I’d have a hard time sacrificing any of that real-estate (4,096,000 pixels!)
+for higher density.</p>
+<p>For serious photo-work I use a 25"
+<a href="http://www.necdisplay.com/products/product/?product=1713e080-c8e3-4aab-9447-73dacb301b84">NEC
+2690</a> that I bought because it was
+<a href="http://blog.duncandavidson.com/2008/03/nec-2690wuxi-first-impressions.html">good
+enough for James Duncan Davidson</a>, and everything looks immensely better there
+than it does on the big Dell or my 113DPI MacBook, but that’s not because of
+the 98DPI, it’s because of the wonderful color.</p>
+<p>I suspect that unless you’re preparing high-quality print work, there’s no
+appreciable benefit for a photographer, and perhaps some downside, in an ultra-high-res
+display.</p>
+<p>Some other relatively low-res devices that seem beautiful to me: the iPad
+at 132DPI, and my nice 42" 1080p TV at home, at a laughable 52DPI.</p>
+<p>I gotta say though that those high
+densities are a joyful experience on hand-held devices; is it as
+simple as the fact that you hold them closer to your face?  Is there a
+placebo effect at work?</p>
+<h2 id='p-5'>Economics</h2>
+<p>Do bear in mind that all these extra dots are not free. I’m fairly ignorant
+about the manufacturing trade-offs, i.e. how much extra it’s costing Apple to put
+614,400 dots on the iPhone 4, as opposed to the the 3GS’s 153,600.</p>
+<p>I tend to worry more about the software costs; you have to manipulate 4
+times as many pixels every time you double the DPI, and while we’ve learned a
+lot of tricks over the years, and increasingly push the work down into display
+controllers, the computing cost is very far from zero.</p>
+<h2 id='p-4'>Typography</h2>
+<p>Anyhow, the best way to make a good looking page on the screen,
+particularly now that browsers are getting smarter and more polished with
+their font-handling, is with
+<a href="http://blog.romeda.org/2010/06/beautiful-lines.html">good typography</a>.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/05/'>
+ <title>Windy</title>
+ <link href='Wind-Mobile' />
+ <link rel='replies'        thr:count='4'        type='application/xhtml+xml'        href='Wind-Mobile#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/05/Wind-Mobile</id>
+ <published>2010-06-05T12:00:00-07:00</published>
+ <updated>2010-06-06T13:27:24-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World/Places/Canada' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Places' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Canada' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Android' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Android' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Business/Mobile' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Business' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Mobile' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Canada has long been a telephone oligopoly: <a href='http://www.rogers.com/'>Rogers</a>, <a href='http://telus.com/'>Telus</a>, and <a href='http://bell.ca/'>Bell Canada</a>; Canadians generally feel that prices are high and service only so-so. Now we&#x2019;ve got a new mobile player, <a href='http://www.windmobile.ca/'>Wind Mobile</a>. I signed up as soon as they got to Vancouver, at least in part for reasons of ideology; competition is a good thing.  So far, Wind looks like a good thing too.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Canada has long been a telephone oligopoly:
+<a href="http://www.rogers.com/">Rogers</a>,
+<a href="http://telus.com/">Telus</a>, and
+<a href="http://bell.ca/">Bell Canada</a>; Canadians generally feel that prices
+are high and service only so-so.
+Now we’ve got a new mobile player, <a href="http://www.windmobile.ca/">Wind
+Mobile</a>. I signed up as soon as they got to Vancouver, at least in part for
+reasons of ideology; competition is a good thing.  So far, Wind looks like a
+good thing too.</p>
+<p>Mobile network operators make it tough to compare prices, but Wind claims to be
+quite a bit cheaper.  I’ve been paying Rogers through the nose because I got a
+package with unlimited US roaming, and some add-ons to (somewhat) reduce the
+data-roaming pain.</p>
+<p>It turns out I can get a corporate SIM card from Google to ease the
+in-the-US pain; and then Wind sells unlimited calls <em>to</em> the US for
+$10/month.  This is going to create some multiple-phone-numbers pain, but
+presumably Google Voice will make that go away before too long assuming it
+crosses the US border.</p>
+<p>So far, the Wind coverage around Vancouver isn’t as good as
+Rogers’ — specifically, only just reaches my house — but it’s usable.</p>
+<p>Here’s an amusing thing; while I was down at the Wind office in Yaletown, I
+was recognized by two people who know me from Twitter;
+<a href="http://flavors.me/nredmond">Niamh Redmond</a> AKA
+<a href="http://twitter.com/nredmond">@nredmond</a> and
+<a href="http://www.figuiere.net/hub/blog/">Hubert Figuière</a> AKA 
+<a href="http://twitter.com/hfiguiere">@hfiguiere</a>.  This kind of thing is
+increasingly common; oddly, I hardly ever encounter <span class='o'>ongoing</span>
+readers, although the numbers suggest there are way more of ’em.</p>
+<p>Here’s another funny thing; while I was at the Wind office signing up,
+two others there had Nexus Ones.  Another reason that Wind is interesting to
+some people is that Nexus Ones come in two flavors, “A”, which works with
+AT&amp;T in the US and Rogers in Canada, and “T”, which works with the
+<a href="http://en.wikipedia.org/wiki/Advanced_Wireless_Services">AWS</a>
+spectrum; T-Mobile in the US, lots of carriers in Europe and Asia, and now
+Wind in Canada.  So if you’ve got a “T” model and want 3G coverage, Wind is
+your only choice.</p>
+<p>Anyhow, if there are nasty surprises I’ll report back; otherwise the
+likeliest outcome is that I will (with some glee) cancel my Rogers service in
+the near future.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/03/'>
+ <title>Mom&#x2019;s Birthday</title>
+ <link href='Jean-Bray-turns-Eighty' />
+ <link rel='replies'        thr:count='1'        type='application/xhtml+xml'        href='Jean-Bray-turns-Eighty#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/03/Jean-Bray-turns-Eighty</id>
+ <published>2010-06-03T12:00:00-07:00</published>
+ <updated>2010-06-03T23:58:59-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World/Family' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='The World' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Family' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts/Photos' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Arts' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Photos' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>The weekend of May 24th, my extended family gathered in Calgary from points East and West across Canada to celebrate my Mom&#x2019;s eightieth birthday.  Herewith  storytelling and pictures.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>The weekend of May 24th, my extended family gathered in Calgary from points East
+and West across Canada to celebrate my Mom’s eightieth birthday.  Herewith 
+storytelling and pictures.</p>
+<p>My Mom is the youngest of six children of Bob and Clara Scott, both Alberta
+schoolteachers; she left the profession to be a mother and he went on to
+become a Provincial Inspector of Schools; there’s still an R.J. Scott School
+somewhere in Edmonton.</p>
+<p>The oldest boy was Allen, who died in the very late stages of World War II;
+the oldest girl was Beryl, who died a few years ago. Next was Patricia, who’s
+not in good enough health to have made it to Calgary.</p>
+<p>That leaves Don Scott, professor emeritus of Chemical Engineering at the U
+of Waterloo, Beth White, now resident in Calgary, and my mother.</p>
+<img src="PS089433.png" alt="Jean Bray, Beth White, Don Scott" />
+<div class="caption"><p>Jean Bray, Beth White, Don Scott.  Combined age 251
+years; don’t they look great?</p></div>
+<p>In Bob and Clara’s generation there was a double marriage between two
+brothers and two sisters, so there are all sorts of double cousins; and then
+their children were fertile; I have many first cousins and
+once you get past that the acquaintance gets hazy. My daughter is the youngest
+of Bob and Clara’s great-grandchildren; there’s a spread of over forty years
+in that generation.  Most of us remain in the western half of Canada, but
+there has been leakage east and south.</p>
+<p>My brother Rob hosted; we had 18 souls
+there for the actual party-with-cake bit.  Rob, with some help from my other
+brother Don and me and his kids, hustled up enough barbecued kebabs and salad and hummus and
+tzaziki and corn-on-the-cob and, oh I forget, that nobody went away
+hungry.  Damn tasty if I say so myself.</p>
+<p>Below are my brothers Don and Rob.  Those who know what I may look like may
+detect a pattern.</p>
+<img src="PS089400.png" alt="Don Bray" />
+<img src="PS089405.png" alt="Rob Bray" />
+<p>We lacked enough organization and determination to bake a cake, so they were
+store-bought; but let me say that the
+<a href="http://www.calgarycoop.com/">Calgary Co-op</a> has the best selection
+of cakes I’ve ever seen in a life that has taken me to some famous baking
+spots around the world.</p>
+<p>I wanted to put eighty candles on it but they wouldn’t let me; anyhow,
+there were quite a few, and the rendition of “Happy Birthday” was rousing.
+Mom, who plays in a woodwind quartet, blew them out with sufficient force that
+the people downwind had to dodge icing fragments.</p>
+<p>There was lots of wine, and after dinner politics broke out.  We are a
+<em>talkative</em> family, an <em>articulate</em> family, a family whose
+current-events discussions have been known to make those who married into it dive for
+cover.  While the perfidy and general wrongness of Harper’s Tories was
+generally agreed to, there were other points where consensus was not evident.</p>
+<p>We’ve taken a resolution to do this again any time one of Bob and Clara’s
+kids has a birthday with a “0” in it.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/01/'>
+ <title>Starting To Be Wrong</title>
+ <link href='Fixed-Format-Electronic-Publishing' />
+ <link rel='replies'        thr:count='20'        type='application/xhtml+xml'        href='Fixed-Format-Electronic-Publishing#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/01/Fixed-Format-Electronic-Publishing</id>
+ <published>2010-06-01T12:00:00-07:00</published>
+ <updated>2010-06-03T21:26:30-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Publishing' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Publishing' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Mobile' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Mobile' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Web' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Web' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Everybody knows that designing for the Web is not like designing for print: The shape is fluid not fixed, the font selection is limited, and there aren&#x2019;t enough dots-per-inch to do proper typography anyhow; the effect is that you have to give up fine control over layout.  Which was true until 2010.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Everybody knows that designing for the Web is not like designing for
+print: The
+shape is fluid not fixed, the font selection is limited, and there aren’t
+enough dots-per-inch to do proper typography anyhow; the effect is that you
+have to give up fine control over layout.  Which was true until 2010.</p>
+<h2 id='p-2'>The Transition</h2>
+<p>It hits me especially hard because I’ve always been interested
+in typography and design (I didn’t say I was <em>good</em> at
+it, just interested), and I come out of the publishing-technology business.  I remember
+the sustained howls of anguish from design professionals when
+the Web came along and everyone wanted to use it and suddenly many of the
+things they they thought they knew became wrong.</p>
+<p>The Web obviously didn’t remove the need for visual excellence; it just
+made the designer’s life harder by subtracting standard tools.
+The user could reshape the window or enlarge the type or suddenly be using a
+computer with a really small or really big screen.  The dots-per-inch plunged
+from 600-and-up to 100-and-down.</p>
+<p>In exchange for all that visual polish we gave up, we got a
+dynamic content-addressable world-wide multimedia-rich hypertext; most people
+found the trade fair enough.</p>
+<h2 id='p-4'>That Wired App</h2>
+<p>It’s what shoved me into this epiphany that I suppose everyone else had
+sometime last year.  The app’s 500M+ in size and, everyone says, 
+enthralling.  The way it works is explained by Layton Duncan in
+<a href="http://laytonduncan.tumblr.com/post/640355763/bundle-diving-in-the-wired-ipad-app">Bundle
+Diving in The WIRED iPad app</a>; the page formats are just graphics, with
+overlays for interaction.  They’re designed down to the pixel level; 
+pre-Web page-layout techniques in action.</p>
+<p>I’ve seen this movie before; in the early days of the Web, a few 
+transplanted designers threw up their hands in frustration at its
+impoverished visual vocabulary and did more or less as WIRED has; composed 
+in a page-layout program, exported as a graphic, and pushed that onto the
+Web.  Which was considered evidence that they Just Didn’t Get It.</p>
+<p>And at the moment, there are indeed peeved born-and-bred Web
+designers explaining why WIRED Just Doesn’t Get It: check out Joe
+Clark’s
+<a href="http://blog.fawny.org/2010/06/02/wired-app/">Smart designer exports
+dumb pictures of text</a> and Jon Gilkison’s
+<a href="http://interfacelab.com/is-this-really-the-future-of-magazines-or-why-didnt-they-just-use-html-5/">Is This Really The Future of Magazines or Why Didn’t They Just Use HTML 5?</a>
+</p>
+<p>Well, yeah.  As
+<a href="http://en.wikipedia.org/wiki/Eric_Gill">Eric Gill</a> wrote, “A
+letter is a thing, not a picture of a thing.”  At some level, what WIRED has
+given us is a travesty.</p>
+<h2 id='p-5'>Oh, Wait</h2>
+<p>At another, it’s a rational response to the new environment found on mobile
+Internet devices.  They typically don’t use resizeable windows; you work within the
+constraints of a specific fixed rectangle.  They have densities that
+are now approaching the 300dpi where print starts; if
+Wikipedia’s
+<a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density">List
+of displays by pixel density</a> is accurate, the next iPhone will exceed it.
+I can certainly testify that my Nexus One is the highest-resolution electronic
+display device I’ve ever owned; it makes conventional monitors (and the 132dpi
+iPad) look dingy.</p>
+<p>Granted, vertical scrolling in the browser style is still common, but on the
+iPad in particular, a page-flip metaphor has replaced scrolling in many
+applications.
+If you abandon scrolling, you immediately open the door to multi-column
+layouts, which
+<a href="http://informationarchitects.jp/wired-on-ipad-just-like-a-paper-tiger/">are controversial</a> but, in the right circumstances, highly
+effective.</p>
+<h2 id='p-6'>What’d you say I’d get?</h2>
+<p>I am reminded of an acronym that had fallen into disuse: WYSIWYG for What
+You See Is What You Get.  It was the rallying cry of the first
+electronic-publishing systems, the ones that made Steve and the Woz their
+first few boatloads of money.  It was always a complete lie, because what you
+could display on a screen was never remotely comparable to the experience of
+the same layout on real paper with a factor-of-ten-higher pixel density.  But
+it was useful.</p>
+<p>In the early days of the Web, some of the authoring software claimed to
+offer “WYSIWYG Web Publishing” which was an even bigger lie and not even a
+useful one; still, I remember Adobe getting a standing ovation at the first
+public demonstration of
+<a href="http://en.wikipedia.org/wiki/Adobe_PageMill">PageMill</a> in 1994, when they
+dragged-and-dropped a GIF in the authoring system and then refreshed Netscape
+and it was just where they’d put it.  In that version of that browser on that
+computer on that day, anyhow.</p>
+<p>But, I dunno... the people who pulled that WIRED app together, What They
+Saw was What We Got.  There has to be a better way to achieve the effect.  But
+the fact remains that a lot of what we think we know about Web design is 
+starting to be wrong.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/06/01/'>
+ <title>Compatibility and Fragmentation</title>
+ <link href='Compatibility' />
+ <link rel='replies'        thr:count='3'        type='application/xhtml+xml'        href='Compatibility#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/06/01/Compatibility</id>
+ <published>2010-06-01T12:00:00-07:00</published>
+ <updated>2010-06-01T11:07:55-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology/Android' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Technology' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Android' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Over on the Android Developers&#x2019; Blog, we just published <a href='http://android-developers.blogspot.com/2010/05/on-android-compatibility.html'>On Android Compatibility</a> by Dan Morrill, who manages both the Open-Source and Compatibility work here.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Over on the Android Developers’ Blog, we just published
+<a href="http://android-developers.blogspot.com/2010/05/on-android-compatibility.html">On
+Android Compatibility</a> by Dan Morrill, who manages both the Open-Source and
+Compatibility work here.</p>
+<p>It’s like this: The source code is the technology.  The Compatibility
+Definition Document is the policy.  The Compatibility Test Suite is the OEM
+tool.  And the Android Market is the enforcement mechanism.</p>
+<p>I think it’s an important piece, because there’s
+been a lot of talk around these issues and, as far as I know, nobody had ever
+written up, for anyone except the OEMs, exactly what the Android policy and
+mechanisms are.  My feeling is that anyone who wants to hold forth on these
+subjects really ought to invest some time reading this, as well as the
+documents it links to.</p>
+</div></content></entry>
+
+<entry xml:base='When/201x/2010/05/30/'>
+ <title>Corporations and Emotions</title>
+ <link href='Feelings-About-Companies' />
+ <link rel='replies'        thr:count='25'        type='application/xhtml+xml'        href='Feelings-About-Companies#comments' />
+ <id>http://www.tbray.org/ongoing/When/201x/2010/05/30/Feelings-About-Companies</id>
+ <published>2010-05-30T12:00:00-07:00</published>
+ <updated>2010-05-30T23:59:47-07:00</updated>
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Business' />
+ <category scheme='http://www.tbray.org/ongoing/What/' term='Business' />
+ <summary type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>Is meaningful or useful to have emotional reactions to business organizations?  Right now there&#x2019;s a lot of that going around; the atmosphere swirling around my employer and That Fruit Company a short commute away in Silicon Valley grows steamy.  Which pales compared to the global outpouring of fear and loathing directed at a certain English oil corporation. I&#x2019;m going to argue (after some personal digressions) that hating on BP is perhaps actively harmful.</div></summary>
+<content type='xhtml'><div xmlns='http://www.w3.org/1999/xhtml'>
+<p>Is meaningful or useful to have emotional reactions to business
+organizations?  Right now there’s a lot of that going around;
+the atmosphere swirling around my employer and That Fruit Company a
+short commute away in Silicon Valley grows steamy.  Which pales
+compared to the global outpouring of fear and loathing directed at a certain
+English oil corporation. I’m going to argue (after some personal digressions) that
+hating on BP is perhaps actively harmful.</p>
+<h2 id='p-7'>Personal Digression</h2>
+<p>Recently I
+<a href="http://twitter.com/timbray/status/14950012279">tweeted</a> (and I
+apologize for the coarse language): “Unlike apparently everyone, I’m not
+pissed at BP. You gonna live on fossil fuel, shit gonna happen. BP drew the
+short straw.”  Which didn’t seem to me that radical a thing to say.  It’s far
+from established that BP is significantly worse (or better) in its practices
+than the rest of the industry.  Seems to me that it’s not one oil company
+that’s befouling our species’ only nest, it’s our systemic addiction to cheap
+energy and aversion of our eyes from what that does to us.</p>
+<p>I can see perfectly well that others might not agree with me, seeing BP as
+a unique malefactor worthy of unique punishment; for example, a 
+<a href="http://www.facebook.com/pages/Boycott-BP/119101198107726">large
+number gathering on Facebook</a>.  So I wasn’t surprised at getting lots of pushback.</p>
+<h2 id='p-2'>Angry at Google</h2>
+<p>I was a little surprised at
+<a href="http://twitter.com/counternotions/status/15062361881">this</a>, which
+opens with “Google mouthpiece Tim Bray...”  A couple of clicks reminded me
+that I was reading someone who hides behind the (albeit stylish) alias
+<a href="http://counternotions.com/contact/">Kontra</a> and who has previously
+<a href="http://counternotions.com/2010/05/17/curation/">hated on me</a> with
+considerable glee.</p>
+<p>While everyone knows that there’s a lot of perfectly-reasonable
+worry about Google’s pervasiveness and reach, the company itself seems too
+inchoate and chaotic to hold any particular single feeling about for any length of
+time. But Kontra genuinely loathes Google right down to the ground. (I can
+testify with some force that at Google there is a notable lack of 
+conspiratorial intent to Do Bad Things With All That Data, but then you might
+choose to discount that testimony because of the logo on my paycheck.)</p>
+<p>Having said all
+that, I think Kontra is something of an anomaly.  I wish he’d decloak though;
+anonymous polemics leave a very sour taste.</p>
+<h2 id='p-3'>What About Apple?</h2>
+<p>Hating (or loving) them seems
+about as equally unreasonable.  I’ve been vocal about my loathing for their
+app-store regime but they’re my favorite computer manufacturer, and
+the iPhone is a terrific product; challenging fun to compete against.  
+Apple marketing irritates me but
+then so does 90%-plus of <em>all</em> marketing.  I have emotional reactions
+to certain of their design values (positive to the general design of the OS X interface,
+negative to the shiny-black-and-silver
+color scheme of recent MacBooks) but design values <em>should</em> provoke
+those.  Apple as a whole? I look into my soul and honestly can’t scare up
+much in the way of feelings, positive or negative.</p>
+<h2 id='p-4'>It Happened To Me</h2>
+<p>For some number of years I loathed Microsoft, but
+then on the other hand I’d been the target of a direct attack during which
+that company sincerely tried to ruin my career, and my wife’s because of her
+relationship to me.  So that was an unusual situation no matter how you look
+at it.  These days Microsoft is irrelevant to anything I care about.</p>
+<p>And at the end of the day I can’t see really getting emotional about
+commercial organizations.  That
+<a href="http://www.google.com/corporate/tenthings.html">Our Philosophy</a> stuff
+does lend me some comfort here at Google, but my passions, positive and negative, center on
+people and projects, not the commercial organizations that house them.</p>
+<h2 id='p-6'>Back to BP</h2>
+<p>Hating the company has the potential to distract from a larger problem, the
+immense number of <em>other</em> 
+poorly-regulated oil platforms in the Gulf; is it 
+<a href="http://scienceblogs.com/pharyngula/2010/05/a_constructive_suggestion_for.php">4,000
+or only 1,500</a>?</p>
+<p>And it’s bigger than that; both the current spill and the whole Gulf problem,
+the more I look at them, seem like
+symptoms of a deeper disease.  You have to treat a disease’s symptoms or they
+might kill you, but suing BP into oblivion (a good idea if there’s
+a decent legal case) isn’t going to reduce the big-picture damage contingent
+on our addiction to unrealistically-priced fossil fuels.</p>
+<p>And hating the company, or any company, will just reduce the quality of
+your life.</p>
+</div></content></entry>
+
+</feed>

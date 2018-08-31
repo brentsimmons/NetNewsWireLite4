@@ -1,0 +1,133 @@
+1.0d4:
+
+News list: text in selected and highlighted rows has a 1 pixel drop shadow going up. 0% gray 45% alpha.
+
+News list: special case for when thumbnail and feedname/favicon are shown. There may be air between title and feedname/favicon. Per design.
+
+News list: the table is cleared when you select a different feed or folder to display. (It was saving its scroll position -- now it goes back to the top.) Of course a special case is made when you're displaying the same feed/folder as previous -- then it remembers your scroll position.
+
+News list: fixed the bug -- I think -- where it could appear that two or more items are selected at the same time. (Can't reproduce it anymore.)
+
+News list: fixed the bug where sometimes, especially after tapping next-unread, the news item row background would have the highlighted background instead of the selected background.
+
+Article: now laid out per Brad's design.
+
+Article: the star button in the toolbar now gets the correct look (hollow or not) based on whether or not the article is starred.
+
+Article: the star button now animates when tapped. Animation by Brad; code by Nick -- I just plugged it in.
+
+Article: if an article is unread, the article view will now reflect that.
+
+Article: when switching from one article to another, there's a .25 second animation where the old article fades out. Makes the transition slightly less jarring. I'll tweak this once I run it on an actual iPad.
+
+Web page: address text field now has a clear button on the right.
+
+Web page: address text field uses Brad's artwork instead of the built-in look.
+
+News list: thumbnails now animate in (except when recently loaded).
+
+Article: the up/down buttons in portrait mode are now properly disabled (and using the disabled-look graphics) when needed.
+
+
+1.0d3:
+
+News list: The Mark All Read button is now disabled when there are no unread items.
+
+Article: using the revised PostReadIndicator.png.
+
+News list: now has toolbar items (same as on Feeds list).
+
+Syncing: fixed a bug where the sync/download session could appear to go on forever -- the toolbar activity indicator would keep spinning and the status would say it's downloading news items, even though it wasn't actually running anymore.
+
+News list: mark-all-read popover is now better centered under the mark-all-read button.
+
+Feeds/News list: using the new toolbar background graphic with the sharp border line up top.
+
+News list: margin to the right of thumbnails increased by 2 pixels.
+
+Article/Web page: fixed a bug where the Feeds popover could disappear when in portrait mode.
+
+Article/Web page: in portrait mode, the Feeds popover button (upper-left) is now a constant 175 pixels wide. The title is truncated if necessary, but still shows the unread count if there is one. For instance, a long feed name might be truncated like "Some Crazy Stu... (19)"
+
+Feeds/News list: The toolbar at the bottom of the Feeds and News List tables now shows the last update time, centered in the toolbar.
+
+Feeds: now using the correct background row image when a web page is open.
+
+Feeds: Starred Items and Latest News had the background row image for expanded folders. Fixed.
+
+Feeds: The disclosure triangles are now lined and indented up per Brad's design.
+
+Feeds: the title for the navbar is now updated at most once a second. This prevents the first-run experience from seeming weirdly frenetic, as this title would update with the unread count continuously. Now it's calmer.
+
+Feeds: unread counts for feeds and folders update at most once every half-a-second. This makes the view seem calmer (especially during that first run, or during any heavy update) -- but it's also a performance boost, since the app is doing less work.
+
+Feeds: the current selection is properly saved and restored after expands and collapses.
+
+News list: now uses the correct row background graphics when a web page is showing.
+
+News list: now using the correct thumbnail overlay when a web page is showing.
+
+
+1.0d2:
+
+Login screen: username and password fields have clear buttons.
+
+Login screen: any existing text is no longer automatically cleared when you tap on the username or password field.
+
+Article: the read indicator circle now appears to the left of the title.
+
+Article, web page: if you've popped up the action menu, you can't pop up another one top of it.
+
+News list: if you've popped up mark-all-read, you can't pop up another one on top.
+
+Syncing: *way* more efficient. It was downloading all unread items on every refresh session. Now it just downloads the unread items it doesn't have.
+
+News list: if you'd popped up mark-all-read, then hit the back button to go back to Feeds, the mark-all-read popover would stay up. (I think this is an OS bug, by the way.) Now it gets removed.
+
+Login: the Login button is now properly disabled when one or both of username and password don't have text.
+
+Feeds/News-List popover: it's at full height in both cases, instead of animating to a different height.
+
+News list: increased the thumbnail left margin from 4 to 8px.
+
+Article: if you pop up the action menu, then click on a toolbar button, the action menu will now disappear.
+
+Massive code cleanups under the hood. Simplified and deleted a bunch. Should mean a performance gain, particularly with the Feeds list, but you probably won't notice on the simulator.
+
+App now launches in landscape if simulator is in landscape -- it doesn't trigger a rotation to portrait. (Turns out just a setting in the info.plist file.)
+
+Login: changed error message title from "Can’t login to Google" to "There was an error logging in."
+
+News list in popover: after confirming Mark All as Read, the view now slides back to Feeds (instead of jumps). I added a little delay thingy -- we're working around an OS bug here (which might get fixed later).
+
+Feeds: There's now a shadow under the navbar. It's the same shadow as the shadow that appears after the last row in the Feed list.
+
+Feeds: there's now a shadow above the first row. Same shadow as the last-row shadow, but inverted.
+
+Feeds: fixed the shadow at the bottom of the list so that its area isn't considered part of the tableview, but is treated as part of the background.
+
+Feeds: on collapsing a folder, trying a new, more accordion-like table view animation (new in the iPad SDK).
+
+News list: the title in the navigation bar is a smaller font and may use two lines. It truncates in the middle, if needed.
+
+News list: has shadow below navbar. Has shadow above first row. Has shadow after last row.
+
+News list: the unread badge now shrinks to single-digit unread counts.
+
+Article, web page: the size of the email-this-page window is the same for both articles and web pages now. (It's the default size -- letting the system decide what it wants to do.)
+
+Syncing: now downloading starred items from Google Reader.
+
+Syncing: now pushing starred items status changes to Google Reader.
+
+Syncing: now pushing marked-read status changes to Google Reader.
+
+News list: using new thumbnail overlays for different states.
+
+Feeds: using more of the various button states. Not finished yet, but closer.
+
+1.0d1:
+
+Sent to Apple as demo app.
+
+Circulated simulator build to folks.

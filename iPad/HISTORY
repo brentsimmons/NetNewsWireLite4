@@ -1,0 +1,37 @@
+3 Feb 2010:
+
+Created nnwipad project, based on splitview template.
+
+Created repository.
+
+Added under-the-hood code from iPhone version.
+
+Doesn't build yet -- some errors to fix.
+
+4 Feb 2010:
+
+All system go for Paris project. Signed/faxed agreement.
+
+Started mapping out steps in OmniOutliner.
+
+4:18 pm: IT BUILDSES!@
+Doesn't have UI code yet, though. Doesn't actually contact Google. Or
+create the news items database. But most of the code is in place and is
+compiling.
+
+Creates databases, both Core Data and straight SQLite.
+
+
+
+5 Feb 2010:
+
+The login window now displays at startup if needed and does its thing.
+
+It now downloads feeds from Google at startup (or after login window displays). Data is stored in the databases.
+
+Feeds view now displays feeds and folders. Does expand/collapse etc. Starting use some of the assets from Brad.
+
+
+23 Mar 2010:
+
+Uploaded to Apple for initial review.

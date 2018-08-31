@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>inessential.com: weblog</title>
+	<meta name="MSSmartTagsPreventParsing" content="true" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css" media="all">@import "http://inessential.com/styles/styleSheet.css";</style>
+	<script type="text/javascript"> </script> <!-- FOUC hack: http://www.bluerobot.com/web/css/fouc.asp -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://inessential.com/xml/rss.xml" />
+   </head>
+<body>
+<div id="banner"><span id="biglink"><a href="http://inessential.com/">inessential.com</a></span><br />
+<span class="links"><a href="http://inessential.com/xml/rss.xml">feed</a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/brentsimmons">Twitter</a>&nbsp;&nbsp;&nbsp;<a href="http://ranchero.com/">linkblog</a>&nbsp;&nbsp;&nbsp;<a href="http://netnewswireapp.com/">NetNewsWire</a>&nbsp;&nbsp;&nbsp;<a href="http://taplynx.com/">TapLynx</a></span><br />
+<span id="saying">Brent Simmons&rsquo;s weblog. File under Cocoa Developers.</span>
+</div>
+
+<div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/06/18/put_weblogs_on_bitbucket">Put weblogs on bitbucket</a></h3>
+	<div class="weblogPostBody"><p>I’ve moved the repositories for inessential.com and ranchero.com to bitbucket and made them public read-only.</p>
+
+<p><a href="http://bitbucket.org/brentsimmons/ranchero.com/overview">ranchero.com repository</a><br />
+<a href="http://bitbucket.org/brentsimmons/inessential.com/overview">inessential.com repository</a></p>
+
+<p>It’s just the raw stuff that gets rendered into weblog posts — it’s not the rendering scripts. There’s no actual software. Just a bunch of words.</p>
+
+<p>Not sure why I did this. Maybe just because I could. But sometimes big bunches of text can be useful for somebody somewhere.</p>
+
+<p>The actual posts are in the posts directory. Older posts are HTML, newer posts are written in <a href="http://daringfireball.net/projects/markdown/">Markdown</a>. The lines at the top of each post that start with a @ character are metadata. Stuff between &#91;[ and ]] are macros. Stuff between &#91;[= and ]] are includes (grabbed from Snippets folder).</p>
+
+<p>I wrote about my system in early 2009 <a href="http://inessential.com/2009/01/30/new_publishing_system_tour_of_my_head">here</a>. I’ve been quite happy with it. To restate the advantages:</p>
+
+<ol>
+<li><p>Static HTML pages are <em>fast</em>. I don’t have to worry about getting Fireballed. :) And they’re easily portable, if I ever have to change web hosts.</p></li>
+<li><p>Static RSS feeds are fast too, which is good because they get requested a lot.</p></li>
+<li><p>Having source control is especially nice when I’m working on templates.</p></li>
+<li><p>Having source control is great for offsite backups. (I was using Dropbox before I switched to bitbucket. I’ll probably still keep a backup on Dropbox, just because.)</p></li>
+<li><p>Being able to search through my weblogs on my desktop using Spotlight or <a href="http://betterthangrep.com/">ack</a> is very convenient. (Okay, I admit I use ack mostly.)</p></li>
+<li><p>The system can generate a local preview version, so I can render my site just on my machine and look at it before uploading. I don’t use that often, but it’s nice when working on templates.</p></li>
+</ol>
+
+
+<p>Best part: I still get to use <a href="http://www.red-sweater.com/marsedit/">MarsEdit</a> — I have a small Ruby-based server that implements the API that MarsEdit expects. I hardly ever actually look at the weblogs as files-on-disk, and I never edit the posts that way (though I could).</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/06/18/put_weblogs_on_bitbucket">Fri 18 Jun 2010 11:36 AM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/06/14/reminder_about_upgrading_netnewswire">Reminder about upgrading NetNewsWire</a></h3>
+	<div class="weblogPostBody"><p>I don’t usually use my personal weblog for this kind of thing — but it’s important for NetNewsWire users, so I want to make sure all bases are covered.</p>
+
+<p>A couple months ago we released updated versions of NetNewsWire that work with an upcoming change in Google Reader. That change (in the authentication system) goes into effect tomorrow (Tuesday). So it’s important to make sure you have the latest version.</p>
+
+<p>In a nutshell: you should have Mac 3.2.7 or greater (you can look at the About window). For iPhone and iPad, you should just check the App Store to make sure there isn’t an update waiting for you.</p>
+
+<p>More details are in a <a href="http://netnewswireapp.com/2010/06/reminder-make-sure-netnewswire-is-latest-version/">post on the NetNewsWire weblog</a>.</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/06/14/reminder_about_upgrading_netnewswire">Mon 14 Jun 2010 05:48 PM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/06/05/practical_wwdc_tips">Practical WWDC tips</a></h3>
+	<div class="weblogPostBody"><p>No time to write something long or organized this year. Quick notes, then.</p>
+
+<p>Drink plenty of water. Make sure there’s plenty of water in your hotel room.</p>
+
+<p>Try to avoid walking the streets at night alone. I wouldn’t say the streets are dangerous. But still.</p>
+
+<p>Avoid the Tenderloin.</p>
+
+<p>You are your fellow developers keeper. Be inclusive. Help anyone who needs help. Be that good person your grandmother imagines you are.</p>
+
+<p>You’re here to learn and see cool things. Part of that is telling other people about the cool things you’ve seen. (Related: you’re not here to complain.)</p>
+
+<p>Go to the ADA ceremony. When you don’t win (odds are you won’t win), remember that feeling. It’s useful year-round. But clap hard for the folks who <em>do</em> win — they worked hard and earned it, and they deserve your support. If you see them later, congratulate them.</p>
+
+<p>Use your iPhone alarm <em>and</em> the hotel’s alarm clock, especially for Monday morning.</p>
+
+<p>Make it drop-dead easy to plug your iPhone into power at night, so you don’t forget.</p>
+
+<p>Put your hotel room number in your wallet.</p>
+
+<p>Use Twitter for organizing and finding out what’s going on.</p>
+
+<p>Remember to eat. Don’t worry about <em>what</em> you eat too much — you’ll go back to being virtuous when you get home. The important thing is to not skip meals: you’ll need the energy.</p>
+
+<p>Remember to listen to music sometimes. You’ll need the energy from that, too.</p>
+
+<p>You won’t be graded on your week — except by you.</p>
+
+<p>The friends you make will mean more to you than the APIs you learn.</p>
+
+<p><a href="http://twitter.com/kickingbear">Guy English</a> is there only to break your heart. (Total sadist, that guy. Delights in it. Whatareyagonnado.)</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/06/05/practical_wwdc_tips">Sat 05 Jun 2010 04:31 PM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/06/03/bssaxtweetparserdemo">BSSAXTweetParserDemo</a></h3>
+	<div class="weblogPostBody"><p>I had reason to look at <a href="http://github.com/mattgemmell/MGTwitterEngine">MGTwitterEngine</a> today. It had been a while since I looked at it, and I was reminded that the libxml-based parser in there was originally based on my <a href="http://inessential.com/2008/04/15/libxml2_xmltextreader_on_macs">BSTweetParser</a> from a couple years ago. (Folks did a real nice job of improving it, of course.)</p>
+
+<p>But I don’t do my XML parsing like that anymore. I still use libxml, but I use the SAX interface these days.</p>
+
+<p>Here’s a new demo project — somewhat like the old BSTweetParser, but using SAX: <a href="http://ranchero.com/downloads/BSSAXTweetParserDemo.zip">BSSAXTweetParserDemo</a>. (It’s an Xcode project folder with source.)</p>
+
+<p>I have no special unnatural love for SAX, like some <a href="http://shapeof.com/">people</a>, but it’s the best way to get both high performance and low memory use. (These days I <em>always</em> use SAX.)</p>
+
+<h4>Notes about the code</h4>
+
+
+<p>Twitter’s public timeline XML is very simple, so it makes a great demo. Easy to follow what’s going on.</p>
+
+<p>SAX is event-based.</p>
+
+<p>SAX means you don’t have to have the entire XML document in memory — you can pass it to the parser in chunks. This demo doesn’t do that, but my production code does. (Do you want to hold a 5MB XML document in memory on an iPhone? Nope.) Luckily, NSURLConnection makes this very simple. Don’t append data to build the response body — just pass each chunk to the parser and forget it.</p>
+
+<p>The original BSTweetParser code allocated a ton of strings and dictionaries. This new code still has to allocate memory — but it allocates a whole lot <em>less</em> memory. This makes a giant difference on iPhones and iPads.</p>
+
+<p>The original BSTweetParser code just turned everything into arrays, dictionaries, and strings. This new code is selective: it stores only what it wants to store, and it uses custom objects: BSTweet and BSUser instead of dictionaries. I recommend this when performance and memory use matter (as they always do on iPhones and iPads).</p>
+
+<p>The comments in the demo code hint at, but don’t entirely demonstrate, the best way to parse a stream like a stream of tweets: don’t create a big array — instead, each time you have a new tweet, call some delegate to do something with it. No need to store the whole thing as an array and then process it — that uses too much memory. (But that’s exactly what the demo is doing. To keep the demo simple.)</p>
+
+<p>This code not only does less memory allocation, it’s also more than twice as fast as the original BSTweetParser. (The two things are related, of course.) On my development machine, BSSAXTweetParser parsed the timeline in about 0.0008 seconds, while BSTweetParser did it in about 0.0017 seconds. (“Faster <em>and</em> less memory? Sold!”) (I bet the difference is way more dramatic on iPhones, but I built this is a Mac Foundation tool.)</p>
+
+<p>You’ll probably realize fairly quickly what parts of the BSTweetParser class could be made an abstract class from which your real parsers would inherit.</p>
+
+<p>There’s a bunch more code in BSSAXTweetParserDemo than in BSTweetParser. I prefer less code to more code almost as much as I prefer breathing to not-breathing. But that’s life — sometimes the faster and better thing takes more code.</p>
+
+<p>I put this thing in the public domain. Use however and wherever.</p>
+
+<p>In the tradition of all demos ever, there’s no error checking or handling.</p>
+
+<p>When it comes to things like XML parsing on iPhones and iPads, the entire name of the game is <em>doing the least work possible</em>.</p>
+
+<p>There are ways to make this even faster still.</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/06/03/bssaxtweetparserdemo">Thu 03 Jun 2010 09:09 PM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://www.zetetic.net/blog/2010/05/27/re-apps-that-work-together-on-ipad">More on Apps that work together – on iPad</a></h3>
+	<div class="weblogPostBody"><p><a href="http://www.zetetic.net/blog/2010/05/27/re-apps-that-work-together-on-ipad">Bill Gray</a>: “However, there’s still no way an app could ‘discover’ what other apps are available and what services they provide under this scenario, and that’s really clutch for this sort of thing...”</p>
+
+<p>Excellent point. It can be done without, but so much better if we had that.</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/05/27/more_on_apps_that_work_together_–_on_i">Thu 27 May 2010 08:30 AM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://www.scsc.no/blog/2010/05-26-universal-back-button-released-for-mac-os-x.html">Universal Back Button app</a></h3>
+	<div class="weblogPostBody"><p><a href="http://www.scsc.no/blog/2010/05-26-universal-back-button-released-for-mac-os-x.html">Daniel Stødle</a>: “The idea is to provide a back button that takes you back to the task you were working on, before you opened a file, clicked a link, or similar.”</p>
+
+<p>Clever and interesting. I bet I never would have thought to use the Apple events debug option to make this work. Cool.</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/05/26/universal_back_button_app">Wed 26 May 2010 05:35 PM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://brockerhoff.net/blog/2010/05/24/re-apps-that-work-together-—-on-ipad/">Re: Apps that work together — on iPad</a></h3>
+	<div class="weblogPostBody"><p>Rainer Brockerhoff: <a href="http://brockerhoff.net/blog/2010/05/24/re-apps-that-work-together-—-on-ipad/">Re: Apps that work together — on iPad</a>: “I was thinking about the same issue, coincidentally, and one idea which occurred to me is to use the equivalent of the http referrer URL.”</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/05/24/re_apps_that_work_together_on_ipad">Mon 24 May 2010 05:18 PM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/05/24/universal_back_button_">Universal back button?</a></h3>
+	<div class="weblogPostBody"><p>On ollicle.com appears an extension to my idea about URL schemes on iPad: a <a href="http://www.ollicle.com/2010/may/24/universal_back_button.html">universal back button on Macs</a>. Very interesting. I like it.</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/05/24/universal_back_button_">Mon 24 May 2010 11:42 AM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/05/24/shared_code_management">Shared code management</a></h3>
+	<div class="weblogPostBody"><p>We have five Cocoa apps at NewsGator: TapLynx, Social Sites, and three versions of NetNewsWire. They share code.</p>
+
+<p>(You may not have heard of <a href="http://itunes.apple.com/us/app/newsgator-social-sites/id358181841?mt=8">Social Sites</a>. Written by <a href="http://twitter.com/nick_harris">Nick Harris</a>, it’s an iPhone client for our Social Sites enterprise social networking app.)</p>
+
+<p>We’ve just been doing the copy-files thing. Not good. So below I present an (ever-so-slightly edited: took out two words) internal email I just sent about managing the shared code. This is as a sanity check: I think, given our tools, this is the best way to manage this stuff, but I wouldn’t mind hearing that there are other, better ways.</p>
+
+<h4>The email: “Shared Code Plan”</h4>
+
+<p>Here’s the issue: we have a bunch of code that’s shared between two or more apps. We don’t have a way of managing this right now other than just copying files — which is inconvenient at best, and leads to files being not-quite-the-same in different places as bugs are fixed and features added.</p>
+
+<p>Here’s the solution I’m thinking of. If any of this sounds like the wrong way to go, let me know.</p>
+
+<ul>
+<li><p>Code shared between two or more apps will all live together in an RSCore repository. (If Apple can keep using NS, we can use RS. I just find the initials more poetic than NG, and that actually, bizarrely, matters to me.) This way the shared code will all be the same for each app.</p></li>
+<li><p>Existing and new projects will include the RSCore repository as a Mercurial sub-repository (a sub-folder in the project folder).</p></li>
+<li><p>The RSCore repository will have Foundation and UIKit sub-sections. (This way NetNewsWire/Mac can still use the Foundation stuff.)</p></li>
+<li><p>A given project will include just what RSCore files it needs. It won’t be presented as a static library, since that makes debugging a pain, and leads to including unnecessary code.</p></li>
+<li><p>However, RSCore will have a unit tests project, so we can verify code changes before committing, so we can avoid breaking all our apps at once.</p></li>
+<li><p>Category methods on Foundation and UIKit will begin with an rs_ prefix, to avoid namespace collisions.</p></li>
+<li><p>New classes in RSCore will be prefixed with RS.</p></li>
+<li><p>We’ll be conservative about what we add. <em>Only</em> things that are for sure used in more than one app will go in there.</p></li>
+</ul>
+
+
+<p>The idea is not to make additional work, but to make less work in the future, to make all this manageable, to increase productivity.</p>
+
+<p>Make sense? Not make sense?</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/05/24/shared_code_management">Mon 24 May 2010 11:11 AM</a></span></div>	
+	</div><div class="weblogPost">
+	<h3><a href="http://inessential.com/2010/05/23/apps_that_work_together_on_ipad">Apps that work together — on iPad</a></h3>
+	<div class="weblogPostBody"><p>On Macs we have a long-standing culture of apps working together. I can think of a few examples from my own Mac app: you can send a podcast to iTunes, send an article to Twitterrific to tweet it, or send an article to MarsEdit to post it to your weblog.</p>
+
+<p>Of course, on a Mac, the calling app doesn’t quit when you do these things. It stays open. You can get right back to it. (In some cases, the calling app stays in front the whole time, like when sending a podcast from NetNewsWire to iTunes.)</p>
+
+<p>On the iPad (and iPhone) we can sort-of do the same thing. We don’t have AppleScript or Apple events, but we do have the URL scheme thing for inter-application communication. It’s technically possible to do some of these same things.</p>
+
+<p>But we don’t have an easy way to get back to the calling app. Imagine a hypothetical case like this:</p>
+
+<ol>
+<li><p>You’re in Twitterrific, looking at a web page, and there’s a link to a feed. You want to subscribe to that feed.</p></li>
+<li><p>So you choose a “Subscribe in NetNewsWire” command. It opens NetNewsWire and subscribes to the feed.</p></li>
+<li><p>Now that you’ve done that, you want to get back to your place in Twitterrific. You want it to be exactly as if it never quit.</p></li>
+</ol>
+
+
+<p>We can do #1 and #2. It’s #3 that’s tricky.</p>
+
+<p>So I have an idea. It just came to me, so I don’t know if it’s good or bad — but it’s worth posting, at least.</p>
+
+<p>What if the calling app added, as a parameter to the URL, a URL to call when the task is completed?</p>
+
+<p>This way the helper app (NetNewsWire in this case) would know, once the task is complete, how to get the user back to their place in the calling app (Twitterrific in this case).</p>
+
+<p>The helper app wouldn’t even have to know anything about the calling app — it’s opening the URL that it was handed. (Maybe there’d be a spot for a success/fail return code of some kind too, but that’s a small side issue.)</p>
+
+<p>Sensible? Silly?</p></div>
+<div class="weblogPostDateline"><span class="weblogPostDisplayDate"><a href="http://inessential.com/2010/05/23/apps_that_work_together_on_ipad">Sun 23 May 2010 08:59 PM</a></span></div>	
+	</div>
+<p><a href="http://inessential.com/archive">Archive</a></p>
+
+<div id="copyrightNotice">&copy; 1995-2010 Brent Simmons</div>
+
+<div id="footer">
+<p>I work for <a href="http://newsgator.com/">NewsGator Technologies, Inc.</a> All opinions here are mine.</p>
+<p>This weblog is designed to be played at maximum volume.</p>
+</div>
+
+</body>
+</html>

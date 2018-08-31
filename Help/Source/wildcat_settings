@@ -1,0 +1,14 @@
+@siteName NetNewsWire Lite 4 Help
+@siteURL http://ranchero.com/help/netnewswirelite4/
+@hasWeblog false
+@weblogRelativePath (empty-string)
+@weblogNumberOfPostsOnHomePage 10
+@weblogTitle weblog
+@weblogMonthListArchiveTitle weblog archive
+@outputFileSuffix .html
+@previewPath /Users/brent/Projects/nnw/Help/HelpBookLite4/
+@previewURL http://127.0.0.1/~brent/inessential/
+@monthNameArray Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
+@styleSheet styleSheet.css
+@feedDescription NetNewsWire Lite Help.
+@remoteRsyncPath ranchero@ranchero.com:/home/ranchero/ranchero.com/help/netnewswirelite4/

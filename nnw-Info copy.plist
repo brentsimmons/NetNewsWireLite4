@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>nnwstyle</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>nnwstyle.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>NetNewsWire Style</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.ranchero.netnewswire.style</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<true/>
+			<key>NSDocumentClass</key>
+			<string>NNWStyleDocument</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>NetNewsWire</string>
+	<key>CFBundleGetInfoString</key>
+	<string>NetNewsWire Lite 4.0b1, Copyright © 2002-2011 NewsGator Technologies, Inc.</string>
+	<key>CFBundleIconFile</key>
+	<string>appIcon.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.ranchero.NetNewsWire4</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>4.0b1</string>
+	<key>CFBundleSignature</key>
+	<string>NNWf</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Subscribe to Feed</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>feed</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CacheFolderName</key>
+	<string>NetNewsWireLite4</string>
+	<key>DataFolderName</key>
+	<string>NetNewsWireLite4</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2002-2011
+NewsGator Technologies, Inc.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>Plugins_Preferences</key>
+	<array>
+		<string>NNWPreferencesGeneralViewController</string>
+		<string>NNWPreferencesFontsViewController</string>
+	</array>
+	<key>Plugins_Sharing</key>
+	<array>
+		<string>NNWSharingPluginSendViaEmail</string>
+		<string>NNWSharingPluginSendToInstapaper</string>
+		<string>NNWSharingPluginOpenInBrowser</string>
+		<string>NNWSharingPluginSendToApp</string>
+		<string>NNWSharingPluginOpenInAnyBrowser</string>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+				<string>public.composite-content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>NetNewsWire Style</string>
+			<key>UTTypeIconName</key>
+			<string>nnwstyle.icns</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.ranchero.netnewswire.style</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://ranchero.com/netnewswire/resources/styles.php</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>nnwstyle</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

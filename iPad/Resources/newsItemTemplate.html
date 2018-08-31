@@ -1,0 +1,125 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-family: Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.6em;
+	background-color: white;
+	-webkit-text-size-adjust:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #666666;
+	}
+h2 {
+	font-size: 1.5em;
+	line-height: 1.3em;
+	}	
+a {
+	text-decoration: none;
+	}
+a, a:link {
+	font-weight: bold;
+	color: #325184;
+	}
+a:visited {
+	color: purple;
+	}
+pre {
+	font-size: 0.8em;
+	white-space: pre-wrap;
+}
+#nnwContent {
+	margin-left: 18px;
+	margin-right: 18px;
+	margin-bottom: 18px;
+	margin-top: 18px;
+}
+#nnwMetadata {
+	margin-left: 18px;
+	margin-right: 18px;
+	margin-bottom: 18px;
+	margin-top: 32px;
+}
+#source {
+	color: #ccc;
+	font-weight: bold;
+	font-family: Helvetica, sans-serif;
+	text-align: left;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	line-height: 1.1em;
+}
+.categories {
+	color: #bbb;
+	font-weight: bold;
+	font-family: Helvetica, sans-serif;
+	text-align: left;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	line-height: 1.1em;
+}
+#nnwDisplayDate {
+	text-align: right;
+	color: #999;
+	font-size: 13px;
+}
+#nnwByline {
+	color: #999;
+	font-size: 13px;
+	font-weight: normal;
+}
+#nnwFeedTitle {
+	text-align: left;
+	color: #616161;
+	font-weight: bold;
+}
+#nnwread, #nnwunread {
+	vertical-align: -4px;
+}
+</style>
+<script>
+function hideObject(obj) {
+	obj.style.display = "none";
+}
+function showObject(obj) {
+	obj.style.display = "inline";
+}
+function showAsRead() {
+	showObject(document.getElementById('nnwread'));
+	hideObject(document.getElementById('nnwunread'));
+}
+function showAsUnread() {
+	hideObject(document.getElementById('nnwread'));
+	showObject(document.getElementById('nnwunread'));
+}
+</script>
+<meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0;"/>
+<title>[[plainTextTitle]]</title>
+</head>
+<body>
+<div id="nnwContent">
+<h2><!-- <img id="nnwunread" src="nnw-image:UnreadPost.png" height="22" width="22" alt="unread" style="display:none" /><img id="nnwread" src="nnw-image:PostReadIndicator.png" height="22" width="22" alt="read" style="display:inline" />&nbsp;-->[[titleLink]]</h2>
+<div id="description">[[htmlText]]</div>
+</div>
+<br clear="all" />
+<table id="nnwMetadata" border="0" cellpadding="0" cellspacing="0" width="95%">
+<tr>
+<td valign="bottom" id="nnwFeedTitle" width="62%">[[googleFeedTitle]] <span id="nnwByline">[[byline]]</span></td>
+<td valign="bottom" id="nnwDisplayDate" width="38%">[[displayDate]]</td>
+</tr>
+<tr>
+<td colspan="2">[[categories]]</td>
+</tr>
+</table>
+</body>
+</html>

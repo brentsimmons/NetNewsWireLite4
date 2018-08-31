@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>inessential.com</title>
+    <link>http://inessential.com/</link>
+    <description>Brent Simmons’s weblog.</description>
+    <item>
+      <title>Put weblogs on bitbucket</title>
+      <link>http://inessential.com/2010/06/18/put_weblogs_on_bitbucket</link>
+      <description>&lt;p&gt;I’ve moved the repositories for inessential.com and ranchero.com to bitbucket and made them public read-only.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bitbucket.org/brentsimmons/ranchero.com/overview&quot;&gt;ranchero.com repository&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://bitbucket.org/brentsimmons/inessential.com/overview&quot;&gt;inessential.com repository&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s just the raw stuff that gets rendered into weblog posts — it’s not the rendering scripts. There’s no actual software. Just a bunch of words.&lt;/p&gt;
+
+&lt;p&gt;Not sure why I did this. Maybe just because I could. But sometimes big bunches of text can be useful for somebody somewhere.&lt;/p&gt;
+
+&lt;p&gt;The actual posts are in the posts directory. Older posts are HTML, newer posts are written in &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;. The lines at the top of each post that start with a @ character are metadata. Stuff between &amp;#91;[ and ]] are macros. Stuff between &amp;#91;[= and ]] are includes (grabbed from Snippets folder).&lt;/p&gt;
+
+&lt;p&gt;I wrote about my system in early 2009 &lt;a href=&quot;http://inessential.com/2009/01/30/new_publishing_system_tour_of_my_head&quot;&gt;here&lt;/a&gt;. I’ve been quite happy with it. To restate the advantages:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Static HTML pages are &lt;em&gt;fast&lt;/em&gt;. I don’t have to worry about getting Fireballed. :) And they’re easily portable, if I ever have to change web hosts.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Static RSS feeds are fast too, which is good because they get requested a lot.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Having source control is especially nice when I’m working on templates.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Having source control is great for offsite backups. (I was using Dropbox before I switched to bitbucket. I’ll probably still keep a backup on Dropbox, just because.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Being able to search through my weblogs on my desktop using Spotlight or &lt;a href=&quot;http://betterthangrep.com/&quot;&gt;ack&lt;/a&gt; is very convenient. (Okay, I admit I use ack mostly.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The system can generate a local preview version, so I can render my site just on my machine and look at it before uploading. I don’t use that often, but it’s nice when working on templates.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;Best part: I still get to use &lt;a href=&quot;http://www.red-sweater.com/marsedit/&quot;&gt;MarsEdit&lt;/a&gt; — I have a small Ruby-based server that implements the API that MarsEdit expects. I hardly ever actually look at the weblogs as files-on-disk, and I never edit the posts that way (though I could).&lt;/p&gt;</description>
+      <pubDate>Fri, 18 Jun 2010 11:36:42 -0700</pubDate>
+      <guid>http://inessential.com/2010/06/18/put_weblogs_on_bitbucket</guid>
+      <dc:date>2010-06-18T11:36:42-07:00</dc:date>
+    </item>
+    <item>
+      <title>Reminder about upgrading NetNewsWire</title>
+      <link>http://inessential.com/2010/06/14/reminder_about_upgrading_netnewswire</link>
+      <description>&lt;p&gt;I don’t usually use my personal weblog for this kind of thing — but it’s important for NetNewsWire users, so I want to make sure all bases are covered.&lt;/p&gt;
+
+&lt;p&gt;A couple months ago we released updated versions of NetNewsWire that work with an upcoming change in Google Reader. That change (in the authentication system) goes into effect tomorrow (Tuesday). So it’s important to make sure you have the latest version.&lt;/p&gt;
+
+&lt;p&gt;In a nutshell: you should have Mac 3.2.7 or greater (you can look at the About window). For iPhone and iPad, you should just check the App Store to make sure there isn’t an update waiting for you.&lt;/p&gt;
+
+&lt;p&gt;More details are in a &lt;a href=&quot;http://netnewswireapp.com/2010/06/reminder-make-sure-netnewswire-is-latest-version/&quot;&gt;post on the NetNewsWire weblog&lt;/a&gt;.&lt;/p&gt;</description>
+      <pubDate>Mon, 14 Jun 2010 17:48:20 -0700</pubDate>
+      <guid>http://inessential.com/2010/06/14/reminder_about_upgrading_netnewswire</guid>
+      <dc:date>2010-06-14T17:48:20-07:00</dc:date>
+    </item>
+    <item>
+      <title>Practical WWDC tips</title>
+      <link>http://inessential.com/2010/06/05/practical_wwdc_tips</link>
+      <description>&lt;p&gt;No time to write something long or organized this year. Quick notes, then.&lt;/p&gt;
+
+&lt;p&gt;Drink plenty of water. Make sure there’s plenty of water in your hotel room.&lt;/p&gt;
+
+&lt;p&gt;Try to avoid walking the streets at night alone. I wouldn’t say the streets are dangerous. But still.&lt;/p&gt;
+
+&lt;p&gt;Avoid the Tenderloin.&lt;/p&gt;
+
+&lt;p&gt;You are your fellow developers keeper. Be inclusive. Help anyone who needs help. Be that good person your grandmother imagines you are.&lt;/p&gt;
+
+&lt;p&gt;You’re here to learn and see cool things. Part of that is telling other people about the cool things you’ve seen. (Related: you’re not here to complain.)&lt;/p&gt;
+
+&lt;p&gt;Go to the ADA ceremony. When you don’t win (odds are you won’t win), remember that feeling. It’s useful year-round. But clap hard for the folks who &lt;em&gt;do&lt;/em&gt; win — they worked hard and earned it, and they deserve your support. If you see them later, congratulate them.&lt;/p&gt;
+
+&lt;p&gt;Use your iPhone alarm &lt;em&gt;and&lt;/em&gt; the hotel’s alarm clock, especially for Monday morning.&lt;/p&gt;
+
+&lt;p&gt;Make it drop-dead easy to plug your iPhone into power at night, so you don’t forget.&lt;/p&gt;
+
+&lt;p&gt;Put your hotel room number in your wallet.&lt;/p&gt;
+
+&lt;p&gt;Use Twitter for organizing and finding out what’s going on.&lt;/p&gt;
+
+&lt;p&gt;Remember to eat. Don’t worry about &lt;em&gt;what&lt;/em&gt; you eat too much — you’ll go back to being virtuous when you get home. The important thing is to not skip meals: you’ll need the energy.&lt;/p&gt;
+
+&lt;p&gt;Remember to listen to music sometimes. You’ll need the energy from that, too.&lt;/p&gt;
+
+&lt;p&gt;You won’t be graded on your week — except by you.&lt;/p&gt;
+
+&lt;p&gt;The friends you make will mean more to you than the APIs you learn.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://twitter.com/kickingbear&quot;&gt;Guy English&lt;/a&gt; is there only to break your heart. (Total sadist, that guy. Delights in it. Whatareyagonnado.)&lt;/p&gt;</description>
+      <pubDate>Sat, 05 Jun 2010 16:31:37 -0700</pubDate>
+      <guid>http://inessential.com/2010/06/05/practical_wwdc_tips</guid>
+      <dc:date>2010-06-05T16:31:37-07:00</dc:date>
+    </item>
+    <item>
+      <title>BSSAXTweetParserDemo</title>
+      <link>http://inessential.com/2010/06/03/bssaxtweetparserdemo</link>
+      <description>&lt;p&gt;I had reason to look at &lt;a href=&quot;http://github.com/mattgemmell/MGTwitterEngine&quot;&gt;MGTwitterEngine&lt;/a&gt; today. It had been a while since I looked at it, and I was reminded that the libxml-based parser in there was originally based on my &lt;a href=&quot;http://inessential.com/2008/04/15/libxml2_xmltextreader_on_macs&quot;&gt;BSTweetParser&lt;/a&gt; from a couple years ago. (Folks did a real nice job of improving it, of course.)&lt;/p&gt;
+
+&lt;p&gt;But I don’t do my XML parsing like that anymore. I still use libxml, but I use the SAX interface these days.&lt;/p&gt;
+
+&lt;p&gt;Here’s a new demo project — somewhat like the old BSTweetParser, but using SAX: &lt;a href=&quot;http://ranchero.com/downloads/BSSAXTweetParserDemo.zip&quot;&gt;BSSAXTweetParserDemo&lt;/a&gt;. (It’s an Xcode project folder with source.)&lt;/p&gt;
+
+&lt;p&gt;I have no special unnatural love for SAX, like some &lt;a href=&quot;http://shapeof.com/&quot;&gt;people&lt;/a&gt;, but it’s the best way to get both high performance and low memory use. (These days I &lt;em&gt;always&lt;/em&gt; use SAX.)&lt;/p&gt;
+
+&lt;h4&gt;Notes about the code&lt;/h4&gt;
+
+
+&lt;p&gt;Twitter’s public timeline XML is very simple, so it makes a great demo. Easy to follow what’s going on.&lt;/p&gt;
+
+&lt;p&gt;SAX is event-based.&lt;/p&gt;
+
+&lt;p&gt;SAX means you don’t have to have the entire XML document in memory — you can pass it to the parser in chunks. This demo doesn’t do that, but my production code does. (Do you want to hold a 5MB XML document in memory on an iPhone? Nope.) Luckily, NSURLConnection makes this very simple. Don’t append data to build the response body — just pass each chunk to the parser and forget it.&lt;/p&gt;
+
+&lt;p&gt;The original BSTweetParser code allocated a ton of strings and dictionaries. This new code still has to allocate memory — but it allocates a whole lot &lt;em&gt;less&lt;/em&gt; memory. This makes a giant difference on iPhones and iPads.&lt;/p&gt;
+
+&lt;p&gt;The original BSTweetParser code just turned everything into arrays, dictionaries, and strings. This new code is selective: it stores only what it wants to store, and it uses custom objects: BSTweet and BSUser instead of dictionaries. I recommend this when performance and memory use matter (as they always do on iPhones and iPads).&lt;/p&gt;
+
+&lt;p&gt;The comments in the demo code hint at, but don’t entirely demonstrate, the best way to parse a stream like a stream of tweets: don’t create a big array — instead, each time you have a new tweet, call some delegate to do something with it. No need to store the whole thing as an array and then process it — that uses too much memory. (But that’s exactly what the demo is doing. To keep the demo simple.)&lt;/p&gt;
+
+&lt;p&gt;This code not only does less memory allocation, it’s also more than twice as fast as the original BSTweetParser. (The two things are related, of course.) On my development machine, BSSAXTweetParser parsed the timeline in about 0.0008 seconds, while BSTweetParser did it in about 0.0017 seconds. (“Faster &lt;em&gt;and&lt;/em&gt; less memory? Sold!”) (I bet the difference is way more dramatic on iPhones, but I built this is a Mac Foundation tool.)&lt;/p&gt;
+
+&lt;p&gt;You’ll probably realize fairly quickly what parts of the BSTweetParser class could be made an abstract class from which your real parsers would inherit.&lt;/p&gt;
+
+&lt;p&gt;There’s a bunch more code in BSSAXTweetParserDemo than in BSTweetParser. I prefer less code to more code almost as much as I prefer breathing to not-breathing. But that’s life — sometimes the faster and better thing takes more code.&lt;/p&gt;
+
+&lt;p&gt;I put this thing in the public domain. Use however and wherever.&lt;/p&gt;
+
+&lt;p&gt;In the tradition of all demos ever, there’s no error checking or handling.&lt;/p&gt;
+
+&lt;p&gt;When it comes to things like XML parsing on iPhones and iPads, the entire name of the game is &lt;em&gt;doing the least work possible&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are ways to make this even faster still.&lt;/p&gt;</description>
+      <pubDate>Thu, 03 Jun 2010 21:09:58 -0700</pubDate>
+      <guid>http://inessential.com/2010/06/03/bssaxtweetparserdemo</guid>
+      <dc:date>2010-06-03T21:09:58-07:00</dc:date>
+    </item>
+    <item>
+      <title>More on Apps that work together – on iPad</title>
+      <link>http://www.zetetic.net/blog/2010/05/27/re-apps-that-work-together-on-ipad</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://www.zetetic.net/blog/2010/05/27/re-apps-that-work-together-on-ipad&quot;&gt;Bill Gray&lt;/a&gt;: “However, there’s still no way an app could ‘discover’ what other apps are available and what services they provide under this scenario, and that’s really clutch for this sort of thing...”&lt;/p&gt;
+
+&lt;p&gt;Excellent point. It can be done without, but so much better if we had that.&lt;/p&gt;</description>
+      <pubDate>Thu, 27 May 2010 08:30:32 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/27/more_on_apps_that_work_together_–_on_i</guid>
+      <dc:date>2010-05-27T08:30:32-07:00</dc:date>
+    </item>
+    <item>
+      <title>Universal Back Button app</title>
+      <link>http://www.scsc.no/blog/2010/05-26-universal-back-button-released-for-mac-os-x.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://www.scsc.no/blog/2010/05-26-universal-back-button-released-for-mac-os-x.html&quot;&gt;Daniel Stødle&lt;/a&gt;: “The idea is to provide a back button that takes you back to the task you were working on, before you opened a file, clicked a link, or similar.”&lt;/p&gt;
+
+&lt;p&gt;Clever and interesting. I bet I never would have thought to use the Apple events debug option to make this work. Cool.&lt;/p&gt;</description>
+      <pubDate>Wed, 26 May 2010 17:35:11 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/26/universal_back_button_app</guid>
+      <dc:date>2010-05-26T17:35:11-07:00</dc:date>
+    </item>
+    <item>
+      <title>Re: Apps that work together — on iPad</title>
+      <link>http://brockerhoff.net/blog/2010/05/24/re-apps-that-work-together-—-on-ipad/</link>
+      <description>&lt;p&gt;Rainer Brockerhoff: &lt;a href=&quot;http://brockerhoff.net/blog/2010/05/24/re-apps-that-work-together-—-on-ipad/&quot;&gt;Re: Apps that work together — on iPad&lt;/a&gt;: “I was thinking about the same issue, coincidentally, and one idea which occurred to me is to use the equivalent of the http referrer URL.”&lt;/p&gt;</description>
+      <pubDate>Mon, 24 May 2010 17:18:16 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/24/re_apps_that_work_together_on_ipad</guid>
+      <dc:date>2010-05-24T17:18:16-07:00</dc:date>
+    </item>
+    <item>
+      <title>Universal back button?</title>
+      <link>http://inessential.com/2010/05/24/universal_back_button_</link>
+      <description>&lt;p&gt;On ollicle.com appears an extension to my idea about URL schemes on iPad: a &lt;a href=&quot;http://www.ollicle.com/2010/may/24/universal_back_button.html&quot;&gt;universal back button on Macs&lt;/a&gt;. Very interesting. I like it.&lt;/p&gt;</description>
+      <pubDate>Mon, 24 May 2010 11:42:59 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/24/universal_back_button_</guid>
+      <dc:date>2010-05-24T11:42:59-07:00</dc:date>
+    </item>
+    <item>
+      <title>Shared code management</title>
+      <link>http://inessential.com/2010/05/24/shared_code_management</link>
+      <description>&lt;p&gt;We have five Cocoa apps at NewsGator: TapLynx, Social Sites, and three versions of NetNewsWire. They share code.&lt;/p&gt;
+
+&lt;p&gt;(You may not have heard of &lt;a href=&quot;http://itunes.apple.com/us/app/newsgator-social-sites/id358181841?mt=8&quot;&gt;Social Sites&lt;/a&gt;. Written by &lt;a href=&quot;http://twitter.com/nick_harris&quot;&gt;Nick Harris&lt;/a&gt;, it’s an iPhone client for our Social Sites enterprise social networking app.)&lt;/p&gt;
+
+&lt;p&gt;We’ve just been doing the copy-files thing. Not good. So below I present an (ever-so-slightly edited: took out two words) internal email I just sent about managing the shared code. This is as a sanity check: I think, given our tools, this is the best way to manage this stuff, but I wouldn’t mind hearing that there are other, better ways.&lt;/p&gt;
+
+&lt;h4&gt;The email: “Shared Code Plan”&lt;/h4&gt;
+
+&lt;p&gt;Here’s the issue: we have a bunch of code that’s shared between two or more apps. We don’t have a way of managing this right now other than just copying files — which is inconvenient at best, and leads to files being not-quite-the-same in different places as bugs are fixed and features added.&lt;/p&gt;
+
+&lt;p&gt;Here’s the solution I’m thinking of. If any of this sounds like the wrong way to go, let me know.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Code shared between two or more apps will all live together in an RSCore repository. (If Apple can keep using NS, we can use RS. I just find the initials more poetic than NG, and that actually, bizarrely, matters to me.) This way the shared code will all be the same for each app.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Existing and new projects will include the RSCore repository as a Mercurial sub-repository (a sub-folder in the project folder).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The RSCore repository will have Foundation and UIKit sub-sections. (This way NetNewsWire/Mac can still use the Foundation stuff.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A given project will include just what RSCore files it needs. It won’t be presented as a static library, since that makes debugging a pain, and leads to including unnecessary code.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;However, RSCore will have a unit tests project, so we can verify code changes before committing, so we can avoid breaking all our apps at once.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Category methods on Foundation and UIKit will begin with an rs_ prefix, to avoid namespace collisions.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New classes in RSCore will be prefixed with RS.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We’ll be conservative about what we add. &lt;em&gt;Only&lt;/em&gt; things that are for sure used in more than one app will go in there.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The idea is not to make additional work, but to make less work in the future, to make all this manageable, to increase productivity.&lt;/p&gt;
+
+&lt;p&gt;Make sense? Not make sense?&lt;/p&gt;</description>
+      <pubDate>Mon, 24 May 2010 11:11:26 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/24/shared_code_management</guid>
+      <dc:date>2010-05-24T11:11:26-07:00</dc:date>
+    </item>
+    <item>
+      <title>Apps that work together — on iPad</title>
+      <link>http://inessential.com/2010/05/23/apps_that_work_together_on_ipad</link>
+      <description>&lt;p&gt;On Macs we have a long-standing culture of apps working together. I can think of a few examples from my own Mac app: you can send a podcast to iTunes, send an article to Twitterrific to tweet it, or send an article to MarsEdit to post it to your weblog.&lt;/p&gt;
+
+&lt;p&gt;Of course, on a Mac, the calling app doesn’t quit when you do these things. It stays open. You can get right back to it. (In some cases, the calling app stays in front the whole time, like when sending a podcast from NetNewsWire to iTunes.)&lt;/p&gt;
+
+&lt;p&gt;On the iPad (and iPhone) we can sort-of do the same thing. We don’t have AppleScript or Apple events, but we do have the URL scheme thing for inter-application communication. It’s technically possible to do some of these same things.&lt;/p&gt;
+
+&lt;p&gt;But we don’t have an easy way to get back to the calling app. Imagine a hypothetical case like this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;You’re in Twitterrific, looking at a web page, and there’s a link to a feed. You want to subscribe to that feed.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;So you choose a “Subscribe in NetNewsWire” command. It opens NetNewsWire and subscribes to the feed.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now that you’ve done that, you want to get back to your place in Twitterrific. You want it to be exactly as if it never quit.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;We can do #1 and #2. It’s #3 that’s tricky.&lt;/p&gt;
+
+&lt;p&gt;So I have an idea. It just came to me, so I don’t know if it’s good or bad — but it’s worth posting, at least.&lt;/p&gt;
+
+&lt;p&gt;What if the calling app added, as a parameter to the URL, a URL to call when the task is completed?&lt;/p&gt;
+
+&lt;p&gt;This way the helper app (NetNewsWire in this case) would know, once the task is complete, how to get the user back to their place in the calling app (Twitterrific in this case).&lt;/p&gt;
+
+&lt;p&gt;The helper app wouldn’t even have to know anything about the calling app — it’s opening the URL that it was handed. (Maybe there’d be a spot for a success/fail return code of some kind too, but that’s a small side issue.)&lt;/p&gt;
+
+&lt;p&gt;Sensible? Silly?&lt;/p&gt;</description>
+      <pubDate>Sun, 23 May 2010 20:59:54 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/23/apps_that_work_together_on_ipad</guid>
+      <dc:date>2010-05-23T20:59:54-07:00</dc:date>
+    </item>
+    <item>
+      <title>Adam Curry on creating the Big App Show</title>
+      <link>http://inessential.com/2010/05/19/adam_curry_on_creating_the_big_app_show</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://curry.com/?p=2265&quot;&gt;curry.com&lt;/a&gt;: “If my intuition is right, I think we might even see app programmers become the heroes of a generation, where fans can’t wait for the release of the next magical app their idol has become famous for.”&lt;/p&gt;</description>
+      <pubDate>Wed, 19 May 2010 11:03:02 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/19/adam_curry_on_creating_the_big_app_show</guid>
+      <dc:date>2010-05-19T11:03:02-07:00</dc:date>
+    </item>
+    <item>
+      <title>Sounds like the end of C4</title>
+      <link>http://inessential.com/2010/05/12/sounds_like_the_end_of_c4</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://rentzsch.tumblr.com/post/592949476/c4-release&quot;&gt;Wolf&lt;/a&gt;: “Software engineering is advancing, albeit at a glacial pace. I spend most of my days writing in languages and using tools that were obsolete over a decade ago.”&lt;/p&gt;
+
+&lt;p&gt;Wolf talks about the lack of outcry over section 3.3.1. I’ve not cried out. I’ve been apathetic about it.&lt;/p&gt;
+
+&lt;p&gt;Well, maybe not totally apathetic — mostly I was glad because &lt;em&gt;I don’t like Flash&lt;/em&gt;. I don’t like Flash because I’ve wasted too much time over the years dealing with Flash crashes.&lt;/p&gt;
+
+&lt;p&gt;But mainly I’ve been apathetic. Even though 3.3.1 isn’t all about Flash.&lt;/p&gt;
+
+&lt;p&gt;I don’t have time to care about everything. Should I make the time for this? I just don’t know. I don’t expect it will ever affect me personally, so it makes it that much tougher to care about. That’s not a laudable position, but it’s accurate (for me).&lt;/p&gt;
+
+&lt;p&gt;But there’s one notable thing here: there is no App Store for Macs, and no section 3.3.1 for Macs. C4 began as a Mac conference, and it could remain a Mac conference. I’ve been to every single one, and I’d love to go again. They’re been &lt;em&gt;hugely&lt;/em&gt; valuable to me.&lt;/p&gt;
+
+&lt;p&gt;Regardless, Wolf deserves another huge round of applause and the heartfelt thanks of many people for putting on C4. It was always awesome.&lt;/p&gt;
+
+&lt;p&gt;I’m standing, saluting, and trying not to cry.&lt;/p&gt;</description>
+      <pubDate>Wed, 12 May 2010 11:27:39 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/12/sounds_like_the_end_of_c4</guid>
+      <dc:date>2010-05-12T11:27:39-07:00</dc:date>
+    </item>
+    <item>
+      <title>Cool Things</title>
+      <link>http://inessential.com/2010/05/10/cool_things</link>
+      <description>&lt;p&gt;Some things I’ve recently become a fan of. Some things I like.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mercurial.selenic.com/&quot;&gt;Mercurial&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://bitbucket.org/&quot;&gt;BitBucket&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://dropbox.com/&quot;&gt;Dropbox&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://uservoice.com/&quot;&gt;UserVoice&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Negra_Modelo#Negra_Modelo&quot;&gt;Negra Modelo&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Mon, 10 May 2010 20:46:21 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/10/cool_things</guid>
+      <dc:date>2010-05-10T20:46:21-07:00</dc:date>
+    </item>
+    <item>
+      <title>Nashville flooded</title>
+      <link>http://inessential.com/2010/05/05/nashville_flooded</link>
+      <description>&lt;p&gt;I follow &lt;a href=&quot;http://twitter.com/nbradbury&quot;&gt;Nick Bradbury on Twitter&lt;/a&gt; for the obvious reasons: he writes FeedDemon and he’s a friend.&lt;/p&gt;
+
+&lt;p&gt;But lately his tweets have done extra duty of getting the word out about the catastrophic flooding in Nashville. For some reason it seems like the national broadcast media have been slower than normal in getting to this story.&lt;/p&gt;
+
+&lt;p&gt;Look. When a city is in trouble, we have to pay attention and we have to help. We all know this.&lt;/p&gt;
+
+&lt;p&gt;Nashville is not the dark side of the moon: it’s home to a civilization of people who get out of bed, work, play, feed the cat, watch TV, make things, wonder about the future, learn things, drink a few beers, mow the lawn — and who are united now in wishing the rains hadn’t fallen like this, and who now need help.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://twitter.com/nbradbury&quot;&gt;Nick’s Twitter page&lt;/a&gt; has good links, including links on how to donate.&lt;/p&gt;</description>
+      <pubDate>Wed, 05 May 2010 21:46:30 -0700</pubDate>
+      <guid>http://inessential.com/2010/05/05/nashville_flooded</guid>
+      <dc:date>2010-05-05T21:46:30-07:00</dc:date>
+    </item>
+    <item>
+      <title>Quick</title>
+      <link>http://inessential.com/2010/04/23/quick</link>
+      <description>&lt;p&gt;Fings...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Check out Daniel Jalkut’s &lt;a href=&quot;http://www.red-sweater.com/blog/1225/elements-of-twitter-style&quot;&gt;Twitter style guide&lt;/a&gt;. Good stuff.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I posted my &lt;a href=&quot;http://ranchero.com/downloads/iPadUIVolcanoBackupPlanTalk.key.zip&quot;&gt;Keynote slides from last night’s Xcoders talk&lt;/a&gt; with &lt;a href=&quot;http://www.halfapixelshort.com/&quot;&gt;Brad Ellis&lt;/a&gt;. The topic was iPad UI — we talked about the design of NetNewsWire for iPad and looked at some other apps. The slides are mostly screen shots (and a few movies).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Also from Brad Ellis: check out the &lt;a href=&quot;http://inessential.com/images/nnwiPadLayers.png&quot;&gt;screenshot of the layers&lt;/a&gt; for his NetNewsWire/iPad project. It’s huge.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m honored to be on the &lt;a href=&quot;http://www.mactech.com/articles/mactech/Vol.26/26.03/MacTech25-3/index.html&quot;&gt;MacTech 25 list&lt;/a&gt;. Congratulations to all.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I love &lt;a href=&quot;http://itunes.apple.com/us/app/star-walk-for-ipad-interactive/id363486802?mt=8&quot;&gt;Star Walk&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <pubDate>Fri, 23 Apr 2010 13:20:47 -0700</pubDate>
+      <guid>http://inessential.com/2010/04/23/quick</guid>
+      <dc:date>2010-04-23T13:20:47-07:00</dc:date>
+    </item>
+    <item>
+      <title>Most expensive platform to develop for?</title>
+      <link>http://inessential.com/2010/04/22/most_expensive_platform_to_develop_for_</link>
+      <description>&lt;p&gt;Of the three platforms — Mac, iPad, and iPhone — which is most expensive to develop for?&lt;/p&gt;
+
+&lt;p&gt;I think the obvious response is to rank them just that way: Mac most expensive, with iPad and iPhone about the same (with iPad being just a little more since it’s bigger).&lt;/p&gt;
+
+&lt;p&gt;But I wonder — could it be that, speaking very generally, the most expensive is &lt;em&gt;iPad&lt;/em&gt;, not Mac?&lt;/p&gt;
+
+&lt;p&gt;The iPad’s size means the apps may be close to desktop apps in terms of features. At the same time, there’s no doubt that user experience and graphic design are most critical on iPad.&lt;/p&gt;
+
+&lt;p&gt;Obviously there are all kinds of exceptions. But I think a compelling case could be made.&lt;/p&gt;</description>
+      <pubDate>Thu, 22 Apr 2010 16:25:27 -0700</pubDate>
+      <guid>http://inessential.com/2010/04/22/most_expensive_platform_to_develop_for_</guid>
+      <dc:date>2010-04-22T16:25:27-07:00</dc:date>
+    </item>
+    <item>
+      <title>UIWebView fade animation tips</title>
+      <link>http://inessential.com/2010/04/22/uiwebview_fade_animation_tips</link>
+      <description>&lt;p&gt;Say you want to fade between one UIWebView and another (as NetNewsWire/iPad does when switching articles, or going from article to web page or back). The first one fades to 0.0 alpha and then goes away. Two tips:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The first one — the one going away — should be on top. (It should fade away, revealing the webview beneath.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It will look weird unless you set the background color of the first one (going-away-one) to UIColor clearColor.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <pubDate>Thu, 22 Apr 2010 12:09:11 -0700</pubDate>
+      <guid>http://inessential.com/2010/04/22/uiwebview_fade_animation_tips</guid>
+      <dc:date>2010-04-22T12:09:11-07:00</dc:date>
+    </item>
+    <item>
+      <title>Unofficial stuff around Voices That Matter this weekend</title>
+      <link>http://inessential.com/2010/04/21/unofficial_stuff_around_voices_that_matt</link>
+      <description>&lt;p&gt;I’ve been getting questions about the unofficial side of things around the Voices that Matter conference. What’s going on at night?&lt;/p&gt;
+
+&lt;p&gt;Some answers:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thursday April 22&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://seattlexcoders.org/2010/04/20/april-22-meeting---brent-simmons-and-brad-ellis.html&quot;&gt;Xcoders&lt;/a&gt; meeting followed by &lt;a href=&quot;http://www.cyclopsseattle.com/&quot;&gt;Cyclops&lt;/a&gt; for geek talk and food and/or drinks. &lt;a href=&quot;http://twitter.com/bradellis&quot;&gt;Brad Ellis&lt;/a&gt; and I are doing an iPad UI Interactive Volcano Backup Plan Talk. Talking about NetNewsWire/iPad design plus other apps. (&lt;a href=&quot;http://twitter.com/fraserspeirs&quot;&gt;Fraser Speirs&lt;/a&gt; is volcano-locked, so we’re filling in as best we can. Wish Fraser could have made it.)&lt;/p&gt;
+
+&lt;p&gt;If you’ve never been to an Xcoders meeting — or you’re from out of town but are arriving in Seattle early — you’re totally encouraged to attend. There’s no official sign-up or anything like that: just show up.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Friday April 23&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.mamas.com/lavalounge.htm&quot;&gt;Lava Lounge&lt;/a&gt; starting at 7 pm. It’s entirely possible we could go MPU (Mobile Party Unit) after a couple hours — see the note about Twitter, below.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Saturday April 24&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.shortydog.com/&quot;&gt;Shorty’s&lt;/a&gt; starting around 9 pm for pinball. (There’s a &lt;a href=&quot;http://twitter.com/VTM_iphone/status/12533731827&quot;&gt;sponsored thing&lt;/a&gt; earlier for conference-goers.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bonus points&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For late-breaking changes of venue or whatever, &lt;a href=&quot;http://twitter.com/brentsimmons&quot;&gt;follow me on Twitter&lt;/a&gt;. I will not be offended if you follow me for the weekend and then unfollow.&lt;/p&gt;
+
+&lt;p&gt;All locations (except for Xcoders meeting) are in Belltown, which is convenient for conference-goers. (Xcoders meeting is downtown. Not much farther.)&lt;/p&gt;</description>
+      <pubDate>Wed, 21 Apr 2010 12:40:34 -0700</pubDate>
+      <guid>http://inessential.com/2010/04/21/unofficial_stuff_around_voices_that_matt</guid>
+      <dc:date>2010-04-21T12:40:34-07:00</dc:date>
+    </item>
+    <item>
+      <title>Show business</title>
+      <link>http://inessential.com/2010/04/18/show_business</link>
+      <description>&lt;p&gt;I can’t remember when it first dawned on me that app development is a form of show business.&lt;/p&gt;
+
+&lt;p&gt;But I was thinking about it when I started NetNewsWire for iPad. I remember thinking that it could be years before I get the next chance to create a brand-new app. So I decided to save screen shots of the &lt;a href=&quot;http://www.flickr.com/photos/brentsimmons/sets/72157623879850432/&quot;&gt;app as it was getting built&lt;/a&gt; — and also to save mockups for a &lt;a href=&quot;http://www.flickr.com/photos/brentsimmons/sets/72157623884146438/&quot;&gt;from-the-cutting-room-floor set&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Think of it as the DVD Extras.&lt;/p&gt;
+
+&lt;p&gt;There’s more I want to do — commentary, especially, on the design and coding process. The iPad is still so new, and it’s a fascinating thing, so I definitely want to write more about it. But, for now, there are screen shots. (And I have to work on my software, not just write about it.)&lt;/p&gt;
+
+&lt;p&gt;Of the things that didn’t make it, this is the one I wish that had made it. We’d have added &lt;a href=&quot;http://twitter.com/nick_harris&quot;&gt;Nick Harris&lt;/a&gt; to the credits list, since he did a ton of great work. (Many of the animations, for instance, are his work.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/78891836@N00/4532044641&quot; title=&quot;View 'Dedication (needed to add Nick Harris)' on Flickr.com&quot;&gt;&lt;img border=&quot;0&quot;src=&quot;http://farm3.static.flickr.com/2764/4532044641_54d9a381ee_o.png&quot;alt=&quot;Dedication (needed to add Nick Harris)&quot;width=&quot;331&quot;style=&quot;display:block; margin-left:auto; margin-right:auto;&quot;height=&quot;189&quot;title=&quot;Dedication (needed to add Nick Harris)&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This dedication and credits was going to be tucked-away in a specific feature — but that feature got cut the night before we called it finished.&lt;/p&gt;
+
+&lt;h4&gt;The other goal&lt;/h4&gt;
+
+
+&lt;p&gt;Posting these screen shots is not just about having something more to look at — there’s a little bit of a teaching goal. For at least a decade I’ve been interested in teaching non-developers what it’s like to make software.&lt;/p&gt;
+
+&lt;p&gt;The average person probably knows a ton more about about making &lt;em&gt;movies&lt;/em&gt; than about making software. As much as we totally love movies, we note that software plays a really important role in day-to-day life. And yet its creation is mysterious to millions (billions, prolly) of people who rely on software.&lt;/p&gt;
+
+&lt;p&gt;It shouldn’t be such a mystery. It’s not magic, it’s just work. But interesting and fun work.&lt;/p&gt;
+
+&lt;p&gt;And it’s the closest thing to show business we geeks have. It’s how we rock.&lt;/p&gt;</description>
+      <pubDate>Sun, 18 Apr 2010 15:32:08 -0700</pubDate>
+      <guid>http://inessential.com/2010/04/18/show_business</guid>
+      <dc:date>2010-04-18T15:32:08-07:00</dc:date>
+    </item>
+    <item>
+      <title>What NetNewsWire/iPad looked like as I was working on it</title>
+      <link>http://inessential.com/2010/04/18/what_netnewswire_ipad_looked_like_as_i_w</link>
+      <description>&lt;p&gt;It’s a &lt;a href=&quot;http://www.flickr.com/photos/brentsimmons/sets/72157623879850432/&quot;&gt;photoset on Flickr&lt;/a&gt;.&lt;/p&gt;</description>
+      <pubDate>Sun, 18 Apr 2010 01:42:26 -0700</pubDate>
+      <guid>http://inessential.com/2010/04/18/what_netnewswire_ipad_looked_like_as_i_w</guid>
+      <dc:date>2010-04-18T01:42:26-07:00</dc:date>
+    </item>
+  </channel>
+</rss>

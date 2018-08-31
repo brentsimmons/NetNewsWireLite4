@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+<!ENTITY % HTMLlat1 PUBLIC
+ "-//W3C//ENTITIES Latin 1 for XHTML//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent">
+%HTMLlat1;
+]>
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:ag="http://purl.org/rss/1.0/modules/aggregation/"
+ xmlns:admin="http://webns.net/mvcb/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" 
+>
+
+<channel rdf:about="http://q.seeto.com/">
+<title>QubeQuorner</title>
+<link>http://q.seeto.com/</link>
+<description>a weblog for the Qube community</description>
+<dc:rights>Copyright &#xA9; 2001 QubeQuorner. 
+           All rights reserved.</dc:rights>
+<dc:publisher>Luke Tymowski (mailto:luke@seeto.com)</dc:publisher>
+<dc:language>en-us</dc:language>
+<dc:date>2001-06-09T10:30:21-05:00</dc:date>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updateBase>1970-01-01T00:00:00-05:00</syn:updateBase>
+<admin:errorReportsTo rdf:resource="mailto:luke@seeto.com"/>
+<items>
+<rdf:Seq><rdf:li rdf:resource="http://q.seeto.com/994897187" />
+<rdf:li rdf:resource="http://q.seeto.com/994895485" />
+</rdf:Seq>
+</items>
+<textinput rdf:resource="http://q.seeto.com/" />
+</channel>
+  <item rdf:about="http://q.seeto.com/994897187">
+    <title>Switching from Eudora/Mac to Pine</title>
+    <link>http://q.seeto.com/994897187</link>
+    <description>
+      inessential.com: Switching from Eudora/Mac to Pine 
+      "I recently switched from Eudora/Mac, which I used for  
+      many years, to Pine [on OS X]. Why the hell would I do a 
+      thing like that? I had a few reasons."
+    </description>
+  </item>
+  <item rdf:about="http://q.seeto.com/994895485">
+    <title>Symmetric Cryptography in Perl</title>
+    <link>http://q.seeto.com/994895485</link>
+    <description>Perl.com: Symmetric Cryptography in Perl "Having 
+     purchased the $250 cookie recipe from Neiman-Marcus, Alice 
+     wants to send it to Bob, but keep it away from Eve, who  
+     snoops on everyone's network traffic from the cubicle down  
+     the hall. How can Perl help her?"</description>
+  </item>
+
+  <textinput rdf:about="http://q.seeto.com/">
+    <title>Search</title>
+    <description>
+      Search for a phrase that appeared in QubeQuorner
+    </description>
+    <name>body</name>
+    <link>http://q.seeto.com/search</link>
+  </textinput>
+</rdf:RDF>

@@ -1,0 +1,30 @@
+
+
+
+Event callbacks:
+
+enum
+	Dictionary
+	Array
+	String
+	Number
+	Boolean
+	NULL
+NGJSONValueType
+
+startOfValue:(NGJSONValueType)
+endOfValue
+startOfKey
+endOfKey
+charactersEncountered:(const char *)ch (int)len
+
+frame
+	valueType
+	
+context
+	scanningForToken
+	inKey
+	inValueType
+	valueTypeIfInValue
+	scanningAheadToDetermineValueType
+	

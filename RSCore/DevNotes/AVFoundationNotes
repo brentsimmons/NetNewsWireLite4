@@ -1,0 +1,183 @@
+AVFoundation player
+
+Play only on iOS 4
+
+Checkbox for use player?
+
+Behavior:
+
+On launch:
+1. Switch to landscape.
+2. Make status bar dark.
+3. Show done button, loading movie, buttons area (rewind, pause, fast forward)
+
+When playback starts:
+1. Loading movie changes to scrubber. Adds fullscreen button.
+2. Controls disappear after 4 seconds.
+
+On tap:
+1. See #1 above -- when playback starts.
+
+Rewind button, fast forward button:
+- Single tap goes all the way to start or end.
+- Tap and hold rewinds or does fast forward.
+
+
+
+### RSMoviePlayerViewController
+
+@class MPMoviePlayerController;
+
+MP_EXTERN_CLASS @interface MPMoviePlayerViewController : UIViewController {
+@private
+    id _internal;
+}
+
+- (id)initWithContentURL:(NSURL *)contentURL;
+
+@property(nonatomic, readonly) MPMoviePlayerController *moviePlayer;
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation; // Default is YES.
+@end
+
+// -----------------------------------------------------------------------------
+// UIViewController Additions
+// Additions to present a fullscreen movie player as a modal view controller using the standard movie player transition.
+
+@interface UIViewController (MPMoviePlayerViewController)
+
+- (void)presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)moviePlayerViewController;
+- (void)dismissMoviePlayerViewControllerAnimated;
+
+@end
+
+#endif // __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
+
+
+
+### RSMoviePlayerController
+
+see bookmark
+
+
+Call initWithContentURL
+Set up notification for did-finish
+Call presentMoviePlayerViewControllerAnimated
+
+on did-finish:
+dismissMoviePlayerViewControllerAnimated
+
+
+WWDC 2010 Session 405 Discovering AV Foundation
+
+Core Media times
+CMTime
+CMTimeRange
+CMTimeMapping
+
+AVAsset
+provides info
+presentation hints, but not display state
+Sequence of media data of uniform type
+Typical has video and audio together
+AVAssetTracks
+
+Create:
+AVURLAsset URLAssetWithURL: options:
+Initialization guarantees nothing
+
+AVAsynchronousKeyValueLoading
+Tell it what we want
+statusOfValueForKey:error:
+AVKeyValueStatus*
+loadValuesAsynchronouslyForKeys: completionHandler:
+[AVAsset cancelLoading]
+
+Example:
+
+AVAsset *asset = [AVURLAsset URLAssetWithURL:aURL options:nil];
+NSArray *keys = [NSArray arrayWithObject:@"tracks"];
+[asset loadValuesAsynchronouslsyForKeys:keys completionHandler:^() {
+	NSError *error = nil;
+	AVKeyValueStatus tracksStatus = [asset statusOfValueForKey:@"tracks" error:&error];
+	switch (tracksStatus) {
+		case AVKeyValueStatusLoaded:
+		
+		
+			[self updateUserInterfaceForTracks];
+			break;
+		case AVKeyValueStatusFailed:
+			[self reportError:error forAsset:asset];
+			break;
+		case AVKeyValueStatusCancelled:
+			break;
+	}
+}];
+
+Use approximate estimated duration. Cheaper.
+
+Presentation state: AVPlayerItem (many AVPlayerItemTracks)
+Initialize with AVAsset or NSURL -- with NSURL it will create an asset
+Control over tiem
+	"Start time" is the initial setting of currentTime
+	End times for forward and reverse playback
+	Methods for seeking and stepping
+AVPlayerItemTracks wrap the presentation state of corresponding AVAssetTracks
+	Enabled is part of track state
+
+Two classes of assets: file and stream
+(File also means on remote http server)
+file: use URLAssetWithURL
+AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
+[playerItem addObserver:self forKeyPath:@"status"];
+AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+
+if (playerItem.status == AVPlayerItemStatusReadyToPlay)
+[player play]
+
+http live stream thing:
+AVPlayerItem  *playerItem = [AVPlayerItem playerItemWithURL:URL]
+[playerItem addObserver:self forKeyPath:@"status"]
+Can't create asset from live stream URL
+Go directly to player classes
+if (playerItem.status == AVPlayerItemStatusReadyToPlay)
+AVPlayerItem provides an instance of AVAsset
+[player play]
+Or... AVPlayer *player = [AVPlayer playerWithURL:streamURL]
+
+Don't know in advance...
+Initialize an AVURLAsset, load its tracks key
+Success: proceed with file-based workflow
+failre: could be stream -- try AVPlayerItem with URL
+Code paths converge when AVPlayerItem reports it's ready to play
+
+Time
+-[AVPlayerItem seekToTime:]
+
+Tracking presentation state
+KVO - AVPlayer and AVPlayerItem
+Observe your own changes plus those initiated by the framework
+AVPlayer rate may be changed when the user multitasks
+AVPlayerItem loadedTimeRanges and seekableTimeRanges are updated as remove media is transferred
+AVPlayerItem trackes can be updated while playing an HTTP live stream
+Media services may be reset
+Observe status key on both - failureStatus and error code may say media services reset
+	Time to create new instances and restore state and proceed
+Readiness for visual display
+AVPlayerLayer.readyForDisplay
+-[AVPlayer addPeriodicTimeObserverForInterval:queue:usingBlock:}
+Block invoked periodically -- also when time jumpes, also when playback starts or stops.
+AVPlayerItemDidPlayToEndTimeNotification
+
+AVPlayerItems auto paused when app goes to background
+
+AVPlayerLayer plays the visual bits
+AVSynchronizedLayer
+
+
+
+Upper controls: Done elapsed-time slider time-remaining
+
+Lower controls: rounded-container rewind play/pause fast-forward
+
+Rounded-container border is 50% gray -- it's probably 100% white with 50% opacity.

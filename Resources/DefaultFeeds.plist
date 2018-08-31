@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>home</key>
+		<string>http://www.appleoutsider.com/</string>
+		<key>name</key>
+		<string>Apple Outsider</string>
+		<key>rss</key>
+		<string>http://www.appleoutsider.com/feed/</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://betterelevation.com/</string>
+		<key>name</key>
+		<string>Better Elevation</string>
+		<key>rss</key>
+		<string>http://betterelevation.com/feed/</string>
+		<key>favicon</key>
+		<string>http://betterelevation.com/wp-content/themes/pop-blue/favicon.ico</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.halfapixelshort.com/</string>
+		<key>favicon</key>
+		<string>http://30.media.tumblr.com/avatar_009c0b437928_16.gif</string>
+		<key>name</key>
+		<string>Brad Ellis</string>
+		<key>rss</key>
+		<string>http://www.halfapixelshort.com/rss</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://daringfireball.net/</string>
+		<key>name</key>
+		<string>Daring Fireball</string>
+		<key>rss</key>
+		<string>http://daringfireball.net/index.xml</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://inessential.com/</string>
+		<key>name</key>
+		<string>inessential.com</string>
+		<key>rss</key>
+		<string>http://inessential.com/xml/rss.xml</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://nick.typepad.com/</string>
+		<key>name</key>
+		<string>Nick Bradbury</string>
+		<key>rss</key>
+		<string>http://feeds.feedburner.com/NickBradbury</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://blog.roguesheep.com/</string>
+		<key>name</key>
+		<string>RogueSheep</string>
+		<key>rss</key>
+		<string>http://blog.roguesheep.com/feed/</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.tuaw.com/</string>
+		<key>name</key>
+		<string>TUAW</string>
+		<key>rss</key>
+		<string>http://www.tuaw.com/rss.xml</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://marco.org/</string>
+		<key>name</key>
+		<string>Marco.org</string>
+		<key>favicon</key>
+		<string>http://25.media.tumblr.com/avatar_58af06ada093_16.png</string>
+		<key>rss</key>
+		<string>http://marco.org/rss</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://netnewswireapp.com/</string>
+		<key>name</key>
+		<string>NetNewsWire</string>
+		<key>rss</key>
+		<string>http://netnewswireapp.com/feed/</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.tbray.org/ongoing/</string>
+		<key>name</key>
+		<string>ongoing</string>
+		<key>rss</key>
+		<string>http://www.tbray.org/ongoing/ongoing.atom</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.randsinrepose.com/</string>
+		<key>name</key>
+		<string>Rands in Repose</string>
+		<key>rss</key>
+		<string>http://www.randsinrepose.com/index.xml</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://shapeof.com/</string>
+		<key>name</key>
+		<string>The Shape of Everything</string>
+		<key>rss</key>
+		<string>http://shapeof.com/atom.xml</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.red-sweater.com/blog/</string>
+		<key>name</key>
+		<string>Red Sweater</string>
+		<key>rss</key>
+		<string>http://www.red-sweater.com/blog/feed</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://arstechnica.com/apple/</string>
+		<key>name</key>
+		<string>Ars Technica Infinite Loop</string>
+		<key>rss</key>
+		<string>http://feeds.arstechnica.com/arstechnica/apple/</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.readwriteweb.com/</string>
+		<key>name</key>
+		<string>ReadWriteWeb</string>
+		<key>rss</key>
+		<string>http://www.readwriteweb.com/rss.xml</string>
+	</dict>
+	<dict>
+		<key>home</key>
+		<string>http://www.macworld.com/</string>
+		<key>name</key>
+		<string>Macworld</string>
+		<key>rss</key>
+		<string>http://rss.macworld.com/macworld/feeds/main</string>
+	</dict>
+</array>
+</plist>

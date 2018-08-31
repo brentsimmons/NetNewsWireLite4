@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'nnwiphone' target in the 'nnwiphone' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import <CoreData/CoreData.h>
+#endif
+
+//#define EXCEPTION_START @try {
+//#define EXCEPTION_END }
+//#define CATCH_EXCEPTION @catch(id obj) {NSMutableDictionary *d = [NSMutableDictionary dictionary];[d setObject:[NSString stringWithUTF8String:__PRETTY_FUNCTION__] forKey:@"function"];[d setObject:obj forKey:@"exception"];[((NNWAppDelegate *)[[UIApplication sharedApplication] delegate]) handleCoreDataException:d];}
+
+#define NNW_PREMIUM 1
+#define THUMBNAILS 0
+#define MEDIA_PLAYBACK 0
+#define ADS 0
+
+#import "RSFoundationExtras.h"
+#import "NNWExtras.h"
+#import "NNWDataDefinitions.h"
+#import "RSFeedDefinitions.h"
+#import "NNWStrings.h"

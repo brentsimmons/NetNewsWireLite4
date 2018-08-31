@@ -1,0 +1,18 @@
+
+
+### RSCore integration
+
+UIImage+Resize.m
+Add tinyurl op to RSCore
+Database controller superclass
+Operation stuff and operation controller
+web-cache stuff
+thumbnail cache stuff
+XML parsers
+Google parsers
+NNWOperationConstants
+
+
+### Misc.
+
+Vacuum periodically, with optimizing database notice (like OmniFocus)

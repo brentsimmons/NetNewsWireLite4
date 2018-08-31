@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+    <title type="text">active questions tagged cocoa - Stack Overflow</title>
+    <link rel="self" href="http://stackoverflow.com/feeds/tag/cocoa" type="application/atom+xml" />
+    <link rel="alternate" href="http://stackoverflow.com/questions/tagged/?tagnames=cocoa&amp;sort=active" type="text/html" />
+    <subtitle>most recent 30 from stackoverflow.com</subtitle>
+    <updated>2010-06-26T04:34:54Z</updated>
+    <id>http://stackoverflow.com/feeds/tag/cocoa</id>
+    <creativeCommons:license>http://www.creativecommons.org/licenses/by-nc/2.5/rdf</creativeCommons:license> 
+
+    <entry>
+        <id>http://stackoverflow.com/questions/3122579/what-api-or-lib-do-i-should-use-to-sniff-local-network-ports-on-mac-os-x-cocoa</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">What API (or lib) do I should use to sniff local network ports on Mac OS X (Cocoa)?</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="http"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="macosx"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="packet-sniffers"/>
+        <author>
+            <name>Eonil</name>
+            <uri>http://stackoverflow.com/users/246776</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3122579/what-api-or-lib-do-i-should-use-to-sniff-local-network-ports-on-mac-os-x-cocoa" />
+        <published>2010-06-26T03:14:41Z</published>
+        <updated>2010-06-26T03:31:50Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm trying to make a simple HTTP sniffer (like &lt;a href=&quot;https://addons.mozilla.org/firefox/addon/6647&quot; rel=&quot;nofollow&quot;&gt;HTTPFox&lt;/a&gt;) development testing purpose.
+HTTPFox is good enough, but I should automate some kind of test. (No detail yet)
+But I have no idea how to do this.&lt;/p&gt;
+
+&lt;p&gt;What kind of API or libs do I should use to do this on Mac?&lt;/p&gt;
+
+&lt;p&gt;Cocoa will be great but any lower level ways are welcome.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/1551300/get-size-of-image-without-loading-in-to-memory</id>
+        <re:rank scheme="http://stackoverflow.com">1</re:rank>
+        <title type="text">Get size of image without loading in to memory</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa-touch"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="uikit"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="core-graphics"/>
+        <author>
+            <name>Gordon Worley</name>
+            <uri>http://stackoverflow.com/users/170876</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/1551300/get-size-of-image-without-loading-in-to-memory" />
+        <published>2009-10-11T18:02:35Z</published>
+        <updated>2010-06-26T02:42:26Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have several &lt;code&gt;.png&lt;/code&gt; images (&lt;strong&gt;ETA:&lt;/strong&gt; but the format could also be JPEG or something else) that I am going to display in &lt;code&gt;UITableViewCell&lt;/code&gt;s.  Right now, in order to get the row heights, I load in the images, get their &lt;code&gt;size&lt;/code&gt; properties, and use that to figure out how high to make the rows (calculating any necessary changes along the way, since most of the images get resized before being displayed).  In order to speed things up and reduce memory usage, I'd like to be able to get &lt;code&gt;size&lt;/code&gt; without loading the images.  Is there a way to do this?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;  I know that there are a number of shortcuts I could implement to eliminate this issue, but for several reasons I can't resize images in advance or collect the image sizes in advance, forcing me to get this info at run time.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3122177/check-if-constant-is-defined-at-runtime-in-obj-c</id>
+        <re:rank scheme="http://stackoverflow.com">2</re:rank>
+        <title type="text">Check if constant is defined at runtime in Obj-C</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa-touch"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="mac"/>
+        <author>
+            <name>Johan Kool</name>
+            <uri>http://stackoverflow.com/users/60488</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3122177/check-if-constant-is-defined-at-runtime-in-obj-c" />
+        <published>2010-06-26T00:05:52Z</published>
+        <updated>2010-06-26T00:07:54Z</updated>
+        <summary type="html">
+            &lt;p&gt;To, for example, access variables in a &lt;code&gt;NSDictionary&lt;/code&gt; Cocoa frameworks often define keys, such as &lt;code&gt;UIKeyboardBoundsUserInfoKey&lt;/code&gt;. How can I check if a key is defined at runtime? I found examples on how to check for classes and functions, but not for constants.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3106444/nsmutableurlrequest-posting-large-amounts-of-data</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">NSMutableURLRequest: posting large amounts of data</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="webview"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsmutableurlrequest"/>
+        <author>
+            <name>Uncommon</name>
+            <uri>http://stackoverflow.com/users/310159</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3106444/nsmutableurlrequest-posting-large-amounts-of-data" />
+        <published>2010-06-24T00:12:50Z</published>
+        <updated>2010-06-25T23:19:43Z</updated>
+        <summary type="html">
+            &lt;p&gt;I need to send large amounts of data (image files) by POST in a &lt;code&gt;WebView&lt;/code&gt;, so I'm using &lt;code&gt;NSMutableURLRequest&lt;/code&gt; with &lt;code&gt;setHTTPBody:&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Problem: if the data size is more than about 3MB, the app suddenly starts eating up huge amounts of memory and gets dog slow with all the paging.&lt;/p&gt;
+
+&lt;p&gt;I've tried changing this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[request setHTTPBody:[NSData dataWithBytes:post.Get() length:post.Size()]];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;..to this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[request setHTTPBodyStream:[NSInputStream inputStreamWithData:
+    [NSData dataWithBytes:post.Get() length:post.Size()]]];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;..but then nothing seems to happen and the request just times out. I get none of the normal callbacks (like &lt;code&gt;WebViewProgressEstimateChangedNotification&lt;/code&gt;) and the data doesn't seem to get set.&lt;/p&gt;
+
+&lt;p&gt;So, how do I (a) make the &lt;code&gt;NSData&lt;/code&gt; approach not be a memory hog or (b) make the stream approach work (assuming it's a good workaround)?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3114894/with-proxy-nsurlconnection-leaks-for-https-urls</id>
+        <re:rank scheme="http://stackoverflow.com">1</re:rank>
+        <title type="text">With proxy, NSURLConnection leaks for https URLs</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/>
+        <author>
+            <name>davidlin</name>
+            <uri>http://stackoverflow.com/users/63757</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3114894/with-proxy-nsurlconnection-leaks-for-https-urls" />
+        <published>2010-06-25T00:48:28Z</published>
+        <updated>2010-06-25T22:46:01Z</updated>
+        <summary type="html">
+            &lt;p&gt;Instrument reports leak for this simple use of NSURLConnection:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
+int main (int argc, char ** argv)
+{
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
+    NSURLRequest *theRequest = [NSURLRequest
+        requestWithURL:[NSURL URLWithString:@&quot;https://gmail.com/&quot;]
+        cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+        timeoutInterval:60.0];
+    [NSURLConnection connectionWithRequest:theRequest delegate:nil];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5]];
+    [pool drain];
+    [NSThread sleepForTimeInterval:10]; // wait for Instruments to check
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Leak stack trace:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   0 CoreFoundation __CFBasicHashRehash
+   1 CoreFoundation CFDictionaryCreate
+   2 CFNetwork _getConnectionInfoForProxy
+   3 CFNetwork HTTPProtocol::createStream()
+   4 CFNetwork HTTPProtocol::createAndOpenStream()
+   5 CFNetwork executionContextPerform(void*)
+   6 CoreFoundation __CFRunLoopDoSources0
+   7 CoreFoundation __CFRunLoopRun
+   8 CoreFoundation CFRunLoopRunSpecific
+   9 CoreFoundation CFRunLoopRunInMode
+  10 Foundation +[NSURLConnection(NSURLConnectionReallyInternal) _resourceLoadLoop:]
+  11 Foundation -[NSThread main]
+  12 Foundation __NSThread__main__
+  13 libSystem.B.dylib _pthread_start
+  14 libSystem.B.dylib thread_start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It doesn't leak if the URL is just normal http and it doesn't redirect to a https site.&lt;/p&gt;
+
+&lt;p&gt;How do I fix the leak?&lt;/p&gt;
+
+&lt;p&gt;I'm using Snow Leopard and I have proxies on for both http and https.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3115143/learning-iphone-programming-coming-from-c-background</id>
+        <re:rank scheme="http://stackoverflow.com">5</re:rank>
+        <title type="text">Learning iPhone programming coming from C# background.</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa-touch"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone-sdk-3.0"/>
+        <author>
+            <name>Nev_Rahd</name>
+            <uri>http://stackoverflow.com/users/85952</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3115143/learning-iphone-programming-coming-from-c-background" />
+        <published>2010-06-25T02:18:08Z</published>
+        <updated>2010-06-25T22:31:08Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hello All,&lt;/p&gt;
+
+&lt;p&gt;I would like to put my foot in world of iPhone programming.  I got fair bit of experience with C# coding.  &lt;/p&gt;
+
+&lt;p&gt;Should I go and start learning objective-C even before touching cocoa [or] there is better approach (i know nothing about iphone programming).&lt;/p&gt;
+
+&lt;p&gt;Are there any recommended books / blogs I should go through for my learning curve.&lt;/p&gt;
+
+&lt;p&gt;** If this is a duplicate question can someone point me the orginal question please **&lt;/p&gt;
+
+&lt;p&gt;Thanks&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3121493/increment-webview-positions-in-cocoa</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Increment WebView Positions in Cocoa</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="resize"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="webview"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="frame"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nswindow"/>
+        <author>
+            <name>PF1</name>
+            <uri>http://stackoverflow.com/users/123441</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3121493/increment-webview-positions-in-cocoa" />
+        <published>2010-06-25T21:12:51Z</published>
+        <updated>2010-06-25T21:12:51Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hi Everyone:&lt;/p&gt;
+
+&lt;p&gt;I am putting multiple instances of WebView in a NSWindow right below each other.  Normally, I would simply adjust the NSRectMake y axis to the sum of the previous heights.  However, in this situation I am adjusting the size of the web views after loading the page in order to display the full amount of content.  This is described here: &lt;a href=&quot;http://stackoverflow.com/questions/2675244/how-to-resize-webview-according-to-its-content&quot;&gt;http://stackoverflow.com/questions/2675244/how-to-resize-webview-according-to-its-content&lt;/a&gt;.  &lt;/p&gt;
+
+&lt;p&gt;However, since this resizing is handled in (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)webFrame, I am unsure how to have this change affect the main y axis variable that I am setting in the loop.  If anyone could help me with making the updated height change the y axis variable in the main function, I would really appreciate it!&lt;/p&gt;
+
+&lt;p&gt;Thanks.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/1669645/how-to-force-nslocalizedstring-to-use-a-specific-language</id>
+        <re:rank scheme="http://stackoverflow.com">4</re:rank>
+        <title type="text">How to force NSLocalizedString to use a specific language</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="localization"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="internationalization"/>
+        <author>
+            <name>CodeFlakes</name>
+            <uri>http://stackoverflow.com/users/129871</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/1669645/how-to-force-nslocalizedstring-to-use-a-specific-language" />
+        <published>2009-11-03T19:33:19Z</published>
+        <updated>2010-06-25T20:57:14Z</updated>
+        <summary type="html">
+            &lt;p&gt;on iPhone NSLocalizedString returns the string in the language of the iPhone.
+Is it possible to force NSLocalizedString to use a specific language to have the app
+in a different language than the device ?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3120622/how-do-i-embed-openoffice-calc-into-my-own-application</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">How do I embed OpenOffice Calc into my own application?</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="xcode"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="mac"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="openoffice.org"/>
+        <author>
+            <name>Paul</name>
+            <uri>http://stackoverflow.com/users/229891</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3120622/how-do-i-embed-openoffice-calc-into-my-own-application" />
+        <published>2010-06-25T18:47:41Z</published>
+        <updated>2010-06-25T19:53:37Z</updated>
+        <summary type="html">
+            &lt;p&gt;I would like to provide spreadsheet capability in my Cocoa application.  From what I've heard, OpenOffice does allow some level of embedding, but I'll be darned if I can find that information in their official SDK documentation.  Can anyone here point me in the right direction?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3119487/cocoa-programmatically-link-nsviews-to-each-other-to-make-layout-simple</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Cocoa: Programmatically link NSViews to each other to make layout simple?</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/>
+        <author>
+            <name>Nektarios</name>
+            <uri>http://stackoverflow.com/users/361312</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3119487/cocoa-programmatically-link-nsviews-to-each-other-to-make-layout-simple" />
+        <published>2010-06-25T15:54:24Z</published>
+        <updated>2010-06-25T18:13:40Z</updated>
+        <summary type="html">
+            &lt;p&gt;I want to lay out several rows of NSViews.  Each row will have start with say 5 NSViews with possibility to arbitrarily add or remove views between any of the starting 5, at beginning, or at the end.&lt;/p&gt;
+
+&lt;p&gt;1) How can I have these lay themselves out without me manually tracking the size of each and calculating position and placing each one?  How can I say &quot;NSView2 is to the right of NSView1 with a gap of 10 pixels&quot;?&lt;/p&gt;
+
+&lt;p&gt;2) What data structure makes sense to hold these views and most simply maintain the positional relationships via Cocoa?  Also I need to go back at the end and iterate from left to right through this list.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3120260/uialertview-display-an-informative-statement-with-ok</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">UIAlertView display an informative statement with OK</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone-sdk-3.0"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="uikit"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="uialertview"/>
+        <author>
+            <name>orangecl4now</name>
+            <uri>http://stackoverflow.com/users/317785</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3120260/uialertview-display-an-informative-statement-with-ok" />
+        <published>2010-06-25T17:57:28Z</published>
+        <updated>2010-06-25T17:58:50Z</updated>
+        <summary type="html">
+            &lt;p&gt;I want to display a UIAlert to indicate to my users that something went wrong (maybe no Internet). I just need an OK button. &lt;/p&gt;
+
+&lt;p&gt;Thanks for the help :)&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3119731/iphone-avaudioplayer-isplaying-always-return-null</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">[iPhone] AVAudioPlayer isPlaying always return null</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="xcode"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="avaudioplayer"/>
+        <author>
+            <name>Daniel</name>
+            <uri>http://stackoverflow.com/users/376472</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3119731/iphone-avaudioplayer-isplaying-always-return-null" />
+        <published>2010-06-25T16:31:46Z</published>
+        <updated>2010-06-25T17:36:40Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hey guys,&lt;/p&gt;
+
+&lt;p&gt;I'm experiencing an odd problem with AVAudioPlayer class.
+Everytime I try to access one of it's properties they are null.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Get the file path to the song to play.
+ NSString *filePath = [[[NSBundle mainBundle] pathForResource:pSound.fileName 
+               ofType:pSound.fileType] retain];
+
+ // Convert the file path to a URL.
+ NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
+
+ NSError* err;
+ //Initialize the AVAudioPlayer
+ self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&amp;amp;err];
+
+    if( err ){
+  NSLog(@&quot;Initializing failed with reason: %@&quot;, [err localizedDescription]);
+ }
+ else{
+  [self.audioPlayer setDelegate:self];
+  [self.audioPlayer prepareToPlay];
+  self.playCount = self.playCount + 1;
+        NSLog(@&quot;%@&quot;, [self.audioPlayer isPlaying]); //this displays null; also if I call it at a later time
+ };
+
+ [filePath release];
+ [fileURL release];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Any Ideas?&lt;/p&gt;
+
+&lt;p&gt;EDIT: Oddly enough when I save isPlaying to a bool and print the bool I get a value...&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3118333/nsurlconnection-multipart-form-from-file-url</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">NSURLConnection + MultiPart form from file URL</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/>
+        <author>
+            <name>Sj</name>
+            <uri>http://stackoverflow.com/users/182259</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3118333/nsurlconnection-multipart-form-from-file-url" />
+        <published>2010-06-25T13:25:32Z</published>
+        <updated>2010-06-25T16:05:36Z</updated>
+        <summary type="html">
+            &lt;p&gt;So I have an application that currently upload images to a web service using a multipart form and I do this pretty simply using an NSMutableRequest and NSURLConnection.  The problem I seem to be coming into though is I want to be able to upload a given file without loading it into the program as an NSData object, but simply from the file path.  I have heard that this is possible and I know the ASIHTTPRequest seems to do it.  Any help would be much appreciated! Thank you!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3119461/cocoa-api-does-it-contain-a-diff-api</id>
+        <re:rank scheme="http://stackoverflow.com">2</re:rank>
+        <title type="text">Cocoa API - Does it contain a diff api?</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="api"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="osx"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="diff"/>
+        <author>
+            <name>James Raybould</name>
+            <uri>http://stackoverflow.com/users/142109</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3119461/cocoa-api-does-it-contain-a-diff-api" />
+        <published>2010-06-25T15:51:00Z</published>
+        <updated>2010-06-25T15:58:49Z</updated>
+        <summary type="html">
+            &lt;p&gt;I'm wondering if there is a diff API in Cocoa, I've attempted to google it but its not bring back any results that are useful.&lt;/p&gt;
+
+&lt;p&gt;If there isn't an API for this would it be better to call &lt;code&gt;diff&lt;/code&gt; from /usr/bin/ or to write my own diff.&lt;/p&gt;
+
+&lt;p&gt;All I need it for is text-files with a possibility of branching out into binaries and folders later.&lt;/p&gt;
+
+&lt;p&gt;Thanks&lt;/p&gt;
+
+&lt;p&gt;James&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3118031/overriding-preferred-strings-localization-on-the-fly-for-testing</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Overriding preferred strings localization on the fly for testing </title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="localization"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsbundle"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nslocalizedstring"/>
+        <author>
+            <name>quixoto</name>
+            <uri>http://stackoverflow.com/users/73297</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3118031/overriding-preferred-strings-localization-on-the-fly-for-testing" />
+        <published>2010-06-25T12:40:30Z</published>
+        <updated>2010-06-25T12:45:41Z</updated>
+        <summary type="html">
+            &lt;p&gt;Using the Settings app in the iPhone simulator to switch languages is a PITA way of testing localization tweaks. I'm trying to figure out a way to switch localizations (en/fr/es/etc) on the fly in my app with a debug setting without restarting the app.&lt;/p&gt;
+
+&lt;p&gt;NSBundle provides ways of requesting localized resources from an arbitrary localization, e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (NSString *)pathForResource:(NSString *)name ofType:(NSString *)extension inDirectory:(NSString *)subpath forLocalization:(NSString *)localizationName
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But I find no equivalent for the string management subsystem. It sounds from &lt;a href=&quot;http://stackoverflow.com/questions/1669645/how-to-force-nslocalizedstring-to-use-a-specific-language&quot;&gt;these&lt;/a&gt; &lt;a href=&quot;http://stackoverflow.com/questions/1305564/use-specific-localization-in-cocoa-app&quot;&gt;questions&lt;/a&gt; that you can override the registered defaults, which sounds goofy and requires an app restart. &lt;/p&gt;
+
+&lt;p&gt;Are there any other strategies here? If I wrapped NSLocalizedString with something that in debug builds did its own work, what's the shortest path to loading a given &lt;code&gt;.strings&lt;/code&gt; file? Is there a programmatic way to access those strings tables without going and parsing them raw myself?&lt;/p&gt;
+
+&lt;p&gt;Thanks.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3117843/hide-uipagecontrol</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Hide UIPageControl</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="ui"/>
+        <author>
+            <name>LeonS</name>
+            <uri>http://stackoverflow.com/users/235420</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3117843/hide-uipagecontrol" />
+        <published>2010-06-25T12:11:00Z</published>
+        <updated>2010-06-25T12:13:34Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hi,&lt;/p&gt;
+
+&lt;p&gt;i want to hide the bar of the UIPageControl, because i want to implement a pagination with swipe gesture function so I don't need to display the dot bar. If I set &lt;code&gt;hidden=YES&lt;/code&gt; there will remain a black block with size of the UIPageControl. Is there a way to hide the UIPageControl Bar completely?&lt;/p&gt;
+
+&lt;p&gt;Thanks for your answers.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3117415/rendering-an-nsattributedstring-with-an-nstextattachment</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Rendering an NSAttributedString with an NSTextAttachment</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsattributedstring"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nstextattachment"/>
+        <author>
+            <name>ndg</name>
+            <uri>http://stackoverflow.com/users/274405</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3117415/rendering-an-nsattributedstring-with-an-nstextattachment" />
+        <published>2010-06-25T10:56:21Z</published>
+        <updated>2010-06-25T10:58:06Z</updated>
+        <summary type="html">
+            &lt;p&gt;I've created a NSTableHeaderCell class with a custom drawWithFrame: method. This works well for rendering text, however I'm also looking to render icons within the table headers cells. To do this, I create an NSAttributedString and add the image to it as an attachment. This works wonderfully for the stock NSTableHeaderCell class, but I can't for the life of me figure out how to render the attachment in my drawWithFrame: implementation.&lt;/p&gt;
+
+&lt;p&gt;Here's the code I'm using to assign the icon to the cells attributedString:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NSImage *headerImage = [NSImage imageNamed:@&quot;icon&quot;];
+NSTextAttachment *ta = [[[NSTextAttachment alloc] init] autorelease];
+[(NSCell *)[ta attachmentCell] setImage: headerImage];
+NSAttributedString *headerAS = [NSAttributedString attributedStringWithAttachment:ta];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How can I tell whether the attributedString I'm passed contains an image attachment and, more specifically, how do I then render that attachment?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3112213/faking-an-nstextfield-using-an-nstextview-to-get-nice-coloring</id>
+        <re:rank scheme="http://stackoverflow.com">1</re:rank>
+        <title type="text">Faking an NSTextField using an NSTextView to get nice coloring?</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="macosx"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nstextfield"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nstextview"/>
+        <author>
+            <name>hasvn</name>
+            <uri>http://stackoverflow.com/users/375486</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3112213/faking-an-nstextfield-using-an-nstextview-to-get-nice-coloring" />
+        <published>2010-06-24T17:04:51Z</published>
+        <updated>2010-06-25T10:42:47Z</updated>
+        <summary type="html">
+            &lt;p&gt;Trying to change the selected text background color for an NSTextField (we have a dark UI, and selected text background is almost the same as the text itself), but only NSTextView seems to allow us to change this.&lt;/p&gt;
+
+&lt;p&gt;So we're trying to fake an NSTextField using an NSTextView, but can't get text scrolling to work the same.&lt;/p&gt;
+
+&lt;p&gt;The closest we get is with this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NSTextView *tf = [ [ NSTextView alloc ] initWithFrame: NSMakeRect( 30.0, 20.0, 80.0, 22.0 ) ];
+
+// Dark UI
+[tf setTextColor:[NSColor whiteColor]];
+[tf setBackgroundColor:[NSColor darkGrayColor]];
+
+// Fixed size
+[tf setVerticallyResizable:FALSE];
+[tf setHorizontallyResizable:FALSE];
+
+[tf setAlignment:NSRightTextAlignment]; // Make it right-aligned (yup, we need this too)
+
+[[tf textContainer] setContainerSize:NSMakeSize(2000, 20)]; // Try to Avoid line wrapping with this ugly hack
+[tf setFieldEditor:TRUE]; // Make Return key accept the textfield
+
+// Set text properties
+NSMutableDictionary *dict = [[[tf selectedTextAttributes] mutableCopy ] autorelease];
+[dict setObject:[NSColor orangeColor] forKey:NSBackgroundColorAttributeName];
+[tf setSelectedTextAttributes:dict];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This works &lt;em&gt;almost&lt;/em&gt; alright, except that if the text is longer than the text field, you can't scroll to it in any way.&lt;/p&gt;
+
+&lt;p&gt;Any idea as how to accomplish this?&lt;/p&gt;
+
+&lt;p&gt;Thanks in advance&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Edit: Solution suggested below by &lt;a href=&quot;http://stackoverflow.com/users/201199/joshua-nozzi&quot;&gt;Joshua Nozzi&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks to Joshua, this is a great solution to what I was looking for:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@interface ColoredTextField : NSTextField
+- (BOOL)becomeFirstResponder;
+@end
+
+@implementation ColoredTextField
+- (BOOL)becomeFirstResponder
+{
+    if (![super becomeFirstResponder])
+        return NO;
+
+    NSDictionary * attributes = [NSDictionary dictionaryWithObjectsAndKeys : 
+                     [NSColor orangeColor], NSBackgroundColorAttributeName, nil];
+
+    NSTextView * fieldEditor = (NSTextView *)[[self window] fieldEditor:YES forObject:self];
+    [fieldEditor setSelectedTextAttributes:attributes];
+    return YES;
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Instead of faking it with an NSTextView, it's just an NSTextField that changes the selected text color when it becomes first responder.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; The above code falls back to the default selection color once you press Enter in the textfield. Here's a way to avoid that. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@interface ColoredTextField : NSTextField
+- (BOOL)becomeFirstResponder;
+- (void)textDidEndEditing:(NSNotification *)notification;
+
+- (void)setSelectedColor;
+@end
+
+@implementation ColoredTextField
+- (BOOL)becomeFirstResponder
+{
+    if (![super becomeFirstResponder])
+        return NO;
+    [self setSelectedColor];
+    return YES;
+}
+
+- (void)textDidEndEditing:(NSNotification *)notification
+{
+    [super textDidEndEditing:notification];
+    [self setSelectedColor];
+}
+
+- (void) setSelectedColor
+{
+    NSDictionary * attributes = [NSDictionary dictionaryWithObjectsAndKeys : 
+                                [NSColor orangeColor], NSBackgroundColorAttributeName, nil];
+
+    NSTextView * fieldEditor = (NSTextView *)[[self window] fieldEditor:YES forObject:self];
+    [fieldEditor setSelectedTextAttributes:attributes];
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3117193/problem-with-nsnumber-and-plotting-a-graph-with-core-plot</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Problem with NSNumber and plotting a graph with Core-Plot</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="core-plot"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsnumber"/>
+        <author>
+            <name>Jonathan</name>
+            <uri>http://stackoverflow.com/users/376147</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3117193/problem-with-nsnumber-and-plotting-a-graph-with-core-plot" />
+        <published>2010-06-25T10:18:03Z</published>
+        <updated>2010-06-25T10:37:17Z</updated>
+        <summary type="html">
+            &lt;p&gt;I try to plot a Bar Chart with Core-Plot with an Array (content are NSIntegers) given one view  before.
+After transfering the Array in an NSInteger, i must convert it into a NSDecimalNumber, and in this process, my NSInteger (for example 45) becomes &quot;60900224&quot;...&lt;/p&gt;
+
+&lt;p&gt;Here's the code extract:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-(NSNumber *)numberForPlot:(CPPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index 
+{ NSInteger *values = [Werte objectAtIndex:index];
+    NSDecimalNumber *num = nil;
+    if ( [plot isKindOfClass:[CPBarPlot class]] ) {
+        switch ( fieldEnum ) {
+            case CPBarPlotFieldBarLocation:
+                num = (NSDecimalNumber *)[NSDecimalNumber numberWithUnsignedInteger:index];
+                break;
+            case CPBarPlotFieldBarLength:
+                //num = (NSDecimalNumber *)[NSDecimalNumber numberWithUnsignedInteger:(index+1)*(index+1)];
+                num = [NSNumber numberWithInt:values];
+                if ( [plot.identifier isEqual:@&quot;Bar Plot 2&quot;] ) 
+                    num = [num decimalNumberBySubtracting:[NSDecimalNumber decimalNumberWithString:@&quot;10&quot;]];
+                break;
+        }
+
+    }
+    return num;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks for help!!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3117174/using-nssegmentedcontrol-with-coredata</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Using NSSegmentedControl with CoreData</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="core-data"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="interface-builder"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsarraycontroller"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nssegmentedcontrol"/>
+        <author>
+            <name>Lachlan Scott</name>
+            <uri>http://stackoverflow.com/users/328806</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3117174/using-nssegmentedcontrol-with-coredata" />
+        <published>2010-06-25T10:15:28Z</published>
+        <updated>2010-06-25T10:24:32Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have a Core Data app that works to add or remove one of a Client's many Appointments with buttons bound in IB to my appointments ArrayController. The appointments content is derived from whichever Client is selected in a feed list. 
+I wish to use a SegmentedControl, and as far as I could tell, this requires I programmatically add and remove the objects in appointments. I have successfully managed to add an Appointment using Marcus Zarra’s code from his book Core Data on p54, but I am at a loss to remove a selected Appointment. I am using a custom table cell, which I suspect might be complicating matters.&lt;/p&gt;
+
+&lt;p&gt;In short, I wish to programmatically achieve the equivalent of an ArrayController’s remove: method on a selected object.&lt;/p&gt;
+
+&lt;p&gt;Can anyone help, please?&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3113974/singleton-nsmutablearray-accessed-by-nsarraycontroller-in-multiple-nibs</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Singleton NSMutableArray accessed by NSArrayController in multiple NIB's</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="singleton"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsmutablearray"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsarraycontroller"/>
+        <author>
+            <name>Hooligancat</name>
+            <uri>http://stackoverflow.com/users/211777</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3113974/singleton-nsmutablearray-accessed-by-nsarraycontroller-in-multiple-nibs" />
+        <published>2010-06-24T21:23:28Z</published>
+        <updated>2010-06-25T09:40:20Z</updated>
+        <summary type="html">
+            &lt;p&gt;Early warning - code sample a little long...&lt;/p&gt;
+
+&lt;p&gt;I have a singleton NSMutableArray that can be accessed from anywhere within my application. I want to be able to reference the &lt;code&gt;NSMutableArray&lt;/code&gt; from multiple NIB files but bind to UI elements via &lt;code&gt;NSArrayController&lt;/code&gt; objects. Initial creation is not a problem. I can reference the singleton &lt;code&gt;NSMutableArray&lt;/code&gt; when the NIB gets loaded and everything appears fine. &lt;/p&gt;
+
+&lt;p&gt;However, changing the &lt;code&gt;NSMutableArray&lt;/code&gt; by adding or removing objects does not kick off KVO to update the &lt;code&gt;NSArrayController&lt;/code&gt; instances. I realize that &quot;changing behind the controller's back&quot; is considered a no-go part of Cocoa-land, but I don't see any other way of programmatically updating the &lt;code&gt;NSMutableArray&lt;/code&gt; and letting every &lt;code&gt;NSArrayController&lt;/code&gt; be notified (except it doesn't work of course...).&lt;/p&gt;
+
+&lt;p&gt;I have simplified classes below to explain.&lt;/p&gt;
+
+&lt;p&gt;Simplified singleton class header:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@interface MyGlobals : NSObject {
+    NSMutableArray * globalArray;
+}
+
+@property (nonatomic, retain) NSMutableArray * globalArray;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Simplified singleton method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static MyGlobals *sharedMyGlobals = nil;
+
+@implementation MyGlobals
+
+@synthesize globalArray;
+
++(MyGlobals*)sharedDataManager {
+    @synchronized(self) {
+    if (sharedMyGlobals == nil)
+    [[[self alloc] init] autorelease];
+}
+
+return sharedMyGlobals;
+}
+
+-(id) init {
+if(self = [super init]) {
+        self.globals = [[NSMutableArray alloc] init];
+    }
+    return self
+}
+
+// ---- allocWithZone, copyWithZone etc clipped from example ----
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this simplified example the header and model for objects in the array:&lt;/p&gt;
+
+&lt;p&gt;Header file: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@interface MyModel : NSObject {
+NSInteger myId;
+NSString * myName;
+}
+
+@property (readwrite) NSInteger myId;
+@property (readwrite, copy) NSString * myName;
+
+-(id)initWithObjectId:(NSInteger)newId objectName:(NSString *)newName;
+
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Method file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@implementation MyModel
+
+@synthesize myId;
+@synthesize myName;
+
+-(id)init {
+
+[super init];
+
+myName  = @&quot;New Object Name&quot;;
+myId    = 0;
+
+return self;
+}
+
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now imagine two NIB files with appropriate &lt;code&gt;NSArrayController&lt;/code&gt; instances. We'll call them &lt;code&gt;myArrayControllerInNibOne&lt;/code&gt; and &lt;code&gt;myArrayControllerInNib2&lt;/code&gt;. Each array controller in the &lt;code&gt;init&lt;/code&gt; of the NIB controller sets the content of the array: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// In NIB one init
+[myArrayControllerInNibOne setContent: [[MyGlobals sharedMyGlobals].globalArray];
+
+// In NIB two init
+[myArrayControllerInNibTwo setContent: [[MyGlobals sharedMyGlobals].globalArray];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When each NIB initializes the &lt;code&gt;NSArrayController&lt;/code&gt; binds correctly to the shared array and I can see the array content in the UI as you would expect. I have a separate background thread that updates the global array when content changes based on an external event. When objects need to be added in this background thread, I simply add them to the array as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[[[MyGlobals sharedMyGlobals].globalArray] addObject:theNewObject];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is where things fall apart. I can't call a &lt;code&gt;willChangeValueForKey&lt;/code&gt; and &lt;code&gt;didChangeValueForKey&lt;/code&gt; on the global array because the shared instance doesn't have a key value (should I be adding this in the singleton class?)&lt;/p&gt;
+
+&lt;p&gt;I could fire off an &lt;code&gt;NSNotification&lt;/code&gt; and catch that in the NIB controller and either do a &lt;code&gt;[myArrayControllerInNibOne rearrangeObjects]&lt;/code&gt;; or set the content to &lt;code&gt;nil&lt;/code&gt; and reassign the content to the array - but both of these seems like hacks and. moreover, setting the &lt;code&gt;NSArrayController&lt;/code&gt; to &lt;code&gt;nil&lt;/code&gt; and then back to the global array causes a visual flash within the UI as the content is cleared and re-populated.&lt;/p&gt;
+
+&lt;p&gt;I know I could add directly to the &lt;code&gt;NSArrayController&lt;/code&gt; and the array gets updated, but I don't see a) how the other &lt;code&gt;NSArrayController&lt;/code&gt; instances would be updated and b) I don't want to tie my background thread class explicitly to a NIB instance (nor should I have to).&lt;/p&gt;
+
+&lt;p&gt;I think the correct approach is to either fire off the KVO notification somehow around the &lt;code&gt;addObject&lt;/code&gt; in the background thread, or add something to the object that is being stored in the global array. But I'm at a loss.&lt;/p&gt;
+
+&lt;p&gt;As a point of note I am NOT using Core Data.&lt;/p&gt;
+
+&lt;p&gt;Any help or assistance would be very much appreciated.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3110067/mac-os-x-window-server-vs-x11-the-insane-task</id>
+        <re:rank scheme="http://stackoverflow.com">1</re:rank>
+        <title type="text">Mac OS X Window Server vs. X11: the insane task.</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="core-graphics"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="x11"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="carbon"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="simbl"/>
+        <author>
+            <name>iUm</name>
+            <uri>http://stackoverflow.com/users/366435</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3110067/mac-os-x-window-server-vs-x11-the-insane-task" />
+        <published>2010-06-24T12:53:36Z</published>
+        <updated>2010-06-25T09:20:43Z</updated>
+        <summary type="html">
+            &lt;p&gt;Dedicated to all who likes low-level Window Server (CoreGraphicsPrivate.h, etc), X11 on Mac, SIMBL and other crazy stuff :)&lt;/p&gt;
+
+&lt;p&gt;There's a simple X11-emulated application on Mac (like xterm, xeyes and so on) with one window. While running, X11 somehow creates a native Quartz window to represent this emulated application, and this window is accessible via Quartz Window Services so that I can get its CSWindowID, title, position, size and owner's PID (PID of X11.app). But it does not support Accessibility API, so there's no way to control it (except, maybe Core Graphichs private functions from the same process).&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Now, here's the task:&lt;/p&gt;
+
+&lt;p&gt;I need to host an additional NSView (or just draw something) upon such a window. I mean a native Quartz window, which appeared as a result of X11 emulating some application. I know, to manipulate windows on Mac I must be in the same process, i.e. X11.app.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I wrote a SIMBL plug-in which intrudes into X11.app process.&lt;/p&gt;
+
+&lt;p&gt;There I can call [NSApp windows], but all the time I'm getting exactly 2 NSWindows which have nothing in common with real applications' windows. They are not even visible on the screen.&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, when I call NSWindowList(), I get anything I need (window IDs for X11 windows) and even more (window IDs from other applications).  &lt;/p&gt;
+
+&lt;p&gt;When I've got CSWindowIDs for X11-emulated windows, I call [NSApp windowWithWindowNumber: ] (Cocoa) and HIWindowFromCGWindowID() (Carbon), but they both return nil! From the very same process!&lt;/p&gt;
+
+&lt;p&gt;BTW, all this actions work perfectly when I intrude into Safari process and others...&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;So, the questions are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;How did X11 create such windows which are not accessible from the very same process?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;How can I get pointers to X11 windows (NSWindow *, CGContextRef, or, at least, anything...) and host my graphics (I don't even speak about NSViews) upon them?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Thanks a lot in advance!&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/1018369/accessing-web-service-from-iphone</id>
+        <re:rank scheme="http://stackoverflow.com">10</re:rank>
+        <title type="text">Accessing Web Service from iPhone</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="iphone"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa-touch"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="web-services"/>
+        <author>
+            <name>Cody C</name>
+            <uri>http://stackoverflow.com/users/120578</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/1018369/accessing-web-service-from-iphone" />
+        <published>2009-06-19T14:45:33Z</published>
+        <updated>2010-06-25T08:42:58Z</updated>
+        <summary type="html">
+            &lt;p&gt;Questions on calling web services from iPhone?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Anyone have any recommended tutorials on doing this?&lt;/li&gt;
+&lt;li&gt;Anyone have any best practices on implementing security with these calls?&lt;/li&gt;
+&lt;li&gt;Has anyone made or seen any shared libraries or wrappers for easy web service calls from the iPhone?&lt;/li&gt;
+&lt;/ol&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3115810/help-on-installing-a-library-like-libical-into-xcode</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Help on installing a library like libical into Xcode</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa-touch"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="xcode"/>
+        <author>
+            <name>JK</name>
+            <uri>http://stackoverflow.com/users/172131</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3115810/help-on-installing-a-library-like-libical-into-xcode" />
+        <published>2010-06-25T05:42:46Z</published>
+        <updated>2010-06-25T08:26:49Z</updated>
+        <summary type="html">
+            &lt;p&gt;I would like to use the libical library in my project, but I have never used an external library before. I have downloaded the libical files, but I am pretty much stuck there. I do not how how, or even if, I need to build/extract them and then how to get them into Xcode. Any help would be greatly appreciated. Thank you.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3107436/flip-coordinate-system-of-an-nswindow-objective-c-cocoa</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">Flip coordinate system of an NSWindow objective-c / cocoa</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/>
+        <author>
+            <name>Nektarios</name>
+            <uri>http://stackoverflow.com/users/361312</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3107436/flip-coordinate-system-of-an-nswindow-objective-c-cocoa" />
+        <published>2010-06-24T05:29:11Z</published>
+        <updated>2010-06-25T08:11:01Z</updated>
+        <summary type="html">
+            &lt;p&gt;How can I flip the coordinate system of an NSWindow? I know it has a Content View, but how can I flip the coordinate system of that specific View which is of type NSView?&lt;/p&gt;
+
+&lt;p&gt;In a sub-view of my NSWindow's Content View I flip the coordinate system by subclassing NSView, placing that in my window, and in that subclassed NSView I implement method isFlipped to return YES.  No idea how I could have NSWindow make it's content view out of &quot;MyFlippedSubclassedNSView&quot;&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3110548/an-important-question-about-nsdictionaries</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">An Important Question About NSDictionaries</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa-touch"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsarray"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsdictionary"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="nsmutablestring"/>
+        <author>
+            <name>orangecl4now</name>
+            <uri>http://stackoverflow.com/users/317785</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3110548/an-important-question-about-nsdictionaries" />
+        <published>2010-06-24T13:51:01Z</published>
+        <updated>2010-06-25T07:54:37Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have an NSDictionary with NSStrings&lt;/p&gt;
+
+&lt;p&gt;Some of the valueForKey:@&quot;Key&quot; have no entry so it's (null)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NSMutableString* addressDictionaryToString = [NSMutableString string];  // use mutable string!
+for (NSDictionary* item in address) {     // use fast enumeration!
+        [addressDictionaryToString appendFormat:@&quot;%@, %@, %@, %@&quot;,
+         [item objectForKey:@&quot;Street&quot;],         
+         [item objectForKey:@&quot;City&quot;],
+         [item objectForKey:@&quot;State&quot;],
+         [item objectForKey:@&quot;ZIP&quot;]
+         ];
+    NSLog(@&quot;MutableString: %@&quot;, addressDictionaryToString);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So I want to build an NSMutableString but filter out those keys that are null. Any ideas?&lt;/p&gt;
+
+&lt;p&gt;UPDATE:::::&lt;/p&gt;
+
+&lt;p&gt;Basically I want my resulting String to look like&lt;/p&gt;
+
+&lt;p&gt;1 Infinite Loop, Cupertino, CA, 95014 (IF all fields are available)&lt;/p&gt;
+
+&lt;p&gt;If Im missing the Street then&lt;/p&gt;
+
+&lt;p&gt;Cupertino, CA, 95014&lt;/p&gt;
+
+&lt;p&gt;If I'm missing the State then&lt;/p&gt;
+
+&lt;p&gt;1 Infinite Loop, Cupertino, 95014&lt;/p&gt;
+
+&lt;p&gt;If I only have the state then it should print&lt;/p&gt;
+
+&lt;p&gt;CA&lt;/p&gt;
+
+&lt;p&gt;(notice that there are no commas on the last element)&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3116339/how-to-display-the-values-of-x-and-y-axis-in-nsview</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">how to display the values of x and y axis in nsview</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/>
+        <author>
+            <name>Kishore</name>
+            <uri>http://stackoverflow.com/users/318324</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3116339/how-to-display-the-values-of-x-and-y-axis-in-nsview" />
+        <published>2010-06-25T07:41:39Z</published>
+        <updated>2010-06-25T07:41:39Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hi All,&lt;/p&gt;
+
+&lt;p&gt;I draw a histogram chart using NSView.To display the values of x and y axis i used NSTextStorage.&lt;/p&gt;
+
+&lt;p&gt;When i tried to display the values it is used display the values inside the rect that is in the histogram chart but i need to display it out side.&lt;/p&gt;
+
+&lt;p&gt;I tried to change the position of x and yaxis from (0,0) to (15,15) then it was able to display as i want but the problem here is the bars which are displayed are not accurate.&lt;/p&gt;
+
+&lt;p&gt;So, Please tell me the solution such that i can display the values of x and y axis outside the rect or please let me know if i can able to display it on window using NSTextStorage.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3107279/how-to-interpret-a-crash-report</id>
+        <re:rank scheme="http://stackoverflow.com">2</re:rank>
+        <title type="text">How to interpret a crash report ?</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="macosx"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="crash-reports"/>
+        <author>
+            <name>Miraaj</name>
+            <uri>http://stackoverflow.com/users/217586</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3107279/how-to-interpret-a-crash-report" />
+        <published>2010-06-24T04:39:17Z</published>
+        <updated>2010-06-25T07:15:49Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hi all,&lt;/p&gt;
+
+&lt;p&gt;I have got a crash report from one of my application's users, who found application to be freezing and then he has to force quit it.&lt;/p&gt;
+
+&lt;p&gt;I am having trouble to extract information from it which can help me to resolve its cause. Can some one help me to interpret it or can give me some initial push so that I can interpret it my self? &lt;/p&gt;
+
+&lt;p&gt;Crash report is as follow, (it is very long, so I have pasted a part of it):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Date/Time: 2010-06-23 12:07:53 -0700
+OS Version: 10.6.4 (Build 10F569)
+Architecture: x86_64
+Report Version: 6
+
+Command: XYZ
+Path: /Applications/XYZ.app/Contents/MacOS/XYZ
+Version: 1.5.6 build-0182 (1.5.6)
+Parent: launchd [94]
+
+PID: 463
+Event: hang
+Duration: 4.41s (sampling started after 2 seconds)
+Steps: 24 (100ms sampling interval)
+
+Pageins: 1
+Pageouts: 0
+
+
+Process: XYZ [463]
+Path: /Applications/XYZ.app/Contents/MacOS/XYZ
+UID: 501
+
+
+Process: AirPort Base Station Agent [118]
+Path: /System/Library/CoreServices/AirPort Base Station Agent.app/Contents/MacOS/AirPort Base Station Agent
+UID: 501
+
+Thread a0923d4 DispatchQueue 1
+User stack:
+24 ??? (in AirPort Base Station Agent + 5692) [0x10000163c]
+24 NSApplicationMain + 364 (in AppKit) [0x7fff861115f8]
+24 -[NSApplication run] + 395 (in AppKit) [0x7fff861188d3]
+24 -[NSApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 155 (in AppKit) [0x7fff86152bed]
+24 _DPSNextEvent + 708 (in AppKit) [0x7fff8615329e]
+24 BlockUntilNextEventMatchingListInMode + 59 (in HIToolbox) [0x7fff8445f5d8]
+24 ReceiveNextEventCommon + 310 (in HIToolbox) [0x7fff8445f71f]
+24 RunCurrentEventLoopInMode + 333 (in HIToolbox) [0x7fff8445f91a]
+24 CFRunLoopRunSpecific + 575 (in CoreFoundation) [0x7fff83a5484f]
+24 __CFRunLoopRun + 1698 (in CoreFoundation) [0x7fff83a553c2]
+24 mach_msg_trap + 10 (in libSystem.B.dylib) [0x7fff841fe2fa]
+Kernel stack:
+24 ipc_mqueue_receive_continue + 0 [0x210c2f]
+
+Thread a119000 DispatchQueue 2
+User stack:
+24 start_wqthread + 13 (in libSystem.B.dylib) [0x7fff84217f25]
+24 _pthread_wqthread + 353 (in libSystem.B.dylib) [0x7fff84218088]
+24 _dispatch_worker_thread2 + 252 (in libSystem.B.dylib) [0x7fff8421875e]
+24 _dispatch_queue_invoke + 185 (in libSystem.B.dylib) [0x7fff84218c34]
+24 kevent + 10 (in libSystem.B.dylib) [0x7fff8421708a]
+Kernel stack:
+24 kevent + 97 [0x4701de]
+
+Thread a0a13d4 
+User stack:
+24 thread_start + 13 (in libSystem.B.dylib) [0x7fff84237309]
+24 _pthread_start + 331 (in libSystem.B.dylib) [0x7fff84237456]
+24 select$DARWIN_EXTSN + 10 (in libSystem.B.dylib) [0x7fff84241dce]
+Kernel stack:
+24 sleep + 52 [0x486bac]
+
+Binary Images:
+0x100000000 - 0x100027fff com.apple.AirPortBaseStationAgent 1.5.5 (155.2) &amp;lt;00010203-0405-0607-0809-0A0B0C0D0E0F&amp;gt; /System/Library/CoreServices/AirPort Base Station Agent.app/Contents/MacOS/AirPort Base Station Agent
+0x7fff83a09000 - 0x7fff83b7eff7 com.apple.CoreFoundation 6.6.3 (550.29) &amp;lt;48810602-63C3-994D-E563-DD02B16E76E1&amp;gt; /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x7fff841fd000 - 0x7fff843bdfef libSystem.B.dylib ??? (???) &amp;lt;95E02DD0-ADEA-745B-E7FA-ABA064E4658C&amp;gt; /usr/lib/libSystem.B.dylib
+0x7fff84431000 - 0x7fff8472ffe7 com.apple.HIToolbox 1.6.3 (???) &amp;lt;CF0C8524-FA82-3908-ACD0-A9176C704AED&amp;gt; /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x7fff8610f000 - 0x7fff86b05fff com.apple.AppKit 6.6.6 (1038.29) &amp;lt;7BDD335D-5425-0354-5AD6-41C4F1B4A2F4&amp;gt; /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+
+
+Process: aosnotifyd [141]
+Path: /usr/sbin/aosnotifyd
+UID: 501
+
+Thread a744000 DispatchQueue 1
+User stack:
+24 start + 52 (in aosnotifyd) [0x100001070]
+24 main + 806 (in aosnotifyd) [0x1000020e8]
+24 CFRunLoopRun + 70 (in CoreFoundation) [0x7fff83a545d6]
+24 CFRunLoopRunSpecific + 575 (in CoreFoundation) [0x7fff83a5484f]
+24 __CFRunLoopRun + 1698 (in CoreFoundation) [0x7fff83a553c2]
+24 mach_msg_trap + 10 (in libSystem.B.dylib) [0x7fff841fe2fa]
+Kernel stack:
+24 ipc_mqueue_receive_continue + 0 [0x210c2f]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks in advance for any help!&lt;/p&gt;
+
+&lt;p&gt;Thanks,&lt;/p&gt;
+
+&lt;p&gt;Miraaj&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/2762456/lsuielement-not-working</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">LSUIElement not working</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="osx"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="info.plist"/>
+        <author>
+            <name>anthony</name>
+            <uri>http://stackoverflow.com/users/64290</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/2762456/lsuielement-not-working" />
+        <published>2010-05-04T02:28:08Z</published>
+        <updated>2010-06-25T06:26:13Z</updated>
+        <summary type="html">
+            &lt;p&gt;I have an application that has LSUIElement = 1 in the Info.plist. When I run the application, a dock item and toplevel menu bar is created for it. Why?&lt;/p&gt;
+
+&lt;p&gt;EDIT:&lt;/p&gt;
+
+&lt;p&gt;I was using a library that was calling TransformProcessType(), clobbering my Info.plist configuration.&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+    <entry>
+        <id>http://stackoverflow.com/questions/3115657/nsapplicationdelegate-application-active-because-of-url-protocol</id>
+        <re:rank scheme="http://stackoverflow.com">0</re:rank>
+        <title type="text">NSApplicationDelegate application active because of URL Protocol</title>
+        <category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="objective-c"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="cocoa"/><category scheme="http://stackoverflow.com/feeds/tag/cocoa/tags" term="osx"/>
+        <author>
+            <name>Hankweb</name>
+            <uri>http://stackoverflow.com/users/296794</uri>
+        </author>
+        <link rel="alternate" href="http://stackoverflow.com/questions/3115657/nsapplicationdelegate-application-active-because-of-url-protocol" />
+        <published>2010-06-25T04:54:58Z</published>
+        <updated>2010-06-25T06:05:00Z</updated>
+        <summary type="html">
+            &lt;p&gt;Hey!  I have my Mac application set up to launch on myApp:// protocol is called in a browser, like Safari, but I cannot seem to be able to do an action when the application is called by that protocol.  The delegate method would have to be something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (void)applicationDidBecomeActiveByURL:(NSURL *)protocol;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I don't know this because I am new at Mac developing, but I am somewhat good at iPhone developing, so I know the iPhone development way, but not the Mac development way&lt;/p&gt;
+
+        </summary>
+    </entry>
+    
+</feed>

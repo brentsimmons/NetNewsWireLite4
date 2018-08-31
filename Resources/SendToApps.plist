@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Cocoalicious</key>
+	<string></string>
+	<key>Delibar</key>
+	<string></string>
+	<key>MarsEdit</key>
+	<string></string>
+	<key>Pukka</key>
+	<string></string>
+	<key>Postr</key>
+	<string></string>
+	<key>Webnote</key>
+	<string></string>
+	<key>VoodooPad</key>
+	<string></string>
+	<key>VoodooPad Lite</key>
+	<string></string>
+	<key>VoodooPad Pro</key>
+	<string></string>
+	<key>Twitter</key>
+	<dict>
+		<key>URLTemplate</key>
+		<string>twitter://post?message=[[title]]%20[[url]]</string>
+		<key>BundleID</key>
+		<string>com.twitter.twitter-mac</string>
+	</dict>
+</dict>
+</plist>

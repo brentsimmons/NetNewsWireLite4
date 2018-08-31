@@ -1,0 +1,28 @@
+//
+// Prefix header for all source files of the 'nnwipad' target in the 'nnwipad' project
+//
+#import <Availability.h>
+
+#ifndef __IPHONE_3_2
+#warning "This project uses features only available in iPhone SDK 3.2 and later."
+#endif
+
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+	#import <CoreData/CoreData.h>
+#endif
+
+
+#import "NNWStrings.h"
+#import "RSFoundationExtras.h"
+#import "NNWExtras.h"
+#import "NNWDataDefinitions.h"
+#import "RSFeedDefinitions.h"
+
+#define RS_IPAD 1
+
+/*Features*/
+
+#define NNW_MOST_RECENT_ITEM_IN_FEEDS_LIST 0

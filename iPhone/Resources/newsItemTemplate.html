@@ -1,0 +1,103 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-family: Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 1.6em;
+	background-color: white;
+	-webkit-text-size-adjust:none;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #666;
+	font-size: 1.2em;
+	}
+h2 {
+	font-size: 1.5em;
+	line-height: 1.3em;
+	}
+a {
+	text-decoration: none;
+	}
+a, a:link, a:visited {
+	font-weight: bold;
+	color: #3366CC;
+	}
+pre {
+	font-size: 0.8em;
+	white-space: pre-wrap;
+}
+img {
+	display: block;
+	float: none;
+	text-align: center;
+	height: auto;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	}
+#content {
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	margin-top:0px;
+}
+#source {
+	color: #ccc;
+	font-weight: bold;
+	font-family: Helvetica, sans-serif;
+	text-align: left;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	line-height: 1.1em;
+}
+.categories {
+	color: #bbb;
+	font-weight: bold;
+	font-family: Helvetica, sans-serif;
+	text-align: left;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	line-height: 1.1em;
+}
+#nnwstar {
+	display: none;
+	float: right;
+	padding-right: 11px;
+	padding-top: 15px;
+}
+</style>
+<script>
+function hideObject(obj) {
+	obj.style.display = "none";
+}
+function showObject(obj) {
+	obj.style.display = "inline";
+}
+function showStar() {
+	showObject(document.getElementById('nnwstar'));
+}
+function hideStar() {
+	hideObject(document.getElementById('nnwstar'));
+}
+</script>
+<meta name="viewport" content="width=320; initial-scale=1.0; minimum-scale=1.0;"/>
+<title>[[plainTextTitle]]</title>
+</head>
+<body>
+<div id="source"><img id="nnwstar" src="nnw:star" height="16" width="16" alt="star" />[[googleFeedTitle]] [[displayDate]] [[byline]]</div>
+<div id="content">
+<h2>[[titleLink]]</h2>
+<div id="description">[[htmlText]]</div>
+</div>
+<div class="categories">[[categories]]</div>
+</body>
+</html>

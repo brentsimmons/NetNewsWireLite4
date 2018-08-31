@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>ranchero.com</title>
+    <link>http://ranchero.com/</link>
+    <description>Brent Simmons’s linkblog.</description>
+    <item>
+      <title>iPhone multitasking explained</title>
+      <link>http://furbo.org/2010/06/21/iphone-multitasking/</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://furbo.org/2010/06/21/iphone-multitasking/&quot;&gt;furbo.org&lt;/a&gt;: “It’s no secret that ‘multitasking’ is one of the great new features of iOS 4. Unfortunately, many people have a misconception about what Apple has implemented.”&lt;/p&gt;</description>
+      <pubDate>Mon, 21 Jun 2010 11:42:39 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/21/iphone_multitasking_explained</guid>
+      <dc:date>2010-06-21T11:42:39-07:00</dc:date>
+    </item>
+    <item>
+      <title>A Month of Mac</title>
+      <link>http://www.feld.com/wp/archives/2010/06/a-month-of-mac.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://www.feld.com/wp/archives/2010/06/a-month-of-mac.html&quot;&gt;Brad Feld&lt;/a&gt;: “Ross (my IT guy) bet me $100 that I’d beg him to ship my Windows desktop to me within a few days of getting to Alaska. Help me win the bet.”&lt;/p&gt;</description>
+      <pubDate>Sun, 20 Jun 2010 16:07:48 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/20/a_month_of_mac</guid>
+      <dc:date>2010-06-20T16:07:48-07:00</dc:date>
+    </item>
+    <item>
+      <title>On sucky app websites</title>
+      <link>http://mattgemmell.com/2010/06/20/your-apps-website-sucks</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://mattgemmell.com/2010/06/20/your-apps-website-sucks&quot;&gt;Matt Legend Gemmell&lt;/a&gt;: “Your customer doesn’t care about any of the other crap that you want to throw onto the product page. Get rid of it; put it elsewhere.”&lt;/p&gt;</description>
+      <pubDate>Sun, 20 Jun 2010 14:16:36 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/20/on_sucky_app_websites</guid>
+      <dc:date>2010-06-20T14:16:36-07:00</dc:date>
+    </item>
+    <item>
+      <title>Fast UITableViewCell with a UIWebView</title>
+      <link>http://nickharris.wordpress.com/2010/06/17/fast-uitableviewcell-with-a-uiwebview/</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://nickharris.wordpress.com/2010/06/17/fast-uitableviewcell-with-a-uiwebview/&quot;&gt;Nick Harris (my co-worker at NewsGator)&lt;/a&gt;: “The problem becomes how you add hyperlinking to a UITableViewCell but keep the scroll speed as fast as possible.”&lt;/p&gt;
+
+&lt;p&gt;Nick’s solution is to actually use a UIWebView. Which works pretty well (to my surprise). He has some demo code posted — and lists a couple issues still to solve. Help appreciated, of course!&lt;/p&gt;</description>
+      <pubDate>Thu, 17 Jun 2010 15:05:13 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/17/fast_uitableviewcell_with_a_uiwebview</guid>
+      <dc:date>2010-06-17T15:05:13-07:00</dc:date>
+    </item>
+    <item>
+      <title>Reminder: make sure NetNewsWire is latest version</title>
+      <link>http://netnewswireapp.com/2010/06/reminder-make-sure-netnewswire-is-latest-version/</link>
+      <description>&lt;p&gt;We released new versions of NetNewsWire a couple months ago to make sure they work with an upcoming change in Google Reader. Most people have upgraded already. But not everybody! So this is a reminder to make sure you’re running the latest version.&lt;/p&gt;
+
+&lt;p&gt;There are more details on this &lt;a href=&quot;http://netnewswireapp.com/2010/06/reminder-make-sure-netnewswire-is-latest-version/&quot;&gt;post on the NetNewsWire website&lt;/a&gt;.&lt;/p&gt;</description>
+      <category>NetNewsWire</category>
+      <category>NetNewsWire-Misc</category>
+      <pubDate>Mon, 14 Jun 2010 17:43:33 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/14/reminder_make_sure_netnewswire_is_lates</guid>
+      <dc:date>2010-06-14T17:43:33-07:00</dc:date>
+    </item>
+    <item>
+      <title>Extended NetNewsWire/iPad intro pricing an extra month</title>
+      <link>http://netnewswireapp.com/2010/06/extending-the-netnewswireipad-intro-pricing-an-additional-month/</link>
+      <description>&lt;p&gt;Since the international iPad release is still in progress, and since even where it’s been released there are people on waiting lists, we decided to extend the introductory pricing an extra month, to July 8. More details on the &lt;a href=&quot;http://netnewswireapp.com/2010/06/extending-the-netnewswireipad-intro-pricing-an-additional-month/&quot;&gt;NetNewsWire blog&lt;/a&gt;.&lt;/p&gt;</description>
+      <category>NetNewsWire</category>
+      <pubDate>Wed, 02 Jun 2010 09:41:18 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/02/extended_netnewswire_ipad_intro_pricing_</guid>
+      <dc:date>2010-06-02T09:41:18-07:00</dc:date>
+    </item>
+    <item>
+      <title>New file comparison app: Kaleidoscope</title>
+      <link>http://www.kaleidoscopeapp.com/</link>
+      <description>&lt;p&gt;I use Mercurial these days — and &lt;a href=&quot;http://www.kaleidoscopeapp.com/&quot;&gt;Kaleidoscope&lt;/a&gt; works with Mercurial. I’ll definitely check it out. (&lt;a href=&quot;http://www.versionsapp.com/&quot;&gt;Versions&lt;/a&gt;, also by the Made by Sofa folks, is a great app, which I loved when I was using Subversion.)&lt;/p&gt;
+
+&lt;p&gt;Also see &lt;a href=&quot;http://iamthewalr.us/blog/2010/06/kaleidoscope-1-0/&quot;&gt;Colin Barrett’s blog post about Kaleidoscope&lt;/a&gt;.&lt;/p&gt;</description>
+      <pubDate>Tue, 01 Jun 2010 15:43:22 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/01/new_file_comparison_app_kaleidoscope</guid>
+      <dc:date>2010-06-01T15:43:22-07:00</dc:date>
+    </item>
+    <item>
+      <title>NetNewsWire/iPad intro price ends soon</title>
+      <link>http://ranchero.com/2010/06/01/netnewswire_ipad_intro_price_ends_soon</link>
+      <description>&lt;p&gt;Just a note, because I don’t want you to miss out: the price for &lt;a href=&quot;http://itunes.apple.com/us/app/netnewswire-for-ipad/id363704172?mt=8&quot;&gt;NetNewsWire for iPad&lt;/a&gt; (App Store link) will go up 50% a week from now, from $9.99 (US) to $14.99.&lt;/p&gt;
+
+&lt;p&gt;The special introductory price will end — so, if you were thinking of buying it, you should buy it &lt;em&gt;before&lt;/em&gt; that happens.&lt;/p&gt;
+
+&lt;p&gt;Save $5 and buy the &lt;a href=&quot;http://itunes.apple.com/us/app/twitterrific-for-ipad/id359914600?mt=8&quot;&gt;Twitterrific upgrade&lt;/a&gt;. Or buy &lt;a href=&quot;http://itunes.apple.com/us/app/bistromath/id309214622?mt=8&quot;&gt;Bistromath&lt;/a&gt; or the multiple-award-winning &lt;a href=&quot;http://itunes.apple.com/us/app/postage-postcards/id312231322?mt=8&quot;&gt;Postage&lt;/a&gt;.&lt;/p&gt;</description>
+      <category>NetNewsWire</category>
+      <pubDate>Tue, 01 Jun 2010 15:32:14 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/06/01/netnewswire_ipad_intro_price_ends_soon</guid>
+      <dc:date>2010-06-01T15:32:14-07:00</dc:date>
+    </item>
+    <item>
+      <title>Accessorizer 2.0</title>
+      <link>http://www.kevincallahan.org/software/accessorizer.html</link>
+      <description>&lt;p&gt;Xcode’s awesome BFF has been updated — &lt;a href=&quot;http://www.kevincallahan.org/software/accessorizer.html&quot;&gt;Accessorizer 2.0&lt;/a&gt; is out!&lt;/p&gt;
+
+&lt;p&gt;Also read Paul Goracke’s &lt;a href=&quot;http://corporationunknown.com/blog/2010/05/31/accessorizer-2-0-configuration-sets/&quot;&gt;notes about the new Configuration Sets feature&lt;/a&gt;. Sounds very cool.&lt;/p&gt;</description>
+      <pubDate>Mon, 31 May 2010 20:50:24 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/31/accessorizer_2_0</guid>
+      <dc:date>2010-05-31T20:50:24-07:00</dc:date>
+    </item>
+    <item>
+      <title>Mike Lee on WWDC</title>
+      <link>http://www.atomicwang.org/motherfucker/Index/Entries/2010/5/23_The_mean_streets_of_San_Francisco.html</link>
+      <description>&lt;p&gt;Mike helps you cope with the &lt;a href=&quot;http://www.atomicwang.org/motherfucker/Index/Entries/2010/5/23_The_mean_streets_of_San_Francisco.html&quot;&gt;mean streets of San Francisco&lt;/a&gt; with advice you won’t get anywhere else.&lt;/p&gt;</description>
+      <pubDate>Wed, 26 May 2010 19:31:58 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/26/mike_lee_on_wwdc</guid>
+      <dc:date>2010-05-26T19:31:58-07:00</dc:date>
+    </item>
+    <item>
+      <title>Paul on WWDC</title>
+      <link>http://corporationunknown.com/blog/2010/05/20/wwdc-eat-the-lunch/</link>
+      <description>&lt;p&gt;Surprisingly, Paul Goracke says: &lt;a href=&quot;http://corporationunknown.com/blog/2010/05/20/wwdc-eat-the-lunch/&quot;&gt;Eat the lunch&lt;/a&gt;. But hear him out. He’s not crazy.&lt;/p&gt;</description>
+      <pubDate>Wed, 26 May 2010 19:28:45 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/26/paul_on_wwdc</guid>
+      <dc:date>2010-05-26T19:28:45-07:00</dc:date>
+    </item>
+    <item>
+      <title>Craig on WWDC</title>
+      <link>http://furbo.org/2010/05/26/wwdc/</link>
+      <description>&lt;p&gt;See &lt;a href=&quot;http://furbo.org/2010/05/26/wwdc/&quot;&gt;furbo.org&lt;/a&gt;’s practical guide to getting the most out of WWDC.&lt;/p&gt;</description>
+      <pubDate>Wed, 26 May 2010 19:26:17 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/26/craig_on_wwdc</guid>
+      <dc:date>2010-05-26T19:26:17-07:00</dc:date>
+    </item>
+    <item>
+      <title>4.5 mice for Twitterrific for iPad</title>
+      <link>http://www.macworld.com/appguide/app.html?id=458364</link>
+      <description>&lt;p&gt;Dan Moren, &lt;a href=&quot;http://www.macworld.com/appguide/app.html?id=458364&quot;&gt;Macworld&lt;/a&gt;: “Despite an apparent lack of controls, Twitterrific packs away a lot of functionality — but the biggest win of the app is &lt;em&gt;context&lt;/em&gt;. Controls are where you want them when you want them, instead of littering the interface at all times.”&lt;/p&gt;
+
+&lt;p&gt;We’re big fans of Twitterrific.&lt;/p&gt;</description>
+      <pubDate>Tue, 25 May 2010 10:50:51 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/25/4_5_mice_for_twitterrific_for_ipad</guid>
+      <dc:date>2010-05-25T10:50:51-07:00</dc:date>
+    </item>
+    <item>
+      <title>Two updates: TapLynx, NetNewsWire for iPad</title>
+      <link>http://ranchero.com/2010/05/24/two_updates_taplynx_netnewswire_for_ip</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://taplynx.com/blog/taplynx-sdk-updates/taplynx-1-3-2-released&quot;&gt;TapLynx 1.3.2 was released today&lt;/a&gt;. A few small features.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://netnewswireapp.com/2010/05/netnewswire-for-ipad-1-0-3-in-app-store-shortly/&quot;&gt;NetNewsWire for iPad 1.0.3&lt;/a&gt; appeared on the App Store today. (Here’s the &lt;a href=&quot;http://itunes.apple.com/us/app/netnewswire-for-ipad/id363704172?mt=8&quot;&gt;App Store link&lt;/a&gt;.)&lt;/p&gt;</description>
+      <category>NetNewsWire</category>
+      <category>NetNewsWire-Updates</category>
+      <pubDate>Mon, 24 May 2010 14:21:21 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/24/two_updates_taplynx_netnewswire_for_ip</guid>
+      <dc:date>2010-05-24T14:21:21-07:00</dc:date>
+    </item>
+    <item>
+      <title>iPad and Business Relationships</title>
+      <link>http://technology.inc.com/hardware/articles/201005/leary.html</link>
+      <description>&lt;p&gt;Brent Leary, &lt;a href=&quot;http://technology.inc.com/hardware/articles/201005/leary.html&quot;&gt;technology.inc.com&lt;/a&gt;: “I think the most important thing about the iPad is that it can present opportunities for businesses to connect with prospects — and to do so in a more meaningful way. Going back to the NPR example, I can honestly say that I was not a big fan before last week.  But I saw the iPad app and have been reading and listening (and tweeting to friends/colleagues) ever since.”&lt;/p&gt;</description>
+      <pubDate>Sun, 23 May 2010 21:06:15 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/23/ipad_and_business_relationships</guid>
+      <dc:date>2010-05-23T21:06:15-07:00</dc:date>
+    </item>
+    <item>
+      <title>Bistromath and keypad UI</title>
+      <link>http://blackpixel.com/blog/897/numpads-gone-wild/</link>
+      <description>&lt;p&gt;Black Pixel, &lt;a href=&quot;http://blackpixel.com/blog/897/numpads-gone-wild/&quot;&gt;Chris Clark&lt;/a&gt;: “What’s unusual about ours (beside Bil’s dogged persistence to make it the best custom keyboard iPhone OS 3.1 can handle, bar none) is the order of the keys: most iPhone apps arrange their buttons like a calculator with the top row ordered 7-8-9, while Bistromath’s are laid out like a telephone with the 1-2-3 on top.”&lt;/p&gt;</description>
+      <pubDate>Thu, 20 May 2010 16:29:50 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/20/bistromath_and_keypad_ui</guid>
+      <dc:date>2010-05-20T16:29:50-07:00</dc:date>
+    </item>
+    <item>
+      <title>iPad design and early adopters</title>
+      <link>http://furbo.org/2010/05/20/dont-design-for-early-adopters/</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://furbo.org/2010/05/20/dont-design-for-early-adopters/&quot;&gt;Craig Hockenberry&lt;/a&gt;: “We’re the first ones standing in line at the Apple store, and the first ones to use all this cool new software. And we know all the things that apps ‘used to do’. And we want all sorts of other bells and whistles. And we’re wrong.”&lt;/p&gt;</description>
+      <pubDate>Thu, 20 May 2010 11:16:10 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/20/ipad_design_and_early_adopters</guid>
+      <dc:date>2010-05-20T11:16:10-07:00</dc:date>
+    </item>
+    <item>
+      <title>Adam Curry, AppJay</title>
+      <link>http://ranchero.com/2010/05/18/adam_curry_appjay</link>
+      <description>&lt;p&gt;Adam Curry’s iPhone app &lt;a href=&quot;http://itunes.apple.com/us/app/big-app-show/id368656200?mt=8&quot;&gt;Big App Show&lt;/a&gt; is up on the App Store. It’s a review of other iPhone apps — it’s like running an app before you buy it. You actually see the app on your iPhone at the size it would appear, doing what it would normally do.&lt;/p&gt;
+
+&lt;p&gt;It’s magic. Free. Fun. (And it’s a &lt;a href=&quot;http://taplynx.com/&quot;&gt;TapLynx&lt;/a&gt; app. The pretty pixels are by &lt;a href=&quot;http://www.roguesheep.com/&quot;&gt;RogueSheep&lt;/a&gt;.)&lt;/p&gt;</description>
+      <pubDate>Tue, 18 May 2010 11:08:03 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/18/adam_curry_appjay</guid>
+      <dc:date>2010-05-18T11:08:03-07:00</dc:date>
+    </item>
+    <item>
+      <title>Cocoa, Flash, Safari</title>
+      <link>http://www.appleoutsider.com/</link>
+      <description>&lt;p&gt;&lt;a href=&quot;http://www.appleoutsider.com/&quot;&gt;Apple Outsider&lt;/a&gt;: “If the Cocoa Touch app empire crumbles before a next-generation replacement is ready, the next best thing is an open standard.”&lt;/p&gt;
+
+&lt;p&gt;Apple Outsider is Matt Drance’s new weblog. You should subscribe to the feed.&lt;/p&gt;</description>
+      <pubDate>Tue, 18 May 2010 10:53:04 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/18/cocoa_flash_safari</guid>
+      <dc:date>2010-05-18T10:53:04-07:00</dc:date>
+    </item>
+    <item>
+      <title>Bistromath - check splitter</title>
+      <link>http://itunes.apple.com/us/app/bistromath/id309214622?mt=8</link>
+      <description>&lt;p&gt;It’s the &lt;a href=&quot;http://itunes.apple.com/us/app/bistromath/id309214622?mt=8&quot;&gt;last iPhone app you’ll ever need&lt;/a&gt;. That is, if the word of God is anything to go by.&lt;/p&gt;
+
+&lt;p&gt;From Seattle Cocoa jockeys &lt;a href=&quot;http://blackpixel.com/&quot;&gt;Black Pixel&lt;/a&gt;.&lt;/p&gt;</description>
+      <pubDate>Mon, 17 May 2010 16:15:56 -0700</pubDate>
+      <guid isPermaLink="false">http://ranchero.com/2010/05/17/bistromath_check_splitter</guid>
+      <dc:date>2010-05-17T16:15:56-07:00</dc:date>
+    </item>
+  </channel>
+</rss>

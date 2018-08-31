@@ -1,0 +1,10 @@
+#import <Cocoa/Cocoa.h>
+#import "RSFoundationExtras.h"
+#import "RSAppKitCategories.h"
+#import "RSAppKitUtilities.h"
+
+#define RSGoogleReaderClientName @"NNW-Mac"
+#define RSGoogleReaderClientIdentifier @"NewsGator-NetNewsWire-3.2"
+#define RSGoogleReaderSyncEnabledKey @"googleSyncEnabled"
+#define RSGoogleReaderUsernameKey @"googleSyncAccount"
+

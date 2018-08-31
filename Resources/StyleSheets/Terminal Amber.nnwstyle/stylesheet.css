@@ -1,0 +1,71 @@
+body {
+	margin-top: 2.2em;
+	margin-bottom: 1em;
+	margin-left: 4.5em;
+	margin-right: 4.5em;
+	line-height: 1.5em;
+	background-color: black;
+	color: #bb6600;
+	text-rendering: optimizeLegibility;
+	font-family: Menlo, Courier, Monaco;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	letter-spacing: 1px;
+	color: #ff6600;
+}
+
+a {
+	text-decoration: none;
+	}
+a, a:link {
+	font-weight: bold;
+	color: gold;
+	}
+a:visited {
+	font-weight: bold;
+	color: gold;
+	}
+a:hover {
+	text-decoration: underline;
+	}
+#nnwFeedTitle a {
+	color: #bbb;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: 14px;
+}
+.nnwDisplayDate {
+	color: green;
+}
+#nnwTitle {
+	margin-top: 2.2em;
+	}
+#nnwTitle a, #nnwTitle a:link {
+	font-size: 2em;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+}
+#nnwByline {
+	color: green;
+}
+
+#nnwContent {
+	margin-top: 2.5em;
+	}
+
+
+pre {
+	white-space: pre-wrap;
+}
+
+a:link[href*="doubleclick."]  img {
+	padding-top: 4em;
+	opacity: 0.65;
+	}	
+.feedflare {
+	padding-top: 4em;
+	opacity: 0.35;
+}
+
