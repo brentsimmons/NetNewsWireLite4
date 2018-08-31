@@ -12,16 +12,16 @@
 
 @interface NNWPluginCommandOpenInAnyBrowser : NSObject <RSPluginCommand> {
 @private
-	NSImage *appIcon;
-	NSString *appName;
-	NSString *appPath;
-	NSString *bundleID;
+    NSImage *appIcon;
+    NSString *appName;
+    NSString *appPath;
+    NSString *bundleID;
 }
 
 
 - (id)initWithAppName:(NSString *)anAppName bundleID:(NSString *)aBundleID path:(NSString *)aPath;
 
-@property (nonatomic, retain, readonly) NSImage *appIcon;
+@property (nonatomic, strong, readonly) NSImage *appIcon;
 
 
 @end

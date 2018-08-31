@@ -16,10 +16,10 @@
 
 }
 
-@property (nonatomic, retain) NSString *htmlText;
-@property (nonatomic, retain) NSString *xmlBaseURL;
+@property (nonatomic, strong) NSString *htmlText;
+@property (nonatomic, strong) NSString *xmlBaseURL;
 
-@property (nonatomic, retain) RSDataArticle *article;
+@property (nonatomic, strong) RSDataArticle *article;
 
 + (RSDataArticleContent *)createArticleContentInManagedObjectContext:(NSManagedObjectContext *)moc;
 

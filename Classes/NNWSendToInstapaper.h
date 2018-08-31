@@ -16,16 +16,16 @@
 
 @interface NNWSendToInstapaper : NSObject {
 @private
-	NNWInstapaperCredentialsEditor *instapaperCredentialsEditor;
-	NSString *password;
-	NSString *username;
-	SEL callbackSelector;
-	id callbackTarget;
-	id<RSSharableItem> sharableItem;
-	id<RSPluginHelper> pluginHelper;
-	NSURLConnection *URLConnection;
-	NSInteger statusCode;
-	BOOL runningFeedbackWindow;
+    NNWInstapaperCredentialsEditor *instapaperCredentialsEditor;
+    NSString *password;
+    NSString *username;
+    SEL callbackSelector;
+    id callbackTarget;
+    id<RSSharableItem> sharableItem;
+    id<RSPluginHelper> pluginHelper;
+    NSURLConnection *URLConnection;
+    NSInteger statusCode;
+    BOOL runningFeedbackWindow;
 }
 
 
@@ -33,7 +33,7 @@
 - (void)sendToInstapaper;
 
 @property (nonatomic, assign, readonly) BOOL didSucceed;
-@property (nonatomic, retain, readonly) id<RSSharableItem> sharableItem;
+@property (nonatomic, strong, readonly) id<RSSharableItem> sharableItem;
 
 @end
 

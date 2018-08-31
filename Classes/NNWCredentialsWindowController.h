@@ -28,9 +28,9 @@
 
 @interface NNWCredentialsResult : NSObject {
 @private
-	BOOL userDidCancel;
-	NSString *password;
-	NSString *username;
+    BOOL userDidCancel;
+    NSString *password;
+    NSString *username;
 }
 
 @property (assign) BOOL userDidCancel;
@@ -45,22 +45,22 @@
 
 @interface NNWCredentialsWindowController : NSWindowController {
 @private
-	BOOL userDidCancel;
-	NSImageView *imageView;
-	NSString *password;
-	NSString *username;
-	NSTextField *messageTextField;
-	NSTextField *passwordTextField;
-	NSTextField *usernameTextField;
+    BOOL userDidCancel;
+    NSImageView *imageView;
+    NSString *password;
+    NSString *username;
+    NSTextField *messageTextField;
+    NSTextField *passwordTextField;
+    NSTextField *usernameTextField;
 }
 
-@property (retain) IBOutlet NSImageView *imageView;
-@property (retain) IBOutlet NSTextField *messageTextField;
-@property (retain) IBOutlet NSTextField *passwordTextField;
-@property (retain) IBOutlet NSTextField *usernameTextField;
+@property (strong) IBOutlet NSImageView *imageView;
+@property (strong) IBOutlet NSTextField *messageTextField;
+@property (strong) IBOutlet NSTextField *passwordTextField;
+@property (strong) IBOutlet NSTextField *usernameTextField;
 
-@property (retain) NSString *username; //username and password are bound to usernameTextField and passwordTextField
-@property (retain) NSString *password;
+@property (strong) NSString *username; //username and password are bound to usernameTextField and passwordTextField
+@property (strong) NSString *password;
 
 - (NNWCredentialsResult *)runModalForBackgroundWindow:(NSWindow *)aBackgroundWindow; //aBackgroundWindow may be nil
 

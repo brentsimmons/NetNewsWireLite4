@@ -18,9 +18,9 @@ NSString *RSURLSchemeFeed = @"feed";
 NSString *RSURLSchemeFile = @"file";
 
 BOOL RSURLIsDownloadable(NSURL *URL) {
-	/*Return YES if scheme is http, https, or feed*/
-	NSString *scheme = [[URL scheme] lowercaseString];
-	return [scheme isEqualToString:RSURLSchemeHTTP] || [scheme isEqualToString:RSURLSchemeHTTPS] || [scheme isEqualToString:RSURLSchemeFeed];
+    /*Return YES if scheme is http, https, or feed*/
+    NSString *scheme = [[URL scheme] lowercaseString];
+    return [scheme isEqualToString:RSURLSchemeHTTP] || [scheme isEqualToString:RSURLSchemeHTTPS] || [scheme isEqualToString:RSURLSchemeFeed];
 }
 
 
@@ -51,38 +51,33 @@ NSString *RSConnectedToInternetNotification = @"RSConnectedToInternetNotificatio
 
 
 + (id)conditionalGetInfoWithEtagResponse:(NSString *)anEtagResponse lastModifiedResponse:(NSString *)aLostModifiedResponse {
-	return [[[self alloc] initWithEtagResponse:anEtagResponse lastModifiedResponse:aLostModifiedResponse] autorelease];
+    return [[self alloc] initWithEtagResponse:anEtagResponse lastModifiedResponse:aLostModifiedResponse];
 }
 
 
 + (id)conditionalGetInfoWithURLResponse:(NSURLResponse *)urlResponse {
-	if (![urlResponse respondsToSelector:@selector(allHeaderFields)])
-		return nil;
-	NSDictionary *responseHeaders = [(NSHTTPURLResponse *)urlResponse allHeaderFields];
-	if (RSIsEmpty(responseHeaders))
-		return nil;
-	NSString *etag = [responseHeaders rs_objectForCaseInsensitiveKey:RSHTTPResponseHeaderEtag];
-	NSString *lastModified = [responseHeaders rs_objectForCaseInsensitiveKey:RSHTTPResponseHeaderLastModified];
-	if (RSStringIsEmpty(etag) && RSStringIsEmpty(lastModified))
-		return nil;
-	return [self conditionalGetInfoWithEtagResponse:etag lastModifiedResponse:lastModified];
+    if (![urlResponse respondsToSelector:@selector(allHeaderFields)])
+        return nil;
+    NSDictionary *responseHeaders = [(NSHTTPURLResponse *)urlResponse allHeaderFields];
+    if (RSIsEmpty(responseHeaders))
+        return nil;
+    NSString *etag = [responseHeaders rs_objectForCaseInsensitiveKey:RSHTTPResponseHeaderEtag];
+    NSString *lastModified = [responseHeaders rs_objectForCaseInsensitiveKey:RSHTTPResponseHeaderLastModified];
+    if (RSStringIsEmpty(etag) && RSStringIsEmpty(lastModified))
+        return nil;
+    return [self conditionalGetInfoWithEtagResponse:etag lastModifiedResponse:lastModified];
 }
 
 
 - (id)initWithEtagResponse:(NSString *)anEtagResponse lastModifiedResponse:(NSString *)aLastModifiedResponse {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	httpResponseEtag = [anEtagResponse copy];
-	httpResponseLastModified =[aLastModifiedResponse copy];
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    httpResponseEtag = [anEtagResponse copy];
+    httpResponseLastModified =[aLastModifiedResponse copy];
+    return self;
 }
 
 
-- (void)dealloc {
-	[httpResponseEtag release];
-	[httpResponseLastModified release];
-	[super dealloc];
-}
 
 @end

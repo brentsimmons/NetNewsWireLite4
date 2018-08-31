@@ -375,13 +375,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84DA3C54129858340024BD58 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84DA3C50129858340024BD58 /* RSCoreTests.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 84DD046011ACBCFC003742A9;
-			remoteInfo = RSCoreTestsBundle;
-		};
 		84F0A19512F6672E00BC5268 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84F0A18B12F6672E00BC5268 /* nnwiphone.xcodeproj */;
@@ -402,13 +395,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
 			remoteInfo = NetNewsWire;
-		};
-		84F0A25F12F6677400BC5268 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84DA3C50129858340024BD58 /* RSCoreTests.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 84DD045F11ACBCFC003742A9;
-			remoteInfo = RSCoreTestsBundle;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1576,7 +1562,6 @@
 		84DA3C51129858340024BD58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84DA3C55129858340024BD58 /* RSCoreTestsBundle.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1771,7 +1756,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				84F0A26012F6677400BC5268 /* PBXTargetDependency */,
 			);
 			name = "NetNewsWire Lite";
 			productInstallPath = "$(HOME)/Applications";
@@ -1784,6 +1768,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+			};
 			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "nnw" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -1819,13 +1806,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		84DA3C55129858340024BD58 /* RSCoreTestsBundle.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RSCoreTestsBundle.octest;
-			remoteRef = 84DA3C54129858340024BD58 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		84F0A19612F6672E00BC5268 /* NetNewsWire.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -2234,14 +2214,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		84F0A26012F6677400BC5268 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RSCoreTestsBundle;
-			targetProxy = 84F0A25F12F6677400BC5268 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -2281,6 +2253,7 @@
 		26FC0A850875C7B200E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2305,6 +2278,7 @@
 		26FC0A860875C7B200E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: NewsGator Technologies, Inc.";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -2348,10 +2322,11 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
@@ -2382,10 +2357,11 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
 			name = Release;
@@ -2474,11 +2450,12 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = BETA;
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
 			name = Beta;
@@ -2486,6 +2463,7 @@
 		84EDCA4612E761D200806A4A /* Beta */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;

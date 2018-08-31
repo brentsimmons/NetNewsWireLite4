@@ -27,34 +27,34 @@
 
 @interface NNWArticleListDelegate : NSResponder <NNWArticleListDelegate, NNWBrowserViewControllerDelegate, NNWArticleContextualMenuDelegate> {
 @private
-	NNWArticleDetailPaneView *articleDetailPaneView;
-	NNWArticleListScrollView *articleListScrollView;
-	NNWBrowserViewController *browserViewController;
-	NNWRightPaneContainerView *rightPaneContainerView;
-	NNWSourceListDelegate *sourceListDelegate;
-	NSArray *articles;
-	NSArray *feeds;
-	NSArray *selectedArticles;
-	NSString *listControllerKey;
-	NSViewController *detailTemporaryViewController;
-	RSArticleListController *articleListController;
-	RSMacWebView *webView;
-	BOOL sortAscending;
-	WebView *currentWebView;
-	RSDataArticle *contextualMenuArticle;
+    NNWArticleDetailPaneView *articleDetailPaneView;
+    NNWArticleListScrollView *articleListScrollView;
+    NNWBrowserViewController *browserViewController;
+    NNWRightPaneContainerView *rightPaneContainerView;
+    NNWSourceListDelegate *sourceListDelegate;
+    NSArray *articles;
+    NSArray *feeds;
+    NSArray *selectedArticles;
+    NSString *listControllerKey;
+    NSViewController *detailTemporaryViewController;
+    RSArticleListController *articleListController;
+    RSMacWebView *webView;
+    BOOL sortAscending;
+    WebView *currentWebView;
+    RSDataArticle *contextualMenuArticle;
 }
 
 
-@property (nonatomic, retain) IBOutlet NNWArticleDetailPaneView *articleDetailPaneView;
-@property (nonatomic, retain) IBOutlet NNWArticleListScrollView *articleListScrollView;
-@property (nonatomic, retain) IBOutlet NNWRightPaneContainerView *rightPaneContainerView;
-@property (nonatomic, retain) IBOutlet NNWSourceListDelegate *sourceListDelegate;
+@property (nonatomic, strong) IBOutlet NNWArticleDetailPaneView *articleDetailPaneView;
+@property (nonatomic, strong) IBOutlet NNWArticleListScrollView *articleListScrollView;
+@property (nonatomic, strong) IBOutlet NNWRightPaneContainerView *rightPaneContainerView;
+@property (nonatomic, strong) IBOutlet NNWSourceListDelegate *sourceListDelegate;
 
-@property (nonatomic, retain) NSArray *articles; //generated here, after feeds are set
-@property (nonatomic, retain) NSArray *feeds; //set (usually) based on source list selection
+@property (nonatomic, strong) NSArray *articles; //generated here, after feeds are set
+@property (nonatomic, strong) NSArray *feeds; //set (usually) based on source list selection
 
-@property (nonatomic, retain) NSArray *selectedArticles; //set based on article list selection, updates HTML in detail pane view
-@property (nonatomic, retain) WebView *currentWebView; //detail view or browser view
+@property (nonatomic, strong) NSArray *selectedArticles; //set based on article list selection, updates HTML in detail pane view
+@property (nonatomic, strong) WebView *currentWebView; //detail view or browser view
 @property (nonatomic, assign, readonly) BOOL currentWebViewIsDetailView;
 
 - (void)navigateToArticleInCurrentList:(RSDataArticle *)anArticle;

@@ -19,14 +19,14 @@
 
 @interface RSFeedParserProxy : NSObject {
 @private
-	RSAbstractFeedParser *actualParser;
+    RSAbstractFeedParser *actualParser;
 }
 
 
-@property (nonatomic, retain, readonly) NSMutableDictionary *headerItems;
-@property (nonatomic, retain, readonly) NSMutableArray *newsItems;
-@property (nonatomic, retain, readonly) NSString *feedTitle;
-@property (nonatomic, retain, readonly) NSString *feedHomePageURL;
+@property (nonatomic, strong, readonly) NSMutableDictionary *headerItems;
+@property (nonatomic, strong, readonly) NSMutableArray *newsItems;
+@property (nonatomic, strong, readonly) NSString *feedTitle;
+@property (nonatomic, strong, readonly) NSString *feedHomePageURL;
 
 - (BOOL)parseData:(NSData *)feedData error:(NSError **)error;
 

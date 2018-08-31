@@ -14,34 +14,30 @@
 #pragma mark Init
 
 - (id)init {
-	self = [self initWithNibName:@"ImportOPML" bundle:nil];
-	if (self == nil)
-		return nil;
-	toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:@"ImportNetNewsWire"];
-	[toolbarItem setLabel:NSLocalizedStringFromTable(@"Import Feeds from Older Version of NetNewsWire", @"AddFeeds", @"Item name")];
-	return self;
+    self = [self initWithNibName:@"ImportOPML" bundle:nil];
+    if (self == nil)
+        return nil;
+    toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:@"ImportNetNewsWire"];
+    [toolbarItem setLabel:NSLocalizedStringFromTable(@"Import Feeds from Older Version of NetNewsWire", @"AddFeeds", @"Item name")];
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[toolbarItem release];
-	[super dealloc];
-}
 
 
 #pragma mark Window Title
 
 - (NSString *)windowTitle {
-	return [toolbarItem label];
+    return [toolbarItem label];
 }
 
 
 #pragma mark Toolbar Item
 
 - (NSToolbarItem *)toolbarItem {
-	return toolbarItem;
+    return toolbarItem;
 }
 
 

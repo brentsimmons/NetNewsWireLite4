@@ -23,11 +23,11 @@ extern void RSAddOperationIfNotInQueue(RSOperation *operation); /*Works only wit
 
 @interface RSOperationController : NSObject {
 @private
-	NSMutableArray *operations;
-	NSOperationQueue *operationQueue;
-	NSUInteger numberOfOperations;
-	NSString *name;
-	BOOL tracksOperations;
+    NSMutableArray *operations;
+    NSOperationQueue *operationQueue;
+    NSUInteger numberOfOperations;
+    NSString *name;
+    BOOL tracksOperations;
 }
 
 + (id)sharedController; /*There's a main controller, but it's okay to create more than one*/
@@ -46,10 +46,10 @@ extern void RSAddOperationIfNotInQueue(RSOperation *operation); /*Works only wit
 
 - (void)setSuspended:(BOOL)suspended;
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain, readonly) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong, readonly) NSOperationQueue *operationQueue;
 
 @property (nonatomic, assign) BOOL tracksOperations; //default is YES -- otherwise operations and numberOfOperations are undefined
-@property (nonatomic, retain, readonly) NSMutableArray *operations; 
+@property (nonatomic, strong, readonly) NSMutableArray *operations; 
 @property (nonatomic, assign, readonly) NSUInteger numberOfOperations;
 @end

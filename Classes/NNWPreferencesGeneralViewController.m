@@ -12,7 +12,7 @@
 
 @interface NNWPreferencesGeneralViewController ()
 
-@property (nonatomic, retain, readwrite) NSToolbarItem *toolbarItem;
+@property (nonatomic, strong, readwrite) NSToolbarItem *toolbarItem;
 @end
 
 
@@ -27,54 +27,47 @@
 #pragma mark Init
 
 - (id)init {
-	self = [self initWithNibName:@"PreferencesGeneral" bundle:nil];
-	if (self == nil)
-		return nil;
-	toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:@"PreferencesGeneral"];
-	[toolbarItem setLabel:NSLocalizedStringFromTable(@"General", @"PreferencesGeneral", @"Toolbar item name")];
-	[toolbarItem setImage:[NSImage imageNamed:NSImageNamePreferencesGeneral]];
-	return self;
+    self = [self initWithNibName:@"PreferencesGeneral" bundle:nil];
+    if (self == nil)
+        return nil;
+    toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:@"PreferencesGeneral"];
+    [toolbarItem setLabel:NSLocalizedStringFromTable(@"General", @"PreferencesGeneral", @"Toolbar item name")];
+    [toolbarItem setImage:[NSImage imageNamed:NSImageNamePreferencesGeneral]];
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[openLinksButtonCell release];
-	[allowPluginsButtonCell release];
-	[allowPluginsButton release];
-	[toolbarItem release];
-	[super dealloc];
-}
 
 
 #pragma mark NSViewController
 
 - (void)loadView {
-	[super loadView];
-	[self.openLinksButtonCell setBackgroundColor:[NSColor windowBackgroundColor]];
-	[self.allowPluginsButtonCell setBackgroundColor:[NSColor windowBackgroundColor]];
-	[self.allowPluginsButton setIntValue:(int)[[WebPreferences standardPreferences] arePlugInsEnabled]];
+    [super loadView];
+    [self.openLinksButtonCell setBackgroundColor:[NSColor windowBackgroundColor]];
+    [self.allowPluginsButtonCell setBackgroundColor:[NSColor windowBackgroundColor]];
+    [self.allowPluginsButton setIntValue:(int)[[WebPreferences standardPreferences] arePlugInsEnabled]];
 }
 
 
 #pragma mark Actions
 
 - (void)pluginsCheckboxClicked:(id)sender {
-	[[WebPreferences standardPreferences] setPlugInsEnabled:(BOOL)[sender intValue]];
+    [[WebPreferences standardPreferences] setPlugInsEnabled:(BOOL)[sender intValue]];
 }
 
 
 - (void)editInstapaperAccount:(id)sender {
-	NNWInstapaperCredentialsEditor *instapaperCredentialsEditor = [[[NNWInstapaperCredentialsEditor alloc] init] autorelease];
-	[instapaperCredentialsEditor editInstapaperCredentials];
+    NNWInstapaperCredentialsEditor *instapaperCredentialsEditor = [[NNWInstapaperCredentialsEditor alloc] init];
+    [instapaperCredentialsEditor editInstapaperCredentials];
 }
 
 
 #pragma mark SLFullContentViewControllerPlugin
 
 - (NSString *)windowTitle {
-	return [self.toolbarItem label];
+    return [self.toolbarItem label];
 }
 
 

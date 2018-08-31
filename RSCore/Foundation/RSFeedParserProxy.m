@@ -14,53 +14,50 @@
 
 
 @interface RSFeedParserProxy ()
-@property (nonatomic, retain) RSAbstractFeedParser *actualParser;
+@property (nonatomic, strong) RSAbstractFeedParser *actualParser;
 @end
 
 @implementation RSFeedParserProxy
 
 @synthesize actualParser;
 
-- (void)dealloc {
-	[actualParser release];
-	[super dealloc];
-}
 
 
 - (BOOL)parseData:(NSData *)feedData error:(NSError **)error {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	RSFeedType feedType = RSFeedTypeForData(feedData);
-	[pool drain];
-	if (feedType == RSFeedTypeNotAFeed)
-		return NO;
-	if (feedType == RSFeedTypeAtom)
-		self.actualParser = [[[RSAtomParser alloc] init] autorelease];
-	else if (feedType == RSFeedTypeRSS)
-		self.actualParser = [[[RSRSSParser alloc] init] autorelease];
-	if (self.actualParser == nil)
-		return NO;
-	[self.actualParser parseData:feedData error:error];
-	return YES;
+    
+    @autoreleasepool {
+        RSFeedType feedType = RSFeedTypeForData(feedData);
+        if (feedType == RSFeedTypeNotAFeed)
+            return NO;
+        if (feedType == RSFeedTypeAtom)
+            self.actualParser = [[RSAtomParser alloc] init];
+        else if (feedType == RSFeedTypeRSS)
+            self.actualParser = [[RSRSSParser alloc] init];
+        if (self.actualParser == nil)
+            return NO;
+        [self.actualParser parseData:feedData error:error];
+    }
+    return YES;
 }
 
 
 - (NSMutableDictionary *)headerItems {
-	return self.actualParser.headerItems;
+    return self.actualParser.headerItems;
 }
 
 
 - (NSMutableArray *)newsItems {
-	return self.actualParser.newsItems;
+    return self.actualParser.newsItems;
 }
 
 
 - (NSString *)feedTitle {
-	return self.actualParser.feedTitle;
+    return self.actualParser.feedTitle;
 }
 
 
 - (NSString *)feedHomePageURL {
-	return self.actualParser.feedHomePageURL;
+    return self.actualParser.feedHomePageURL;
 }
 
 

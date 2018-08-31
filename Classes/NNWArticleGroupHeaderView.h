@@ -15,17 +15,17 @@
 
 @interface NNWArticleGroupHeaderView : NSView <NNWArticleListRowView> {
 @private
-	BOOL selected;
-	NNWArticleListGroupItem *groupItem;
-	NSString *reuseIdentifier;
-	NSString *title;
-	BOOL isFirst;
+    BOOL selected;
+    NNWArticleListGroupItem *groupItem;
+    NSString *reuseIdentifier;
+    NSString *title;
+    BOOL isFirst;
 }
 
 @property (nonatomic, assign) BOOL selected;
-@property (nonatomic, retain) NNWArticleListGroupItem *groupItem;
-@property (nonatomic, retain) NSString *reuseIdentifier;
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, strong) NNWArticleListGroupItem *groupItem;
+@property (nonatomic, strong) NSString *reuseIdentifier;
+@property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL isFirst;
 
 @end

@@ -17,8 +17,8 @@ extern NSString *NNWInstapaperAccountUsernameKey;
 
 - (BOOL)editInstapaperCredentials; //return NO if canceled
 
-@property (nonatomic, retain, readonly) NSString *username;
-@property (nonatomic, retain, readonly) NSString *password;
+@property (nonatomic, strong, readonly) NSString *username;
+@property (nonatomic, strong, readonly) NSString *password;
 
 
 @end

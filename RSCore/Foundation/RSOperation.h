@@ -12,25 +12,25 @@
 extern NSString *RSOperationDidCompleteNotification;
 
 typedef enum _RSOperationType {
-	RSOperationTypeUnknown,
-	RSOperationTypeDownloadFeed,
-	RSOperationTypeDownloadTemporaryFeed,
-	RSOperationTypeFetchImagesFromCache,
-	RSOperationTypeDownloadImage,
-	RSOperationTypeDownloadAd,
-	RSOperationTypeDownloadAdImage,
-	RSOperationTypeDownloadSearchResults,
-	RSOperationTypeCreateShortenedURL,
-	RSOperationTypePostToTwitter,
-	RSOperationTypeDownloadThumbnail,
-	RSOperationTypeFetchThumbnail, //get from cache or download
-	RSOperationTypeDownloadWebConfigFile,
-	RSOperationTypeDownloadAppArtwork,
-	RSOperationTypeDeleteDisappearedNewsItems,
-	RSOperationTypeSavingFeeds,
-	RSOperationTypeDownloadFavicon,
-	RSOperationTypeDownloadWebClipIcon,
-	RSOperationTypeUpdateUnreadCount
+    RSOperationTypeUnknown,
+    RSOperationTypeDownloadFeed,
+    RSOperationTypeDownloadTemporaryFeed,
+    RSOperationTypeFetchImagesFromCache,
+    RSOperationTypeDownloadImage,
+    RSOperationTypeDownloadAd,
+    RSOperationTypeDownloadAdImage,
+    RSOperationTypeDownloadSearchResults,
+    RSOperationTypeCreateShortenedURL,
+    RSOperationTypePostToTwitter,
+    RSOperationTypeDownloadThumbnail,
+    RSOperationTypeFetchThumbnail, //get from cache or download
+    RSOperationTypeDownloadWebConfigFile,
+    RSOperationTypeDownloadAppArtwork,
+    RSOperationTypeDeleteDisappearedNewsItems,
+    RSOperationTypeSavingFeeds,
+    RSOperationTypeDownloadFavicon,
+    RSOperationTypeDownloadWebClipIcon,
+    RSOperationTypeUpdateUnreadCount
 } RSOperationType;
 
 /*App-defined operation types should start at 1000*/
@@ -38,18 +38,18 @@ typedef enum _RSOperationType {
 
 @interface RSOperation : NSOperation {
 @protected
-	id delegate;
-	SEL callbackSelector;
-	NSInteger operationType;
-	id operationObject;
+    id __unsafe_unretained delegate;
+    SEL callbackSelector;
+    NSInteger operationType;
+    id operationObject;
 }
 
 - (id)initWithDelegate:(id)aDelegate callbackSelector:(SEL)aCallbackSelector;
 
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, unsafe_unretained) id delegate;
 @property (nonatomic, assign) SEL callbackSelector;
 @property (nonatomic, assign) NSInteger operationType;
-@property (nonatomic, retain) id operationObject;
+@property (nonatomic, strong) id operationObject;
 
 /*For subclasses*/
 

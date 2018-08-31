@@ -20,8 +20,8 @@ NSString *RSRefreshDidUpdateFeedNotification = @"RSRefreshDidUpdateFeedNotificat
 
 @interface RSRefreshController ()
 
-@property (nonatomic, retain) NSMutableArray *accountRefreshers;
-@property (nonatomic, retain, readwrite) RSOperationController *refreshOperationController;
+@property (nonatomic, strong) NSMutableArray *accountRefreshers;
+@property (nonatomic, strong, readwrite) RSOperationController *refreshOperationController;
 
 - (id<RSAccountRefresher>)refresherForAccount:(id<RSAccount>)accountToRefresh;
 
@@ -37,81 +37,78 @@ NSString *RSRefreshDidUpdateFeedNotification = @"RSRefreshDidUpdateFeedNotificat
 #pragma mark Init
 
 - (id)init {
-	self = [super init];
-	if (self == nil)
-		return nil;
-	refreshOperationController = [[RSOperationController alloc] init];
-	refreshOperationController.tracksOperations = YES;
-	refreshOperationController.name = @"Refresh";
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshOperationsDidBegin:) name:RSOperationControllerDidBeginOperationsNotification object:refreshOperationController];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshOperationsDidEnd:) name:RSOperationControllerDidEndOperationsNotification object:refreshOperationController];
-	return self;
+    self = [super init];
+    if (self == nil)
+        return nil;
+    refreshOperationController = [[RSOperationController alloc] init];
+    refreshOperationController.tracksOperations = YES;
+    refreshOperationController.name = @"Refresh";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshOperationsDidBegin:) name:RSOperationControllerDidBeginOperationsNotification object:refreshOperationController];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshOperationsDidEnd:) name:RSOperationControllerDidEndOperationsNotification object:refreshOperationController];
+    return self;
 }
 
 
 #pragma mark Dealloc
 
 - (void)dealloc {
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[refreshOperationController cancelAllOperations];
-	[refreshOperationController release];
-	[accountRefreshers release];
-	[super dealloc];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [refreshOperationController cancelAllOperations];
 }
 
 
 #pragma mark API
 
 - (void)refreshAllInAccounts:(NSArray *)accountsToRefresh {
-	for (id<RSAccount> oneAccount in accountsToRefresh) {
-		id<RSAccountRefresher> accountRefresher = [self refresherForAccount:oneAccount];
-		[accountRefresher refreshAll:oneAccount operationController:self.refreshOperationController];
-	}
+    for (id<RSAccount> oneAccount in accountsToRefresh) {
+        id<RSAccountRefresher> accountRefresher = [self refresherForAccount:oneAccount];
+        [accountRefresher refreshAll:oneAccount operationController:self.refreshOperationController];
+    }
 }
 
 
 - (void)refreshFeeds:(NSArray *)feeds {
-	for (RSFeed *oneFeed in feeds) {
-		id<RSAccountRefresher> accountRefresher = [self refresherForAccount:oneFeed.account];
-		if (oneFeed.URL == nil)
-			continue;
-		[accountRefresher refreshFeeds:[NSArray arrayWithObject:oneFeed] account:oneFeed.account operationController:self.refreshOperationController];		
-	}
+    for (RSFeed *oneFeed in feeds) {
+        id<RSAccountRefresher> accountRefresher = [self refresherForAccount:oneFeed.account];
+        if (oneFeed.URL == nil)
+            continue;
+        [accountRefresher refreshFeeds:[NSArray arrayWithObject:oneFeed] account:oneFeed.account operationController:self.refreshOperationController];        
+    }
 }
 
 
 - (void)registerAccountRefresher:(id<RSAccountRefresher>)accountRefresher {
-	if (self.accountRefreshers == nil)
-		self.accountRefreshers = [NSMutableArray array];
-	if ([self.accountRefreshers indexOfObjectIdenticalTo:accountRefresher] == NSNotFound)
-		[self.accountRefreshers addObject:accountRefresher];
+    if (self.accountRefreshers == nil)
+        self.accountRefreshers = [NSMutableArray array];
+    if ([self.accountRefreshers indexOfObjectIdenticalTo:accountRefresher] == NSNotFound)
+        [self.accountRefreshers addObject:accountRefresher];
 }
 
 
 - (void)cancelSession {
-	//TODO: cancel session
+    //TODO: cancel session
 }
 
 #pragma mark Refreshers
 
 - (id<RSAccountRefresher>)refresherForAccount:(id<RSAccount>)accountToRefresh {
-	for (id<RSAccountRefresher> oneAccountRefresher in self.accountRefreshers) {
-		if ([oneAccountRefresher wantsToRefreshAccount:accountToRefresh])
-			return oneAccountRefresher;
-	}
-	return nil;
+    for (id<RSAccountRefresher> oneAccountRefresher in self.accountRefreshers) {
+        if ([oneAccountRefresher wantsToRefreshAccount:accountToRefresh])
+            return oneAccountRefresher;
+    }
+    return nil;
 }
 
 
 #pragma mark Notifications
 
 - (void)refreshOperationsDidBegin:(NSNotification *)note {
-	[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSRefreshSessionDidBeginNotification object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSRefreshSessionDidBeginNotification object:self userInfo:nil];
 }
 
 
 - (void)refreshOperationsDidEnd:(NSNotification *)note {
-	[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSRefreshSessionDidEndNotification object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSRefreshSessionDidEndNotification object:self userInfo:nil];
 }
 
 

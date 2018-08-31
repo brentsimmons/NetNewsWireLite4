@@ -11,15 +11,15 @@
 
 @interface NNWSourceListCell : NSTextFieldCell {
 @private
-	id smallImage;
-	NSUInteger countForDisplay;
-	BOOL selected;
-	BOOL isFolder;
-	BOOL shouldDrawSmallImage;
+    id __unsafe_unretained smallImage;
+    NSUInteger countForDisplay;
+    BOOL selected;
+    BOOL isFolder;
+    BOOL shouldDrawSmallImage;
 }
 
 
-@property (nonatomic, assign) id smallImage; //CGImageRef
+@property (nonatomic, unsafe_unretained) id smallImage; //CGImageRef
 @property (nonatomic, assign) NSUInteger countForDisplay;
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic, assign) BOOL isFolder;

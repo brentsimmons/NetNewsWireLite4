@@ -14,29 +14,29 @@
 
 
 typedef enum _RSDownloadStatus {
-	RSDownloadPending = 0,
-	RSDownloadInProgress,
-	RSDownloadComplete,
-	RSDownloadCanceled
+    RSDownloadPending = 0,
+    RSDownloadInProgress,
+    RSDownloadComplete,
+    RSDownloadCanceled
 } RSDownloadStatus;
 
 
 /* HTTP Request Status Codes http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html */
 
 typedef enum _RSHTTPStatusCode {
-	RSHTTPStatusOK = 200,
-	RSHTTPStatusMovedPermanently = 301,
-	RSHTTPStatusMovedTemporarily = 302,
-	RSHTTPStatusNotModified = 304,
-	RSHTTPStatusBadRequest = 400,
-	RSHTTPStatusUnauthorized = 401,
-	RSHTTPStatusForbidden = 403,
-	RSHTTPStatusNotFound = 404,
-	RSHTTPStatusGone = 410,
-	RSHTTPStatusServerError = 500,
-	RSHTTPStatusNotImplemented = 501,
-	RSHTTPStatusBadGateway = 502,
-	RSHTTPStatusServiceNotAvailable = 503
+    RSHTTPStatusOK = 200,
+    RSHTTPStatusMovedPermanently = 301,
+    RSHTTPStatusMovedTemporarily = 302,
+    RSHTTPStatusNotModified = 304,
+    RSHTTPStatusBadRequest = 400,
+    RSHTTPStatusUnauthorized = 401,
+    RSHTTPStatusForbidden = 403,
+    RSHTTPStatusNotFound = 404,
+    RSHTTPStatusGone = 410,
+    RSHTTPStatusServerError = 500,
+    RSHTTPStatusNotImplemented = 501,
+    RSHTTPStatusBadGateway = 502,
+    RSHTTPStatusServiceNotAvailable = 503
 } RSHTTPStatusCode;
 
 
@@ -71,8 +71,8 @@ extern NSString *RSConnectedToInternetNotification;
 
 @interface RSHTTPConditionalGetInfo : NSObject {
 @private
-	NSString *httpResponseEtag;
-	NSString *httpResponseLastModified;
+    NSString *httpResponseEtag;
+    NSString *httpResponseLastModified;
 }
 
 + (id)conditionalGetInfoWithEtagResponse:(NSString *)anEtagResponse lastModifiedResponse:(NSString *)aLostModifiedResponse;
@@ -80,7 +80,7 @@ extern NSString *RSConnectedToInternetNotification;
 
 - (id)initWithEtagResponse:(NSString *)anEtagResponse lastModifiedResponse:(NSString *)aLastModifiedResponse;
 
-@property (nonatomic, retain) NSString *httpResponseEtag;
-@property (nonatomic, retain) NSString *httpResponseLastModified;
+@property (nonatomic, strong) NSString *httpResponseEtag;
+@property (nonatomic, strong) NSString *httpResponseLastModified;
 
 @end

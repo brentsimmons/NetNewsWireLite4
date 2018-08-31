@@ -14,18 +14,18 @@
 
 @interface NNWAddFeedWithURLWindowController : NSWindowController {
 @private
-	NNWSubscriber *subscriber;
-	NSPopUpButton *folderPopupButton;
-	NSString *initialURLString;
-	NNWSubscribeRequest *initialSubscribeRequest;
-	NSTextField *titleTextField;
-	NSTextField *urlTextField;
+    NNWSubscriber *subscriber;
+    NSPopUpButton *folderPopupButton;
+    NSString *initialURLString;
+    NNWSubscribeRequest *initialSubscribeRequest;
+    NSTextField *titleTextField;
+    NSTextField *urlTextField;
 }
 
 
-@property (nonatomic, retain) IBOutlet NSPopUpButton *folderPopupButton;
-@property (nonatomic, retain) IBOutlet NSTextField *titleTextField;
-@property (nonatomic, retain) IBOutlet NSTextField *urlTextField;
+@property (nonatomic, strong) IBOutlet NSPopUpButton *folderPopupButton;
+@property (nonatomic, strong) IBOutlet NSTextField *titleTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *urlTextField;
 
 - (id)initWithURLString:(NSString *)aURLString; //caller may have grabbed URL from pasteboard, for instance
 - (id)initWithSubscribeRequest:(NNWSubscribeRequest *)aSubscribeRequest;

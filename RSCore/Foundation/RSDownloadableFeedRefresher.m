@@ -15,16 +15,16 @@
 @implementation RSDownloadableFeedRefresher
 
 - (BOOL)wantsToRefreshFeed:(id)feed accountToRefresh:(id<RSAccount>)accountToRefresh {
-	return accountToRefresh.accountType == RSAccountTypeLocal && RSURLIsDownloadable(((RSFeed *)feed).URL);
+    return accountToRefresh.accountType == RSAccountTypeLocal && RSURLIsDownloadable(((RSFeed *)feed).URL);
 }
 
 
 - (void)refreshFeed:(RSFeed *)feed account:(id<RSAccount>)accountToRefresh operationController:(id)operationController {
-	RSRefreshFeedOperation *refreshFeedOperation = [[[RSRefreshFeedOperation alloc] initWithFeedURL:((RSFeed *)feed).URL accountIdentifier:accountToRefresh.identifier] autorelease];
-	refreshFeedOperation.username = feed.username;
-	if (feed.username != nil)
-		refreshFeedOperation.password = feed.password;
-	[operationController addOperation:refreshFeedOperation];
+    RSRefreshFeedOperation *refreshFeedOperation = [[RSRefreshFeedOperation alloc] initWithFeedURL:((RSFeed *)feed).URL accountIdentifier:accountToRefresh.identifier];
+    refreshFeedOperation.username = feed.username;
+    if (feed.username != nil)
+        refreshFeedOperation.password = feed.password;
+    [operationController addOperation:refreshFeedOperation];
 }
 
 

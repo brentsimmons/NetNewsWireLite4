@@ -28,33 +28,33 @@
 
 @interface NNWMainWindowController : NSWindowController <NSUserInterfaceValidations, NNWKeyDownFilter> {
 @private
-	NNWArticleListDelegate *articleListDelegate;
-	NNWRightPaneContainerView *rightPaneContainerView;
-	NNWSourceListDelegate *sourceListDelegate;
-	NSString *mouseOverURL;
-	NSString *selectedURL;
-	NSString *statusBarURL;
-	NSString *toggleReadMenuItemTitle;
-	NSUInteger unreadCount;
-	RSDataController *dataController;
-	RSPluginManager *pluginManager;
-	id<RSSharableItem> presentedSharableItem;
-	WebView *currentWebView;
-	NSUndoManager *undoManager;
+    NNWArticleListDelegate *articleListDelegate;
+    NNWRightPaneContainerView *rightPaneContainerView;
+    NNWSourceListDelegate *sourceListDelegate;
+    NSString *mouseOverURL;
+    NSString *selectedURL;
+    NSString *statusBarURL;
+    NSString *toggleReadMenuItemTitle;
+    NSUInteger unreadCount;
+    RSDataController *dataController;
+    RSPluginManager *pluginManager;
+    id<RSSharableItem> presentedSharableItem;
+    WebView *currentWebView;
+    NSUndoManager *undoManager;
 }
 
-@property (nonatomic, retain) IBOutlet NNWSourceListDelegate *sourceListDelegate;
-@property (nonatomic, retain) IBOutlet NNWArticleListDelegate *articleListDelegate;
-@property (nonatomic, retain) IBOutlet NSOutlineView *sourceListView;
-@property (nonatomic, retain) IBOutlet NNWArticleListScrollView *articleListScrollView;
-@property (nonatomic, retain) IBOutlet NNWRightPaneContainerView *rightPaneContainerView;
+@property (nonatomic, strong) IBOutlet NNWSourceListDelegate *sourceListDelegate;
+@property (nonatomic, strong) IBOutlet NNWArticleListDelegate *articleListDelegate;
+@property (nonatomic, strong) IBOutlet NSOutlineView *sourceListView;
+@property (nonatomic, strong) IBOutlet NNWArticleListScrollView *articleListScrollView;
+@property (nonatomic, strong) IBOutlet NNWRightPaneContainerView *rightPaneContainerView;
 
-@property (nonatomic, retain) RSPluginManager *pluginManager;
-@property (nonatomic, retain, readonly) NSString *toggleReadMenuItemTitle;
-@property (nonatomic, retain) NNWSourceListTreeBuilder *sourceListTreeBuilder;
-@property (nonatomic, retain) RSDataController *dataController;
+@property (nonatomic, strong) RSPluginManager *pluginManager;
+@property (nonatomic, strong, readonly) NSString *toggleReadMenuItemTitle;
+@property (nonatomic, strong) NNWSourceListTreeBuilder *sourceListTreeBuilder;
+@property (nonatomic, strong) RSDataController *dataController;
 
-@property (nonatomic, retain) WebView *currentWebView; //detail view or browser view
+@property (nonatomic, strong) WebView *currentWebView; //detail view or browser view
 
 - (void)openURLInDefaultBrowser:(NSURL *)aURL;
 - (void)addSharingPluginCommandsToMenu:(NSMenu *)menu withSharableItem:(id<RSSharableItem>)sharableItem;
@@ -65,12 +65,12 @@
 
 @interface NNWMainWindow : NSWindow {
 @private
-	id<NNWKeyDownFilter> keyDownFilter;
-//	NSUndoManager *undoManager;
+    id<NNWKeyDownFilter> keyDownFilter;
+//    NSUndoManager *undoManager;
 }
 
 
-@property (nonatomic, retain) id<NNWKeyDownFilter> keyDownFilter;
+@property (nonatomic, strong) id<NNWKeyDownFilter> keyDownFilter;
 //@property (nonatomic, retain, readonly) NSUndoManager *undoManager;
 
 @end

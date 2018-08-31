@@ -18,13 +18,5 @@
 @synthesize title;
 
 
-- (void)dealloc {
-	[account release];
-	[backgroundWindow release];
-	[feedURL release];
-	[parentFolder release];
-	[title release];
-	[super dealloc];
-}
 
 @end

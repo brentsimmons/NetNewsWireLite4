@@ -23,28 +23,28 @@
 
 @interface NNWArticleListView : NSView <NNWArticleListRowView> {
 @private
-	BOOL selected;
-	NSString *reuseIdentifier;
-	NSString *title;
-	RSDataArticle *article;
-	NSButton *unreadButton;
-	BOOL showFeedName;
-	id thumbnail; //CGImageRef
-	id webclipIcon; //CGImageRef
-	id <NNWArticleContextualMenuDelegate> contextualMenuDelegate;
+    BOOL selected;
+    NSString *reuseIdentifier;
+    NSString *title;
+    RSDataArticle *article;
+    NSButton *unreadButton;
+    BOOL showFeedName;
+    id thumbnail; //CGImageRef
+    id webclipIcon; //CGImageRef
+    id <NNWArticleContextualMenuDelegate> __unsafe_unretained contextualMenuDelegate;
 }
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *reuseIdentifier;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *reuseIdentifier;
 
-@property (nonatomic, retain) RSDataArticle *article;
+@property (nonatomic, strong) RSDataArticle *article;
 
 @property (nonatomic, assign) BOOL selected;
 
-@property (nonatomic, retain) NSURL *logicalThumbnailURL;
+@property (nonatomic, strong) NSURL *logicalThumbnailURL;
 
 @property (nonatomic, assign) BOOL showFeedName;
-@property (nonatomic, assign) id<NNWArticleContextualMenuDelegate> contextualMenuDelegate;
+@property (nonatomic, unsafe_unretained) id<NNWArticleContextualMenuDelegate> contextualMenuDelegate;
 
 + (CGFloat)heightForArticleWithThumbnail;
 

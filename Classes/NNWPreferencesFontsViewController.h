@@ -14,15 +14,15 @@
 
 @interface NNWPreferencesFontsViewController : NSViewController <SLFullContentViewControllerPlugin> {
 @private
-	NSToolbarItem *toolbarItem;
-	RSFontLabelView *standardFontLabelView;
-	RSFontLabelView *fixedFontLabelView;
-	BOOL changingStandardFont;
+    NSToolbarItem *toolbarItem;
+    RSFontLabelView *standardFontLabelView;
+    RSFontLabelView *fixedFontLabelView;
+    BOOL changingStandardFont;
 }
 
 
-@property (nonatomic, retain) IBOutlet RSFontLabelView *standardFontLabelView;
-@property (nonatomic, retain) IBOutlet RSFontLabelView *fixedFontLabelView;
+@property (nonatomic, strong) IBOutlet RSFontLabelView *standardFontLabelView;
+@property (nonatomic, strong) IBOutlet RSFontLabelView *fixedFontLabelView;
 @property (nonatomic, assign) int minimumFontSize;
 
 

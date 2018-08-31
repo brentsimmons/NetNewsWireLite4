@@ -13,11 +13,11 @@
 
 @interface RSArticleListController : NSObject {
 @private
-	BOOL sortAscending;
-	NSArray *articles;
-	NSArray *feedsAndFolders; //whatever is selected
-	NSString *sortKey;
-	BOOL includesMultipleFeeds;
+    BOOL sortAscending;
+    NSArray *articles;
+    NSArray *feedsAndFolders; //whatever is selected
+    NSString *sortKey;
+    BOOL includesMultipleFeeds;
 }
 
 
@@ -27,12 +27,12 @@
 - (void)updateArticles:(NSArray *)articlesToForceInclusion;
 
 @property (nonatomic, assign) BOOL sortAscending; //default is NO
-@property (nonatomic, retain) NSArray *feedsAndFolders;
-@property (nonatomic, retain) NSString *sortKey; //default is @"dateForDisplay"
-@property (nonatomic, retain, readonly) NSArray *articles;
+@property (nonatomic, strong) NSArray *feedsAndFolders;
+@property (nonatomic, strong) NSString *sortKey; //default is @"dateForDisplay"
+@property (nonatomic, strong, readonly) NSArray *articles;
 @property (nonatomic, assign, readonly) BOOL includesMultipleFeeds;
 @property (nonatomic, assign, readonly) BOOL hasAnyUnreadItems;
-@property (nonatomic, retain, readonly) RSDataArticle *firstUnreadArticle;
+@property (nonatomic, strong, readonly) RSDataArticle *firstUnreadArticle;
 
 - (void)markAllAsRead;
 

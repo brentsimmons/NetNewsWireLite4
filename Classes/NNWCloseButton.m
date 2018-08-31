@@ -23,121 +23,118 @@
 #pragma mark Init
 
 - (void)commonInit {
-	[self setPostsFrameChangedNotifications:YES];
-	[self setPostsBoundsChangedNotifications:YES];
-	_buttonTrackingRect = -1;
-	[self performSelectorOnMainThread:@selector(resetTrackingRects) withObject:nil waitUntilDone:NO];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSViewFrameDidChangeNotification object:self];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSViewBoundsDidChangeNotification object:self];		
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSWindowDidMoveNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSWindowDidResizeNotification object:nil];
+    [self setPostsFrameChangedNotifications:YES];
+    [self setPostsBoundsChangedNotifications:YES];
+    _buttonTrackingRect = -1;
+    [self performSelectorOnMainThread:@selector(resetTrackingRects) withObject:nil waitUntilDone:NO];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSViewFrameDidChangeNotification object:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSViewBoundsDidChangeNotification object:self];        
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSWindowDidMoveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGenericFrameDidChangeNotification:) name:NSWindowDidResizeNotification object:nil];
 }
 
 
 - (id)initWithFrame:(NSRect)r {
-	self = [super initWithFrame:r];
-	if (self)
-		[self commonInit];
-	return self;
+    self = [super initWithFrame:r];
+    if (self)
+        [self commonInit];
+    return self;
 }
 
 
 - (id)initWithCoder:(NSCoder *)coder {
-	self = [super initWithCoder:coder];
-	if (self)
-		[self commonInit];
-	return self;
+    self = [super initWithCoder:coder];
+    if (self)
+        [self commonInit];
+    return self;
 }
 
 
-#pragma mark Dealloc	
+#pragma mark Dealloc    
 
 - (void)dealloc {
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[self discardTrackingRects];
-	[_realImage release];
-	[_mouseOverImage release];
-	[super dealloc];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self discardTrackingRects];
 }
 
 
 #pragma mark First responder
 
 - (BOOL)acceptsFirstResponder {
-	return YES;
+    return YES;
 }
 
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent {
-	return NO;
+    return NO;
 }
 
 
 #pragma mark Mouse events
 
 - (void)mouseEntered:(NSEvent *)event {
-	if (!_mouseOverImage || ![NSApp isActive]) {
-		[super mouseEntered:event];
-		return;
-	}
-	[self setImage:_mouseOverImage];
-	[self display];
-	if (mouseOverDelegate != nil) {
-		if ([mouseOverDelegate respondsToSelector:@selector(mouseEnteredCloseButton:)])
-			[mouseOverDelegate mouseEnteredCloseButton:self];
-	}
+    if (!_mouseOverImage || ![NSApp isActive]) {
+        [super mouseEntered:event];
+        return;
+    }
+    [self setImage:_mouseOverImage];
+    [self display];
+    if (mouseOverDelegate != nil) {
+        if ([mouseOverDelegate respondsToSelector:@selector(mouseEnteredCloseButton:)])
+            [mouseOverDelegate mouseEnteredCloseButton:self];
+    }
 }
 
 
 - (void)mouseExited:(NSEvent *)event {
-	if (!_mouseOverImage) {
-		[super mouseExited:event];
-		return;
-	}
-	[self setImage:_realImage];
-	[self display];
-	if (mouseOverDelegate != nil) {
-		if ([mouseOverDelegate respondsToSelector:@selector(mouseExitedCloseButton:)])
-			[mouseOverDelegate mouseExitedCloseButton:self];
-	}
+    if (!_mouseOverImage) {
+        [super mouseExited:event];
+        return;
+    }
+    [self setImage:_realImage];
+    [self display];
+    if (mouseOverDelegate != nil) {
+        if ([mouseOverDelegate respondsToSelector:@selector(mouseExitedCloseButton:)])
+            [mouseOverDelegate mouseExitedCloseButton:self];
+    }
 }
 
 
 #pragma mark Tracking rects
 
 - (void)discardTrackingRects {
-	if (_buttonTrackingRect >= 0) {
-		[self removeTrackingRect: _buttonTrackingRect];
-		_buttonTrackingRect = -1;
-	}
+    if (_buttonTrackingRect >= 0) {
+        [self removeTrackingRect: _buttonTrackingRect];
+        _buttonTrackingRect = -1;
+    }
 }
 
 
 - (void)resetTrackingRects {
-	NSRect r = [self frame];
-	r.origin = NSZeroPoint;
-	[self discardTrackingRects];
-	_buttonTrackingRect = [self addTrackingRect:r owner:self userData:nil assumeInside:NO];
+    NSRect r = [self frame];
+    r.origin = NSZeroPoint;
+    [self discardTrackingRects];
+    _buttonTrackingRect = [self addTrackingRect:r owner:self userData:nil assumeInside:NO];
 }
 
 
 #pragma mark Notifications
 
 - (void)handleGenericFrameDidChangeNotification:(NSNotification *)note {
-	[self resetTrackingRects];
+    [self resetTrackingRects];
 }
 
 
 - (void)viewDidMoveToWindow {
-	[self resetTrackingRects];
+    [self resetTrackingRects];
 }
 
 
 #pragma mark RemoveFromSuperview
 
 - (void)removeFromSuperview {
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[self discardTrackingRects];
-	[super removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self discardTrackingRects];
+    [super removeFromSuperview];
 }
 
 

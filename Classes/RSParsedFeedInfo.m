@@ -20,16 +20,10 @@ NSString *RSDidParseFeedInfoNotification = @"RSDidParseFeedInfoNotification";
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[feedURLString release];
-	[homePageURLString release];
-	[title release];
-	[super dealloc];
-}
 
 
 - (void)sendDidParseFeedInfoNotification {
-	[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSDidParseFeedInfoNotification object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSDidParseFeedInfoNotification object:self userInfo:nil];
 }
 
 

@@ -16,10 +16,6 @@
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[urlString release];
-	[super dealloc];
-}
 
 
 @end

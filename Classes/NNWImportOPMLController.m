@@ -12,11 +12,11 @@
 
 @interface NNWImportOPMLController ()
 
-@property (nonatomic, retain) NSString *errorTitle;
-@property (nonatomic, retain) NSString *errorMessage;
-@property (nonatomic, assign) id callbackTarget;
+@property (nonatomic, strong) NSString *errorTitle;
+@property (nonatomic, strong) NSString *errorMessage;
+@property (nonatomic, unsafe_unretained) id callbackTarget;
 @property (nonatomic, assign) SEL callbackSelector;
-@property (nonatomic, retain, readwrite) NSArray *outlineItems;
+@property (nonatomic, strong, readwrite) NSArray *outlineItems;
 @end
 
 
@@ -32,19 +32,12 @@
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[backgroundWindow release];
-	[errorTitle release];
-	[errorMessage release];
-	[outlineItems release];
-	[super dealloc];
-}
 
 
 #pragma mark Error Sheet
 
 - (void)displayAlertSheet {
-	[rs_app_delegate showAlertSheetWithTitle:self.errorTitle andMessage:self.errorMessage];
+    [rs_app_delegate showAlertSheetWithTitle:self.errorTitle andMessage:self.errorMessage];
 }
 
 
@@ -58,58 +51,58 @@
 
 
 - (void)doCallback {
-	if (self.callbackTarget != nil)
-		[self.callbackTarget performSelector:self.callbackSelector withObject:self];
-	self.callbackTarget = nil;
-	self.callbackSelector = nil;
+    if (self.callbackTarget != nil)
+        [self.callbackTarget performSelector:self.callbackSelector withObject:self];
+    self.callbackTarget = nil;
+    self.callbackSelector = nil;
 }
 
 
 - (void)chooseOPMLSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void  *)contextInfo {
-	
-	if (returnCode != NSOKButton)
-		return;
-	
-	NSData *opmlData = [NSData dataWithContentsOfURL:[[(NSOpenPanel *)sheet URLs] rs_safeObjectAtIndex:0]];
-	
-	if (RSIsEmpty(opmlData)) {
-		self.errorTitle = NNW_IMPORT_ERROR_TITLE;
-		self.errorMessage = NNW_IMPORT_DATA_EMPTY;
-		[self performSelector:@selector(displayAlertSheet) withObject:nil afterDelay:1.0]; //give time to dismiss choose-file sheet
-		[self doCallback];
-		return;
-	}
-	
-	RSOPMLParser *opmlParser = [RSOPMLParser xmlParser];
-	[opmlParser parseData:opmlData error:nil];
-	
-	if (!RSIsEmpty([opmlParser outlineItems]))
-		self.outlineItems = opmlParser.outlineItems;
-	else {
-		self.errorTitle = NNW_IMPORT_ERROR_TITLE;
-		self.errorMessage = NNW_CANT_PARSE_OPML_IMPORT;
-		[self performSelector:@selector(displayAlertSheet) withObject:nil afterDelay:1.0]; //give time to dismiss choose-file sheet
-	}
-	
-	[self doCallback];
+    
+    if (returnCode != NSOKButton)
+        return;
+    
+    NSData *opmlData = [NSData dataWithContentsOfURL:[[(NSOpenPanel *)sheet URLs] rs_safeObjectAtIndex:0]];
+    
+    if (RSIsEmpty(opmlData)) {
+        self.errorTitle = NNW_IMPORT_ERROR_TITLE;
+        self.errorMessage = NNW_IMPORT_DATA_EMPTY;
+        [self performSelector:@selector(displayAlertSheet) withObject:nil afterDelay:1.0]; //give time to dismiss choose-file sheet
+        [self doCallback];
+        return;
+    }
+    
+    RSOPMLParser *opmlParser = [RSOPMLParser xmlParser];
+    [opmlParser parseData:opmlData error:nil];
+    
+    if (!RSIsEmpty([opmlParser outlineItems]))
+        self.outlineItems = opmlParser.outlineItems;
+    else {
+        self.errorTitle = NNW_IMPORT_ERROR_TITLE;
+        self.errorMessage = NNW_CANT_PARSE_OPML_IMPORT;
+        [self performSelector:@selector(displayAlertSheet) withObject:nil afterDelay:1.0]; //give time to dismiss choose-file sheet
+    }
+    
+    [self doCallback];
 }
 
 
 - (void)runChooseOPMLFileSheet:(id)aCallbackTarget callbackSelector:(SEL)aCallbackSelector {
-	
-	self.callbackTarget = aCallbackTarget;
-	self.callbackSelector = aCallbackSelector;
-	
-	self.outlineItems = nil;
-	self.errorTitle = nil; //because this object gets re-used
-	self.errorMessage = nil;
-	
-	NSOpenPanel *op = [NSOpenPanel openPanel];	
-	[op setAllowsMultipleSelection:NO];	
-	[op setCanChooseDirectories:NO];	
-	[op setCanChooseFiles:YES];
-	[op setMessage:NNW_CHOOSE_OPML_FILE];	
-	[op beginSheetForDirectory:nil file:nil types:nil modalForWindow:self.backgroundWindow modalDelegate:self didEndSelector:@selector(chooseOPMLSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    
+    self.callbackTarget = aCallbackTarget;
+    self.callbackSelector = aCallbackSelector;
+    
+    self.outlineItems = nil;
+    self.errorTitle = nil; //because this object gets re-used
+    self.errorMessage = nil;
+    
+    NSOpenPanel *op = [NSOpenPanel openPanel];    
+    [op setAllowsMultipleSelection:NO];    
+    [op setCanChooseDirectories:NO];    
+    [op setCanChooseFiles:YES];
+    [op setMessage:NNW_CHOOSE_OPML_FILE];    
+    [op beginSheetForDirectory:nil file:nil types:nil modalForWindow:self.backgroundWindow modalDelegate:self didEndSelector:@selector(chooseOPMLSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
 }
 
 

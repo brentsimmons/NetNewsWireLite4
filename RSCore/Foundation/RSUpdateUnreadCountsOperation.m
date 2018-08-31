@@ -14,7 +14,7 @@ NSString *RSUnreadCountDidCalculateNotification = @"RSUnreadCountDidCalculateNot
 
 @interface RSUpdatedUnreadCount ()
 
-@property (nonatomic, retain, readwrite) NSURL *feedURL;
+@property (nonatomic, strong, readwrite) NSURL *feedURL;
 @property (nonatomic, assign, readwrite) NSUInteger unreadCount;
 @end
 
@@ -27,10 +27,6 @@ NSString *RSUnreadCountDidCalculateNotification = @"RSUnreadCountDidCalculateNot
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[feedURL release];
-	[super dealloc];
-}
 
 
 @end
@@ -47,50 +43,44 @@ NSString *RSUnreadCountDidCalculateNotification = @"RSUnreadCountDidCalculateNot
 #pragma mark Init
 
 - (id)initWithFeedURLs:(NSArray *)someFeedURLs accountID:(NSString *)anAccountID delegate:(id)aDelegate callbackSelector:(SEL)aCallbackSelector {
-	self = [super initWithDelegate:aDelegate callbackSelector:aCallbackSelector];
-	if (self == nil)
-		return nil;
-	unreadCounts = [[NSMutableArray array] retain];
-	accountID = [anAccountID retain];
-	feedURLs = [someFeedURLs retain];
-	return self;
+    self = [super initWithDelegate:aDelegate callbackSelector:aCallbackSelector];
+    if (self == nil)
+        return nil;
+    unreadCounts = [NSMutableArray array];
+    accountID = anAccountID;
+    feedURLs = someFeedURLs;
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[feedURLs release];
-	[accountID release];
-	[unreadCounts release];
-	[super dealloc];
-}
 
 
 #pragma mark Unread Counts
 
 - (void)updateUnreadCountForFeedURL:(NSURL *)aFeedURL moc:(NSManagedObjectContext *)moc {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	NSUInteger unreadCount = [RSDataArticle unreadCountForArticlesWithFeedURL:aFeedURL accountID:self.accountID moc:moc];
-	[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSUnreadCountDidCalculateNotification object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:aFeedURL, RSURLKey, [NSNumber numberWithUnsignedInteger:unreadCount], @"unreadCount", nil]];
-	[pool drain];
+    @autoreleasepool {
+        NSUInteger unreadCount = [RSDataArticle unreadCountForArticlesWithFeedURL:aFeedURL accountID:self.accountID moc:moc];
+        [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSUnreadCountDidCalculateNotification object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:aFeedURL, RSURLKey, [NSNumber numberWithUnsignedInteger:unreadCount], @"unreadCount", nil]];
+    }
 }
 
 
 #pragma mark RSOperation
 
 - (void)main {
-	if (![self isCancelled]) {
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		NSManagedObjectContext *moc = rs_app_delegate.temporaryManagedObjectContext;
-		for (NSURL *oneFeedURL in self.feedURLs) {
-			if ([self isCancelled])
-				break;
-			[self updateUnreadCountForFeedURL:oneFeedURL moc:moc];
-		}
-		[pool drain];
-	}
-	[super main];
+    if (![self isCancelled]) {
+        @autoreleasepool {
+            NSManagedObjectContext *moc = rs_app_delegate.temporaryManagedObjectContext;
+            for (NSURL *oneFeedURL in self.feedURLs) {
+                if ([self isCancelled])
+                    break;
+                [self updateUnreadCountForFeedURL:oneFeedURL moc:moc];
+            }
+        }
+    }
+    [super main];
 }
 
 

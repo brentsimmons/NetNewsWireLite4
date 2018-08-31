@@ -16,17 +16,17 @@
 
 @interface RSGlobalAccount : NSObject <RSAccount, RSTreeNodeRepresentedObject> {
 @private
-	RSGlobalFeed *allUnreadFeed;
-	RSGlobalFeed *todayFeed;
-	NSArray *childTreeNodes;
-	RSTreeNode *accountTreeNode;
-	NSTimer *todayUnreadCountTimer;
+    RSGlobalFeed *allUnreadFeed;
+    RSGlobalFeed *todayFeed;
+    NSArray *childTreeNodes;
+    RSTreeNode *accountTreeNode;
+    NSTimer *todayUnreadCountTimer;
 }
 
 
 + (RSGlobalAccount *)globalAccount; //just one
 
-@property (nonatomic, retain, readonly) NSArray *childTreeNodes;
+@property (nonatomic, strong, readonly) NSArray *childTreeNodes;
 
 
 @end

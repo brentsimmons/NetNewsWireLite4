@@ -12,18 +12,18 @@
 
 @interface RSCoreDataStack : NSObject {
 @private
-	NSManagedObjectModel *managedObjectModel;
-	NSPersistentStoreCoordinator *persistentStoreCoordinator;
-	NSManagedObjectContext *mainThreadManagedObjectContext;
-	
+    NSManagedObjectModel *managedObjectModel;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectContext *mainThreadManagedObjectContext;
+    
 }
 
 
 - (id)initWithModelResourceName:(NSString *)modelResourceName storeFileName:(NSString *)storeFileName;
 
 
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *mainThreadManagedObjectContext;
+@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *mainThreadManagedObjectContext;
 
 
 @end

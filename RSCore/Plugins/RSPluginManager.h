@@ -12,22 +12,22 @@
 
 @interface RSPluginManager : NSObject <RSPluginManager> {
 @private
-	NSMutableArray *plugins;
-	NSMutableArray *pluginClasses;
-	NSMutableArray *commands;
-	NSMutableArray *sharingCommands;
-	NSMutableArray *appObserverPlugins;
-	NSMutableArray *adManagerPlugins;
-	id<RSPluginHelper> pluginHelper;
+    NSMutableArray *plugins;
+    NSMutableArray *pluginClasses;
+    NSMutableArray *commands;
+    NSMutableArray *sharingCommands;
+    NSMutableArray *appObserverPlugins;
+    NSMutableArray *adManagerPlugins;
+    id<RSPluginHelper> pluginHelper;
 }
 
 
 + (RSPluginManager *)sharedManager;
 
-@property (nonatomic, retain, readonly) NSArray *sharingCommands;
-@property (nonatomic, retain, readonly) NSMutableArray *appObserverPlugins;
-@property (nonatomic, retain, readonly) NSMutableArray *adManagerPlugins;
-@property (nonatomic, retain, readonly) NSArray *sharingPlugins; //all plugins with at least one sharing command
+@property (nonatomic, strong, readonly) NSArray *sharingCommands;
+@property (nonatomic, strong, readonly) NSMutableArray *appObserverPlugins;
+@property (nonatomic, strong, readonly) NSMutableArray *adManagerPlugins;
+@property (nonatomic, strong, readonly) NSArray *sharingPlugins; //all plugins with at least one sharing command
 
 - (void)registerPluginOfClass:(Class)pluginClass;
 - (void)registerPlugins:(NSArray *)somePluginClasses;

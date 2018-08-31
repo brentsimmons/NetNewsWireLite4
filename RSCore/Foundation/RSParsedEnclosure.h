@@ -14,23 +14,23 @@
 
 @interface RSParsedEnclosure : NSObject {
 @private
-	NSString *urlString;
-	NSString *mimeType;
-	NSString *medium;
-	NSInteger fileSize;
-	NSInteger bitrate;
-	NSInteger height;
-	NSInteger width;
-	BOOL didCalculateMIMEType;
-	RSMediaType mediaType;
-	BOOL didCalculateMediaType;
+    NSString *urlString;
+    NSString *mimeType;
+    NSString *medium;
+    NSInteger fileSize;
+    NSInteger bitrate;
+    NSInteger height;
+    NSInteger width;
+    BOOL didCalculateMIMEType;
+    RSMediaType mediaType;
+    BOOL didCalculateMediaType;
 }
 
 /*All of these may be nil or 0 except for urlString.*/
 
-@property (nonatomic, retain) NSString *urlString;
-@property (nonatomic, retain) NSString *mimeType;
-@property (nonatomic, retain) NSString *medium;
+@property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) NSString *mimeType;
+@property (nonatomic, strong) NSString *medium;
 @property (nonatomic, assign) NSInteger fileSize;
 @property (nonatomic, assign) NSInteger bitrate;
 @property (nonatomic, assign) NSInteger height;

@@ -16,18 +16,18 @@ void shutupcompiler(void);
 
 @interface NNWSubscribeRequest : NSObject {
 @private
-	NSString *title;
-	NSURL *feedURL;
-	NSWindow *backgroundWindow;
-	RSFolder *parentFolder;
-	id<RSAccount> account;
+    NSString *title;
+    NSURL *feedURL;
+    NSWindow *backgroundWindow;
+    RSFolder *parentFolder;
+    id<RSAccount> account;
 }
 
-@property (nonatomic, retain) RSFolder *parentFolder;
-@property (nonatomic, retain) id<RSAccount> account;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSURL *feedURL;
-@property (nonatomic, retain) NSWindow *backgroundWindow; //because UI gets displayed over the window
+@property (nonatomic, strong) RSFolder *parentFolder;
+@property (nonatomic, strong) id<RSAccount> account;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSURL *feedURL;
+@property (nonatomic, strong) NSWindow *backgroundWindow; //because UI gets displayed over the window
 
 
 @end

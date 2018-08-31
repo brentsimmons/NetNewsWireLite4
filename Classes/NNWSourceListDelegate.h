@@ -20,20 +20,20 @@ extern NSString *RSSourceListSelectionDidChangeNotification;
 
 @interface NNWSourceListDelegate : NSResponder <NSUserInterfaceValidations> {
 @private
-	NNWSourceListTreeBuilder *sourceListTreeBuilder;
-	CGFloat configuredRowHeight;
-	NSOutlineView *sourceListOutlineView;
-	NSSet *selectedOutlineItems;
-	NSArray *draggedItems;
-	NSSplitView *splitView;
-	RSTreeNode *itemBeingEdited;
+    NNWSourceListTreeBuilder *sourceListTreeBuilder;
+    CGFloat configuredRowHeight;
+    NSOutlineView *sourceListOutlineView;
+    NSSet *selectedOutlineItems;
+    NSArray *draggedItems;
+    NSSplitView *splitView;
+    RSTreeNode *itemBeingEdited;
 }
 
 
-@property (nonatomic, retain) IBOutlet NSOutlineView *sourceListOutlineView;
-@property (nonatomic, retain) NSSet *selectedOutlineItems;
-@property (nonatomic, retain, readonly) RSTreeNode *currentTreeNode;
-@property (nonatomic, retain) IBOutlet NSSplitView *splitView;
+@property (nonatomic, strong) IBOutlet NSOutlineView *sourceListOutlineView;
+@property (nonatomic, strong) NSSet *selectedOutlineItems;
+@property (nonatomic, strong, readonly) RSTreeNode *currentTreeNode;
+@property (nonatomic, strong) IBOutlet NSSplitView *splitView;
 
 - (void)selectTreeNode:(RSTreeNode *)aTreeNode;
 - (void)selectRow:(NSUInteger)aRow;

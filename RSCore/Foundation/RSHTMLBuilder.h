@@ -11,21 +11,21 @@
 
 @interface RSHTMLBuilder : NSObject {
 @private
-	BOOL includeHTMLFooter;
-	BOOL includeHTMLHeader;
-	NSString *htmlTemplate;
-	NSString *renderedHTML;
-	NSString *styleSheetPath;
-	id dataSource;
+    BOOL includeHTMLFooter;
+    BOOL includeHTMLHeader;
+    NSString *htmlTemplate;
+    NSString *renderedHTML;
+    NSString *styleSheetPath;
+    id dataSource;
 }
 
 - (id)initWithDataSource:(id)aDataSource andHTMLTemplate:(NSString *)anHTMLTemplate;
 
 @property (nonatomic, assign) BOOL includeHTMLFooter;
 @property (nonatomic, assign) BOOL includeHTMLHeader;
-@property (nonatomic, retain) NSString *styleSheetPath;
+@property (nonatomic, strong) NSString *styleSheetPath;
 
-@property (nonatomic, retain, readonly) NSString *renderedHTML;
+@property (nonatomic, strong, readonly) NSString *renderedHTML;
 
 
 @end

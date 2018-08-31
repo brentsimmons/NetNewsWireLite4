@@ -29,19 +29,19 @@ extern NSString *RSTreeDidDeleteItemsNotification;
 
 @interface RSTreeNode : NSObject {
 @private
-	NSMutableArray *children;
-	NSArray *orderedChildren;
-	NSString *sortKeyForOrderingChildren;
-	BOOL isSpecialGroup;
-	BOOL isGroup;
-	RSTreeNode *parent;
-	id<RSTreeNodeRepresentedObject> representedObject;
-	RSTree *tree;
-	BOOL expanded;
-	NSArray *flatItems;
-	NSArray *flatItemsRespectingExpansionState;
-	NSUInteger numberOfFlatItemsRespectingExpansionState;
-	BOOL allowsDragging; //YES by default, since most nodes can be dragged (in theory)
+    NSMutableArray *children;
+    NSArray *orderedChildren;
+    NSString *sortKeyForOrderingChildren;
+    BOOL isSpecialGroup;
+    BOOL isGroup;
+    RSTreeNode *__weak parent;
+    id<RSTreeNodeRepresentedObject> representedObject;
+    RSTree *__weak tree;
+    BOOL expanded;
+    NSArray *flatItems;
+    NSArray *flatItemsRespectingExpansionState;
+    NSUInteger numberOfFlatItemsRespectingExpansionState;
+    BOOL allowsDragging; //YES by default, since most nodes can be dragged (in theory)
 }
 
 
@@ -51,17 +51,17 @@ extern NSString *RSTreeDidDeleteItemsNotification;
 @property (nonatomic, assign) BOOL isGroup;
 @property (nonatomic, assign) BOOL isSpecialGroup;
 @property (nonatomic, assign) NSUInteger numberOfFlatItemsRespectingExpansionState;
-@property (nonatomic, assign) RSTree *tree;
-@property (nonatomic, assign) RSTreeNode *parent;
+@property (nonatomic, weak) RSTree *tree;
+@property (nonatomic, weak) RSTreeNode *parent;
 @property (nonatomic, assign, readonly) BOOL hasChildren;
 @property (nonatomic, assign, readonly) NSUInteger numberOfChildren;
-@property (nonatomic, retain) NSArray *flatItems;
-@property (nonatomic, retain) NSArray *flatItemsRespectingExpansionState;
-@property (nonatomic, retain) NSMutableArray *children;
-@property (nonatomic, retain) NSString *sortKeyForOrderingChildren;
-@property (nonatomic, retain) id<RSTreeNodeRepresentedObject> representedObject;
-@property (nonatomic, retain, readonly) NSArray *orderedChildren; //sorted alphabetically by default
-@property (nonatomic, retain, readonly) NSString *title;
+@property (nonatomic, strong) NSArray *flatItems;
+@property (nonatomic, strong) NSArray *flatItemsRespectingExpansionState;
+@property (nonatomic, strong) NSMutableArray *children;
+@property (nonatomic, strong) NSString *sortKeyForOrderingChildren;
+@property (nonatomic, strong) id<RSTreeNodeRepresentedObject> representedObject;
+@property (nonatomic, strong, readonly) NSArray *orderedChildren; //sorted alphabetically by default
+@property (nonatomic, strong, readonly) NSString *title;
 @property (nonatomic, assign) BOOL allowsDragging;
 
 - (void)addChild:(RSTreeNode *)childToAdd;

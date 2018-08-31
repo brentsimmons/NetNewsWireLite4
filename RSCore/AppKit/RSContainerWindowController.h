@@ -17,9 +17,9 @@
 
 @interface RSContainerWindowController : NSWindowController <NSToolbarDelegate> {
 @private
-	NSArray *plugins;
-	NSMutableArray *toolbarItems;
-	NSToolbar *toolbar;
+    NSArray *plugins;
+    NSMutableArray *toolbarItems;
+    NSToolbar *toolbar;
 }
 
 
@@ -28,8 +28,8 @@
 
 /*For subclasses*/
 
-@property (nonatomic, retain) NSArray *plugins;
-@property (nonatomic, retain) NSMutableArray *toolbarItems;
+@property (nonatomic, strong) NSArray *plugins;
+@property (nonatomic, strong) NSMutableArray *toolbarItems;
 
 - (void)switchToPlugin:(id<SLSelectableViewControllerPlugin>)aPlugin;
 

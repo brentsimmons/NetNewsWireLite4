@@ -11,9 +11,9 @@
 
 @interface NNWRightPaneContainerView : NSView {
 @private
-	NSMutableArray *viewStack;
-	NSImageView *screenshotViewForAnimation;
-	NSSplitView *rightPaneSplitView;
+    NSMutableArray *viewStack;
+    NSImageView *screenshotViewForAnimation;
+    NSSplitView *rightPaneSplitView;
 }
 
 
@@ -22,8 +22,8 @@
 - (void)popAllViews;
 
 @property (nonatomic, assign, readonly) BOOL hasPushedView;
-@property (nonatomic, retain, readonly) NSView *topView;
+@property (nonatomic, strong, readonly) NSView *topView;
 
-@property (nonatomic, retain) IBOutlet NSSplitView *rightPaneSplitView;
+@property (nonatomic, strong) IBOutlet NSSplitView *rightPaneSplitView;
 
 @end

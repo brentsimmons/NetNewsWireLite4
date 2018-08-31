@@ -21,9 +21,9 @@ extern NSString *RSWebClipIconURLKey; //in userInfo
 
 @interface RSWebClipIconController : NSObject {
 @private
-	pthread_mutex_t webclipControllerLock;
-	RSImageFolderCache *imageFolderCache;
-	NSMutableSet *checkedURLs;
+    pthread_mutex_t webclipControllerLock;
+    RSImageFolderCache *imageFolderCache;
+    NSMutableSet *checkedURLs;
 }
 
 + (RSWebClipIconController *)sharedController;
@@ -33,6 +33,6 @@ extern NSString *RSWebClipIconURLKey; //in userInfo
 
 - (CGImageRef)webclipIconForHomePageURL:(NSURL *)homePageURL webclipIconURL:(NSURL *)webclipIconURL;
 
-@property (nonatomic, retain, readonly) RSImageFolderCache *imageFolderCache;
+@property (nonatomic, strong, readonly) RSImageFolderCache *imageFolderCache;
 
 @end

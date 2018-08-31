@@ -12,15 +12,15 @@
 
 @interface NNWPreferencesGeneralViewController : NSViewController <SLFullContentViewControllerPlugin> {
 @private
-	NSButton *allowPluginsButton;
-	NSButtonCell *allowPluginsButtonCell;
-	NSButtonCell *openLinksButtonCell;
+    NSButton *allowPluginsButton;
+    NSButtonCell *allowPluginsButtonCell;
+    NSButtonCell *openLinksButtonCell;
 }
 
 
-@property (nonatomic, retain) IBOutlet NSButton *allowPluginsButton;
-@property (nonatomic, retain) IBOutlet NSButtonCell *allowPluginsButtonCell;
-@property (nonatomic, retain) IBOutlet NSButtonCell *openLinksButtonCell;
+@property (nonatomic, strong) IBOutlet NSButton *allowPluginsButton;
+@property (nonatomic, strong) IBOutlet NSButtonCell *allowPluginsButtonCell;
+@property (nonatomic, strong) IBOutlet NSButtonCell *openLinksButtonCell;
 
 
 - (IBAction)pluginsCheckboxClicked:(id)sender;

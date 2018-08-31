@@ -12,8 +12,8 @@
 
 @interface NNWPluginCommandSendToInstapaper ()
 
-@property (nonatomic, retain) id<RSPluginHelper> pluginHelper;
-@property (nonatomic, retain) NNWSendToInstapaper *sendToInstapaper;
+@property (nonatomic, strong) id<RSPluginHelper> pluginHelper;
+@property (nonatomic, strong) NNWSendToInstapaper *sendToInstapaper;
 @end
 
 
@@ -24,65 +24,60 @@
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[pluginHelper release];
-	[sendToInstapaper release];
-	[super dealloc];
-}
 
 
 #pragma mark Send to Instapaper Callback
 
 - (void)sendToInstapaperDidComplete:(NNWSendToInstapaper *)aSendToInstapaper {
-	if (aSendToInstapaper.didSucceed)
-		[self.pluginHelper noteUserDidShareItem:aSendToInstapaper.sharableItem viaServiceIdentifier:@"com.instapaper"];
-	self.sendToInstapaper = nil;
+    if (aSendToInstapaper.didSucceed)
+        [self.pluginHelper noteUserDidShareItem:aSendToInstapaper.sharableItem viaServiceIdentifier:@"com.instapaper"];
+    self.sendToInstapaper = nil;
 }
 
 
 #pragma mark RSPluginCommand
 
 - (NSString *)commandID {
-	return @"com.ranchero.NetNewsWire.plugin.sharing.SendToInstapaper";
+    return @"com.ranchero.NetNewsWire.plugin.sharing.SendToInstapaper";
 }
 
 
 - (NSString *)title {
-	return NSLocalizedStringFromTable(@"Send to Instapaper", @"Instapaper", @"Menu item title");
+    return NSLocalizedStringFromTable(@"Send to Instapaper", @"Instapaper", @"Menu item title");
 }
 
 
 - (NSString *)shortTitle {
-	return @"Instapaper";
+    return @"Instapaper";
 }
 
 
 - (NSImage *)image {
-	return [NSImage imageNamed:@"toolbar_main_instapaper"];
+    return [NSImage imageNamed:@"toolbar_main_instapaper"];
 }
 
 
 - (NSArray *)commandTypes {
-	return [NSArray arrayWithObject:[NSNumber numberWithInteger:RSPluginCommandTypeSharing]];
+    return [NSArray arrayWithObject:[NSNumber numberWithInteger:RSPluginCommandTypeSharing]];
 }
 
 
 - (BOOL)validateCommandWithArray:(NSArray *)items {
-	
-	if (items == nil || [items count] != 1)
-		return NO;
-	id<RSSharableItem> aSharableItem = [items objectAtIndex:0];
-	return aSharableItem.URL != nil || aSharableItem.permalink != nil;
+    
+    if (items == nil || [items count] != 1)
+        return NO;
+    id<RSSharableItem> aSharableItem = [items objectAtIndex:0];
+    return aSharableItem.URL != nil || aSharableItem.permalink != nil;
 }
 
 
 - (BOOL)performCommandWithArray:(NSArray *)items userInterfaceContext:(id<RSUserInterfaceContext>)userInterfaceContext pluginHelper:(id<RSPluginHelper>)aPluginHelper error:(NSError **)error {
-	
-	self.pluginHelper = aPluginHelper;
-	self.sendToInstapaper = [[[NNWSendToInstapaper alloc] initWithSharableItem:[items objectAtIndex:0] pluginHelper:aPluginHelper callbackTarget:self callbackSelector:@selector(sendToInstapaperDidComplete:)] autorelease];
-	[self.sendToInstapaper sendToInstapaper];
+    
+    self.pluginHelper = aPluginHelper;
+    self.sendToInstapaper = [[NNWSendToInstapaper alloc] initWithSharableItem:[items objectAtIndex:0] pluginHelper:aPluginHelper callbackTarget:self callbackSelector:@selector(sendToInstapaperDidComplete:)];
+    [self.sendToInstapaper sendToInstapaper];
 
-	return YES; //well, probably
+    return YES; //well, probably
 }
 
 

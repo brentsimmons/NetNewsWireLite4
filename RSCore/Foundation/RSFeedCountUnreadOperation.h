@@ -12,16 +12,16 @@
 
 @interface RSFeedCountUnreadOperation : RSOperation {
 @private
-	NSURL *feedURL;
-	NSString *accountID;
-	NSUInteger unreadCount;
+    NSURL *feedURL;
+    NSString *accountID;
+    NSUInteger unreadCount;
 }
 
 
 - (id)initWithFeedURL:(NSURL *)aFeedURL accountID:(NSString *)anAccountID delegate:(id)aDelegate callbackSelector:(SEL)aCallbackSelector;
 
-@property (nonatomic, retain, readonly) NSURL *feedURL;
+@property (nonatomic, strong, readonly) NSURL *feedURL;
 @property (nonatomic, assign, readonly) NSUInteger unreadCount;
-@property (nonatomic, retain, readonly) NSString *accountID;
+@property (nonatomic, strong, readonly) NSString *accountID;
 
 @end

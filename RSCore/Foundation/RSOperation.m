@@ -21,59 +21,55 @@ NSString *RSOperationDidCompleteNotification = @"RSOperationDidCompleteNotificat
 #pragma mark Init
 
 - (id)initWithDelegate:(id)aDelegate callbackSelector:(SEL)aCallbackSelector {
-	self = [super init];
-	if (!self)
-		return nil;
-	delegate = aDelegate;
-	callbackSelector = aCallbackSelector;
-	return self;
+    self = [super init];
+    if (!self)
+        return nil;
+    delegate = aDelegate;
+    callbackSelector = aCallbackSelector;
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[operationObject release];
-	[super dealloc];
-}
 
 
 #pragma mark Notifications
 
 - (void)postOperationDidCompleteNotification {
-	[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSOperationDidCompleteNotification object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSOperationDidCompleteNotification object:self userInfo:nil];
 }
 
 
 #pragma mark Delegate Callback
 
 - (void)callDelegate {
-	if (![self isCancelled] && self.delegate != nil && [self.delegate respondsToSelector:self.callbackSelector])
-		[self.delegate performSelectorOnMainThread:self.callbackSelector withObject:self waitUntilDone:NO];
+    if (![self isCancelled] && self.delegate != nil && [self.delegate respondsToSelector:self.callbackSelector])
+        [self.delegate performSelectorOnMainThread:self.callbackSelector withObject:self waitUntilDone:NO];
 }
 
 
 #pragma mark NSOperation
 
 - (BOOL)isConcurrent {
-	return NO;
+    return NO;
 }
 
 
 - (void)cancel {
-	[self postOperationDidCompleteNotification];
-	[super cancel];
+    [self postOperationDidCompleteNotification];
+    [super cancel];
 }
 
 
 - (void)main {
-	[self notifyObserversThatOperationIsComplete];
+    [self notifyObserversThatOperationIsComplete];
 }
 
 
 - (void)notifyObserversThatOperationIsComplete {
-	[self callDelegate];
-	[self postOperationDidCompleteNotification];	
+    [self callDelegate];
+    [self postOperationDidCompleteNotification];    
 }
 
 

@@ -11,7 +11,7 @@
 /*Subscribes to a new feed. Finds the feed via RSS discovery, if needed.*/
 
 enum {
-	NNWErrorCouldNotFindFeed = 1000
+    NNWErrorCouldNotFindFeed = 1000
 };
 
 @class NNWFeedFinder;
@@ -28,16 +28,16 @@ enum {
 
 @interface NNWFeedFinder : NSObject {
 @private
-	NSInteger statusCode;
-	NSMutableData *responseBody;
-	NSMutableDictionary *urlsRead;
-	NSString *password;
-	NSString *username;
-	NSTimer *keepAliveTimer;
-	NSURL *originalURL;
-	NSURL *permanentURL;
-	NSURLRequest *urlRequest;
-	id<NNWFeedFinderDelegate> delegate;
+    NSInteger statusCode;
+    NSMutableData *responseBody;
+    NSMutableDictionary *urlsRead;
+    NSString *password;
+    NSString *username;
+    NSTimer *keepAliveTimer;
+    NSURL *originalURL;
+    NSURL *permanentURL;
+    NSURLRequest *urlRequest;
+    id<NNWFeedFinderDelegate> __unsafe_unretained delegate;
 }
 
 - (id)initWithURL:(NSURL *)url delegate:(id<NNWFeedFinderDelegate>)aDelegate;
@@ -46,9 +46,9 @@ enum {
 @property (copy) NSString *password;
 @property (copy) NSString *username;
 @property (nonatomic, assign, readonly) NSInteger statusCode;
-@property (nonatomic, retain, readonly) NSMutableData *responseBody;
-@property (nonatomic, retain, readonly) NSURL *originalURL;
-@property (nonatomic, retain, readonly) NSURL *permanentURL;
+@property (nonatomic, strong, readonly) NSMutableData *responseBody;
+@property (nonatomic, strong, readonly) NSURL *originalURL;
+@property (nonatomic, strong, readonly) NSURL *permanentURL;
 
 @end
 

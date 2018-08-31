@@ -16,9 +16,9 @@
 static NSString *defaultUserAgent = nil;
 
 @interface RSDownloadOperation ()
-@property (nonatomic, retain) NSURL *url;
-@property (nonatomic, retain) NSMutableURLRequest *urlRequest;
-@property (nonatomic, retain, readwrite) NSError *error;
+@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) NSMutableURLRequest *urlRequest;
+@property (nonatomic, strong, readwrite) NSError *error;
 @property (nonatomic, assign, readwrite) RSDownloadStatus downloadStatus;
 - (void)download;
 @end
@@ -38,245 +38,227 @@ static NSString *defaultUserAgent = nil;
 #pragma mark Default User Agent
 
 + (void)setDefaultUserAgent:(NSString *)aUserAgent {
-	[defaultUserAgent autorelease];
-	defaultUserAgent = [aUserAgent retain];
+    defaultUserAgent = aUserAgent;
 }
 
 
 #pragma mark Init
 
 - (id)initWithURL:(NSURL *)aURL delegate:(id)aDelegate callbackSelector:(SEL)aCallbackSelector parser:(id)aParser useWebCache:(BOOL)useWebCacheFlag {
-	self = [super initWithDelegate:aDelegate callbackSelector:aCallbackSelector];
-	if (!self)
-		return nil;
-	url = [aURL retain];
-	parser = [aParser retain];
-	if (parser == nil)
-		useWebCache = useWebCacheFlag;
-	extraRequestHeaders = [[NSMutableDictionary dictionary] retain];
-	return self;
+    self = [super initWithDelegate:aDelegate callbackSelector:aCallbackSelector];
+    if (!self)
+        return nil;
+    url = aURL;
+    parser = aParser;
+    if (parser == nil)
+        useWebCache = useWebCacheFlag;
+    extraRequestHeaders = [NSMutableDictionary dictionary];
+    return self;
 }
 
 
 #pragma mark Dealloc
 
-- (void)dealloc {
-	[url release];
-	[httpMethod release];
-	[postBody release];
-	[urlRequest release];
-	[extraRequestHeaders release];
-	[urlConnection release];
-	[urlResponse release];
-	[responseBody release];
-	[parser release];
-	[error release];
-	[userInfo release];
-	[username release];
-	[password release];
-	[conditionalGetInfoResponse release];
-	[super dealloc];
-}
 
 
 #pragma mark Cache
 
 - (BOOL)fetchCachedObject {
-	if (self.usePermanentWebCache)
-		self.responseBody = [[[[RSPermanentWebCacheController sharedController] cachedObjectAtURL:self.url] mutableCopy] autorelease];
-	else
-		self.responseBody = [[[[RSWebCacheController sharedController] cachedObjectAtURL:self.url] mutableCopy] autorelease];
-	return self.responseBody != nil;
+    if (self.usePermanentWebCache)
+        self.responseBody = [[[RSPermanentWebCacheController sharedController] cachedObjectAtURL:self.url] mutableCopy];
+    else
+        self.responseBody = [[[RSWebCacheController sharedController] cachedObjectAtURL:self.url] mutableCopy];
+    return self.responseBody != nil;
 }
 
 
 #pragma mark NSOperation
 
 - (BOOL)isConcurrent {
-	return NO;
+    return NO;
 }
 
 
 - (void)cancel {
-	if (self.parser != nil)
-		[self.parser stopParsing];
-	[super cancel];
-	self.downloadStatus = RSDownloadCanceled;
+    if (self.parser != nil)
+        [self.parser stopParsing];
+    [super cancel];
+    self.downloadStatus = RSDownloadCanceled;
 }
 
 
 - (void)main {
-	if (!self.useWebCache || ![self fetchCachedObject]) /*Short-circuit is significant*/
-		[self download];
-	[self notifyObserversThatOperationIsComplete];
+    if (!self.useWebCache || ![self fetchCachedObject]) /*Short-circuit is significant*/
+        [self download];
+    [self notifyObserversThatOperationIsComplete];
 }
 
 
 #pragma mark Downloading
 
 - (void)createRequest {
-	self.urlRequest = [NSMutableURLRequest requestWithURL:self.url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
-	if (defaultUserAgent != nil)
-		[self.urlRequest setValue:defaultUserAgent forHTTPHeaderField:RSHTTPRequestHeaderUserAgent];
-	[self.urlRequest setValue:@"close" forHTTPHeaderField:@"Connection"];
-	for (NSString *oneKey in self.extraRequestHeaders)
-		[self.urlRequest setValue:[self.extraRequestHeaders objectForKey:oneKey] forHTTPHeaderField:oneKey];
-	[self.urlRequest setHTTPShouldHandleCookies:NO];
-	if (!RSStringIsEmpty(self.httpMethod))
-		[self.urlRequest setHTTPMethod:self.httpMethod];
-	if ([self.httpMethod isEqualToString:RSHTTPMethodPost])
-		[self.urlRequest setHTTPBody:self.postBody];
+    self.urlRequest = [NSMutableURLRequest requestWithURL:self.url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
+    if (defaultUserAgent != nil)
+        [self.urlRequest setValue:defaultUserAgent forHTTPHeaderField:RSHTTPRequestHeaderUserAgent];
+    [self.urlRequest setValue:@"close" forHTTPHeaderField:@"Connection"];
+    for (NSString *oneKey in self.extraRequestHeaders)
+        [self.urlRequest setValue:[self.extraRequestHeaders objectForKey:oneKey] forHTTPHeaderField:oneKey];
+    [self.urlRequest setHTTPShouldHandleCookies:NO];
+    if (!RSStringIsEmpty(self.httpMethod))
+        [self.urlRequest setHTTPMethod:self.httpMethod];
+    if ([self.httpMethod isEqualToString:RSHTTPMethodPost])
+        [self.urlRequest setHTTPBody:self.postBody];
 }
 
 
 - (void)download {
-	/*TODO: increment and decrement network activity*/
-	self.downloadStatus = RSDownloadInProgress;
-	[self createRequest];
-	self.urlConnection = [[[NSURLConnection alloc] initWithRequest:self.urlRequest delegate:self] autorelease];
-	do {
-		CFRunLoopRunInMode(kCFRunLoopDefaultMode, 10.0, true);
+    /*TODO: increment and decrement network activity*/
+    self.downloadStatus = RSDownloadInProgress;
+    [self createRequest];
+    self.urlConnection = [[NSURLConnection alloc] initWithRequest:self.urlRequest delegate:self];
+    do {
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 10.0, true);
         if ([self isCancelled]) {
             [self.urlConnection cancel];
             break;
         }
-	} while (!self.finishedReading);
+    } while (!self.finishedReading);
 }
 
 
 #pragma mark NSURLConnection Delegate
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	self.urlResponse = response;
-	if (self.parser == nil)
-		self.responseBody = [[[NSMutableData alloc] init] autorelease];
-	if ([response respondsToSelector:@selector(statusCode)]) {
-		self.statusCode = [(NSHTTPURLResponse *)response statusCode];
-//		if (self.statusCode >= 400) {
-//			[connection cancel];
-//			self.finishedReading = YES;
-//		}
-	}
+    self.urlResponse = response;
+    if (self.parser == nil)
+        self.responseBody = [[NSMutableData alloc] init];
+    if ([response respondsToSelector:@selector(statusCode)]) {
+        self.statusCode = [(NSHTTPURLResponse *)response statusCode];
+//        if (self.statusCode >= 400) {
+//            [connection cancel];
+//            self.finishedReading = YES;
+//        }
+    }
 }
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	if ([self isCancelled]) {
-		[self.urlConnection cancel];
-		return;
-	}
-	if (self.parser == nil)
-		[self.responseBody appendData:data];
-	else {
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		if (self.statusCode < 400) {
-			if (self.didStartParser)
-				[self.parser parseChunk:data error:nil];
-			else {
-				self.didStartParser = YES;
-				[self.parser startParsing:data];
-			}
-		}
-		[pool drain];
-	}
+    if ([self isCancelled]) {
+        [self.urlConnection cancel];
+        return;
+    }
+    if (self.parser == nil)
+        [self.responseBody appendData:data];
+    else {
+        @autoreleasepool {
+            if (self.statusCode < 400) {
+                if (self.didStartParser)
+                    [self.parser parseChunk:data error:nil];
+                else {
+                    self.didStartParser = YES;
+                    [self.parser startParsing:data];
+                }
+            }
+        }
+    }
 }
 
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)anError {
-	//self.responseBody = nil;
-	self.error = anError;
-	if (self.notConnectedToInternetError)
-		[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSErrorNotConnectedToInternetNotification object:self userInfo:nil];
-	self.finishedReading = YES;
-	self.downloadStatus = RSDownloadComplete;
+    //self.responseBody = nil;
+    self.error = anError;
+    if (self.notConnectedToInternetError)
+        [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSErrorNotConnectedToInternetNotification object:self userInfo:nil];
+    self.finishedReading = YES;
+    self.downloadStatus = RSDownloadComplete;
 }
 
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	if (self.parser != nil) {
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-		if (self.didStartParser && ![self isCancelled])
-			[self.parser endParsing];
-		[pool drain];
-	}
-	if (self.useWebCache && self.statusCode == 200) {
-		if (self.usePermanentWebCache)
-			[[RSPermanentWebCacheController sharedController] storeObject:self.responseBody url:self.url];
-		else
-			[[RSWebCacheController sharedController] storeObject:self.responseBody url:self.url];
-	}
-	if (!self.notConnectedToInternetError)
-		[[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSConnectedToInternetNotification object:self userInfo:nil];
-	self.finishedReading = YES;
-	self.downloadStatus = RSDownloadComplete;
+    if (self.parser != nil) {
+        @autoreleasepool {
+            if (self.didStartParser && ![self isCancelled])
+                [self.parser endParsing];
+        }
+    }
+    if (self.useWebCache && self.statusCode == 200) {
+        if (self.usePermanentWebCache)
+            [[RSPermanentWebCacheController sharedController] storeObject:self.responseBody url:self.url];
+        else
+            [[RSWebCacheController sharedController] storeObject:self.responseBody url:self.url];
+    }
+    if (!self.notConnectedToInternetError)
+        [[NSNotificationCenter defaultCenter] rs_postNotificationOnMainThread:RSConnectedToInternetNotification object:self userInfo:nil];
+    self.finishedReading = YES;
+    self.downloadStatus = RSDownloadComplete;
 }
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	if (!RSStringIsEmpty(self.username) && !RSStringIsEmpty(self.password) && [challenge previousFailureCount] < 3) {
-		NSURLCredential *newCredential = [NSURLCredential credentialWithUser:self.username password:self.password persistence:NSURLCredentialPersistenceForSession];
-		[[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
-		return;
-	}	
-	[[challenge sender] cancelAuthenticationChallenge:challenge];
+    if (!RSStringIsEmpty(self.username) && !RSStringIsEmpty(self.password) && [challenge previousFailureCount] < 3) {
+        NSURLCredential *newCredential = [NSURLCredential credentialWithUser:self.username password:self.password persistence:NSURLCredentialPersistenceForSession];
+        [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
+        return;
+    }    
+    [[challenge sender] cancelAuthenticationChallenge:challenge];
 }
 
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse {
-	return nil;
+    return nil;
 }
 
 
 #pragma mark Errors and Status
 
 - (BOOL)notConnectedToInternetError {
-	/*The extra error code 22 and NSPOSIXErrorDomain comes from testing -- happens on our development iPod Touch.*/
-	return error != nil && ([error code] == NSURLErrorNotConnectedToInternet || ([error code] == 22 && [[error domain] isEqualToString:NSPOSIXErrorDomain]));
+    /*The extra error code 22 and NSPOSIXErrorDomain comes from testing -- happens on our development iPod Touch.*/
+    return error != nil && ([error code] == NSURLErrorNotConnectedToInternet || ([error code] == 22 && [[error domain] isEqualToString:NSPOSIXErrorDomain]));
 }
 
 
 - (NSInteger)didFailErrorCode {
-	return self.error ? [self.error code] : 0;
+    return self.error ? [self.error code] : 0;
 }
 
 
 - (BOOL)authenticationError {
-	NSInteger code = self.statusCode;
+    NSInteger code = self.statusCode;
 #if TARGET_IPHONE_SIMULATOR
-	NSLog(@"didFailWithAuthenticationError: %d %@", code, self.url);
+    NSLog(@"didFailWithAuthenticationError: %d %@", code, self.url);
 #endif
-	if (code == 401)
-		return YES;
-	code = [self didFailErrorCode];
-	return code == NSURLErrorUserAuthenticationRequired || code == NSURLErrorUserCancelledAuthentication;
+    if (code == 401)
+        return YES;
+    code = [self didFailErrorCode];
+    return code == NSURLErrorUserAuthenticationRequired || code == NSURLErrorUserCancelledAuthentication;
 }
 
 
 - (BOOL)okResponse {
-	/*The check for NSHTTPURLResponse is because the response may not be an NSHTTPURLResponse -- it may be an ok response from a local URL protocol handler.*/
-	return self.error == nil && (self.statusCode == 200 || ![self.urlResponse isKindOfClass:[NSHTTPURLResponse class]]);
+    /*The check for NSHTTPURLResponse is because the response may not be an NSHTTPURLResponse -- it may be an ok response from a local URL protocol handler.*/
+    return self.error == nil && (self.statusCode == 200 || ![self.urlResponse isKindOfClass:[NSHTTPURLResponse class]]);
 }
 
 
 - (NSString *)responseBodyString {
-	if (self.responseBody == nil)
-		return nil;
-	return [[[NSString alloc] initWithData:self.responseBody encoding:NSUTF8StringEncoding] autorelease];
+    if (self.responseBody == nil)
+        return nil;
+    return [[NSString alloc] initWithData:self.responseBody encoding:NSUTF8StringEncoding];
 }
 
 
 - (void)debugLog {
-	NSLog(@"request headers: %@", [self.urlRequest allHTTPHeaderFields]);
-	NSLog(@"status code: %ld", (long)[(NSHTTPURLResponse *)(self.urlResponse) statusCode]);
-	NSLog(@"response headers: %@", [(NSHTTPURLResponse *)(self.urlResponse) allHeaderFields]);
-	NSLog(@"response body: %@", self.responseBodyString);
+    NSLog(@"request headers: %@", [self.urlRequest allHTTPHeaderFields]);
+    NSLog(@"status code: %ld", (long)[(NSHTTPURLResponse *)(self.urlResponse) statusCode]);
+    NSLog(@"response headers: %@", [(NSHTTPURLResponse *)(self.urlResponse) allHeaderFields]);
+    NSLog(@"response body: %@", self.responseBodyString);
 }
 
 
 - (RSHTTPConditionalGetInfo *)conditionalGetInfoResponse {
-	if (conditionalGetInfoResponse == nil)
-		conditionalGetInfoResponse = [[RSHTTPConditionalGetInfo conditionalGetInfoWithURLResponse:self.urlResponse] retain];
-	return conditionalGetInfoResponse;
+    if (conditionalGetInfoResponse == nil)
+        conditionalGetInfoResponse = [RSHTTPConditionalGetInfo conditionalGetInfoWithURLResponse:self.urlResponse];
+    return conditionalGetInfoResponse;
 }
 
 

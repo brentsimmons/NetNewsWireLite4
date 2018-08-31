@@ -23,22 +23,22 @@ extern NSString *RSCoreDataStoreFileName;
 
 @interface RSDataController : NSObject {
 @private
-	BOOL managedObjectContextIsDirty;
-	NSArray *currentArticles;
-	NSMutableArray *accounts;
-	NSMutableDictionary *listControllers;
-	NSOperationQueue *coreDataBackgroundOperationQueue;
-	NSTimer *saveTimer;
-	RSArticleListController *currentListController;
-	RSCoreDataStack *coreDataStack;
-	RSDataAccount *localAccount;
-	RSGlobalAccount *globalAccount;
+    BOOL managedObjectContextIsDirty;
+    NSArray *currentArticles;
+    NSMutableArray *accounts;
+    NSMutableDictionary *listControllers;
+    NSOperationQueue *coreDataBackgroundOperationQueue;
+    NSTimer *saveTimer;
+    RSArticleListController *currentListController;
+    RSCoreDataStack *coreDataStack;
+    RSDataAccount *localAccount;
+    RSGlobalAccount *globalAccount;
 }
 
 
 - (id)initWithModelResourceName:(NSString *)modelResourceName storeFileName:(NSString *)storeFileName;
 
-@property (nonatomic, retain, readonly) NSManagedObjectContext *mainThreadManagedObjectContext;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *mainThreadManagedObjectContext;
 @property (nonatomic, assign) BOOL managedObjectContextIsDirty;
 @property (nonatomic, assign, readonly) NSUInteger unreadCount;
 
@@ -53,8 +53,8 @@ extern NSString *RSCoreDataStoreFileName;
 
 /*Accounts*/
 
-@property (nonatomic, retain, readonly) RSDataAccount *localAccount;
-@property (nonatomic, retain, readonly) RSGlobalAccount *globalAccount;
+@property (nonatomic, strong, readonly) RSDataAccount *localAccount;
+@property (nonatomic, strong, readonly) RSGlobalAccount *globalAccount;
 
 - (id<RSAccount>)accountWithID:(NSString *)anAccountID; //finds existing account
 
@@ -72,11 +72,11 @@ extern NSString *RSCoreDataStoreFileName;
 
 /*List Controllers*/
 
-@property (nonatomic, retain) RSArticleListController *currentListController; //the one containing data the user is looking at
+@property (nonatomic, strong) RSArticleListController *currentListController; //the one containing data the user is looking at
 - (void)setListController:(RSArticleListController *)aListController forKey:(NSString *)aKey;
 
 /*Articles*/
 
-@property (nonatomic, retain) NSArray *currentArticles; //the ones the user has selected
+@property (nonatomic, strong) NSArray *currentArticles; //the ones the user has selected
 
 @end
